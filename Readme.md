@@ -1,5 +1,5 @@
 # Horned Sungem
 ## Our site
-<www.hornedsungem.org>
+<http://www.hornedsungem.org>
 ## Documentation
-<hornedsungem.github.io/docs>
+<http://hornedsungem.github.io/docs>
