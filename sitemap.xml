@@ -3,12 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/categories/</loc>
-    <priority>0</priority>
+    <loc>https://hornedsungem.github.io/Docs/_footer/</loc>
   </url>
   
   <url>
     <loc>https://hornedsungem.github.io/Docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/models/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/categories/</loc>
     <priority>0</priority>
   </url>
   
