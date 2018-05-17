@@ -12,17 +12,17 @@
     <title> :: Horned Sungem Documentation</title>
     
     
-    <link href="/Docs/css/nucleus.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1526532252" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1526532253" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1526532252"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1526532253"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -32,7 +32,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/Docs/api/">
+  <body class="" data-url="/Docs/workflow/recorder/">
     <nav id="sidebar" class="">
 
 
@@ -67,14 +67,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1526532252"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1526532252"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1526532253"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1526532253"></script>
 <script type="text/javascript">
     
         var baseurl = '\/Docs';
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1526532252"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1526532253"></script>
 
     
   </div>
@@ -91,8 +91,8 @@
   
     
     <li data-nav-id="/Docs/api/" title="" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/Docs/api/">
@@ -157,7 +157,7 @@
   
     
     <li data-nav-id="/Docs/workflow/" title="" class="dd-item 
-        
+        parent
         
         
         ">
@@ -200,7 +200,7 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/recorder/" title="" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/recorder/" title="" class="dd-item active">
         <a href="/Docs/workflow/recorder/">
         
         
@@ -263,7 +263,13 @@
             
           
           
-            <a href='/Docs/'></a> > 
+            
+            
+          
+          
+            <a href='/Docs/'></a> > <a href='/Docs/workflow/'></a> > 
+          
+         
           
          
           
@@ -273,7 +279,32 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#角蜂鸟情景记录器">角蜂鸟情景记录器</a></li>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#使用说明">使用说明</a></li>
+<li><a href="#注意事项">注意事项</a>
+<ul>
+<li><a href="#路径和文件">路径和文件</a></li>
+<li><a href="#情景记录器-scene-recorder">情景记录器 Scene Recorder</a>
+<ul>
+<li>
+<ul>
+<li><a href="#初始化">初始化</a></li>
+<li><a href="#情景识别">情景识别</a>
+<ul>
+<li><a href="#图像与其特征向量">图像与其特征向量</a></li>
+<li><a href="#录入与取得分类结果">录入与取得分类结果</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -293,9 +324,138 @@
 
 
 
+<h2 id="角蜂鸟情景记录器">角蜂鸟情景记录器</h2>
+
+<hr />
+
+<p>本章为您介绍如何使用角蜂鸟在Python调用内置部署的GoogleNet来实现一个实用性非常强的情景记录器。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>角蜂鸟情景记录器可将希望分类的图像实时储存在不同的“存档”下并立即生成一个分类模型，之后便可辨识它们对应的场景。比如说在门打开的时候将图像录制进[存档1]，关闭的时候录制进[存档2]，生成模型之后便可辨认门是否开启。将不同的手势录制进不同的存档下就变成了一个简单的手势识别。</p>
+
+<h2 id="使用说明">使用说明</h2>
+
+<p>执行Python程序、初始化角蜂鸟之后，对准需要录制的第一个目标，按1-5之中的一个数字（对应存档编号）：</p>
+
+<p>比如说按1后保持7帧，终端将显示：</p>
+
+<pre><code>|        Record to bin: 1        |
+|      [7]-[0]-[0]-[0]-[0]       |
+</code></pre>
+
+<p>接着对准第二个目标按2：</p>
+
+<pre><code>|        Record to bin: 2        |
+|      [7]-[8]-[0]-[0]-[0]       |
+</code></pre>
+
+<p>这样记录器中储存两个目标就可以开始生成模型了。</p>
+
+<p>按 <em>&lsquo;r&rsquo;</em> 将自动精简储存的图像，并生成模型。</p>
+
+<p>自动将多余的图片自动删除。</p>
+
+<pre><code>| .........Compressing.......... |
+|      [2]-[2]-[0]-[0]-[0]       |
+| ------Compress finished------- |
+</code></pre>
+
+<p>进入识别状态并开始实时显示5个不同类别的置信度。下例中的意思为第一个类别的可能性为74%，第二个为26%。第二个栏里简单的将置信度可视化，竖条越多说明当前场景越可能属于该存档。</p>
+
+<pre><code>| ---------Running ANN---------- |
+*           [1]: 0.74            *
+*           [2]: 0.26            *
+*           [3]: 0.00            *
+*           [4]: 0.00            *
+*           [5]: 0.00            *
+| --------Probabilities--------- |
+|            |||||||             |
+|               ||               |
+|                                |
+|                                |
+|                                |
+</code></pre>
+
+<h2 id="注意事项">注意事项</h2>
+
+<ol>
+<li>信噪比</li>
+</ol>
+
+<p>因为记录器会将整个图片量化为特征向量并储存，意味着如果情景中的关键信息占的图像比重越低，效果会越差。</p>
+
+<ol>
+<li>负样本</li>
+</ol>
+
+<p>识别中往往存在“无信息”的状态，这时需要假如额外的负样本来辨识。比如说识别两个不同的人分别为1和2，当两个人都不存在于场景时，分类器会强行赋予1和2之间的标签，所以需要将背景或是希望避免的干扰信息记录至一个额外的存档中。</p>
+
+<ul>
+<li>本教程基于Ubuntu 16.04系统</li>
+</ul>
+
+<hr />
+
+<h3 id="路径和文件">路径和文件</h3>
+
+<ul>
+<li>情景记录器Python：<strong>SungemSDK/examples/python/SceneRecorder.py</strong></li>
+<li>模型文件：<strong>SungemSDK/examples/graphs/graph_g</strong>  - GoogleNet</li>
+<li>模型文件（备选）：<strong>SungemSDK/examples/graphs/graph_fn</strong>  - FaceNet</li>
+</ul>
+
+<hr />
+
+<h3 id="情景记录器-scene-recorder">情景记录器 Scene Recorder</h3>
+
+<p>在<strong>python</strong>目录下执行以下命令来启动 <em>情景记录器</em> 范例。</p>
+
+<pre><code>~/SungemSDK/examples/python$ python3 SceneRecorder.py
+</code></pre>
+
+<h5 id="初始化">初始化</h5>
+
+<pre><code class="language-python">WEBCAM = False
+net = hs.HS('GoogleNet', zoom = True, verbose = 2)
+</code></pre>
+
+<p>两种模式（WEBCAM）：
+* True时使用外接USB摄像头
+* False时使用角蜂鸟内置树梅派摄像头</p>
+
+<p>在初始化角蜂鸟时可设置的参数：
+* zoom: 如果为True，则输出图像为640*360，否则为1920*1080 *
+* verbose: 0时不输出任何信息、1时输出设备和其他关键信息、2时输出全部信息。</p>
+
+<h5 id="情景识别">情景识别</h5>
+
+<h6 id="图像与其特征向量">图像与其特征向量</h6>
+
+<pre><code class="language-python">result = net.run(img)
+</code></pre>
+
+<p>使用角蜂鸟模式时（WEBCAM为False），无需输入图像，img为None。在使用外置摄像头模式时需输入图像。
+result中返回图像与其特征向量（GoogleNet时为1024维度向量），分别放置在result[0]与result[1]中</p>
+
+<h6 id="录入与取得分类结果">录入与取得分类结果</h6>
+
+<pre><code class="language-python">key = cv2.waitKey(5)
+prob = net.record(result, key)
+</code></pre>
+
+<p>通过OpenCV的waitKey将获得输入的键盘键位，目前对应的键位分别为：
+* 1-5 将当前帧储存至对应的数字存档中
+* r 清理存档中图像，并生成分类模型
+* 录制时输出为<em>None</em></p>
+
+<p>如其他键位或没有按键，将输出识别*SoftMax*置信度。</p>
+
+
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -328,23 +488,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -388,19 +531,6 @@
                     
 
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -409,6 +539,40 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
                 
                 
 
@@ -430,10 +594,10 @@
 
 
         
-            <a class="nav nav-prev" href="/Docs/" title=""> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/Docs/workflow/detector/" title=""> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/Docs/models/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/Docs/workflow/detector/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -442,20 +606,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1526532252"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1526532252"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1526532252"></script>
-    <script src="/Docs/js/jquery.sticky.js?1526532252"></script>
-    <script src="/Docs/js/featherlight.min.js?1526532252"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1526532252"></script>
-    <script src="/Docs/js/highlight.pack.js?1526532252"></script>
+    <script src="/Docs/js/clipboard.min.js?1526532253"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1526532253"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1526532253"></script>
+    <script src="/Docs/js/jquery.sticky.js?1526532253"></script>
+    <script src="/Docs/js/featherlight.min.js?1526532253"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1526532253"></script>
+    <script src="/Docs/js/highlight.pack.js?1526532253"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1526532252"></script>
-    <script src="/Docs/js/learn.js?1526532252"></script>
-    <script src="/Docs/js/hugo-learn.js?1526532252"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1526532253"></script>
+    <script src="/Docs/js/learn.js?1526532253"></script>
+    <script src="/Docs/js/hugo-learn.js?1526532253"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1526532252" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1526532252"></script>
+    <link href="/Docs/mermaid/mermaid.css?1526532253" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1526532253"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -463,3 +627,4 @@
 
   </body>
 </html>
+

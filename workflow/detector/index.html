@@ -12,17 +12,17 @@
     <title> :: Horned Sungem Documentation</title>
     
     
-    <link href="/Docs/css/nucleus.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1526532252" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1526532252" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1526532253" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1526532253" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1526532252"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1526532253"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -32,7 +32,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/Docs/api/">
+  <body class="" data-url="/Docs/workflow/detector/">
     <nav id="sidebar" class="">
 
 
@@ -67,14 +67,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1526532252"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1526532252"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1526532253"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1526532253"></script>
 <script type="text/javascript">
     
         var baseurl = '\/Docs';
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1526532252"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1526532253"></script>
 
     
   </div>
@@ -91,8 +91,8 @@
   
     
     <li data-nav-id="/Docs/api/" title="" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/Docs/api/">
@@ -157,7 +157,7 @@
   
     
     <li data-nav-id="/Docs/workflow/" title="" class="dd-item 
-        
+        parent
         
         
         ">
@@ -181,7 +181,7 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/detector/" title="" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/detector/" title="" class="dd-item active">
         <a href="/Docs/workflow/detector/">
         
         
@@ -263,7 +263,13 @@
             
           
           
-            <a href='/Docs/'></a> > 
+            
+            
+          
+          
+            <a href='/Docs/'></a> > <a href='/Docs/workflow/'></a> > 
+          
+         
           
          
           
@@ -273,7 +279,29 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ssd-mobilenet-人脸-物体检测">SSD-Mobilenet 人脸/物体检测</a>
+<ul>
+<li><a href="#路径和文件">路径和文件</a></li>
+<li><a href="#人脸检测-face-detector">人脸检测 Face Detector</a></li>
+<li><a href="#参数设置">参数设置</a>
+<ul>
+<li>
+<ul>
+<li><a href="#初始化">初始化</a></li>
+<li><a href="#检测">检测</a></li>
+<li><a href="#可视化">可视化</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#物体检测-object-detector">物体检测 Object Detector</a></li>
+</ul></li>
+<li><a href="#使用实例">使用实例</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -293,9 +321,150 @@
 
 
 
+<h2 id="ssd-mobilenet-人脸-物体检测">SSD-Mobilenet 人脸/物体检测</h2>
+
+<hr />
+
+<p>本章为您介绍如何使用角蜂鸟在Python调用内置部署的SSD-Mobilenet人脸和物体检测卷积神经网络。</p>
+
+<p>检测器分析图片并找出目标的位置和尺寸。</p>
+
+<ul>
+<li>本教程基于Ubuntu 16.04系统</li>
+</ul>
+
+<hr />
+
+<h3 id="路径和文件">路径和文件</h3>
+
+<ul>
+<li>人脸识别Python：<strong>SungemSDK/examples/python/FaceDetector.py</strong></li>
+
+<li><p>模型文件：<strong>SungemSDK/examples/graphs/graph_face_SSD</strong></p></li>
+
+<li><p>物体识别Python：<strong>SungemSDK/examples/python/ObjectDetector.py</strong></p></li>
+
+<li><p>模型文件：<strong>SungemSDK/examples/graphs/graph_object_SSD</strong></p></li>
+</ul>
+
+<hr />
+
+<h3 id="人脸检测-face-detector">人脸检测 Face Detector</h3>
+
+<p>在<strong>python</strong>目录下执行以下命令来启动 <em>人脸检测</em> 范例。</p>
+
+<pre><code>~/SungemSDK/examples/python$ python3 FaceDetector.py
+</code></pre>
+
+<p>得到结果：</p>
+
+<pre><code>| ======= Horned Sungem ======== |
+|        Device found [0]        |
+|    ../graphs/graph_face_SSD    |
+|     Model loaded to Python     |
+|   Model allocated to device    |
+| ============================== |
+* *****SSD [0]: Box values****** *
+...
+</code></pre>
+
+<p>如图像中包括人脸，则：</p>
+
+<pre><code>* *****SSD [1]: Box values****** *
+*         Box Name: Face         *
+* 360 106 591 361 - w:231 h:255  *
+</code></pre>
+
+<p>其中SSD [N]中N为检测人脸个数，下一行为人脸检测框Bounding Box的左上角和右下角坐标以及窗的宽高。</p>
+
+<h3 id="参数设置">参数设置</h3>
+
+<h5 id="初始化">初始化</h5>
+
+<pre><code class="language-python">WEBCAM = False
+net = hs.HS('FaceDetector', zoom = True, verbose = 2)
+</code></pre>
+
+<p>两种模式（WEBCAM）：
+* True时使用外接USB摄像头
+* False时使用角蜂鸟内置树梅派摄像头</p>
+
+<p>在初始化角蜂鸟时可设置的参数：
+* zoom: 如果为True，则输出图像为640*360，否则为1920*1080 *
+* verbose: 0时不输出任何信息、1时输出设备和其他关键信息、2时输出全部信息。
+* threshSSD: 人脸检测阈值，范围为0-1， 提高阈值会减少错检但增加漏检，反之亦然。</p>
+
+<h5 id="检测">检测</h5>
+
+<pre><code class="language-python">result = net.run(img)
+</code></pre>
+
+<p>使用角蜂鸟模式时（WEBCAM为False），无需输入图像，img为None。在使用外置摄像头模式时需输入图像。
+result中返回图像与检测结果，分别放置在result[0]与result[1]中</p>
+
+<p>检测结果包括以下内容，按照数组顺序：
+例如</p>
+
+<pre><code>print(result[1])
+[[0, 0.99805, 334, 2, 595, 289]]
+</code></pre>
+
+<ul>
+<li>检测目标类别：人脸固定为0, 物体检测时可为0-19,对应不同的标签（请参考VOC数据库标注）。</li>
+<li>检测置信度：范围为0-1,越高检测器越肯定目标是否准确。</li>
+<li>人脸框的位置：4个数值对应左上角和右下角坐标</li>
+</ul>
+
+<h5 id="可视化">可视化</h5>
+
+<pre><code class="language-python">img = net.plotSSD(result)
+</code></pre>
+
+<p>输入result，输出画框之后的图像。之后通过OpenCV函数来显示图像。</p>
+
+<hr />
+
+<h3 id="物体检测-object-detector">物体检测 Object Detector</h3>
+
+<p>在<strong>python</strong>目录下执行以下命令来启动 <em>物体检测</em> 范例。</p>
+
+<pre><code>~/SungemSDK/examples/python$ python3 ObjectDetector.py
+</code></pre>
+
+<p>物体检测流程与人脸检测基本相同。检测类别为20个，具体类别请参考VOC数据库或从API中取得。</p>
+
+<h2 id="使用实例">使用实例</h2>
+
+<p><img src="../face_detection.jpg" alt="Face Detection" /></p>
+
+<pre><code>* *****SSD [9]: Box values****** *
+*         Box Name: Face         *
+* 167 103 307 262 - w:140 h:159  *
+*         Box Name: Face         *
+*  29 114 140 272 - w:111 h:158  *
+*         Box Name: Face         *
+* 344 101 446 239 - w:102 h:138  *
+*         Box Name: Face         *
+* 349 255 474 365 - w:125 h:110  *
+*         Box Name: Face         *
+*  507 93 611 225 - w:104 h:132  *
+*         Box Name: Face         *
+*  205 280 313 362 - w:108 h:82  *
+*         Box Name: Face         *
+*   19 2 119 109 - w:100 h:107   *
+*         Box Name: Face         *
+*   189 4 290 99 - w:101 h:95    *
+*         Box Name: Face         *
+*    334 0 425 92 - w:91 h:92    *
+</code></pre>
+
+<p>*截图和复制时之间的短暂延时导致图片与结果略微不符</p>
+
+
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -328,23 +497,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -388,19 +540,6 @@
                     
 
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -409,6 +548,40 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -430,10 +603,10 @@
 
 
         
-            <a class="nav nav-prev" href="/Docs/" title=""> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/Docs/workflow/" title=""> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/Docs/models/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/Docs/workflow/recorder/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -442,20 +615,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1526532252"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1526532252"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1526532252"></script>
-    <script src="/Docs/js/jquery.sticky.js?1526532252"></script>
-    <script src="/Docs/js/featherlight.min.js?1526532252"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1526532252"></script>
-    <script src="/Docs/js/highlight.pack.js?1526532252"></script>
+    <script src="/Docs/js/clipboard.min.js?1526532253"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1526532253"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1526532253"></script>
+    <script src="/Docs/js/jquery.sticky.js?1526532253"></script>
+    <script src="/Docs/js/featherlight.min.js?1526532253"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1526532253"></script>
+    <script src="/Docs/js/highlight.pack.js?1526532253"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1526532252"></script>
-    <script src="/Docs/js/learn.js?1526532252"></script>
-    <script src="/Docs/js/hugo-learn.js?1526532252"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1526532253"></script>
+    <script src="/Docs/js/learn.js?1526532253"></script>
+    <script src="/Docs/js/hugo-learn.js?1526532253"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1526532252" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1526532252"></script>
+    <link href="/Docs/mermaid/mermaid.css?1526532253" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1526532253"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -463,3 +636,4 @@
 
   </body>
 </html>
+
