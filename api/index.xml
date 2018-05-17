@@ -10,5 +10,47 @@
 	<atom:link href="https://hornedsungem.github.io/Docs/api/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title></title>
+      <link>https://hornedsungem.github.io/Docs/api/highlevel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/api/highlevel/</guid>
+      <description>Horned Sungem High Level API (Ver. 0.1.0) 通用高层函数 HS.__init__()  版本 Version: 0.1.0
+ 总览 Overview: 初始化角蜂鸟高层接口。
+ 语法 Syntax:
+  hs.HS(modelName, **kwargs)   参数 Parameters:
+ modelName: 内置模型名称。
+ **kwargs 关键字参数: (Optional)
+ &amp;lsquo;verbose&amp;rsquo; 显示信息详细程度：从0到2分别为无信息、关键信息、全部信息。默认为2。
+ &amp;lsquo;mean&amp;rsquo; 模型前处理均值。默认为1.0
+ &amp;lsquo;scale&amp;rsquo; 模型前处理尺度。默认为0.007843 （1/127.5）
+ &amp;lsquo;graphFolder&amp;rsquo; 模型文件夹路径。 默认为 &amp;lsquo;../graphs/&amp;rsquo;
+ &amp;lsquo;zoom&amp;rsquo; 为True时图像尺寸为640x360，False时1920x1080。默认为True。
+ &amp;lsquo;labels&amp;rsquo; 使用SSD时是否使用自定义标签。默认为None。未来开放自定义模型时可更改。
+ &amp;lsquo;threshSSD&amp;rsquo; 使用SSD时的阈值，范围为0-1。 默认为0.55。
+   返回 Return: 返回已加载模型的HS Object实例。
+ 范例 Example:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hornedsungem.github.io/Docs/api/lowlevel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/api/lowlevel/</guid>
+      <description>Horned Sungem Low Level API (Ver. 0.1.0) Enumerations GlobalOption  Version: 0.1.0
+ Overview:
+The GlobalOption class is an enumeration class that defines the options that are passed to and received from the SetGlobalOption and the GetGlobalOption functions.
+ enum: LOGLEVEL
+ option type: int
+ possible values: 0, 1, 2
+ get/set get, set
+ Description
+0 = Nothing is printed (default)
+1 = Print errors only
+2 = Verbose</description>
+    </item>
+    
   </channel>
 </rss>

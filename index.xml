@@ -21,6 +21,48 @@
     
     <item>
       <title></title>
+      <link>https://hornedsungem.github.io/Docs/api/highlevel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/api/highlevel/</guid>
+      <description>Horned Sungem High Level API (Ver. 0.1.0) 通用高层函数 HS.__init__()  版本 Version: 0.1.0
+ 总览 Overview: 初始化角蜂鸟高层接口。
+ 语法 Syntax:
+  hs.HS(modelName, **kwargs)   参数 Parameters:
+ modelName: 内置模型名称。
+ **kwargs 关键字参数: (Optional)
+ &amp;lsquo;verbose&amp;rsquo; 显示信息详细程度：从0到2分别为无信息、关键信息、全部信息。默认为2。
+ &amp;lsquo;mean&amp;rsquo; 模型前处理均值。默认为1.0
+ &amp;lsquo;scale&amp;rsquo; 模型前处理尺度。默认为0.007843 （1/127.5）
+ &amp;lsquo;graphFolder&amp;rsquo; 模型文件夹路径。 默认为 &amp;lsquo;../graphs/&amp;rsquo;
+ &amp;lsquo;zoom&amp;rsquo; 为True时图像尺寸为640x360，False时1920x1080。默认为True。
+ &amp;lsquo;labels&amp;rsquo; 使用SSD时是否使用自定义标签。默认为None。未来开放自定义模型时可更改。
+ &amp;lsquo;threshSSD&amp;rsquo; 使用SSD时的阈值，范围为0-1。 默认为0.55。
+   返回 Return: 返回已加载模型的HS Object实例。
+ 范例 Example:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hornedsungem.github.io/Docs/api/lowlevel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/api/lowlevel/</guid>
+      <description>Horned Sungem Low Level API (Ver. 0.1.0) Enumerations GlobalOption  Version: 0.1.0
+ Overview:
+The GlobalOption class is an enumeration class that defines the options that are passed to and received from the SetGlobalOption and the GetGlobalOption functions.
+ enum: LOGLEVEL
+ option type: int
+ possible values: 0, 1, 2
+ get/set get, set
+ Description
+0 = Nothing is printed (default)
+1 = Print errors only
+2 = Verbose</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://hornedsungem.github.io/Docs/workflow/detector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -48,8 +90,7 @@
 比如说按1后保持7帧，终端将显示：
 | Record to bin: 1 | | [7]-[0]-[0]-[0]-[0] |  接着对准第二个目标按2：
 | Record to bin: 2 | | [7]-[8]-[0]-[0]-[0] |  这样记录器中储存两个目标就可以开始生成模型了。
-按 &amp;lsquo;r&amp;rsquo; 将自动精简储存的图像，并生成模型。
-自动将多余的图片自动删除。
+按 &amp;lsquo;r&amp;rsquo; 将筛选去除每个存档中的冗余图像特征，并生成模型。
 | .........Compressing.......... | | [2]-[2]-[0]-[0]-[0] | | ------Compress finished------- |  进入识别状态并开始实时显示5个不同类别的置信度。下例中的意思为第一个类别的可能性为74%，第二个为26%。第二个栏里简单的将置信度可视化，竖条越多说明当前场景越可能属于该存档。
 | ---------Running ANN---------- | * [1]: 0.74 * * [2]: 0.26 * * [3]: 0.00 * * [4]: 0.00 * * [5]: 0.00 * | --------Probabilities--------- | | ||||||| | | || | | | | | | |  注意事项 信噪比 因为记录器会将整个图片量化为特征向量并储存，意味着情景中的关键信息占的图像比重越低，效果会越差。</description>
     </item>

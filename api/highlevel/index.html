@@ -32,7 +32,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/Docs/models/">
+  <body class="" data-url="/Docs/api/highlevel/">
     <nav id="sidebar" class="">
 
 
@@ -91,7 +91,7 @@
   
     
     <li data-nav-id="/Docs/api/" title="" class="dd-item 
-        
+        parent
         
         
         ">
@@ -115,7 +115,7 @@
  
   
     
-      <li data-nav-id="/Docs/api/highlevel/" title="" class="dd-item ">
+      <li data-nav-id="/Docs/api/highlevel/" title="" class="dd-item active">
         <a href="/Docs/api/highlevel/">
         
         
@@ -161,8 +161,8 @@
   
     
     <li data-nav-id="/Docs/models/" title="" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/Docs/models/">
@@ -311,7 +311,13 @@
             
           
           
-            <a href='/Docs/'></a> > 
+            
+            
+          
+          
+            <a href='/Docs/'></a> > <a href='/Docs/api/'></a> > 
+          
+         
           
          
           
@@ -323,9 +329,46 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
+<li><a href="#horned-sungem-high-level-api-ver-0-1-0">Horned Sungem High Level API (Ver. 0.1.0)</a>
+<ul>
+<li><a href="#通用高层函数">通用高层函数</a>
+<ul>
 <li>
 <ul>
-<li><a href="#内置模型与实例说明">内置模型与实例说明</a></li>
+<li><a href="#hs-init">HS.__init__()</a></li>
+<li><a href="#hs-run">HS.run()</a></li>
+<li><a href="#hs-getparam">HS.getParam()</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#ssd-相关高层函数">SSD 相关高层函数</a>
+<ul>
+<li>
+<ul>
+<li><a href="#hs-getboundingboxfromssdresult">HS.getBoundingBoxFromSSDResult()</a></li>
+<li><a href="#hs-plotssd">HS.plotSSD()</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#scene-recorder-相关高层函数">Scene Recorder 相关高层函数</a>
+<ul>
+<li>
+<ul>
+<li><a href="#hs-init-recorder">HS.init_recorder()</a></li>
+<li><a href="#hs-record">HS.record()</a></li>
+<li><a href="#hs-compressfeatbin">HS.compressFeatBin()</a></li>
+<li><a href="#hs-buildann">HS.buildANN()</a></li>
+<li><a href="#hs-runann">HS.runANN()</a></li>
+<li><a href="#hs-dispbins">HS.dispBins()</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#其他功能-包含数学函数与发送消息函数">其他功能：包含数学函数与发送消息函数</a>
+<ul>
+<li>
+<ul>
+<li><a href="#hs-msg">HS.msg()</a></li>
+<li><a href="#hs-msg-debug">HS.msg_debug()</a></li>
+<li><a href="#hs-softmax">HS.softmax()</a></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -348,35 +391,442 @@
 
 
 
-<h2 id="内置模型与实例说明">内置模型与实例说明</h2>
+<h1 id="horned-sungem-high-level-api-ver-0-1-0">Horned Sungem High Level API (Ver. 0.1.0)</h1>
+
+<h2 id="通用高层函数">通用高层函数</h2>
 
 <hr />
 
-<p>目前角蜂鸟包括6个内置模型：</p>
+<h4 id="hs-init">HS.__init__()</h4>
 
 <ul>
-<li><a href="../quickstart">MNIST 数字识别模型</a></li>
-<li><a href="../workflow/detector/">Mobilenet-SSD 人脸检测模型</a></li>
-<li><a href="../workflow/detector/">Mobilenet-SSD 20物体检测模型</a></li>
-<li><a href="../workflow/recorder">GoogleNet 图像识别模型</a></li>
-<li><a href="../workflow/recorder">FaceNet 人脸识别模型</a></li>
-<li><a href="./">SketchGraph 手绘识别</a></li>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 初始化角蜂鸟高层接口。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
 </ul>
 
-<p>以及5个Python实例：</p>
+<pre><code class="language-python">hs.HS(modelName, **kwargs)
+</code></pre>
 
 <ul>
-<li><a href="../quickstart">Hello2018.py 新手教程</a></li>
-<li><a href="../workflow/detector/">FaceDetector.py 人脸检测Demo</a></li>
-<li><a href="../workflow/detector/">ObjectDetector.py 物体检测Demo</a></li>
-<li><a href="../workflow/recorder">SceneRecorder.py 情景记录识别</a></li>
-<li><a href="./">SketchGuess.py 你画AI猜小游戏</a></li>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><p><strong>modelName:</strong> 内置模型名称。</p></li>
+
+<li><p><strong>**kwargs</strong> 关键字参数: (Optional)</p>
+
+<ul>
+<li><p><strong>&lsquo;verbose&rsquo;</strong>
+显示信息详细程度：从0到2分别为无信息、关键信息、全部信息。默认为2。</p></li>
+
+<li><p><strong>&lsquo;mean&rsquo;</strong>
+模型前处理均值。默认为1.0</p></li>
+
+<li><p><strong>&lsquo;scale&rsquo;</strong>
+模型前处理尺度。默认为0.007843 （1/127.5）</p></li>
+
+<li><p><strong>&lsquo;graphFolder&rsquo;</strong>
+模型文件夹路径。 默认为 &lsquo;../graphs/&rsquo;</p></li>
+
+<li><p><strong>&lsquo;zoom&rsquo;</strong>
+为True时图像尺寸为640x360，False时1920x1080。默认为True。</p></li>
+
+<li><p><strong>&lsquo;labels&rsquo;</strong>
+使用SSD时是否使用自定义标签。默认为None。未来开放自定义模型时可更改。</p></li>
+
+<li><p><strong>&lsquo;threshSSD&rsquo;</strong>
+使用SSD时的阈值，范围为0-1。 默认为0.55。</p></li>
+</ul></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> 返回已加载模型的HS Object实例。</p></li>
+
+<li><p><strong>范例 Example:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">net = hs.HS('FaceDetector', zoom = True, verbose = 2)
+</code></pre>
+
+<hr />
+
+<h4 id="hs-run">HS.run()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 执行一次角蜂鸟卷积神经网络。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">result = net.run(img, **kwargs)
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><strong>img:</strong> 使用角蜂鸟模式时输入应为None，用外置摄像头时为输入UINT8图片，可为黑白或<strong>BGR</strong>(OpenCV视频流输出)。
+<br /></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> 返回[Image, Output]，视频图像(UINT8)与神经网络结果。 结果内容取决于模型类型。</p></li>
+
+<li><p><strong>范例 Example:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">result = net.run(img)
+</code></pre>
+
+<hr />
+
+<h4 id="hs-getparam">HS.getParam()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 获取模型信息。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">modelParam = getParam(modelName):
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><strong>modelName:</strong> 模型名称，例如&rsquo;mnist&rsquo;。
+<br /></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> 返回模型参数，例如 [&lsquo;graph_mnist&rsquo;, 0.007843, 1.0, True, (28,28), 1]。分别对应为<strong>模型文件名称</strong>、<strong>Scale</strong>、<strong>Mean</strong>、是否为灰度、网络输入尺寸、模型ID。未来会增加自定义模型。</p></li>
+
+<li><p><strong>范例 Example:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">modelParam = getParam('mnist'):
+</code></pre>
+
+<h2 id="ssd-相关高层函数">SSD 相关高层函数</h2>
+
+<hr />
+
+<h4 id="hs-getboundingboxfromssdresult">HS.getBoundingBoxFromSSDResult()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 从SSD神经网络模型输出结果中解析出检测窗。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">boxes = getBoundingBoxFromSSDResult(out_HS, size):
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><strong>out_HS:</strong> SSD网络输出结果。</li>
+<li><strong>size:</strong> 网络输入尺寸。
+<br /></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> 返回检测窗Array，例如 [[0, 0.99805, 334, 2, 595, 289]]。分别对应为：</p>
+
+<ul>
+<li>检测目标类别：人脸固定为0, 物体检测时可为0-19,对应不同的标签（请参考VOC数据库标注）。</li>
+<li>检测置信度：范围为0-1,越高检测器越肯定目标是否准确。</li>
+<li>人脸框的位置：4个数值对应左上角和右下角坐标。</li>
+</ul></li>
+
+<li><p><strong>范例 Example:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">output = self.getBoundingBoxFromSSDResult(output, (300,300))
+</code></pre>
+
+<hr />
+
+<h4 id="hs-plotssd">HS.plotSSD()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 将SSD模型解析后的检测结果（从run()得到的[Image,result]）在图片上画框。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">img = net.plotSSD(result)
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><strong>result:</strong> 解析后的SSD网络输出结果。
+<br /></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> 返回画框的图像。</p></li>
+</ul>
+
+<h2 id="scene-recorder-相关高层函数">Scene Recorder 相关高层函数</h2>
+
+<hr />
+
+<h4 id="hs-init-recorder">HS.init_recorder()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 初始化情景记录器。注意：在范例中由record函数自动调用。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">net.init_recorder(feat_dim)
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><strong>feat_dim:</strong> 图像特征向量的维度。范例中为1024。
+<br /></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> 无。</p></li>
+
+<li><p><strong>范例 Example:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">self.init_recorder(result[1].shape[0])
+</code></pre>
+
+<hr />
+
+<h4 id="hs-record">HS.record()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 根据输入键位存在两种模式：录制模式与识别模式：</p>
+
+<ul>
+<li>录制模式：按[1-5]其中之一按键，将特征向量存入指定存档中。目前支持一共5个存档，可根据需要修改API扩展。按[r]将自动执行实时压缩和训练分类模型。</li>
+<li>识别模式：没有按键，将输出识别结果。</li>
+</ul></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">result = record(result, key)
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><strong>result:</strong> 图片与神经网络输出的图像特征向量。</li>
+<li><strong>key:</strong> OpenCV返回的键位字符串，例如&rsquo;1&rsquo;。
+<br /></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> None 或 属于每一个存档类别的估测概率。</p></li>
+
+<li><p><strong>范例 Example:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">key = cv2.waitKey(5)
+prob = net.record(result, key)
+</code></pre>
+
+<hr />
+
+<h4 id="hs-compressfeatbin">HS.compressFeatBin()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 压缩存档，去除每一个类别中的冗余图像特征向量。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">net.compressFeatBin()
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong> 无。</p></li>
+
+<li><p><strong>返回 Return:</strong> 无。</p></li>
+</ul>
+
+<hr />
+
+<h4 id="hs-buildann">HS.buildANN()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 用每个存档中的图像特征向量学习近似最近邻模型(Approximate Nearest Neighbour)。依赖Annoy库。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">net.buildANN()
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong> 无。</p></li>
+
+<li><p><strong>返回 Return:</strong> 无。</p></li>
+
+<li><p><strong>范例 Example:</strong></p></li>
+</ul>
+
+<hr />
+
+<h4 id="hs-runann">HS.runANN()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 将特征向量与每个存档比对。依赖Annoy库。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">result = net.runANN(feat)
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><strong>feat:</strong> 图像特征向量。
+<br /></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> 分别属于每个类别的估测概率。</p></li>
+
+<li><p><strong>范例 Example:</strong></p></li>
+</ul>
+
+<hr />
+
+<h4 id="hs-dispbins">HS.dispBins()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 在终端中显示每个存档所包含的图像特征向量个数。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">net.dispBins()
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong> 无。</p></li>
+
+<li><p><strong>返回 Return:</strong> 无。</p></li>
+</ul>
+
+<h2 id="其他功能-包含数学函数与发送消息函数">其他功能：包含数学函数与发送消息函数</h2>
+
+<hr />
+
+<h4 id="hs-msg">HS.msg()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 在终端中显示内容，在Verbose &gt;= 1时显示。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">net.msg(string)
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><strong>string:</strong> 需要显示的字符串。
+<br /></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> 无。</p></li>
+</ul>
+
+<hr />
+
+<h4 id="hs-msg-debug">HS.msg_debug()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 在终端中显示用于Debug的详细内容，在Verbose &gt;= 2时显示。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">net.msg_debug(string)
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><strong>string:</strong> 需要显示的字符串。
+<br /></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> 无。</p></li>
+</ul>
+
+<hr />
+
+<h4 id="hs-softmax">HS.softmax()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> SoftMax归一化指数函数。压缩向量使得每一个元素的范围都在 (0,1)之间，并且所有元素的和为1。用于估测分类置信度。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">softmax_result = net.softmax(result)
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong></p>
+
+<ul>
+<li><strong>result</strong> 分类结果。
+<br /></li>
+</ul></li>
+
+<li><p><strong>返回 Return:</strong> SoftMax函数处理后的结果。</p></li>
 </ul>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -409,8 +859,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -419,41 +867,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
                         
             
@@ -479,6 +892,41 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -546,10 +994,10 @@
 
 
         
-            <a class="nav nav-prev" href="/Docs/api/lowlevel/" title=""> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/Docs/api/" title=""> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/Docs/quickstart/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/Docs/api/lowlevel/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -579,3 +1027,4 @@
 
   </body>
 </html>
+
