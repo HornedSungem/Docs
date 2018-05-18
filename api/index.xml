@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Horned Sungem Documentation</title>
+    <title>角蜂鸟API on Horned Sungem Documentation</title>
     <link>https://hornedsungem.github.io/Docs/api/</link>
-    <description>Recent content on Horned Sungem Documentation</description>
+    <description>Recent content in 角蜂鸟API on Horned Sungem Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     
 	<atom:link href="https://hornedsungem.github.io/Docs/api/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title></title>
+      <title>底层API</title>
+      <link>https://hornedsungem.github.io/Docs/api/lowlevel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/api/lowlevel/</guid>
+      <description>Horned Sungem Low Level API (Ver. 0.1.0) Enumerations GlobalOption  Version: 0.1.0
+ Overview:
+The GlobalOption class is an enumeration class that defines the options that are passed to and received from the SetGlobalOption and the GetGlobalOption functions.
+ enum: LOGLEVEL
+ option type: int
+ possible values: 0, 1, 2
+ get/set get, set
+ Description
+0 = Nothing is printed (default)
+1 = Print errors only
+2 = Verbose</description>
+    </item>
+    
+    <item>
+      <title>高层API</title>
       <link>https://hornedsungem.github.io/Docs/api/highlevel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -31,25 +49,6 @@
  &amp;lsquo;threshSSD&amp;rsquo; 使用SSD时的阈值，范围为0-1。 默认为0.55。
    返回 Return: 返回已加载模型的HS Object实例。
  范例 Example:</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://hornedsungem.github.io/Docs/api/lowlevel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hornedsungem.github.io/Docs/api/lowlevel/</guid>
-      <description>Horned Sungem Low Level API (Ver. 0.1.0) Enumerations GlobalOption  Version: 0.1.0
- Overview:
-The GlobalOption class is an enumeration class that defines the options that are passed to and received from the SetGlobalOption and the GetGlobalOption functions.
- enum: LOGLEVEL
- option type: int
- possible values: 0, 1, 2
- get/set get, set
- Description
-0 = Nothing is printed (default)
-1 = Print errors only
-2 = Verbose</description>
     </item>
     
   </channel>
