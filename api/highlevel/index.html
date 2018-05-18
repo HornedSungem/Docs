@@ -12,19 +12,19 @@
     <title>高层API :: Horned Sungem Documentation</title>
     
     
-    <link href="/Docs/css/nucleus.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1526625541" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1526637018" rel="stylesheet">
     
-      <link href="/Docs/css/theme-mine.css?1526625541" rel="stylesheet">
+      <link href="/Docs/css/theme-mine.css?1526637018" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1526625541"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1526637018"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1526625541"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1526625541"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1526637018"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1526637018"></script>
 <script type="text/javascript">
     
         var baseurl = '\/Docs';
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1526625541"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1526637018"></script>
 
     
   </div>
@@ -403,6 +403,9 @@
 <li><a href="#hs-compressfeatbin">HS.compressFeatBin()</a></li>
 <li><a href="#hs-buildann">HS.buildANN()</a></li>
 <li><a href="#hs-runann">HS.runANN()</a></li>
+<li><a href="#hs-savebinstolocal">HS.saveBinsToLocal()</a></li>
+<li><a href="#hs-loadbinstolocal">HS.loadBinsToLocal()</a></li>
+<li><a href="#hs-resetbins">HS.resetBins()</a></li>
 <li><a href="#hs-dispbins">HS.dispBins()</a></li>
 </ul></li>
 </ul></li>
@@ -675,7 +678,7 @@
 <li><p><strong>语法 Syntax:</strong></p></li>
 </ul>
 
-<pre><code class="language-python">result = record(result, key)
+<pre><code class="language-python">result = record(result, key, **kwargs)
 </code></pre>
 
 <ul>
@@ -683,8 +686,18 @@
 
 <ul>
 <li><strong>result:</strong> 图片与神经网络输出的图像特征向量。</li>
-<li><strong>key:</strong> OpenCV返回的键位字符串，例如&rsquo;1&rsquo;。
-<br /></li>
+<li><strong>key:</strong> OpenCV返回的键位字符串，例如&rsquo;1&rsquo;。</li>
+
+<li><p><strong>**kwargs</strong> 关键字参数: (Optional)</p></li>
+
+<li><p><strong>&lsquo;saveFilename&rsquo;</strong>
+储存在本地时文件名，例如: &lsquo;../misc/record.dat&rsquo;。</p></li>
+
+<li><p><strong>&lsquo;threshPerc&rsquo;</strong>
+裁剪冗余图像向量时的阈值。建议0.3</p></li>
+
+<li><p><strong>&lsquo;metric&rsquo;</strong>
+Metric类型。默认为欧式距离&rsquo;euclidean&rsquo;，可选Cosine距离&rsquo;angular&rsquo;。其他距离请参考Annoy官方文档。</p></li>
 </ul></li>
 
 <li><p><strong>返回 Return:</strong> None 或 属于每一个存档类别的估测概率。</p></li>
@@ -736,8 +749,6 @@ prob = net.record(result, key)
 <li><p><strong>参数 Parameters:</strong> 无。</p></li>
 
 <li><p><strong>返回 Return:</strong> 无。</p></li>
-
-<li><p><strong>范例 Example:</strong></p></li>
 </ul>
 
 <hr />
@@ -764,8 +775,69 @@ prob = net.record(result, key)
 </ul></li>
 
 <li><p><strong>返回 Return:</strong> 分别属于每个类别的估测概率。</p></li>
+</ul>
 
-<li><p><strong>范例 Example:</strong></p></li>
+<hr />
+
+<h4 id="hs-savebinstolocal">HS.saveBinsToLocal()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 将特征向量存档储存于本地指定的文件中。默认为../misc/record.dat。范例中按&rsquo;s&rsquo;键触发。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">net.saveBinsToLocal()
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong> 无。</p></li>
+
+<li><p><strong>返回 Return:</strong> 无。</p></li>
+</ul>
+
+<hr />
+
+<h4 id="hs-loadbinstolocal">HS.loadBinsToLocal()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 将本地指定的文件载入存档中。默认为../misc/record.dat。范例中按&rsquo;l&rsquo;键触发。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">net.loadBinsToLocal()
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong> 无。</p></li>
+
+<li><p><strong>返回 Return:</strong> 无。</p></li>
+</ul>
+
+<hr />
+
+<h4 id="hs-resetbins">HS.resetBins()</h4>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>总览 Overview:</strong> 重置删除所有存档。范例中按&rsquo;p&rsquo;键触发。不会删除本地文件。</p></li>
+
+<li><p><strong>语法 Syntax:</strong></p></li>
+</ul>
+
+<pre><code class="language-python">net.resetBins()
+</code></pre>
+
+<ul>
+<li><p><strong>参数 Parameters:</strong> 无。</p></li>
+
+<li><p><strong>返回 Return:</strong> 无。</p></li>
 </ul>
 
 <hr />
@@ -1133,20 +1205,20 @@ prob = net.record(result, key)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1526625541"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1526625541"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1526625541"></script>
-    <script src="/Docs/js/jquery.sticky.js?1526625541"></script>
-    <script src="/Docs/js/featherlight.min.js?1526625541"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1526625541"></script>
-    <script src="/Docs/js/highlight.pack.js?1526625541"></script>
+    <script src="/Docs/js/clipboard.min.js?1526637018"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1526637018"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1526637018"></script>
+    <script src="/Docs/js/jquery.sticky.js?1526637018"></script>
+    <script src="/Docs/js/featherlight.min.js?1526637018"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1526637018"></script>
+    <script src="/Docs/js/highlight.pack.js?1526637018"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1526625541"></script>
-    <script src="/Docs/js/learn.js?1526625541"></script>
-    <script src="/Docs/js/hugo-learn.js?1526625541"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1526637018"></script>
+    <script src="/Docs/js/learn.js?1526637018"></script>
+    <script src="/Docs/js/hugo-learn.js?1526637018"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1526625541" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1526625541"></script>
+    <link href="/Docs/mermaid/mermaid.css?1526637018" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1526637018"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

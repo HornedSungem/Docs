@@ -12,19 +12,19 @@
     <title>使用入门 :: Horned Sungem Documentation</title>
     
     
-    <link href="/Docs/css/nucleus.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1526625541" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1526625541" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1526637018" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1526637018" rel="stylesheet">
     
-      <link href="/Docs/css/theme-mine.css?1526625541" rel="stylesheet">
+      <link href="/Docs/css/theme-mine.css?1526637018" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1526625541"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1526637018"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1526625541"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1526625541"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1526637018"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1526637018"></script>
 <script type="text/javascript">
     
         var baseurl = '\/Docs';
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1526625541"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1526637018"></script>
 
     
   </div>
@@ -473,17 +473,25 @@ for n in [1,2,3,4]:
 
 <h2 id="疑难解答-q-a">疑难解答 Q&amp;A</h2>
 
+<p>如下列Q&amp;A仍没有解决您的问题，请联系我们：hssdk@hornedsungem.org</p>
+
 <pre><code>Q: Python显示: No devices found
-A: 找不到设备。请尝试重新连接角蜂鸟两端USB接口，确保正确连接。
+A: 找不到设备，请稍等数秒再试。如仍未找到请尝试重新连接角蜂鸟两端USB接口，确保正确连接。
 
 Q: Python显示: Error: Failed to load graph, please check file path
 A: 模型路径错误，可能改变了路径或模型文件名称。如改变模型文件路径，可尝试在初始化时将新模型文件夹输入至第二个参数。如：net = hs.HS('mnist','../MyNewPath/graph')
 
-Q: Python显示: Error: Failed to allocate graph to device 或是 Exception: hsStatus.ERROR
-A: 模型加载错误，一般是设备未重置导致，请尝试重新连接USB。如仍有问题可能是模型文件有错。
+Q: Python显示: Error: Failed to allocate graph to device, please try to re-plug the device 或是 Exception: hsStatus.ERROR
+A: 设备未重置或模型加载错误，一般是更换内部载入的模型导致，请尝试重新连接USB。如仍有问题可能是模型文件不完整或安装出现问题。
 
 Q: Python显示：OpenCV Error: Assertion failed (VScn::contains(scn) &amp;&amp; VDcn::contains(dcn) &amp;&amp; VDepth::contains(depth)) in CvtHelper... line 253
 A: 找不到图像路径。可print(image)来确定图像是否存在。
+
+Q: 输出图像偶尔卡住反复出现两三帧如何解决？
+A: 请拔出USB并重新连接，在未来版本将解决此问题。
+
+Q: 如何更换模型或同一时间跑多个模型？
+A: 目前更换模型需要重新连接USB，所以仍无法同时运行多个模型，但未来计划将会更新支持多个模型之间切换以及更便利高效的Pipeline模式。另外当前支持连接多个角蜂鸟进行集联，即可并行执行不同的任务。
 </code></pre>
 
 
@@ -718,20 +726,20 @@ A: 找不到图像路径。可print(image)来确定图像是否存在。
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1526625541"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1526625541"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1526625541"></script>
-    <script src="/Docs/js/jquery.sticky.js?1526625541"></script>
-    <script src="/Docs/js/featherlight.min.js?1526625541"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1526625541"></script>
-    <script src="/Docs/js/highlight.pack.js?1526625541"></script>
+    <script src="/Docs/js/clipboard.min.js?1526637018"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1526637018"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1526637018"></script>
+    <script src="/Docs/js/jquery.sticky.js?1526637018"></script>
+    <script src="/Docs/js/featherlight.min.js?1526637018"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1526637018"></script>
+    <script src="/Docs/js/highlight.pack.js?1526637018"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1526625541"></script>
-    <script src="/Docs/js/learn.js?1526625541"></script>
-    <script src="/Docs/js/hugo-learn.js?1526625541"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1526637018"></script>
+    <script src="/Docs/js/learn.js?1526637018"></script>
+    <script src="/Docs/js/hugo-learn.js?1526637018"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1526625541" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1526625541"></script>
+    <link href="/Docs/mermaid/mermaid.css?1526637018" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1526637018"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

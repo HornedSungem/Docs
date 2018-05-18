@@ -49,7 +49,7 @@
 | Record to bin: 2 | | [7]-[8]-[0]-[0]-[0] |  这样记录器中储存两个目标就可以开始生成模型了。
 按 &amp;lsquo;r&amp;rsquo; 将筛选去除每个存档中的冗余图像特征，并生成模型。
 | .........Compressing.......... | | [2]-[2]-[0]-[0]-[0] | | ------Compress finished------- |  进入识别状态并开始实时显示5个不同类别的置信度。下例中的意思为第一个类别的可能性为74%，第二个为26%。第二个栏里简单的将置信度可视化，竖条越多说明当前场景越可能属于该存档。
-| ---------Running ANN---------- | * [1]: 0.74 * * [2]: 0.26 * * [3]: 0.00 * * [4]: 0.00 * * [5]: 0.00 * | --------Probabilities--------- | | ||||||| | | || | | | | | | |  注意事项 信噪比 因为记录器会将整个图片量化为特征向量并储存，意味着情景中的关键信息占的图像比重越低，效果会越差。</description>
+| ---------Running ANN---------- | * [1]: 0.74 * * [2]: 0.26 * * [3]: 0.00 * * [4]: 0.00 * * [5]: 0.00 * | --------Probabilities--------- | | ||||||| | | || | | | | | | |  按 &amp;rsquo;s&amp;rsquo; 将存档录入至 /misc/record.</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/smartlamp/</guid>
-      <description>这里给大家带来一个借助角蜂鸟实现的人脸检测控制的智能台灯。
+      <description>这里给大家带来一个借助角蜂鸟实现的人脸检测控制的智能台灯。当角蜂鸟发现人脸出现时台灯自动打开，没有检测到人时会自动关闭。
  硬件清单参考如下：
  角蜂鸟 树莓派3b 1路继电器模块 5V USB台灯   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现人脸检测的功能。大概的处理逻辑如下：
 start=&amp;gt;start: 开始 end=&amp;gt;end: 结束 data=&amp;gt;operation: 读取角蜂鸟返回的结果 face=&amp;gt;condition: 检测到人脸 on=&amp;gt;operation: 开灯 off=&amp;gt;operation: 关灯 start-&amp;gt;data-&amp;gt;face face(yes)-&amp;gt;on-&amp;gt;end face(no)-&amp;gt;off-&amp;gt;end  然后就是控制台灯，我们通过 1路继电器模块 来控制工作电路的闭合。树莓派 GPIO 引脚接继电器控制端 IN，GND 引脚接继电器 DC-端构成回路。这里采用高电平触发，当 GPIO 输出高电平时，工作电路闭合，台灯亮起；输出低电平时，工作电路断开，台灯熄灭。
