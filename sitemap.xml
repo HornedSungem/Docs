@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/detector/</loc>
+  </url>
+  
+  <url>
     <loc>https://hornedsungem.github.io/Docs/quickstart/</loc>
   </url>
   
@@ -11,7 +15,23 @@
   </url>
   
   <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/recorder/</loc>
+  </url>
+  
+  <url>
     <loc>https://hornedsungem.github.io/Docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/rapiro/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/smartlamp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/sitting_pose/</loc>
   </url>
   
   <url>
@@ -23,23 +43,11 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/detector/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/robot/</loc>
+    <loc>https://hornedsungem.github.io/Docs/workflow/raspi_car/</loc>
   </url>
   
   <url>
     <loc>https://hornedsungem.github.io/Docs/api/lowlevel/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/recorder/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/smartlamp/</loc>
   </url>
   
   <url>

@@ -12,19 +12,19 @@
     <title>情景记录器 :: Horned Sungem Documentation</title>
     
     
-    <link href="/Docs/css/nucleus.css?1526873568" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1526873568" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1526873568" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1526873568" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1526873568" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1526873568" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1526873568" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1526873568" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1526894340" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1526894340" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1526894340" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1526894340" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1526894340" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1526894340" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1526894340" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1526894340" rel="stylesheet">
     
-      <link href="/Docs/css/theme-mine.css?1526873568" rel="stylesheet">
+      <link href="/Docs/css/theme-mine.css?1526894340" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1526873568"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1526894340"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -42,7 +42,7 @@
   <div id="header-wrapper">
     <div id="header">
       <div>
-	<img align="center" src="/Docs/logo.png">
+	<a href="/Docs/" ><img align="center" src="/Docs/logo.png"></a>
 </div>
 
     </div>
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1526873568"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1526873568"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1526894340"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1526894340"></script>
 <script type="text/javascript">
     
         var baseurl = '\/Docs';
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1526873568"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1526894340"></script>
 
     
   </div>
@@ -164,25 +164,6 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/robot/" title="人脸检测 &#43; 奥松机器人" class="dd-item ">
-        <a href="/Docs/workflow/robot/">
-        人脸检测 &#43; 奥松机器人
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/Docs/workflow/recorder/" title="情景记录器" class="dd-item active">
         <a href="/Docs/workflow/recorder/">
         情景记录器
@@ -202,9 +183,66 @@
  
   
     
+      <li data-nav-id="/Docs/workflow/rapiro/" title="奥松机器人" class="dd-item ">
+        <a href="/Docs/workflow/rapiro/">
+        奥松机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/Docs/workflow/smartlamp/" title="智能台灯" class="dd-item ">
         <a href="/Docs/workflow/smartlamp/">
         智能台灯
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/sitting_pose/" title="坐姿提醒" class="dd-item ">
+        <a href="/Docs/workflow/sitting_pose/">
+        坐姿提醒
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/raspi_car/" title="树莓派小车" class="dd-item ">
+        <a href="/Docs/workflow/raspi_car/">
+        树莓派小车
         
         </a>
     </li>
@@ -424,6 +462,8 @@
 <p>本章为您介绍如何使用角蜂鸟在Python调用内置部署的GoogleNet来实现一个实用性非常强的情景记录器。</p>
 
 <h2 id="介绍">介绍</h2>
+
+<p><img src="/Docs/media/1234567890/idea.png" alt="Idea" /></p>
 
 <p>角蜂鸟情景记录器可将希望分类的图像实时储存在不同的“存档”下并立即生成一个分类模型，之后便可辨识它们对应的场景。比如说在门打开的时候将图像录制进[存档1]，关闭的时候录制进[存档2]，生成模型之后便可辨认门是否开启。将不同的手势录制进不同的存档下就变成了一个简单的手势识别。</p>
 
@@ -659,22 +699,6 @@ prob = net.record(result, key)
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -706,9 +730,6 @@ prob = net.record(result, key)
             
         
                     
-            
-        
-                    
                         
             
             
@@ -721,6 +742,9 @@ prob = net.record(result, key)
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -770,6 +794,54 @@ prob = net.record(result, key)
                     
 
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -780,10 +852,10 @@ prob = net.record(result, key)
 
 
         
-            <a class="nav nav-prev" href="/Docs/workflow/robot/" title="人脸检测 &#43; 奥松机器人"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/Docs/workflow/detector/" title="人脸与物体检测"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/Docs/workflow/smartlamp/" title="智能台灯" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/Docs/workflow/rapiro/" title="奥松机器人" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -792,20 +864,20 @@ prob = net.record(result, key)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1526873568"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1526873568"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1526873568"></script>
-    <script src="/Docs/js/jquery.sticky.js?1526873568"></script>
-    <script src="/Docs/js/featherlight.min.js?1526873568"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1526873568"></script>
-    <script src="/Docs/js/highlight.pack.js?1526873568"></script>
+    <script src="/Docs/js/clipboard.min.js?1526894340"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1526894340"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1526894340"></script>
+    <script src="/Docs/js/jquery.sticky.js?1526894340"></script>
+    <script src="/Docs/js/featherlight.min.js?1526894340"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1526894340"></script>
+    <script src="/Docs/js/highlight.pack.js?1526894340"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1526873568"></script>
-    <script src="/Docs/js/learn.js?1526873568"></script>
-    <script src="/Docs/js/hugo-learn.js?1526873568"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1526894340"></script>
+    <script src="/Docs/js/learn.js?1526894340"></script>
+    <script src="/Docs/js/hugo-learn.js?1526894340"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1526873568" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1526873568"></script>
+    <link href="/Docs/mermaid/mermaid.css?1526894340" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1526894340"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
