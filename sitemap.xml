@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/ocr/</loc>
+    <loc>https://hornedsungem.github.io/Docs/workflow/detector_object/</loc>
   </url>
   
   <url>
@@ -24,10 +24,6 @@
   
   <url>
     <loc>https://hornedsungem.github.io/Docs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/api/android/</loc>
   </url>
   
   <url>
@@ -59,6 +55,10 @@
   </url>
   
   <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/android_hello2018/</loc>
+  </url>
+  
+  <url>
     <loc>https://hornedsungem.github.io/Docs/api/lowlevel/</loc>
   </url>
   
@@ -67,11 +67,19 @@
   </url>
   
   <url>
+    <loc>https://hornedsungem.github.io/Docs/api/android/</loc>
+  </url>
+  
+  <url>
     <loc>https://hornedsungem.github.io/Docs/contact/</loc>
   </url>
   
   <url>
     <loc>https://hornedsungem.github.io/Docs/_footer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/ocr/</loc>
   </url>
   
   <url>

@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
-    <title>Android Java API :: Horned Sungem Documentation</title>
+    <title>Android Hello 2018 :: Horned Sungem Documentation</title>
     
     
     <link href="/Docs/css/nucleus.css?1527077097" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/Docs/api/android/">
+  <body class="" data-url="/Docs/workflow/android_hello2018/">
     <nav id="sidebar" class="">
 
 
@@ -143,7 +143,7 @@
   
     
     <li data-nav-id="/Docs/workflow/" title="实例教程" class="dd-item 
-        
+        parent
         
         
         ">
@@ -300,7 +300,7 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/android_hello2018/" title="Android Hello 2018" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/android_hello2018/" title="Android Hello 2018" class="dd-item active">
         <a href="/Docs/workflow/android_hello2018/">
         Android Hello 2018
         
@@ -346,7 +346,7 @@
   
     
     <li data-nav-id="/Docs/api/" title="角蜂鸟API" class="dd-item 
-        parent
+        
         
         
         ">
@@ -408,7 +408,7 @@
  
   
     
-      <li data-nav-id="/Docs/api/android/" title="Android Java API" class="dd-item active">
+      <li data-nav-id="/Docs/api/android/" title="Android Java API" class="dd-item ">
         <a href="/Docs/api/android/">
         Android Java API
         
@@ -483,6 +483,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
                   <span class="links">
                     
           
@@ -495,7 +497,7 @@
             
           
           
-            <a href='/Docs/'>角蜂鸟使用手册与文档</a> > <a href='/Docs/api/'>角蜂鸟API</a> > Android Java API
+            <a href='/Docs/'>角蜂鸟使用手册与文档</a> > <a href='/Docs/workflow/'>实例教程</a> > Android Hello 2018
           
          
           
@@ -505,14 +507,35 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#快速开始">快速开始</a>
+<ul>
+<li><a href="#步骤1-准备环境">步骤1：准备环境</a></li>
+<li><a href="#步骤2-添加sdk">步骤2：添加SDK</a></li>
+<li><a href="#步骤3-添加权限">步骤3：添加权限</a></li>
+<li><a href="#步骤4-代码实现">步骤4：代码实现</a></li>
+</ul></li>
+<li><a href="#具体操作流程">具体操作流程</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
 
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>Android Hello 2018</h1>
           
 
         
@@ -520,300 +543,228 @@
 
 
 
-<h1 id="sungemsdk-android-api">SungemSDK Android API</h1>
+<h2 id="快速开始">快速开始</h2>
 
-<h3 id="version-0-1-0">Version 0.1.0</h3>
+<p>下面介绍如何在Android Studio开发环境下通过角蜂鸟SDK使用卷积神经网络，实现复杂计算</p>
 
-<h2 id="hsthread类相关函数及属性">HsThread类相关函数及属性</h2>
+<h3 id="步骤1-准备环境">步骤1：准备环境</h3>
 
-<p>当前类是跟角蜂鸟交互的子线程，开发者可继承该类进行功能扩展</p>
+<ol>
+<li>下载最新版<a href="https://github.com/HornedSungem">HornedSungemSDK</a> jar包</li>
+<li>请确保满足一下开发环境要求
 
-<h3 id="类内主要变量">类内主要变量：</h3>
+<ul>
+<li>确保minSdkVersion在<strong>Android 3.1</strong>以上</li>
+<li>确保设备支持OTG</li>
+<li>Android Studio 2.0或以上版本</li>
+</ul></li>
+<li>新建project工程</li>
+<li>请确保在使用角蜂鸟相关功能及服务前，已阅读Android API,详见<a href="/Docs/api/android/">API文档</a></li>
+</ol>
 
-<pre><code>-  mHandler:用于处理线程中的消息循环，通知主线程执行UI的更新
--  mActivity:当前线程绑定的activity,可用于跳转，获取资源等
--  mHsApi:与角蜂鸟通信的主要api类，可调用类里对应函数执行相应操作
+<h3 id="步骤2-添加sdk">步骤2：添加SDK</h3>
+
+<ol>
+<li>将下载的软件包根据实际需求拷贝到您项目对应的文件夹里，例如：</li>
+</ol>
+
+<p><img src="/Docs/android/addSDK.jpeg" alt="add libs" /></p>
+
+<p>该lib下包含了horned-sungemSDK及javacv所需要的jar和so库</p>
+
+<p>注意：<strong>libs文件夹路径不能包含中文，否则会编译失败</strong></p>
+
+<p>2.请在build.gradle文件里，请将上述库放入正确路径下，如检索不到，可手动添加引用：</p>
+
+<p><img src="/Docs/android/dependencies.jpeg" alt="set libs" /></p>
+
+<h3 id="步骤3-添加权限">步骤3：添加权限</h3>
+
+<p>为了保证SDK正常运行，需要在AndroidManistest.xml文件下添加下列许可：</p>
+
+<pre><code>&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.hardware.usb.host&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.hardware.usb.accessory&quot;/&gt;
+&lt;uses-feature android:name=&quot;android.hardware.usb.host&quot;/&gt;
 </code></pre>
 
-<h3 id="相关函数">相关函数</h3>
+<h3 id="步骤4-代码实现">步骤4：代码实现</h3>
+
+<p>下面通过一个简单hello2018的例子讲解具体怎么使用角蜂鸟SDK</p>
 
 <ol>
-<li><p><strong>allocateGraph(filename)</strong> ：此函数是传送一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能</p>
+<li><p>下载<a href="https://github.com/HornedSungem/SungemSDK/tree/master/examples/graphs">graph_mnist</a>文件和4张<a href="https://github.com/HornedSungem/SungemSDK/tree/master/examples/misc/2018_mnist">测试图片</a>,在您的module下新建assets包，将下载的文件复制到该目录下，如图：
+<img src="/Docs/android/assets.jpeg" alt="assets" /></p></li>
 
-<ul>
-<li>参数 Parameters：</li>
-<li>filename（String类型） 文件绝对路径<br /></li>
-<li>返回 return:返回操作状态 （状态声明都在HsConnectApi里）</li>
-<li>HS_OK值为0，表示成功</li>
-<li>HS_ERROR值为-2，表示加载失败</li>
-<li>HS_UNSUPPORTED_GRAPH_FILE值为-10,表示不支持的模型文件</li>
-<li>HS_NO_FILE值为-12，表示filename路径有误，没有文件</li>
-<li>Example用法:</li>
-</ul>
+<li><p>定义HelloActivity继承HsBaseActivity,用于角蜂鸟通信和显示结果,具体代码如下：</p>
 
-<pre><code>int status=allocateGraph(Environment.getExternalStorageDirectory().getAbsolutePath() + "/hs/" + "graph_face_SSD");
+<pre><code>public class HelloActivity extends HsBaseActivity {
+
+private TextView mTextView;
+private Handler mHandler = new Handler() {
+    @Override
+    public void handleMessage(Message msg) {
+        super.handleMessage(msg);
+        mTextView.append(&quot;\r\n&quot; + msg.what);
+    }
+};
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_hello);
+    mTextView = findViewById(R.id.tv_hello);
+}
+
+@Override
+public void openSucceed(UsbLinkVsc usbLinkVsc) {
+
+    new Hello2018Thread(this, usbLinkVsc, mHandler).start();
+}
+
+@Override
+protected void onDestroy() {
+    super.onDestroy();
+}
+
+@Override
+public void openFailed() {
+}
+
+@Override
+public void disConnected() {
+}
+}
 </code></pre></li>
 
-<li><p><strong>allocateGraphByAssets(filename)</strong> :与上述方法功能相似，区别在于参数表示在android工程assets包下的文件</p>
+<li><p>activity_hello.xml文件如图：</p>
 
-<ul>
-<li>Example用法:</li>
-</ul>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout
+  xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+  xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:orientation=&quot;horizontal&quot;
+  tools:context=&quot;com.senscape.hsdemo.hello2018.HelloActivity&quot;&gt;
 
-<p><pre><code>int status = allocateGraphByAssets(&ldquo;graph_face_SSD&rdquo;);
- </code></pre></p></li>
+  &lt;LinearLayout
+      android:layout_width=&quot;wrap_content&quot;
+      android:layout_height=&quot;wrap_content&quot;
+      android:layout_centerHorizontal=&quot;true&quot;
+      android:layout_marginTop=&quot;20dp&quot;
+      android:orientation=&quot;horizontal&quot;&gt;
 
-<li><p><strong>close()</strong>: 线程关闭时调用，执行操作包括：deallocate模型,关闭角蜂鸟设备等</p>
+      &lt;ImageView
+          android:layout_width=&quot;wrap_content&quot;
+          android:layout_height=&quot;wrap_content&quot;
 
-<ul>
-<li>无参数</li>
-<li>Example：示例代码</li>
-</ul>
+          android:background=&quot;@drawable/test_1&quot;/&gt;
 
-<pre><code>
-if (mHsThread != null) {
-   mHsThread.setRunning(false);
-   mHsThread.close();
- }
+      &lt;ImageView
+          android:layout_width=&quot;wrap_content&quot;
+          android:layout_height=&quot;wrap_content&quot;
+          android:background=&quot;@drawable/test_2&quot;/&gt;
+
+      &lt;ImageView
+          android:layout_width=&quot;wrap_content&quot;
+          android:layout_height=&quot;wrap_content&quot;
+          android:background=&quot;@drawable/test_3&quot;/&gt;
+
+      &lt;ImageView
+          android:layout_width=&quot;wrap_content&quot;
+          android:layout_height=&quot;wrap_content&quot;
+          android:background=&quot;@drawable/test_4&quot;/&gt;
+  &lt;/LinearLayout&gt;
+
+  &lt;TextView
+      android:id=&quot;@+id/tv_hello&quot;
+      android:layout_width=&quot;wrap_content&quot;
+      android:layout_height=&quot;wrap_content&quot;
+      android:layout_centerHorizontal=&quot;true&quot;
+      android:layout_marginTop=&quot;100dp&quot;
+      android:gravity=&quot;center_vertical&quot;
+      android:text=&quot;依次识别到的是:&quot;/&gt;
+&lt;/RelativeLayout&gt;
 </code></pre></li>
 
-<li><p><strong>setZoom( zoom)</strong>：设置获取角蜂鸟的图像分辨率大小，用于处理得到数据，设置图像宽高等</p>
+<li><p>Hello2018Thread继承HsThread,处理业务逻辑，具体代码如下:</p>
 
-<ul>
-<li>参数 zoom(boolean类型):</li>
-<li>true:设置为true,获取分辨率为640*360</li>
-<li>false:设置为false,获取分辨率为1920*1080</li>
-</ul></li>
-</ol>
+<pre><code>public class Hello2018Thread extends HsThread {
 
-<hr />
+public Hello2018Thread(Activity activity, UsbLinkVsc usbLinkVsc, Handler handler) {
+    super(activity, usbLinkVsc, handler);
+}
 
-<h2 id="hsconnectapi类相关属性及函数">HsConnectApi类相关属性及函数</h2>
-
-<p>当前类跟角蜂鸟直接交互，定义了许多变量标识，传送，获取图像及得到返回结果等函数</p>
-
-<h3 id="重要状态参数">重要状态参数</h3>
-
-<ul>
-<li>HS_OK ：正常</li>
-<li>HS_BUSY ：队列正忙</li>
-<li>HS_ERROR ：发送异常</li>
-<li>HS_NO_FILE ：没有索引到文件</li>
-<li>HS_UNSUPPORTED_GRAPH_FILE ：不支持的graph文件</li>
-<li>STATUS_WAIT_TIMEOUT ： 等待命令超时时间</li>
-</ul>
-
-<h3 id="相关函数-1">相关函数</h3>
-
-<ol>
-<li><p><strong>getImage(stdValue,meanValue,truthy)</strong>:获取角蜂鸟上摄像头图像</p>
-
-<ul>
-<li>参数 Parameters：
-
-<ul>
-<li>stdValue（float类型）:默认值为0.007843f</li>
-<li>meanValue（float类型）:默认值为-0.9999825f</li>
-<li>truthy（boolean类型）： 用于控制接收图像的大小</li>
-<li>ture：接收640*360图像</li>
-<li>false：接收1920*1080图像</li>
-</ul></li>
-
-<li><p>返回 return:返回 byte[] ，表示该图像的原始数据</p>
-
-<ul>
-<li>如果参数truthy为true: byte[]大小为640*360*3，得到bgr的图像，示例代码如下：</li>
-</ul></li>
-</ul>
-
-<p><pre><code>
-  byte[] bytes = mHsApi.getImage(STD, MEAN, true);
-  int  FRAME_W = 640;
-  int  FRAME_H = 360;
-  opencv_core.IplImage  bgrImage = opencv_core.IplImage.create(FRAME_W, FRAME_H, opencv_core.IPL_DEPTH_8U, 3);
-  bgrImage.getByteBuffer().put(bytes);
-  </code></pre></p>
-
-<ul>
-<li>如果参数truthy为false: byte[]大小为1920*1080*3 rgb图像顺序排列，需要作对应转化才能显示正确，转化代码如下</li>
-</ul>
-
-<p><pre><code>
-  byte[] bytes = mHsApi.getImage(STD, MEAN, false);
-  int FRAME_W = 1920;
-  int FRAME_H = 1080;
-  byte[] bytes_rgb = new byte[FRAME_W * FRAME_H * 3];
-  for (int i = 0; i &lt; FRAME_H * FRAME_W; i++) {
-      bytes_rgb[i * 3 + 2] = bytes[i];//r
-      bytes_rgb[i * 3 + 1] = bytes[FRAME_W * FRAME_H + i];//g
-      bytes_rgb[i * 3] = bytes[FRAME_W * FRAME_H * 2 + i];//b
-  }
-  opencv_core.IplImage bgrImage = opencv_core.IplImage.create(FRAME_W, FRAME_H, opencv_core.IPL_DEPTH_8U, 3);
-  bgrImage.getByteBuffer().put(bytes_rgb);
-  </code></pre></p></li>
-
-<li><p><strong>loadTensor(inputTensor,length,userObj)</strong>：把外部的图像或数据传送给角蜂鸟</p></li>
-</ol>
-
-<p><strong>该方法重载，可根据开发者使用参数不同选择对应函数</strong></p>
-
-<ul>
-<li><p>参数 Parameters：</p>
-
-<ul>
-<li>inputTensor（float[]或byte[]类型）：传送的数据</li>
-<li>length(int类型):传送数据数组的大小，默认数组index从0开始</li>
-<li>userObj(int类型)：<strong>用户配置参数，当前版本未使用，可随意填写</strong></li>
-</ul></li>
-
-<li><p>返回 return:返回该函数执行后状态</p>
-
-<ul>
-<li>HS_ERROR:读写发生异常<br /></li>
-<li>HS_BUSY:当前设备正忙，操作失败</li>
-<li>HS_OK:正常</li>
-</ul></li>
-
-<li><p>Example：此处采用hello2018的示例代码</p>
-
-<pre><code>
-for (int i = 1; i < 5; i++) {
-    int[] ints = new int[28 * 28];
-    try {
-        InputStream inputStream = mActivity.getAssets().open("hello/" + i + ".jpg");
-        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-        bitmap.getPixels(ints, 0, 28, 0, 0, 28, 28);
-    } catch (FileNotFoundException e) {
-        e.printStackTrace();
-    } catch (IOException e) {
-        e.printStackTrace();
+@Override
+public void run() {
+    super.run();
+    int status = allocateGraphByAssets(&quot;graph_mnist&quot;);
+    if (status != HsConnectApi.HS_OK) {
+        Message message = mHandler.obtainMessage();
+        message.arg1 = 1;
+        message.obj = status;
+        mHandler.sendMessage(message);
+        return;
     }
-    float[] float_tensor = new float[28 * 28];
-    for (int j = 0; j < 28 * 28; j++) {
-        float_tensor[j] = Color.red(ints[j]) * 0.007843f - 1;
-    }
-    int status_load = mHsApi.loadTensor(float_tensor, float_tensor.length, 0);
-    if (status_load == HsConnectApi.HS_OK) {
-        float[] result = mHsApi.getResult(0);
-        if (result != null) {
-            int max = getMaxPossible(result);
-            mHandler.sendEmptyMessage(max);
+    for (int i = 1; i &lt; 5; i++) {
+        int[] ints = new int[28 * 28];
+        try {
+            InputStream inputStream = mActivity.getAssets().open(&quot;hello/&quot; + i + &quot;.jpg&quot;);
+            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+            bitmap.getPixels(ints, 0, 28, 0, 0, 28, 28);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        float[] float_tensor = new float[28 * 28];
+        for (int j = 0; j &lt; 28 * 28; j++) {
+            float_tensor[j] = Color.red(ints[j]) * 0.007843f - 1;
+        }
+        int status_load = mHsApi.loadTensor(float_tensor, float_tensor.length, 0);
+        if (status_load == HsConnectApi.HS_OK) {
+            float[] result = mHsApi.getResult(0);
+            if (result != null) {
+                int max = getMaxPossible(result);
+                mHandler.sendEmptyMessage(max);
+            }
         }
     }
 }
-</code></pre></li>
-</ul>
-
-<ol>
-<li><p><strong>getResult(userObj)</strong>:获取图像处理后的返回结果</p>
-
-<ul>
-<li>参数 Parameters：</li>
-<li>userObj(int类型)：<strong>用户配置参数，当前版本未使用，可随意填写</strong></li>
-<li>基本用法 Example：</li>
-</ul>
-
-<pre><code>  float[] result = mHsApi.getResult(0);
-</code></pre>
-
-<ul>
-<li>返回 return：返回float[] 根据使用神经网络不同，返回数组长度和后续使用也不尽相同</li>
-<li>人脸及物体检测返回结果处理：</li>
-</ul>
-
-<p><pre><code><br />
-  //结果处理
-  int num = (int) floats[0];//第一个数为检测到的个数
-  if (num &gt; 0) {
-      for (int i = 0; i &lt; num; i++) {
-          int type = (int) (floats[7 * (i + 1) + 1]);//类别
-          int x1 = (int) (floats[7 * (i + 1) + 3] * FRAME_W);
-          int y1 = (int) (floats[7 * (i + 1) + 4] * FRAME_H);
-          int x2 = (int) (floats[7 * (i + 1) + 5] * FRAME_W);
-          int y2 = (int) (floats[7 * (i + 1) + 6] * FRAME_H);
-          int wight = x2 - x1;
-          int height = y2 - y1;
-          //如果有值不满足条件，这组数据干掉
-          int percentage = (int) (floats[7 * (i + 1) + 2] * 100);//置信度
-          if (percentage &lt;= MIN_SCORE_PERCENT) {
-            continue;
-          }
-          if (wight &gt;= FRAME_W * 0.8 || height &gt;= FRAME_H * 0.8) {
-            continue;
-          }
-          if (x1 &lt; 0 || x2 &lt; 0 || y1 &lt; 0 || y2 &lt; 0 || wight &lt; 0 || height &lt; 0) {
-            continue;
-          }
-      }
-  }
-  </code></pre>
-2. 数字识别返回结果处理：返回10个float数，分别对应0-9的置信度
-3. 简笔画识别返回结果处理：** 当前版本未实现，请关注后续更新**</p></li>
-</ol>
-
-<hr />
-
-<h2 id="hsbaseactivity相关属性及函数">HsBaseActivity相关属性及函数</h2>
-
-<p>该抽象类继承Activity，定义几个抽象回调函数用于各种行为处理，是开发者使用角蜂鸟的基础Activity</p>
-
-<h3 id="主要参数">主要参数</h3>
-
-<pre><code>- mUsbManager： UsbManager 用于控制USB的连接
-</code></pre>
-
-<h3 id="相关回调">相关回调</h3>
-
-<ol>
-<li><p><strong>openSucceed(usbLinkVsc)</strong>: 打开角蜂鸟设备以后的回调函数，主要用于进行通信，比如创建角蜂鸟线程，给出提醒等</p>
-
-<ul>
-<li>参数 Parameters：</li>
-<li>usbLinkVsc: SDK里封装的usb读写类，用于实例化hsThread需要的参数</li>
-<li>Example: 示例代码</li>
-</ul>
-
-<pre><code>
-@Override
-public void openSucceed(UsbLinkVsc usbLinkVsc) {
-    mTvTip.setVisibility(View.GONE);
-    mHsThread = new FaceDetectionThread(FaceDetectorActivity.this, usbLinkVsc, mHandler);
-    mHsThread.start();
-}
-</code></pre></li>
-
-<li><p><strong>openFailed()</strong>:打开角蜂鸟设备失败以后的回调函数，主要用于失败以后执行对应操作，比如提醒重新插拔角蜂鸟等</p>
-
-<ul>
-<li>无参数</li>
-<li>Example: 部分示例代码</li>
-</ul>
-
-<pre><code>
-@Override
-public void openFailed() {
-    mTvTip.setText("请重新插拔角蜂鸟允许权限");
-}
-</code></pre></li>
-
-<li><p><strong>disConnected()</strong>:拔掉角蜂鸟或usb接触有问题的回调函数，用于处理断开后的release操作，比如停止线程等</p>
-
-<ul>
-<li>无参数</li>
-<li>Example: 部分示例代码</li>
-</ul>
-
-<pre><code>
-@Override
-public void disConnected() {
-    Toast.makeText(this, "断开连接", Toast.LENGTH_SHORT).show();
-    if (mHsThread != null) {
-      mHsThread.setRunning(false);
-      mHsThread.close();
+public int getMaxPossible(float[] arr) {
+    int max = 0;
+    float max_f = 0;
+    for (int i = 0; i &lt; arr.length; i++) {
+        float temp = arr[i];
+        if (temp &gt; max_f) {
+            max = i;
+            max_f = temp;
+        }
     }
+    return max;
+}
 }
 </code></pre></li>
 </ol>
+
+<h2 id="具体操作流程">具体操作流程</h2>
+
+<ul>
+<li>编译该程序，运行在Android设备上</li>
+<li>进入程序主页</li>
+<li>通过usb连接角蜂鸟</li>
+<li>短暂等待，弹出权限提醒，</li>
+<li><strong>点击打开该设备</strong>，得到返回结果</li>
+<li>结果如图：</li>
+</ul>
+
+<p><img src="/Docs/android/result.jpeg" alt="result" /></p>
+
+<p>注意：<strong>如果不打开设备，程序会执行openFailed()回调，想再次使用，请重新插拔角蜂鸟</strong></p>
+
+<p>更多详情，请点击进行<a href="/Docs/workflow/">实例教程</a>，或直接下载演示工程，<a href="https://github.com/HornedSungem">下载地址</a></p>
 
 
 <footer class=" footline" >
@@ -821,8 +772,6 @@ public void disConnected() {
 </footer>
 
 
-        
-            </div> 
         
         </div> 
         
@@ -905,6 +854,7 @@ public void disConnected() {
             
                 
                     
+                    
                 
                 
 
@@ -912,6 +862,57 @@ public void disConnected() {
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -982,6 +983,7 @@ public void disConnected() {
             
                 
                     
+                    
                 
                 
 
@@ -992,6 +994,41 @@ public void disConnected() {
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
                         
             
@@ -1041,55 +1078,6 @@ public void disConnected() {
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -1109,45 +1097,6 @@ public void disConnected() {
             
         
                     
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
         
@@ -1155,10 +1104,10 @@ public void disConnected() {
 
 
         
-            <a class="nav nav-prev" href="/Docs/api/highlevel/" title="高层API"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/Docs/workflow/raspi_car/" title="树莓派小车"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/Docs/contact/" title="联系我们" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/Docs/workflow/ocr/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
