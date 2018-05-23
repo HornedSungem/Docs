@@ -27,6 +27,17 @@
     </item>
     
     <item>
+      <title>OCR 中文文字检测与识别</title>
+      <link>https://hornedsungem.github.io/Docs/workflow/ocr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/workflow/ocr/</guid>
+      <description> 本章为您介绍如何使用角蜂鸟在Python调用内置部署的OCR中文文字检测与识别。
+OCR分析图片找出文字并识别。
+ 本教程基于Ubuntu 16.04系统  路径和文件  OCR Python：SungemSDK/examples/python/OCR.py 模型文件：SungemSDK/examples/graphs/graph_ocr  </description>
+    </item>
+    
+    <item>
       <title>情景记录器</title>
       <link>https://hornedsungem.github.io/Docs/workflow/recorder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -41,6 +52,20 @@
 按 &amp;lsquo;r&amp;rsquo; 将筛选去除每个存档中的冗余图像特征，并生成模型。
 | .........Compressing.......... | | [2]-[2]-[0]-[0]-[0] | | ------Compress finished------- |  进入识别状态并开始实时显示5个不同类别的置信度。下例中的意思为第一个类别的可能性为74%，第二个为26%。第二个栏里简单的将置信度可视化，竖条越多说明当前场景越可能属于该存档。
 | ---------Running ANN---------- | * [1]: 0.74 * * [2]: 0.26 * * [3]: 0.00 * * [4]: 0.00 * * [5]: 0.00 * | --------Probabilities--------- | | ||||||| | | || | | | | | | |  按 &amp;rsquo;s&amp;rsquo; 将存档录入至 /misc/record.</description>
+    </item>
+    
+    <item>
+      <title>Android Java API</title>
+      <link>https://hornedsungem.github.io/Docs/api/android/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/api/android/</guid>
+      <description>SungemSDK Android API Version 0.1.0 HsThread类相关函数及属性 当前类是跟角蜂鸟交互的子线程，开发者可继承该类进行功能扩展
+类内主要变量： - mHandler:用于处理线程中的消息循环，通知主线程执行UI的更新 - mActivity:当前线程绑定的activity,可用于跳转，获取资源等 - mHsApi:与角蜂鸟通信的主要api类，可调用类里对应函数执行相应操作  相关函数  allocateGraph(filename) ：此函数是传送一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能
+ 参数 Parameters：  filename（String类型） 文件绝对路径
+  返回 return:返回操作状态 （状态声明都在HsConnectApi里）  HS_OK值为0，表示成功 HS_ERROR值为-2，表示加载失败 HS_UNSUPPORTED_GRAPH_FILE值为-10,表示不支持的模型文件 HS_NO_FILE值为-12，表示filename路径有误，没有文件  Example用法:  int status=allocateGraph(Environment.getExternalStorageDirectory().getAbsolutePath() + &amp;quot;/hs/&amp;quot; + &amp;quot;graph_face_SSD&amp;quot;);   allocateGraphByAssets(filename) :与上述方法功能相似，区别在于参数表示在android工程assets包下的文件
+ Example用法:  int status = allocateGraphByAssets(&amp;quot;graph_face_SSD&amp;quot;);   close(): 线程关闭时调用，执行操作包括：deallocate模型,关闭角蜂鸟设备等
+ 无参数 Example：示例代码  if (mHsThread != null) { mHsThread.setRunning(false); mHsThread.</description>
     </item>
     
     <item>
@@ -110,7 +135,7 @@ start=&amp;gt;start: 开始 end=&amp;gt;end: 结束 data=&amp;gt;operation: 读�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/api/lowlevel/</guid>
-      <description>Horned Sungem Low Level API (Ver. 0.1.0) Enumerations GlobalOption  Version: 0.1.0
+      <description>Horned Sungem Low Level API Version 0.1.0 Enumerations GlobalOption  Version: 0.1.0
  Overview:
 The GlobalOption class is an enumeration class that defines the options that are passed to and received from the SetGlobalOption and the GetGlobalOption functions.
  enum: LOGLEVEL
@@ -129,7 +154,7 @@ The GlobalOption class is an enumeration class that defines the options that are
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/api/highlevel/</guid>
-      <description>Horned Sungem High Level API (Ver. 0.1.0) 通用高层函数 HS.__init__()  版本 Version: 0.1.0
+      <description>Horned Sungem High Level API Version 0.1.0 通用高层函数 HS.__init__()  版本 Version: 0.1.0
  总览 Overview: 初始化角蜂鸟高层接口。
  语法 Syntax:
   hs.HS(modelName, **kwargs)   参数 Parameters:
@@ -152,7 +177,7 @@ The GlobalOption class is an enumeration class that defines the options that are
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/_footer/</guid>
-      <description>Sungem Horned Documentation</description>
+      <description>Horned Sungem Documentation</description>
     </item>
     
   </channel>

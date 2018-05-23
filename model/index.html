@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
-    <title> :: Horned Sungem Documentation</title>
+    <title>模型列表 :: Horned Sungem Documentation</title>
     
     
     <link href="/Docs/css/nucleus.css?1527045678" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/Docs/_footer/">
+  <body class="" data-url="/Docs/model/">
     <nav id="sidebar" class="">
 
 
@@ -121,8 +121,8 @@
   
     
     <li data-nav-id="/Docs/model/" title="模型列表" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/Docs/model/">
@@ -445,8 +445,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
-                  
                   <span class="links">
                     
           
@@ -455,7 +453,7 @@
             
           
           
-            <a href='/Docs/'>角蜂鸟使用手册与文档</a> > 
+            <a href='/Docs/'>角蜂鸟使用手册与文档</a> > 模型列表
           
          
           
@@ -463,34 +461,216 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
 
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1></h1>
           
 
         
 
 
-<p>Horned Sungem Documentation</p>
+
+
+<h2 id="内置模型与实例说明">内置模型与实例说明</h2>
+
+<hr />
+
+<p>目前角蜂鸟包括6个内置模型：</p>
+
+<h2 id="mnist-数字识别模型">MNIST 数字识别模型</h2>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>文件名称 Filename:</strong> graph_mnist</p></li>
+
+<li><p><strong>描述 Description:</strong> MNIST 数字识别模型。</p></li>
+
+<li><p><strong>实例 Example:</strong></p>
+
+<ul>
+<li><a href="/Docs/quickstart">MNIST 数字识别 （使用入门）</a></li>
+</ul></li>
+
+<li><p><strong>属性 Properties:</strong></p>
+
+<ul>
+<li><strong>Channel:</strong> 1 （灰度图）</li>
+<li><strong>Scale:</strong> 0.007843</li>
+<li><strong>Mean:</strong> 1.0</li>
+<li><strong>Image Size:</strong> [28,28]</li>
+<li><strong>Type:</strong> 识别</li>
+</ul></li>
+</ul>
+
+<h2 id="mobilenet-ssd-人脸检测模型">Mobilenet-SSD 人脸检测模型</h2>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>文件名称 Filename:</strong> graph_face_SSD</p></li>
+
+<li><p><strong>描述 Description:</strong> Mobilenet + Single-shot detector 人脸检测模型。</p></li>
+
+<li><p><strong>实例 Example:</strong></p>
+
+<ul>
+<li><a href="/Docs/workflow/detector/">Mobilenet-SSD 人脸检测</a></li>
+</ul></li>
+
+<li><p><strong>属性 Properties:</strong></p>
+
+<ul>
+<li><strong>Channel:</strong> 3 （RGB图）</li>
+<li><strong>Scale:</strong> 0.007843</li>
+<li><strong>Mean:</strong> [1.0, 1.0, 1.0]</li>
+<li><strong>Image Size:</strong> [300,300]</li>
+<li><strong>Type:</strong> SSD检测</li>
+</ul></li>
+</ul>
+
+<h2 id="mobilenet-ssd-voc物体检测模型">Mobilenet-SSD VOC物体检测模型</h2>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>文件名称 Filename:</strong> graph_object_SSD</p></li>
+
+<li><p><strong>描述 Description:</strong> Mobilenet + Single-shot detector 物体检测模型，VOC数据集训练，共20种物体。</p></li>
+
+<li><p><strong>实例 Example:</strong></p>
+
+<ul>
+<li><a href="/Docs/workflow/detector/">Mobilenet-SSD 物体检测</a></li>
+</ul></li>
+
+<li><p><strong>属性 Properties:</strong></p>
+
+<ul>
+<li><strong>Channel:</strong> 3 （RGB图）</li>
+<li><strong>Scale:</strong> 0.007843</li>
+<li><strong>Mean:</strong> [1.0, 1.0, 1.0]</li>
+<li><strong>Image Size:</strong> [300,300]</li>
+<li><strong>Type:</strong> SSD检测</li>
+</ul></li>
+</ul>
+
+<h2 id="googlenet-图像识别模型-特征提取">GoogleNet 图像识别模型（特征提取）</h2>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>文件名称 Filename:</strong> graph_g</p></li>
+
+<li><p><strong>描述 Description:</strong> GoogleNet 图像识别模型（输出层用于特征提取）。</p></li>
+
+<li><p><strong>实例 Example:</strong></p>
+
+<ul>
+<li><a href="/Docs/workflow/detector/">情景记录器</a></li>
+</ul></li>
+
+<li><p><strong>属性 Properties:</strong></p>
+
+<ul>
+<li><strong>Channel:</strong> 3 （RGB图）</li>
+<li><strong>Scale:</strong> 0.007843</li>
+<li><strong>Mean:</strong> [1.0, 1.0, 1.0]</li>
+<li><strong>Image Size:</strong> [224,224]</li>
+<li><strong>Type:</strong> 特征提取</li>
+</ul></li>
+</ul>
+
+<h2 id="facenet-人脸识别模型-特征提取">FaceNet 人脸识别模型（特征提取）</h2>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>文件名称 Filename:</strong> graph_fn</p></li>
+
+<li><p><strong>描述 Description:</strong> FaceNet 图像识别模型（输出层用于特征提取）。</p></li>
+
+<li><p><strong>实例 Example:</strong></p>
+
+<ul>
+<li><a href="/Docs/workflow/detector/">情景记录器</a></li>
+</ul></li>
+
+<li><p><strong>属性 Properties:</strong></p>
+
+<ul>
+<li><strong>Channel:</strong> 3 （RGB图）</li>
+<li><strong>Scale:</strong> 0.007843</li>
+<li><strong>Mean:</strong> [1.0, 1.0, 1.0]</li>
+<li><strong>Image Size:</strong> [160,160]</li>
+<li><strong>Type:</strong> 特征提取</li>
+</ul></li>
+</ul>
+
+<h2 id="sketchgraph-手绘识别模型">SketchGraph 手绘识别模型</h2>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>文件名称 Filename:</strong> graph_sg</p></li>
+
+<li><p><strong>描述 Description:</strong> SketchGraph 简笔画识别模型。由Google提供Quick Draw!提供数据，标签可参考misc下的 <strong>class_list.txt</strong>。</p></li>
+
+<li><p><strong>实例 Example:</strong></p>
+
+<ul>
+<li><a href="https://blog.csdn.net/weixin_40986174/article/details/80223626">手绘识别（用户外部博客链接）</a></li>
+</ul></li>
+
+<li><p><strong>属性 Properties:</strong></p>
+
+<ul>
+<li><strong>Channel:</strong> 3 （RGB图，建议前处理分割并二值化）</li>
+<li><strong>Scale:</strong> 0.007843</li>
+<li><strong>Mean:</strong> [1.0, 1.0, 1.0]</li>
+<li><strong>Image Size:</strong> [28,28]</li>
+<li><strong>Type:</strong> 识别</li>
+</ul></li>
+</ul>
+
+<h2 id="ocr-中文文字识别模型-work-in-progress">OCR 中文文字识别模型 （Work in progress）</h2>
+
+<ul>
+<li><p><strong>版本 Version:</strong> 0.1.0</p></li>
+
+<li><p><strong>文件名称 Filename:</strong> graph_ocr</p></li>
+
+<li><p><strong>描述 Description:</strong> OCR 中文识别模型。可识别4000余字，标签可参考misc下的 <strong>ocr_class_id.txt</strong>。</p></li>
+
+<li><p><strong>实例 Example:</strong></p>
+
+<ul>
+<li><a href="/Docs/workflow/ocr/">OCR 中文文字检测与识别</a></li>
+</ul></li>
+
+<li><p><strong>属性 Properties:</strong></p>
+
+<ul>
+<li><strong>Channel:</strong> 3 （RGB图，建议前处理分割并二值化）</li>
+<li><strong>Scale:</strong> 0.007843</li>
+<li><strong>Mean:</strong> [1.0, 1.0, 1.0]</li>
+<li><strong>Image Size:</strong> [28,28]</li>
+<li><strong>Type:</strong> 识别</li>
+</ul></li>
+</ul>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-
+        
+            </div> 
         
         </div> 
         
@@ -557,34 +737,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -602,6 +754,9 @@
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -609,9 +764,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -693,6 +845,38 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -783,8 +967,10 @@
 
 
         
+            <a class="nav nav-prev" href="/Docs/quickstart/" title="使用入门"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/Docs/installation/" title="安装说明" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/Docs/workflow/" title="实例教程" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -814,4 +1000,3 @@
 
   </body>
 </html>
-

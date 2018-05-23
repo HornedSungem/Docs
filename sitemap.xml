@@ -7,11 +7,15 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/quickstart/</loc>
+    <loc>https://hornedsungem.github.io/Docs/installation/</loc>
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/installation/</loc>
+    <loc>https://hornedsungem.github.io/Docs/workflow/ocr/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/quickstart/</loc>
   </url>
   
   <url>
@@ -23,11 +27,19 @@
   </url>
   
   <url>
+    <loc>https://hornedsungem.github.io/Docs/api/android/</loc>
+  </url>
+  
+  <url>
     <loc>https://hornedsungem.github.io/Docs/workflow/rapiro/</loc>
   </url>
   
   <url>
     <loc>https://hornedsungem.github.io/Docs/workflow/smartlamp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/model/</loc>
   </url>
   
   <url>
