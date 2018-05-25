@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
-    <title> :: Horned Sungem Documentation</title>
+    <title>手绘识别 :: Horned Sungem Documentation</title>
     
     
     <link href="/Docs/css/nucleus.css?1527243195" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/Docs/_footer/">
+  <body class="" data-url="/Docs/workflow/android/android_sketchguess/">
     <nav id="sidebar" class="">
 
 
@@ -143,7 +143,7 @@
   
     
     <li data-nav-id="/Docs/workflow/" title="实例教程" class="dd-item 
-        
+        parent
         
         
         ">
@@ -322,7 +322,7 @@
   
     
     <li data-nav-id="/Docs/workflow/android/" title="Android" class="dd-item 
-        
+        parent
         
         
         ">
@@ -403,7 +403,7 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/android/android_sketchguess/" title="手绘识别" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/android/android_sketchguess/" title="手绘识别" class="dd-item active">
         <a href="/Docs/workflow/android/android_sketchguess/">
         手绘识别
         
@@ -605,7 +605,19 @@
             
           
           
-            <a href='/Docs/'>角蜂鸟使用手册与文档</a> > 
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Docs/'>角蜂鸟使用手册与文档</a> > <a href='/Docs/workflow/'>实例教程</a> > <a href='/Docs/workflow/android/'>Android</a> > 手绘识别
+          
+         
+          
+         
           
          
           
@@ -615,7 +627,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#准备工作">准备工作</a></li>
+<li><a href="#具体实现">具体实现</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -627,13 +647,142 @@
         
         <div id="body-inner">
           
-            <h1></h1>
+            <h1>手绘识别</h1>
           
 
         
 
 
-<p>Horned Sungem Documentation</p>
+
+
+<p>本文主要给大家介绍下在Android平台下使用角蜂鸟实现手绘识别功能</p>
+
+<h2 id="准备工作">准备工作</h2>
+
+<ol>
+<li>配置环境等详情请参照<a href="https://hornedsungem.github.io/Docs/workflow/android_hello2018/">HELLO 2018</a>里的快速开始，此处不具体阐述</li>
+<li>下载物体检测所需模型<a href="https://github.com/HornedSungem/SungemSDK/tree/master/examples/graphs">graph_sg</a>文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下</li>
+<li>因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或<a href="https://github.com/HornedSungem/SungemSDK-Android">点击链接</a>从示例工程中libs下拷贝到自己工程</li>
+<li>将class_list_chn.txt文件拷贝到Android设备的存储空间下，用于物体比对</li>
+</ol>
+
+<h2 id="具体实现">具体实现</h2>
+
+<ul>
+<li>将graph文件传输到角蜂鸟里
+<code>
+int status = allocateGraphByAssets(&quot;graph_sg&quot;);
+</code></li>
+<li>读取物体分类文件</li>
+</ul>
+
+<pre><code>  try {
+    BufferedReader bufferedReader = new BufferedReader(new FileReader(Environment.getExternalStorageDirectory().getAbsolutePath() + &quot;/hs/class_list_chn.txt&quot;));
+    for (int i = 0; i &lt; 345; i++) {
+        String line = bufferedReader.readLine();
+        if (line != null) {
+            String[] strings = line.split(&quot; &quot;);
+            mObjectNames[i] = strings[0];
+        }
+    }
+    bufferedReader.close();
+} catch (FileNotFoundException e) {
+    e.printStackTrace();
+    Log.e(&quot;SketchGuessThread&quot;, &quot;FileNotFoundException&quot;);
+} catch (IOException e) {
+    e.printStackTrace();
+    Log.e(&quot;SketchGuessThread&quot;, &quot;IOException&quot;);
+}
+</code></pre>
+
+<ul>
+<li>获取设备的图像
+<code>
+byte[] bytes = mHsApi.deviceGetImage(true);
+</code></li>
+
+<li><p>处理图像，并将处理好的tensor传给角蜂鸟</p>
+
+<pre><code>      opencv_core.IplImage bgrImage = opencv_core.IplImage.create(FRAME_W, FRAME_H, opencv_core.IPL_DEPTH_8U, 3);
+           bgrImage.getByteBuffer().put(bytes_frame);
+           //处理该图像
+           int sg_weight = (int) (FRAME_W * roi_ratio);
+           //crop
+           opencv_core.CvRect cvRect = opencv_core.cvRect((int) (FRAME_W * (0.5 - roi_ratio / 2)), (int) (FRAME_H * 0.5 - sg_weight / 2), sg_weight, sg_weight);
+           cvSetImageROI(bgrImage, cvRect);
+           opencv_core.IplImage cropped = cvCreateImage(cvGetSize(bgrImage), bgrImage.depth(), bgrImage.nChannels());
+           cvCopy(bgrImage, cropped);
+           //canny
+           opencv_core.IplImage image_canny = opencv_core.IplImage.create(sg_weight, sg_weight, opencv_core.IPL_DEPTH_8U, 1);
+           cvCanny(cropped, image_canny, 120, 45);
+           //dilate
+           opencv_core.IplImage image_dilate = opencv_core.IplImage.create(sg_weight, sg_weight, opencv_core.IPL_DEPTH_8U, 1);
+           opencv_core.IplConvKernel iplConvKernel = cvCreateStructuringElementEx(4, 4, 0, 0, CV_SHAPE_RECT);
+           cvDilate(image_canny, image_dilate, iplConvKernel, 1);
+           opencv_core.IplImage image_dilate_rgba = opencv_core.IplImage.create(sg_weight, sg_weight, opencv_core.IPL_DEPTH_8U, 4);
+           cvCvtColor(image_dilate, image_dilate_rgba, CV_GRAY2RGBA);
+           //resize
+           opencv_core.IplImage image_load = opencv_core.IplImage.create(28, 28, opencv_core.IPL_DEPTH_8U, 4);
+           cvResize(image_dilate_rgba, image_load);
+           //把该image_dilate转化成float类型传送给角蜂鸟
+           Bitmap bitmap_tensor = IplImageToBitmap(image_load);
+           int[] pixels = new int[28 * 28];
+           bitmap_tensor.getPixels(pixels, 0, 28, 0, 0, 28, 28);
+           float[] floats = new float[28 * 28 * 3];
+           for (int i = 0; i &lt; 28 * 28; i++) {
+               floats[i] = Color.red(pixels[i]) * 0.007843f - 1;
+               floats[3 * i + 1] = Color.green(pixels[i]) * 0.007843f - 1;
+               floats[3 * i + 2] = Color.blue(pixels[i]) * 0.007843f - 1;
+           }
+           int status_tensor = mHsApi.loadTensor(floats, floats.length, 0);
+</code></pre></li>
+
+<li><p>获取返回的处理结果</p>
+
+<pre><code>float[] result = mHsApi.getResult(0);
+</code></pre></li>
+
+<li><p>处理result返回值,排列取出最大的5个数对应的idex</p></li>
+</ul>
+
+<pre><code>  public String[] sortMax5(float[] result) {
+
+       HashMap&lt;Integer, Float&gt; integerFloatHashMap = new HashMap&lt;&gt;();
+       String[] object_names = new String[5];
+       for (int i = 0; i &lt; result.length; i++) {
+           integerFloatHashMap.put(i, result[i]);
+       }
+       Arrays.sort(result);
+       for (int i = 0; i &lt; result.length; i++) {
+           if (integerFloatHashMap.get(i) == result[result.length - 1]) {
+               object_names[0] = mObjectNames[i] + &quot; &quot; + result[result.length - 1];
+           }
+           if (integerFloatHashMap.get(i) == result[result.length - 2]) {
+               object_names[1] = mObjectNames[i] + &quot; &quot; + result[result.length - 2];
+           }
+           if (integerFloatHashMap.get(i) == result[result.length - 3]) {
+               object_names[2] = mObjectNames[i] + &quot; &quot; + result[result.length - 3];
+           }
+           if (integerFloatHashMap.get(i) == result[result.length - 4]) {
+               object_names[3] = mObjectNames[i] + &quot; &quot; + result[result.length - 4];
+           }
+           if (integerFloatHashMap.get(i) == result[result.length - 5]) {
+               object_names[4] = mObjectNames[i] + &quot; &quot; + result[result.length - 5];
+           }
+       }
+       return object_names;
+   }
+</code></pre>
+
+<ul>
+<li>结果显示在view上,效果如图：</li>
+</ul>
+
+<p><img src="/Docs/android/android_sketchguess.jpeg" alt="sketchGuess" /></p>
+
+<p><strong>友好提醒</strong>：因Android设备基本都是USB2.0,所以不建议使用1080P的图像，传输比较耗时，会有卡顿感，可以使用360P的图像</p>
+
+<p><strong>具体代码可去GitHub下载，地址如下</strong> <a href="https://github.com/HornedSungem/SungemSDK-Android">SungemSDK-AndroidExamples</a></p>
 
 
 <footer class=" footline" >
@@ -723,6 +872,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -738,21 +888,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -874,6 +1011,129 @@
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -922,105 +1182,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1047,8 +1208,10 @@
 
 
         
+            <a class="nav nav-prev" href="/Docs/workflow/android/android_object_detector/" title="物体检测"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/Docs/installation/" title="安装说明" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/Docs/workflow/ocr/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

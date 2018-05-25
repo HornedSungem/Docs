@@ -12,19 +12,19 @@
     <title>Android Java API :: Horned Sungem Documentation</title>
     
     
-    <link href="/Docs/css/nucleus.css?1527156540" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1527156540" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1527156540" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1527156540" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1527156540" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1527156540" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1527156540" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1527156540" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1527243195" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1527243195" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1527243195" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1527243195" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1527243195" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1527243195" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1527243195" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1527243195" rel="stylesheet">
     
-      <link href="/Docs/css/theme-mine.css?1527156540" rel="stylesheet">
+      <link href="/Docs/css/theme-mine.css?1527243195" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1527156540"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1527243195"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1527156540"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1527156540"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1527243195"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1527243195"></script>
 <script type="text/javascript">
     
         var baseurl = '\/Docs';
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1527156540"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1527243195"></script>
 
     
   </div>
@@ -156,6 +156,8 @@
         <ul>
           
           
+            
+          
           
           
         
@@ -208,6 +210,25 @@
       <li data-nav-id="/Docs/workflow/recorder/" title="情景记录器" class="dd-item ">
         <a href="/Docs/workflow/recorder/">
         情景记录器
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/image_recognition/" title="图像识别器（底层API教程）" class="dd-item ">
+        <a href="/Docs/workflow/image_recognition/">
+        图像识别器（底层API教程）
         
         </a>
     </li>
@@ -300,13 +321,104 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/android_hello2018/" title="Android Hello 2018" class="dd-item ">
-        <a href="/Docs/workflow/android_hello2018/">
-        Android Hello 2018
+    <li data-nav-id="/Docs/workflow/android/" title="Android" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/workflow/android/">
+          Android
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_hello2018/" title="Hello 2018" class="dd-item ">
+        <a href="/Docs/workflow/android/android_hello2018/">
+        Hello 2018
         
         </a>
     </li>
      
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_face_detector/" title="人脸检测" class="dd-item ">
+        <a href="/Docs/workflow/android/android_face_detector/">
+        人脸检测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_object_detector/" title="物体检测" class="dd-item ">
+        <a href="/Docs/workflow/android/android_object_detector/">
+        物体检测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_sketchguess/" title="手绘识别" class="dd-item ">
+        <a href="/Docs/workflow/android/android_sketchguess/">
+        手绘识别
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -615,8 +727,8 @@ if (mHsThread != null) {
 <li>stdValue（float类型）:默认值为0.007843f</li>
 <li>meanValue（float类型）:默认值为-0.9999825f</li>
 <li>truthy（boolean类型）： 用于控制接收图像的大小</li>
-<li>ture：接收640*360图像</li>
-<li>false：接收1920*1080图像</li>
+<li>ture：接收640*360的3通道图像</li>
+<li>false：接收1920*1080的3通道图像</li>
 </ul></li>
 
 <li><p>返回 return:返回 byte[] ，表示该图像的原始数据</p>
@@ -651,6 +763,19 @@ if (mHsThread != null) {
   opencv_core.IplImage bgrImage = opencv_core.IplImage.create(FRAME_W, FRAME_H, opencv_core.IPL_DEPTH_8U, 3);
   bgrImage.getByteBuffer().put(bytes_rgb);
   </code></pre></p></li>
+
+<li><p><strong>deviceGetImage(truthy)</strong>:从树莓派摄像头里取出图像</p>
+
+<ul>
+<li>参数 Parameters：</li>
+<li>truthy(boolean类型):控制接受图像的大小
+
+<ul>
+<li>true:接收640*360的3通道图像</li>
+<li>false:接收1920*1080的3通道图像</li>
+</ul></li>
+<li>返回 return:返回图像byte[],表示图像的原始数据，<strong>返回值跟getImage()函数相似，此处就不具体阐述</strong></li>
+</ul></li>
 
 <li><p><strong>loadTensor(inputTensor,length,userObj)</strong>：把外部的图像或数据传送给角蜂鸟</p></li>
 </ol>
@@ -748,7 +873,7 @@ for (int i = 1; i < 5; i++) {
   }
   </code></pre>
 2. 数字识别返回结果处理：返回10个float数，分别对应0-9的置信度
-3. 简笔画识别返回结果处理：** 当前版本未实现，请关注后续更新**</p></li>
+3. 简笔画识别返回结果处理：返回345个float值，分别对应345种物体的置信度，详情可见<a href="https://hornedsungem.github.io/Docs/workflow/">手绘识别</a>文档</p></li>
 </ol>
 
 <hr />
@@ -910,6 +1035,8 @@ public void disConnected() {
 
                     
                     
+                        
+                    
                     
 
                     
@@ -1037,6 +1164,86 @@ public void disConnected() {
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1167,20 +1374,20 @@ public void disConnected() {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1527156540"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1527156540"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1527156540"></script>
-    <script src="/Docs/js/jquery.sticky.js?1527156540"></script>
-    <script src="/Docs/js/featherlight.min.js?1527156540"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1527156540"></script>
-    <script src="/Docs/js/highlight.pack.js?1527156540"></script>
+    <script src="/Docs/js/clipboard.min.js?1527243195"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1527243195"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1527243195"></script>
+    <script src="/Docs/js/jquery.sticky.js?1527243195"></script>
+    <script src="/Docs/js/featherlight.min.js?1527243195"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1527243195"></script>
+    <script src="/Docs/js/highlight.pack.js?1527243195"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1527156540"></script>
-    <script src="/Docs/js/learn.js?1527156540"></script>
-    <script src="/Docs/js/hugo-learn.js?1527156540"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1527243195"></script>
+    <script src="/Docs/js/learn.js?1527243195"></script>
+    <script src="/Docs/js/hugo-learn.js?1527243195"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1527156540" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1527156540"></script>
+    <link href="/Docs/mermaid/mermaid.css?1527243195" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1527243195"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
