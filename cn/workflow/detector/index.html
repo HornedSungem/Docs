@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="cn" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.41" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+    <title>人脸检测 :: 角蜂鸟中文文档</title>
+    
+    
+    <link href="/Docs/css/nucleus.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1530279882" rel="stylesheet">
+    
+      <link href="/Docs/css/theme-mine.css?1530279882" rel="stylesheet">
+    
+
+    <script src="/Docs/js/jquery-2.x.min.js?1530279882"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Docs/cn/workflow/detector/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+	<a href="/Docs/" ><img align="left" src="/Docs/logo.png"></a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1530279882"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1530279882"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/Docs\/cn";
+    
+</script>
+<script type="text/javascript" src="/Docs/js/search.js?1530279882"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/installation/" title="安装说明" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/cn/installation/">
+          安装说明
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/quickstart/" title="使用入门" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/cn/quickstart/">
+          使用入门
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/model/" title="模型列表" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/cn/model/">
+          模型列表
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/workflow/" title="实例教程" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Docs/cn/workflow/">
+          实例教程
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/detector/" title="人脸检测" class="dd-item active">
+        <a href="/Docs/cn/workflow/detector/">
+        人脸检测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/detector_object/" title="物体检测" class="dd-item ">
+        <a href="/Docs/cn/workflow/detector_object/">
+        物体检测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/recorder/" title="情景记录器" class="dd-item ">
+        <a href="/Docs/cn/workflow/recorder/">
+        情景记录器
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/face_recognition/" title="人脸识别器（双角蜂鸟集联教程）" class="dd-item ">
+        <a href="/Docs/cn/workflow/face_recognition/">
+        人脸识别器（双角蜂鸟集联教程）
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/image_recognition/" title="图像识别器（底层API教程）" class="dd-item ">
+        <a href="/Docs/cn/workflow/image_recognition/">
+        图像识别器（底层API教程）
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/rapiro/" title="奥松机器人" class="dd-item ">
+        <a href="/Docs/cn/workflow/rapiro/">
+        奥松机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/smartlamp/" title="智能台灯" class="dd-item ">
+        <a href="/Docs/cn/workflow/smartlamp/">
+        智能台灯
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/sitting_pose/" title="坐姿提醒" class="dd-item ">
+        <a href="/Docs/cn/workflow/sitting_pose/">
+        坐姿提醒
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/raspi_car/" title="树莓派小车" class="dd-item ">
+        <a href="/Docs/cn/workflow/raspi_car/">
+        树莓派小车
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/api/" title="角蜂鸟API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/cn/api/">
+          角蜂鸟API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/api/highlevel/" title="高层API" class="dd-item ">
+        <a href="/Docs/cn/api/highlevel/">
+        高层API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/contact/" title="联系我们" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/cn/contact/">
+          联系我们
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/Docs/workflow/detector/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="/Docs/cn/workflow/detector/" selected>Chinese</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <a class="github-button" href="https://github.com/HornedSungem/SungemSDK" data-icon="octicon-cloud-download" aria-label="Download Horned Sungem SDK on GitHub">Github Link</a>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Docs/cn/'>角蜂鸟使用手册与文档</a> > <a href='/Docs/cn/workflow/'>实例教程</a> > 人脸检测
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ssd-mobilenet-人脸检测">SSD-Mobilenet 人脸检测</a>
+<ul>
+<li><a href="#路径和文件">路径和文件</a></li>
+<li><a href="#人脸检测-face-detector">人脸检测 Face Detector</a></li>
+<li><a href="#参数设置">参数设置</a>
+<ul>
+<li>
+<ul>
+<li><a href="#初始化">初始化</a></li>
+<li><a href="#检测">检测</a></li>
+<li><a href="#可视化">可视化</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#使用实例">使用实例</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>人脸检测</h1>
+          
+
+        
+
+
+
+
+<h2 id="ssd-mobilenet-人脸检测">SSD-Mobilenet 人脸检测</h2>
+
+<hr />
+
+<p>本章为您介绍如何使用角蜂鸟在Python调用内置部署的SSD-Mobilenet人脸检测卷积神经网络。</p>
+
+<p>检测器分析图片并找出目标的位置和尺寸。</p>
+
+<ul>
+<li>本教程基于Ubuntu 16.04系统</li>
+</ul>
+
+<hr />
+
+<h3 id="路径和文件">路径和文件</h3>
+
+<ul>
+<li>人脸识别Python：<strong>SungemSDK/examples/python/FaceDetector.py</strong></li>
+<li>模型文件：<strong>SungemSDK/examples/graphs/graph_face_SSD</strong></li>
+</ul>
+
+<hr />
+
+<h3 id="人脸检测-face-detector">人脸检测 Face Detector</h3>
+
+<p>在<strong>python</strong>目录下执行以下命令来启动 <em>人脸检测</em> 范例。</p>
+
+<pre><code>~/SungemSDK/examples/python$ python3 FaceDetector.py
+</code></pre>
+
+<p>得到结果：</p>
+
+<pre><code>| ======= Horned Sungem ======== |
+|        Device found [0]        |
+|    ../graphs/graph_face_SSD    |
+|     Model loaded to Python     |
+|   Model allocated to device    |
+| ============================== |
+* *****SSD [0]: Box values****** *
+...
+</code></pre>
+
+<p>如图像中包括人脸，则：</p>
+
+<pre><code>* *****SSD [1]: Box values****** *
+*         Box Name: Face         *
+* 360 106 591 361 - w:231 h:255  *
+</code></pre>
+
+<p>其中SSD [N]中N为检测人脸个数，下一行为人脸检测框Bounding Box的左上角和右下角坐标以及窗的宽高。</p>
+
+<h3 id="参数设置">参数设置</h3>
+
+<h5 id="初始化">初始化</h5>
+
+<pre><code class="language-python">WEBCAM = False
+net = hs.HS('FaceDetector', zoom = True, verbose = 2)
+</code></pre>
+
+<p>两种模式（WEBCAM）：</p>
+
+<ul>
+<li>True时使用外接USB摄像头</li>
+<li>False时使用角蜂鸟内置摄像头</li>
+</ul>
+
+<p>在初始化角蜂鸟时可设置的参数：</p>
+
+<ul>
+<li>zoom: 如果为True，则输出图像为640*360，否则为1920*1080 *</li>
+<li>verbose: 0时不输出任何信息、1时输出设备和其他关键信息、2时输出全部信息。</li>
+<li>threshSSD: 人脸检测阈值，范围为0-1， 提高阈值会减少错检但增加漏检，反之亦然。</li>
+</ul>
+
+<h5 id="检测">检测</h5>
+
+<pre><code class="language-python">result = net.run(img)
+</code></pre>
+
+<p>使用角蜂鸟模式时（WEBCAM为False），无需输入图像，img为None。在使用外置摄像头模式时需输入图像。
+result中返回图像与检测结果，分别放置在result[0]与result[1]中</p>
+
+<p>检测结果包括以下内容，按照数组顺序：
+例如</p>
+
+<pre><code>print(result[1])
+[[0, 0.99805, 334, 2, 595, 289]]
+</code></pre>
+
+<ul>
+<li>检测目标类别：人脸固定为0, 物体检测时可为0-19,对应不同的标签（请参考VOC数据库标注）。</li>
+<li>检测置信度：范围为0-1,越高检测器越肯定目标是否准确。</li>
+<li>人脸框的位置：4个数值对应左上角和右下角坐标。</li>
+</ul>
+
+<h5 id="可视化">可视化</h5>
+
+<pre><code class="language-python">img = net.plotSSD(result)
+</code></pre>
+
+<p>输入result，输出画框之后的图像。之后通过OpenCV函数来显示图像。</p>
+
+<h2 id="使用实例">使用实例</h2>
+
+<p><img src="/Docs/media/img/face_detection.jpg" alt="Face Detection" /></p>
+
+<pre><code>* *****SSD [9]: Box values****** *
+*         Box Name: Face         *
+* 167 103 307 262 - w:140 h:159  *
+*         Box Name: Face         *
+*  29 114 140 272 - w:111 h:158  *
+*         Box Name: Face         *
+* 344 101 446 239 - w:102 h:138  *
+*         Box Name: Face         *
+* 349 255 474 365 - w:125 h:110  *
+*         Box Name: Face         *
+*  507 93 611 225 - w:104 h:132  *
+*         Box Name: Face         *
+*  205 280 313 362 - w:108 h:82  *
+*         Box Name: Face         *
+*   19 2 119 109 - w:100 h:107   *
+*         Box Name: Face         *
+*   189 4 290 99 - w:101 h:95    *
+*         Box Name: Face         *
+*    334 0 425 92 - w:91 h:92    *
+</code></pre>
+
+<p>*截图和复制时之间的短暂延时导致图片与结果略微不符</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/Docs/cn/workflow/" title="实例教程"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/Docs/cn/workflow/detector_object/" title="物体检测" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Docs/js/clipboard.min.js?1530279882"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1530279882"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1530279882"></script>
+    <script src="/Docs/js/jquery.sticky.js?1530279882"></script>
+    <script src="/Docs/js/featherlight.min.js?1530279882"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1530279882"></script>
+    <script src="/Docs/js/highlight.pack.js?1530279882"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1530279882"></script>
+    <script src="/Docs/js/learn.js?1530279882"></script>
+    <script src="/Docs/js/hugo-learn.js?1530279882"></script>
+
+    <link href="/Docs/mermaid/mermaid.css?1530279882" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1530279882"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

@@ -1,132 +1,117 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>角蜂鸟使用手册与文档 on Horned Sungem Documentation</title>
+    <title>Horned Sungem Documentation</title>
     <link>https://hornedsungem.github.io/Docs/</link>
-    <description>Recent content in 角蜂鸟使用手册与文档 on Horned Sungem Documentation</description>
+    <description>Recent content on Horned Sungem Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://hornedsungem.github.io/Docs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>人脸检测</title>
+      <title>Face detector</title>
       <link>https://hornedsungem.github.io/Docs/workflow/detector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/detector/</guid>
-      <description>SSD-Mobilenet 人脸检测 本章为您介绍如何使用角蜂鸟在Python调用内置部署的SSD-Mobilenet人脸检测卷积神经网络。
-检测器分析图片并找出目标的位置和尺寸。
- 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK/examples/python/FaceDetector.py 模型文件：SungemSDK/examples/graphs/graph_face_SSD  人脸检测 Face Detector 在python目录下执行以下命令来启动 人脸检测 范例。
-~/SungemSDK/examples/python$ python3 FaceDetector.py  得到结果：
-| ======= Horned Sungem ======== | | Device found [0] | | ../graphs/graph_face_SSD | | Model loaded to Python | | Model allocated to device | | ============================== | * *****SSD [0]: Box values****** * ...  如图像中包括人脸，则：
-* *****SSD [1]: Box values****** * * Box Name: Face * * 360 106 591 361 - w:231 h:255 *  其中SSD [N]中N为检测人脸个数，下一行为人脸检测框Bounding Box的左上角和右下角坐标以及窗的宽高。</description>
+      <description>SSD-Mobilenet Face Detector This chapter will introduce how to use HS to deploy SSD-Mobilenet face detector
+ Based on Ubuntu 16.04  Path and files  Python: SungemSDK/examples/python/FaceDetector.py Model file: SungemSDK/examples/graphs/graph_face_SSD  Face Detector Under python directory, enter following command to run face detector demo:
+~/SungemSDK/examples/python$ python3 FaceDetector.py  get result:
+| ======= Horned Sungem ======== | | Device found [0] | | ../graphs/graph_face_SSD | | Model loaded to Python | | Model allocated to device | | ============================== | * *****SSD [0]: Box values****** * .</description>
     </item>
     
     <item>
-      <title>物体检测</title>
+      <title>Object Detector</title>
       <link>https://hornedsungem.github.io/Docs/workflow/detector_object/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/detector_object/</guid>
-      <description>SSD-Mobilenet 物体检测 本章为您介绍如何使用角蜂鸟在Python调用内置部署的SSD-Mobilenet物体检测卷积神经网络。
-检测器分析图片并找出目标的位置和尺寸。
- 本教程基于Ubuntu 16.04系统  路径和文件  物体识别Python：SungemSDK/examples/python/ObjectDetector.py 模型文件：SungemSDK/examples/graphs/graph_object_SSD  物体检测 Object Detector 在python目录下执行以下命令来启动 物体检测 范例。
-~/SungemSDK/examples/python$ python3 ObjectDetector.py  物体检测流程与人脸检测基本相同。检测类别为20个，具体类别请参考VOC数据库或从API中取得。
-使用实例 * *****SSD [2]: Box values****** * * Box Name: chair * * 221 141 335 300 - w:114 h:159 * * Box Name: pottedplant * * 388 46 530 265 - w:142 h:219 *  *截图和复制时之间的短暂延时导致图片与结果略微不符</description>
+      <description>SSD-Mobilenet Object Detector This chapter will introduce how to user HS to deploy SSD-Mobilenet object detector.
+Detector analyse images and find the target image location and size.
+ Based on Ubuntu 16.04  Path and files  Python: SungemSDK/examples/python/ObjectDetector.py Model files: SungemSDK/examples/graphs/graph_object_SSD  Object Detector Under python directory, enter following command to run object detector demo:
+~/SungemSDK/examples/python$ python3 ObjectDetector.py  Object detector is very similar to the previous face detector, except the number of classes is 20 (from VOC dataset).</description>
     </item>
     
     <item>
-      <title>情景记录器</title>
+      <title>Scene Recorder</title>
       <link>https://hornedsungem.github.io/Docs/workflow/recorder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/recorder/</guid>
-      <description>角蜂鸟情景记录器 本章为您介绍如何使用角蜂鸟在Python调用内置部署的GoogleNet来实现一个实用性非常强的情景记录器。
-介绍 角蜂鸟情景记录器可将希望分类的图像实时储存在不同的“存档”下并立即生成一个分类模型，之后便可辨识它们对应的场景。比如说在门打开的时候将图像录制进[存档1]，关闭的时候录制进[存档2]，生成模型之后便可辨认门是否开启。将不同的手势录制进不同的存档下就变成了一个简单的手势识别。
-使用说明 执行Python程序、初始化角蜂鸟之后，对准需要录制的第一个目标，按1-5之中的一个数字（对应存档编号）：
-比如说按1后保持7帧，终端将显示：
-| Record to bin: 1 | | [7]-[0]-[0]-[0]-[0] |  接着对准第二个目标按2：
-| Record to bin: 2 | | [7]-[8]-[0]-[0]-[0] |  这样记录器中储存两个目标就可以开始生成模型了。
-按 &amp;lsquo;r&amp;rsquo; 将筛选去除每个存档中的冗余图像特征，并生成模型。
-| .........Compressing.......... | | [2]-[2]-[0]-[0]-[0] | | ------Compress finished------- |  进入识别状态并开始实时显示5个不同类别的置信度。下例中的意思为第一个类别的可能性为74%，第二个为26%。第二个栏里简单的将置信度可视化，竖条越多说明当前场景越可能属于该存档。
-| ---------Running ANN---------- | * [1]: 0.74 * * [2]: 0.26 * * [3]: 0.00 * * [4]: 0.00 * * [5]: 0.00 * | --------Probabilities--------- | | ||||||| | | || | | | | | | |  按 &amp;rsquo;s&amp;rsquo; 将存档录入至 /misc/record.</description>
+      <description>Scene Recorder This chapter introduces how to use HS to deploy GoogleNet for building a useful scene recorder tool
+Introduction HS Scene Recorder records and classifies images in real-time. It &amp;lsquo;descripts&amp;rsquo; images into image feature vectors and store them into different bins for training a classifier. For instance, put HS in front of a door and record the images to bin-0 when door is closed and bin-&amp;lsquo;1&amp;rsquo; when door is opened.</description>
     </item>
     
     <item>
-      <title>图像识别器（底层API教程）</title>
+      <title>Face recorder (Working with two HS devices)</title>
+      <link>https://hornedsungem.github.io/Docs/workflow/face_recognition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/workflow/face_recognition/</guid>
+      <description>Face detetor + Scene recorder = Face recorder This chapter introduces how to build a face recorder with two HS devices.
+ Note that two HS devices are needed to run this demo Tested on Ubuntu 16.04 system  Path and files  Face recorder Python：SungemSDK/examples/python/FaceRecorder.py Model file - detection：SungemSDK/examples/graphs/graph_face_SSD Model file - recognition：SungemSDK/examples/graphs/graph_face_rec  Image Recognition After connecting two HS devices, run face recorder with the following command under python directory</description>
+    </item>
+    
+    <item>
+      <title>Image Recogniser (Low-level API Tutorial)</title>
       <link>https://hornedsungem.github.io/Docs/workflow/image_recognition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/image_recognition/</guid>
-      <description>SqueezeNet 1000类图像识别器 本章为您介绍如何使用角蜂鸟在Python调用底层API实现基于SqueezeNet的图像识别器。
-比起检测器，识别器可从图片分析得到较细的分类类别，例如猫、狗的某个品种。
- 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK/examples/python/ImageRecognition.py 模型文件：SungemSDK/examples/graphs/graph_sz  图像识别 Image Recognition 在python目录下执行以下命令来启动 图像识别 范例。
-~/SungemSDK/examples/python$ python3 ImageRecognition.py  识别目标图像为青色框中区域(ROI)的图像部分。通过按 &amp;lsquo;w&amp;rsquo; 与 &amp;rsquo;s&amp;rsquo; 可调整 ROI 的大小。
-得到 Top5 结果例如: 属于计算机键盘概率98.39%、空格1.40%、打字机键盘0.22%、笔记本0.03%、仓鼠0.00%。 因为调用全部函数为底层API，终端不显示任何提示。
-参数设置 初始化 # Load device （载入设备） devices = hs.EnumerateDevices() dev = hs.Device(devices[0]) dev.OpenDevice() # Load CNN model （载入模型） with open(&#39;../graphs/graph_sz&#39;, mode=&#39;rb&#39;) as f: b = f.read() graph = dev.AllocateGraph(b) dim = (227,227) # Load classes （载入分类标签） classes=np.</description>
+      <description>SqueezeNet 1000 Classes Image Classifier This chapter introduces how to build an image classifier by using low-level API only.
+ Tested on Ubuntu 16.04  Path and files  Python：SungemSDK/examples/python/ImageRecognition.py Model file：SungemSDK/examples/graphs/graph_sz  Image Recognition run image recogniser with the following command under python directory
+~/SungemSDK/examples/python$ python3 ImageRecognition.py  The region-of-interest is highlighted with a cyan bounding box. You can adjust the size by pressing &amp;lsquo;w&amp;rsquo; and &amp;rsquo;s&amp;rsquo;.
+Get Top5 classification result, as shown in the example.</description>
     </item>
     
     <item>
-      <title>奥松机器人</title>
+      <title>Rapiro Robot</title>
       <link>https://hornedsungem.github.io/Docs/workflow/rapiro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/rapiro/</guid>
-      <description>这里给大家带来一个借助角蜂鸟实现的人脸检测控制的机器人。
- 硬件清单参考如下：
- 角蜂鸟 树莓派3b 奥松机器人 12V转5V的DC-DC模块（可选） 散热风扇（可选）   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现人脸检测的功能。大概的处理逻辑如下：
-实现 首先组装好奥松机器人，奥松机器人为树莓派供电，树莓派为角蜂鸟供电，树莓派通过USB通信控制奥松机器人和角蜂鸟。 由于树莓派USB供电限制，可能会产生供电不足的问题，影响稳定性。这里考虑从奥松机器人的电源上接入12V转5V的DC-DC模块为USB提供额外供电，或者使用外源HUB。 担心空间散热性比较差可考虑加入散热风扇。
-为了优雅与美观，这里我们DIY了奥松机器人，把所有的东西都埋进了脑袋里，角蜂鸟放在了后脑勺的位置。
-奥松机器人控制代码如下：
-class RapiroProcessor(Thread): class Flags: face = None face_frame_cnt = 0 head_angle = 90 arm_raised = False light_on = False light_need_change = False def __init__(self, connection): Thread.__init__(self) self.daemon = True self.rapiro = Rapiro(connection) self.flags = RapiroProcessor.Flags() def reset(self): self.rapiro.execute(GO_TO_INITIAL_POSITION) time.sleep(3) def run(self): self.reset() try: while True: time.sleep(0.1) has_face = self.</description>
+      <description>This chapter introduced how to build a robot that controlled by HS face detector.
+ Hardware requirement:
+ Horned Sungem Device Raspberry Pi 3b Rapiro Robot 12V to 5V DC-DC module (Optional) Cooling fan (Optional)   Workflow The built-in model Mobilenet-SSD face detector is used in this DIY demo. The logic is illustrated as below:
+Implementation Firstly assemble and power the Rapiro robot, then use robot to supply the power to a Raspeberry Pi.</description>
     </item>
     
     <item>
-      <title>智能台灯</title>
+      <title>Smart Lamp</title>
       <link>https://hornedsungem.github.io/Docs/workflow/smartlamp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/smartlamp/</guid>
-      <description>这里给大家带来一个借助角蜂鸟实现的人脸检测控制的智能台灯。当角蜂鸟发现人脸出现时台灯自动打开，没有检测到人时会自动关闭。
- 硬件清单参考如下：
- 角蜂鸟 树莓派3b 1路继电器模块 5V USB台灯   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现人脸检测的功能。大概的处理逻辑如下：
-然后就是控制台灯，我们通过 1路继电器模块 来控制工作电路的闭合。树莓派 GPIO 引脚接继电器控制端 IN，GND 引脚接继电器 DC-端构成回路。这里采用高电平触发，当 GPIO 输出高电平时，工作电路闭合，台灯亮起；输出低电平时，工作电路断开，台灯熄灭。
- 1路继电器模块
- DC+ 接电源正极 DC- 接电源负极 IN 高或低电平控制继电器吸合 COM 公用接口 NO 常开接口，吸合前悬空，吸合后与 COM 短接 NC 常闭接口，吸合前与 COM 短接，吸合后悬空  跳线与 High 短接时为高电平触发，与 LOW 短接时为低电平触发。
- 具体实现 准备好树莓派，安装 SungemSDK 运行环境，并且连接好角蜂鸟和继电器。 继电器控制代码如下：
-#!/usr/bin/env python3 # coding=utf-8 # lamp.py import RPi.GPIO as GPIO PIN = 7 def setup(): GPIO.</description>
+      <description>Here we give a tutorial on how to control a lamp through face detector with HS device. The lamb automatically turns on if face appears, otherwise turn off.
+ Hardware list:
+ HS device Raspberry Pi 3b 1 channel relay module 5V USB lamp   Workflow The built-in model Mobilenet-SSD face detector is used in this DIY demo. The logic is illustrated as below:
+then we control the switch of the lamp through a 1 channel relay module.</description>
     </item>
     
     <item>
-      <title>坐姿提醒</title>
+      <title>Sitting posture alarm</title>
       <link>https://hornedsungem.github.io/Docs/workflow/sitting_pose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/sitting_pose/</guid>
-      <description>这里给大家带来一个借助角蜂鸟实现的简单的坐姿监测器。
- 硬件清单参考如下：
- 角蜂鸟 树莓派3b 蜂鸣器   构思 在角蜂鸟的内置模型中和公开的数据集中没有关于坐姿的，我们要实现效果非常好，需要大量的数据，自己去采集数据并去标记不太现实。这里我们采用角蜂鸟内置的 GoogleNet 来实现我们的需求，仿照情景记录器做一个比较简单的坐姿监测器。
-我们需要记录至少2个场景分类：
- 正确的坐姿 不良的坐姿  大概的处理逻辑如下：
-准备 首先，我们需要先记录我们的情景分类。 我们可以执行SDK示例程序中的 SceneRecorder.py 来记录场景，再拷贝数据文件到我们的项目中，或者仿照情景记录器自己去实现。 这里我们把情景记录与应用分开，树莓派的界面实在不够友好，我们在PC端进行场景记录，在树莓派上实现我们监测的应用。
-from SungemSDK.api import hsapi as hs import cv2 if __name__ == &#39;__main__&#39;: cv2.namedWindow(&amp;quot;Scene Recorder&amp;quot;, cv2.WINDOW_NORMAL) try: net = hs.HS(&#39;GoogleNet&#39;, zoom=True, verbose=2, graphFolder=&amp;quot;../../SungemSDK/examples/graphs/&amp;quot;) while True: result = net.run() key = cv2.waitKey(5) prob = net.record(result, key, saveFilename=&amp;quot;./record.dat&amp;quot;) cv2.imshow(&amp;quot;Scene Recorder&amp;quot;, result[0]) cv2.waitKey(1) finally: cv2.destroyAllWindows()  我们需要不断去重复训练的过程，不断去修正，直到达到预期的结果。这里 1 为正确的坐姿，2 为不良的坐姿。在训练的过程中，如果出现误检，需要再次记录场景，再次训练，不断扩充训练集。</description>
+      <description>In this tutorial we will build a simple sitting posture alarm.
+ Hardware list:
+ HS device Raspberry Pi 3b Buzzer   Workflow Since currently the HS model zoo does not include pose estimation model, we simplify the problem and use our Scene Recorder to achieve the goal.
+Here we consider two senarios that need to be distinguished:
+ Normal sitting posture Unhealthy sitting posture  as shown below:</description>
     </item>
     
     <item>
-      <title>树莓派小车</title>
+      <title>Raspberry Pi Toy Car</title>
       <link>https://hornedsungem.github.io/Docs/workflow/raspi_car/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/raspi_car/</guid>
-      <description>这里给大家带来一个借助角蜂鸟实现的基于物体识别控制的树莓派小车。
- 硬件清单参考如下：
- 角蜂鸟 树莓派3b + 小车配件   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现物体检测的功能。大概的处理逻辑如下：
-具体实现 首先我们需要将小车组装起来，虽然购买到的树莓派小车的可能不同，但组装过程大同小异，实际上都是通过 GPIO 控制驱动板，进而控制电机转动。
-安装好小车、固定好角蜂鸟之后，就可以配置树莓派以及 SungemSDK 的运行环境了。树莓派的图形界面不太友好，本着要优雅的原则，可以使用 pycharm 进行远程开发调试，具体配置过程可询问谷哥和度娘。
-这里需要说明的是，树莓派的USB接口有电流限制，最高只能达到600mA，可能当多个IO输出的时候，会造成工作不稳定。这里可以考虑为USB提供额外的供电，飞根线或者采用外源HUB。
-主要流程实现直接上代码：
-#!/usr/bin/env python3 # coding=utf-8 from SungemSDK.api import hsapi as hs import drive from video import VideoProcessor def process(ret): bicycles = [x for x in ret[1] if x[0] in {1}] # 1 bicycle if len(bicycles) &amp;gt; 0: # 当检测到自行车时 bike = bicycles[0] x_mid = (bike[2] + bike[4]) / 2 / ret[0].</description>
+      <description>We bring a HS enhanced Raspberry Pi Toy car by using object detector.
+ Hardware list:
+ HS device Raspberry Pi 3b Assembled Raspberry Pi toy car with SCM controlled motors   Workflow The built-in model Mobilenet-SSD object detector is used in this DIY demo. The logic is illustrated as below:
+Implementation Firstly we assemble the toy car, the car is not necessary to be the same as ours, it should work as long as it is controlled through GPIO pin.</description>
     </item>
     
     <item>
@@ -195,26 +180,20 @@ The GlobalOption class is an enumeration class that defines the options that are
     </item>
     
     <item>
-      <title>高层API</title>
+      <title>High-level API</title>
       <link>https://hornedsungem.github.io/Docs/api/highlevel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/api/highlevel/</guid>
-      <description>Horned Sungem High Level API Version 0.1.0 通用高层函数 HS.__init__()  版本 Version: 0.1.0
- 总览 Overview: 初始化角蜂鸟高层接口。
- 语法 Syntax:
-  hs.HS(modelName, **kwargs)   参数 Parameters:
- modelName: 内置模型名称。
- **kwargs 关键字参数: (Optional)
- &amp;lsquo;verbose&amp;rsquo; 显示信息详细程度：从0到2分别为无信息、关键信息、全部信息。默认为2。
- &amp;lsquo;mean&amp;rsquo; 模型前处理均值。默认为1.0
- &amp;lsquo;scale&amp;rsquo; 模型前处理尺度。默认为0.007843 （1/127.5）
- &amp;lsquo;graphFolder&amp;rsquo; 模型文件夹路径。 默认为 &amp;lsquo;../graphs/&amp;rsquo;
- &amp;lsquo;zoom&amp;rsquo; 为True时图像尺寸为640x360，False时1920x1080。默认为True。
- &amp;lsquo;labels&amp;rsquo; 使用SSD时是否使用自定义标签。默认为None。未来开放自定义模型时可更改。
- &amp;lsquo;threshSSD&amp;rsquo; 使用SSD时的阈值，范围为0-1。 默认为0.55。
-   返回 Return: 返回已加载模型的HS Object实例。
- 范例 Example:</description>
+      <description>Horned Sungem High Level API Version 0.1.0 HS.__init__()  Version: 0.1.0
+ Overview: initialisation
+ Syntax:
+  hs.HS(modelName, **kwargs)   Parameters:
+ modelName: built-in models&amp;rsquo; name
+ **kwargs key arguments: (Optional)
+ &amp;lsquo;verbose&amp;rsquo; Detail of log. From 0 to 2: no log, key log, full log. Default is 2
+ &amp;lsquo;mean&amp;rsquo; Mean value in preprocessing. Default is 1.0
+ &amp;lsquo;scale&amp;rsquo; Scale value in preprocessing. Default is 0.007843 (1&amp;frasl;127.</description>
     </item>
     
     <item>

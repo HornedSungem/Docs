@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="cn" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.41" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+    <title>使用入门 :: 角蜂鸟中文文档</title>
+    
+    
+    <link href="/Docs/css/nucleus.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1530279882" rel="stylesheet">
+    
+      <link href="/Docs/css/theme-mine.css?1530279882" rel="stylesheet">
+    
+
+    <script src="/Docs/js/jquery-2.x.min.js?1530279882"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Docs/cn/quickstart/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+	<a href="/Docs/" ><img align="left" src="/Docs/logo.png"></a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1530279882"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1530279882"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/Docs\/cn";
+    
+</script>
+<script type="text/javascript" src="/Docs/js/search.js?1530279882"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/installation/" title="安装说明" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/cn/installation/">
+          安装说明
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/quickstart/" title="使用入门" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/Docs/cn/quickstart/">
+          使用入门
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/model/" title="模型列表" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/cn/model/">
+          模型列表
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/workflow/" title="实例教程" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/cn/workflow/">
+          实例教程
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/detector/" title="人脸检测" class="dd-item ">
+        <a href="/Docs/cn/workflow/detector/">
+        人脸检测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/detector_object/" title="物体检测" class="dd-item ">
+        <a href="/Docs/cn/workflow/detector_object/">
+        物体检测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/recorder/" title="情景记录器" class="dd-item ">
+        <a href="/Docs/cn/workflow/recorder/">
+        情景记录器
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/face_recognition/" title="人脸识别器（双角蜂鸟集联教程）" class="dd-item ">
+        <a href="/Docs/cn/workflow/face_recognition/">
+        人脸识别器（双角蜂鸟集联教程）
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/image_recognition/" title="图像识别器（底层API教程）" class="dd-item ">
+        <a href="/Docs/cn/workflow/image_recognition/">
+        图像识别器（底层API教程）
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/rapiro/" title="奥松机器人" class="dd-item ">
+        <a href="/Docs/cn/workflow/rapiro/">
+        奥松机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/smartlamp/" title="智能台灯" class="dd-item ">
+        <a href="/Docs/cn/workflow/smartlamp/">
+        智能台灯
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/sitting_pose/" title="坐姿提醒" class="dd-item ">
+        <a href="/Docs/cn/workflow/sitting_pose/">
+        坐姿提醒
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/workflow/raspi_car/" title="树莓派小车" class="dd-item ">
+        <a href="/Docs/cn/workflow/raspi_car/">
+        树莓派小车
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/api/" title="角蜂鸟API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/cn/api/">
+          角蜂鸟API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/cn/api/highlevel/" title="高层API" class="dd-item ">
+        <a href="/Docs/cn/api/highlevel/">
+        高层API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/cn/contact/" title="联系我们" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/cn/contact/">
+          联系我们
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/Docs/quickstart/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="/Docs/cn/quickstart/" selected>Chinese</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <a class="github-button" href="https://github.com/HornedSungem/SungemSDK" data-icon="octicon-cloud-download" aria-label="Download Horned Sungem SDK on GitHub">Github Link</a>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/Docs/cn/'>角蜂鸟使用手册与文档</a> > 使用入门
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+
+<h2 id="角蜂鸟使用入门">角蜂鸟使用入门</h2>
+
+<hr />
+
+<p><div>
+    <img align="right" src="./4.jpg" width="28">
+    <img align="right" src="./3.jpg" width="28">
+    <img align="right" src="./2.jpg" width="28">
+    <img align="right"  src="./1.jpg" width="28">
+</div>
+本章为您介绍如何使用角蜂鸟在Python快速调用内置部署的卷积神经网络。</p>
+
+<p>以下将使用MNIST手写数字识别CNN网络作为基础实现第一个非常简易的Demo: <em>Hello 2018</em> 。
+跟随教程我们将识别4张分别写着2018的图片，仅仅只用数行代码！</p>
+
+<ul>
+<li>本教程基于Ubuntu 16.04系统</li>
+</ul>
+
+<hr />
+
+<h3 id="路径和文件">路径和文件</h3>
+
+<p>在角蜂鸟项目的范例目录<strong>SungemSDK/examples</strong>下的3个文件夹分别对应内容为：</p>
+
+<ul>
+<li><strong>/graphs</strong>: 储存内置CNN模型文件，修改/移动文件会导致部分API失效。</li>
+<li><strong>/misc</strong>: 储存图像、标签数据或其他杂物。</li>
+<li><strong>/python</strong>: Python实例。</li>
+</ul>
+
+<hr />
+
+<h3 id="hello-2018">Hello 2018</h3>
+
+<p>在<strong>python</strong>目录下执行以下命令来启动 <em>Hello 2018</em> 范例。</p>
+
+<pre><code>~/SungemSDK/examples/python$ python3 Hello2018.py
+</code></pre>
+
+<p>如果一切正常，将会得到以下结果:</p>
+
+<pre><code>| ======= Horned Sungem ======== |
+|        Device found [0]        |
+|     Model loaded to Python     |
+|   Model allocated to device    |
+| ============================== |
+Hello
+[2]
+[0]
+[1]
+[8]
+</code></pre>
+
+<p>4张MNIST数字图片成功识别。</p>
+
+<hr />
+
+<h2 id="代码解析">代码解析</h2>
+
+<p>加载<strong>OpenCV</strong>、<strong>Numpy</strong>以及角蜂鸟<strong>HSAPI</strong></p>
+
+<pre><code class="language-python">import cv2, sys, numpy as np
+sys.path.append('../../api/')
+import hsapi as hs
+</code></pre>
+
+<p>初始化角蜂鸟、设定内置加载模型、识别对象图片的根目录</p>
+
+<pre><code class="language-python">net = hs.HS('mnist')
+imgRoot = '../misc/2018_mnist/%d.jpg'
+</code></pre>
+
+<p>分别调取4张图片[<em>1.jpg - 4.jpg</em>]。使用OpenCV的<strong>imread</strong>获取每张图像位图矩阵并通过**.run(img)载入角蜂鸟中。角蜂鸟返回识别结果并打印。</p>
+
+<pre><code class="language-python">print('Hello')
+for n in [1,2,3,4]:
+	imgname = imgRoot % n
+	img = cv2.imread(imgname)
+	result = net.run(img)
+	print(result[1])
+</code></pre>
+
+<hr />
+
+<h2 id="如何只取角蜂鸟图像">如何只取角蜂鸟图像</h2>
+
+<p>调取以下函数即可。可参考范例GetImage.py。
+注意：输出图像与OpenCV获取摄像头视频流一样为BGR图像。</p>
+
+<pre><code class="language-python">image = net.getImage()
+</code></pre>
+
+<h2 id="疑难解答-q-a">疑难解答 Q&amp;A</h2>
+
+<p>如下列Q&amp;A仍没有解决您的问题，请联系我们：<a href="mailto:support@hornedsungem.org">support@hornedsungem.org</a></p>
+
+<pre><code>Q: Python显示: No devices found
+A: 找不到设备，请稍等数秒再试。如仍未找到请尝试重新连接角蜂鸟两端USB接口，确保正确连接。
+
+Q: Python显示: Error: Failed to load graph, please check file path
+A: 模型路径错误，可能改变了路径或模型文件名称。如改变模型文件路径，可尝试在初始化时将新模型文件夹输入至第二个参数。如：net = hs.HS('mnist',graphFolder='../MyNewPath/graph')
+
+Q: Python显示: Error: Failed to allocate graph to device, please try to re-plug the device 或是 Exception: hsStatus.ERROR
+A: 设备未重置或模型加载错误，一般是更换内部载入的模型导致，请尝试重新连接USB。如仍有问题可能是模型文件不完整或安装出现问题。
+
+Q: Python显示：OpenCV Error: Assertion failed (VScn::contains(scn) &amp;&amp; VDcn::contains(dcn) &amp;&amp; VDepth::contains(depth)) in CvtHelper... line 253
+A: 找不到图像路径。可print(image)来确定图像是否存在。
+
+Q: 输出图像偶尔卡住反复出现两三帧如何解决？
+A: 请拔出USB并重新连接，在未来版本将解决此问题。
+
+Q: 如何更换模型或同一时间跑多个模型？
+A: 目前更换模型需要重新连接USB，所以仍无法同时运行多个模型，但未来计划将会更新支持多个模型之间切换以及更便利高效的Pipeline模式。另外当前支持连接多个角蜂鸟进行集联，即可并行执行不同的任务。
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/Docs/cn/installation/" title="安装说明"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/Docs/cn/model/" title="模型列表" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Docs/js/clipboard.min.js?1530279882"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1530279882"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1530279882"></script>
+    <script src="/Docs/js/jquery.sticky.js?1530279882"></script>
+    <script src="/Docs/js/featherlight.min.js?1530279882"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1530279882"></script>
+    <script src="/Docs/js/highlight.pack.js?1530279882"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1530279882"></script>
+    <script src="/Docs/js/learn.js?1530279882"></script>
+    <script src="/Docs/js/hugo-learn.js?1530279882"></script>
+
+    <link href="/Docs/mermaid/mermaid.css?1530279882" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1530279882"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>

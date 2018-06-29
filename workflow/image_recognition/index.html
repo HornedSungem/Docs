@@ -3,28 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.40.3" />
+    <meta name="generator" content="Hugo 0.41" />
     <meta name="description" content="">
 
 
     <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
-    <title>图像识别器（底层API教程） :: Horned Sungem Documentation</title>
+    <title>Image Recogniser (Low-level API Tutorial) :: Horned Sungem Documentation</title>
     
     
-    <link href="/Docs/css/nucleus.css?1527321706" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1527321706" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1527321706" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1527321706" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1527321706" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1527321706" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1527321706" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1527321706" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1530279882" rel="stylesheet">
     
-      <link href="/Docs/css/theme-mine.css?1527321706" rel="stylesheet">
+      <link href="/Docs/css/theme-mine.css?1530279882" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1527321706"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1530279882"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1527321706"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1527321706"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1530279882"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1530279882"></script>
 <script type="text/javascript">
     
-        var baseurl = '\/Docs';
+        var baseurl = "\/Docs";
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1527321706"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1530279882"></script>
 
     
   </div>
@@ -76,13 +76,13 @@
  
   
     
-    <li data-nav-id="/Docs/installation/" title="安装说明" class="dd-item 
+    <li data-nav-id="/Docs/installation/" title="Installation Guide" class="dd-item 
         
         
         
         ">
       <a href="/Docs/installation/">
-          安装说明
+          Installation Guide
           
       </a>
       
@@ -98,13 +98,13 @@
  
   
     
-    <li data-nav-id="/Docs/quickstart/" title="使用入门" class="dd-item 
+    <li data-nav-id="/Docs/quickstart/" title="Quick Start" class="dd-item 
         
         
         
         ">
       <a href="/Docs/quickstart/">
-          使用入门
+          Quick Start
           
       </a>
       
@@ -120,13 +120,13 @@
  
   
     
-    <li data-nav-id="/Docs/model/" title="模型列表" class="dd-item 
+    <li data-nav-id="/Docs/model/" title="Model List" class="dd-item 
         
         
         
         ">
       <a href="/Docs/model/">
-          模型列表
+          Model List
           
       </a>
       
@@ -142,13 +142,13 @@
  
   
     
-    <li data-nav-id="/Docs/workflow/" title="实例教程" class="dd-item 
+    <li data-nav-id="/Docs/workflow/" title="Example and Tutorials" class="dd-item 
         parent
         
         
         ">
       <a href="/Docs/workflow/">
-          实例教程
+          Example and Tutorials
           
       </a>
       
@@ -169,9 +169,9 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/detector/" title="人脸检测" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/detector/" title="Face detector" class="dd-item ">
         <a href="/Docs/workflow/detector/">
-        人脸检测
+        Face detector
         
         </a>
     </li>
@@ -188,9 +188,9 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/detector_object/" title="物体检测" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/detector_object/" title="Object Detector" class="dd-item ">
         <a href="/Docs/workflow/detector_object/">
-        物体检测
+        Object Detector
         
         </a>
     </li>
@@ -207,9 +207,9 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/recorder/" title="情景记录器" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/recorder/" title="Scene Recorder" class="dd-item ">
         <a href="/Docs/workflow/recorder/">
-        情景记录器
+        Scene Recorder
         
         </a>
     </li>
@@ -226,9 +226,28 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/image_recognition/" title="图像识别器（底层API教程）" class="dd-item active">
+      <li data-nav-id="/Docs/workflow/face_recognition/" title="Face recorder (Working with two HS devices)" class="dd-item ">
+        <a href="/Docs/workflow/face_recognition/">
+        Face recorder (Working with two HS devices)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/image_recognition/" title="Image Recogniser (Low-level API Tutorial)" class="dd-item active">
         <a href="/Docs/workflow/image_recognition/">
-        图像识别器（底层API教程）
+        Image Recogniser (Low-level API Tutorial)
         
         </a>
     </li>
@@ -245,9 +264,9 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/rapiro/" title="奥松机器人" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/rapiro/" title="Rapiro Robot" class="dd-item ">
         <a href="/Docs/workflow/rapiro/">
-        奥松机器人
+        Rapiro Robot
         
         </a>
     </li>
@@ -264,9 +283,9 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/smartlamp/" title="智能台灯" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/smartlamp/" title="Smart Lamp" class="dd-item ">
         <a href="/Docs/workflow/smartlamp/">
-        智能台灯
+        Smart Lamp
         
         </a>
     </li>
@@ -283,9 +302,9 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/sitting_pose/" title="坐姿提醒" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/sitting_pose/" title="Sitting posture alarm" class="dd-item ">
         <a href="/Docs/workflow/sitting_pose/">
-        坐姿提醒
+        Sitting posture alarm
         
         </a>
     </li>
@@ -302,9 +321,9 @@
  
   
     
-      <li data-nav-id="/Docs/workflow/raspi_car/" title="树莓派小车" class="dd-item ">
+      <li data-nav-id="/Docs/workflow/raspi_car/" title="Raspberry Pi Toy Car" class="dd-item ">
         <a href="/Docs/workflow/raspi_car/">
-        树莓派小车
+        Raspberry Pi Toy Car
         
         </a>
     </li>
@@ -457,13 +476,13 @@
  
   
     
-    <li data-nav-id="/Docs/api/" title="角蜂鸟API" class="dd-item 
+    <li data-nav-id="/Docs/api/" title="HS-API" class="dd-item 
         
         
         
         ">
       <a href="/Docs/api/">
-          角蜂鸟API
+          HS-API
           
       </a>
       
@@ -501,9 +520,9 @@
  
   
     
-      <li data-nav-id="/Docs/api/highlevel/" title="高层API" class="dd-item ">
+      <li data-nav-id="/Docs/api/highlevel/" title="High-level API" class="dd-item ">
         <a href="/Docs/api/highlevel/">
-        高层API
+        High-level API
         
         </a>
     </li>
@@ -546,13 +565,13 @@
  
   
     
-    <li data-nav-id="/Docs/contact/" title="联系我们" class="dd-item 
+    <li data-nav-id="/Docs/contact/" title="Contact us" class="dd-item 
         
         
         
         ">
       <a href="/Docs/contact/">
-          联系我们
+          Contact us
           
       </a>
       
@@ -568,6 +587,60 @@
     
     
 
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/Docs/workflow/image_recognition/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="/Docs/cn/workflow/image_recognition/">Chinese</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
     
     <section id="footer">
       <a class="github-button" href="https://github.com/HornedSungem/SungemSDK" data-icon="octicon-cloud-download" aria-label="Download Horned Sungem SDK on GitHub">Github Link</a>
@@ -609,7 +682,7 @@
             
           
           
-            <a href='/Docs/'>角蜂鸟使用手册与文档</a> > <a href='/Docs/workflow/'>实例教程</a> > 图像识别器（底层API教程）
+            <a href='/Docs/'>Horned Sungem Documentation</a> > <a href='/Docs/workflow/'>Example and Tutorials</a> > Image Recogniser (Low-level API Tutorial)
           
          
           
@@ -625,17 +698,17 @@
 <ul>
 <li>
 <ul>
-<li><a href="#squeezenet-1000类图像识别器">SqueezeNet 1000类图像识别器</a>
+<li><a href="#squeezenet-1000-classes-image-classifier">SqueezeNet 1000 Classes Image Classifier</a>
 <ul>
-<li><a href="#路径和文件">路径和文件</a></li>
-<li><a href="#图像识别-image-recognition">图像识别 Image Recognition</a></li>
-<li><a href="#参数设置">参数设置</a>
+<li><a href="#path-and-files">Path and files</a></li>
+<li><a href="#image-recognition">Image Recognition</a></li>
+<li><a href="#parameter-setting">Parameter setting</a>
 <ul>
 <li>
 <ul>
-<li><a href="#初始化">初始化</a></li>
-<li><a href="#图像识别">图像识别</a></li>
-<li><a href="#可视化">可视化</a></li>
+<li><a href="#initialisation">Initialisation</a></li>
+<li><a href="#image-classification">Image classification</a></li>
+<li><a href="#visualisation">Visualisation</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -653,7 +726,7 @@
         
         <div id="body-inner">
           
-            <h1>图像识别器（底层API教程）</h1>
+            <h1>Image Recogniser (Low-level API Tutorial)</h1>
           
 
         
@@ -661,111 +734,102 @@
 
 
 
-<h2 id="squeezenet-1000类图像识别器">SqueezeNet 1000类图像识别器</h2>
+<h2 id="squeezenet-1000-classes-image-classifier">SqueezeNet 1000 Classes Image Classifier</h2>
 
 <hr />
 
-<p>本章为您介绍如何使用角蜂鸟在Python调用底层API实现基于SqueezeNet的图像识别器。</p>
-
-<p>比起检测器，识别器可从图片分析得到较细的分类类别，例如猫、狗的某个品种。</p>
+<p>This chapter introduces how to build an image classifier by using low-level API only.</p>
 
 <ul>
-<li>本教程基于Ubuntu 16.04系统</li>
+<li>Tested on Ubuntu 16.04</li>
 </ul>
 
 <hr />
 
-<h3 id="路径和文件">路径和文件</h3>
+<h3 id="path-and-files">Path and files</h3>
 
 <ul>
-<li>人脸识别Python：<strong>SungemSDK/examples/python/ImageRecognition.py</strong></li>
-<li>模型文件：<strong>SungemSDK/examples/graphs/graph_sz</strong></li>
+<li>Python：<strong>SungemSDK/examples/python/ImageRecognition.py</strong></li>
+<li>Model file：<strong>SungemSDK/examples/graphs/graph_sz</strong></li>
 </ul>
 
 <hr />
 
-<h3 id="图像识别-image-recognition">图像识别 Image Recognition</h3>
+<h3 id="image-recognition">Image Recognition</h3>
 
-<p>在<strong>python</strong>目录下执行以下命令来启动 <em>图像识别</em> 范例。</p>
+<p>run <em>image recogniser</em> with the following command under <strong>python</strong> directory</p>
 
 <pre><code>~/SungemSDK/examples/python$ python3 ImageRecognition.py
 </code></pre>
 
-<p>识别目标图像为青色框中区域(ROI)的图像部分。通过按 <strong>&lsquo;w&rsquo;</strong> 与 <strong>&rsquo;s&rsquo;</strong> 可调整 ROI 的大小。</p>
+<p>The region-of-interest is highlighted with a cyan bounding box. You can adjust the size by pressing &lsquo;w&rsquo; and &rsquo;s&rsquo;.</p>
 
-<p>得到 <strong>Top5</strong> 结果例如: 属于计算机键盘概率98.39%、空格1.40%、打字机键盘0.22%、笔记本0.03%、仓鼠0.00%。
+<p>Get <strong>Top5</strong> classification result, as shown in the example.
 <img src="/Docs/media/img/ImageRecognition.png" alt="Image Recognition" /></p>
 
-<p>因为调用全部函数为底层API，终端不显示任何提示。</p>
+<p>No message displayed on the console as we are using low-level API</p>
 
-<h3 id="参数设置">参数设置</h3>
+<h3 id="parameter-setting">Parameter setting</h3>
 
-<h5 id="初始化">初始化</h5>
+<h5 id="initialisation">Initialisation</h5>
 
 <pre><code class="language-python">
-# Load device （载入设备）
+# Load device
 devices = hs.EnumerateDevices()
 dev = hs.Device(devices[0])
 dev.OpenDevice()
 
-# Load CNN model （载入模型）
+# Load CNN model
 with open('../graphs/graph_sz', mode='rb') as f:
 	b = f.read()
 graph = dev.AllocateGraph(b)
 dim = (227,227)
 
-# Load classes （载入分类标签）
+# Load class labels
 classes=np.loadtxt('../misc/image_category.txt',str,delimiter='\t')
 
-# Set camera mode (摄像头模式）
+# Set camera mode
 if WEBCAM: video_capture = cv2.VideoCapture(0)
 
 </code></pre>
 
-<p>两种模式（WEBCAM）：</p>
-
-<ul>
-<li>True时使用外接USB摄像头</li>
-<li>False时使用角蜂鸟内置摄像头</li>
-</ul>
-
-<h5 id="图像识别">图像识别</h5>
+<h5 id="image-classification">Image classification</h5>
 
 <pre><code class="language-python">
-# 裁切出ROI区域
+# Crop ROI
 sz = image_raw.shape
 cx = int(sz[0]/2)
 cy = int(sz[1]/2)
 ROI = int(sz[0]*ROI_ratio)
 cropped = image_raw[cx-ROI:cx+ROI,cy-ROI:cy+ROI,:]
 	
-# 前处理
+# Preprocessing
 cropped = cropped.astype(np.float32)
 cropped[:,:,0] = (cropped[:,:,0] - 104)
 cropped[:,:,1] = (cropped[:,:,1] - 117)
 cropped[:,:,2] = (cropped[:,:,2] - 123)
 
-# 图像数据传入角蜂鸟并排序分类结果
+# Load to HS device and sort result
 graph.LoadTensor(cv2.resize(cropped,dim).astype(np.float16), 'user object')
 output, userobj = graph.GetResult()
 output_label = output.argsort()[::-1][:5]
 </code></pre>
 
-<h5 id="可视化">可视化</h5>
+<h5 id="visualisation">Visualisation</h5>
 
 <pre><code class="language-python">
-# 输出文字
+# Display outcome
 for i in range(5):
 	label = re.search(&quot;n[0-9]+\s([^,]+)&quot;, classes[output_label[i]]).groups(1)[0]
 	cv2.putText(image_raw, &quot;%s %0.2f %%&quot; % (label, output[output_label[i]]*100), (20, 50+i*30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
 
-# 画框
+# Plot bounding box
 cv2.rectangle(image_raw, (cy-ROI, cx-ROI), (cy+ROI, cx+ROI),(255,255,0), 5)
 
-# 显示图像
+# Display result image
 cv2.imshow('Result',image_raw)
 
-# 检测键盘输入
+# Detect keyboard press
 key = cv2.waitKey(1)
 if key == ord('w'):
 	ROI_ratio += 0.1
@@ -775,8 +839,6 @@ if ROI_ratio &lt; 0.1:
 	ROI_ratio = 0.1
 	
 </code></pre>
-
-<p>输入result，输出画框之后的图像。之后通过OpenCV函数来显示图像。</p>
 
 
 <footer class=" footline" >
@@ -933,6 +995,22 @@ if ROI_ratio &lt; 0.1:
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1198,10 +1276,10 @@ if ROI_ratio &lt; 0.1:
 
 
         
-            <a class="nav nav-prev" href="/Docs/workflow/recorder/" title="情景记录器"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/Docs/workflow/face_recognition/" title="Face recorder (Working with two HS devices)"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/Docs/workflow/rapiro/" title="奥松机器人" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/Docs/workflow/rapiro/" title="Rapiro Robot" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1210,20 +1288,20 @@ if ROI_ratio &lt; 0.1:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1527321706"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1527321706"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1527321706"></script>
-    <script src="/Docs/js/jquery.sticky.js?1527321706"></script>
-    <script src="/Docs/js/featherlight.min.js?1527321706"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1527321706"></script>
-    <script src="/Docs/js/highlight.pack.js?1527321706"></script>
+    <script src="/Docs/js/clipboard.min.js?1530279882"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1530279882"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1530279882"></script>
+    <script src="/Docs/js/jquery.sticky.js?1530279882"></script>
+    <script src="/Docs/js/featherlight.min.js?1530279882"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1530279882"></script>
+    <script src="/Docs/js/highlight.pack.js?1530279882"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1527321706"></script>
-    <script src="/Docs/js/learn.js?1527321706"></script>
-    <script src="/Docs/js/hugo-learn.js?1527321706"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1530279882"></script>
+    <script src="/Docs/js/learn.js?1530279882"></script>
+    <script src="/Docs/js/hugo-learn.js?1530279882"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1527321706" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1527321706"></script>
+    <link href="/Docs/mermaid/mermaid.css?1530279882" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1530279882"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

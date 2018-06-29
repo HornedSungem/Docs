@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>角蜂鸟API on Horned Sungem Documentation</title>
+    <title>HS-API on Horned Sungem Documentation</title>
     <link>https://hornedsungem.github.io/Docs/api/</link>
-    <description>Recent content in 角蜂鸟API on Horned Sungem Documentation</description>
+    <description>Recent content in HS-API on Horned Sungem Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://hornedsungem.github.io/Docs/api/index.xml" rel="self" type="application/rss+xml" />
@@ -29,26 +29,20 @@ The GlobalOption class is an enumeration class that defines the options that are
     </item>
     
     <item>
-      <title>高层API</title>
+      <title>High-level API</title>
       <link>https://hornedsungem.github.io/Docs/api/highlevel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/api/highlevel/</guid>
-      <description>Horned Sungem High Level API Version 0.1.0 通用高层函数 HS.__init__()  版本 Version: 0.1.0
- 总览 Overview: 初始化角蜂鸟高层接口。
- 语法 Syntax:
-  hs.HS(modelName, **kwargs)   参数 Parameters:
- modelName: 内置模型名称。
- **kwargs 关键字参数: (Optional)
- &amp;lsquo;verbose&amp;rsquo; 显示信息详细程度：从0到2分别为无信息、关键信息、全部信息。默认为2。
- &amp;lsquo;mean&amp;rsquo; 模型前处理均值。默认为1.0
- &amp;lsquo;scale&amp;rsquo; 模型前处理尺度。默认为0.007843 （1/127.5）
- &amp;lsquo;graphFolder&amp;rsquo; 模型文件夹路径。 默认为 &amp;lsquo;../graphs/&amp;rsquo;
- &amp;lsquo;zoom&amp;rsquo; 为True时图像尺寸为640x360，False时1920x1080。默认为True。
- &amp;lsquo;labels&amp;rsquo; 使用SSD时是否使用自定义标签。默认为None。未来开放自定义模型时可更改。
- &amp;lsquo;threshSSD&amp;rsquo; 使用SSD时的阈值，范围为0-1。 默认为0.55。
-   返回 Return: 返回已加载模型的HS Object实例。
- 范例 Example:</description>
+      <description>Horned Sungem High Level API Version 0.1.0 HS.__init__()  Version: 0.1.0
+ Overview: initialisation
+ Syntax:
+  hs.HS(modelName, **kwargs)   Parameters:
+ modelName: built-in models&amp;rsquo; name
+ **kwargs key arguments: (Optional)
+ &amp;lsquo;verbose&amp;rsquo; Detail of log. From 0 to 2: no log, key log, full log. Default is 2
+ &amp;lsquo;mean&amp;rsquo; Mean value in preprocessing. Default is 1.0
+ &amp;lsquo;scale&amp;rsquo; Scale value in preprocessing. Default is 0.007843 (1&amp;frasl;127.</description>
     </item>
     
     <item>

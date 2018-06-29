@@ -1,115 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/detector/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/installation/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/detector_object/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/quickstart/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/recorder/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/image_recognition/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/rapiro/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/smartlamp/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/model/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/sitting_pose/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/api/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/raspi_car/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/android/android_hello2018/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/android/android_face_detector/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/android/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/android/android_object_detector/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/android/android_sketchguess/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/api/lowlevel/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/api/highlevel/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/api/android/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/contact/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/_footer/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/ocr/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	
+	<sitemap>
+	   	<loc>https://hornedsungem.github.io/Docs/en/sitemap.xml</loc>
+		
+	</sitemap>
+	
+	<sitemap>
+	   	<loc>https://hornedsungem.github.io/Docs/cn/sitemap.xml</loc>
+		
+	</sitemap>
+	
+</sitemapindex>
