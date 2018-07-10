@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
-    <title>联系我们 :: 角蜂鸟中文文档</title>
+    <title>Android Java API :: 角蜂鸟中文文档</title>
     
     
     <link href="/Docs/css/nucleus.css?1531217010" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/Docs/cn/contact/">
+  <body class="" data-url="/Docs/cn/api/android/">
     <nav id="sidebar" class="">
 
 
@@ -346,7 +346,7 @@
   
     
     <li data-nav-id="/Docs/cn/api/" title="角蜂鸟API" class="dd-item 
-        
+        parent
         
         
         ">
@@ -408,7 +408,7 @@
  
   
     
-      <li data-nav-id="/Docs/cn/api/android/" title="Android Java API" class="dd-item ">
+      <li data-nav-id="/Docs/cn/api/android/" title="Android Java API" class="dd-item active">
         <a href="/Docs/cn/api/android/">
         Android Java API
         
@@ -435,8 +435,8 @@
   
     
     <li data-nav-id="/Docs/cn/contact/" title="联系我们" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/Docs/cn/contact/">
@@ -474,7 +474,7 @@
                   
                     
                     
-                      <option id="en" value="/Docs/contact/">English</option>
+                      <option id="en" value="/Docs/api/android/">English</option>
                     
                   
               
@@ -488,7 +488,7 @@
                   
                     
                     
-                      <option id="cn" value="/Docs/cn/contact/" selected>Chinese</option>
+                      <option id="cn" value="/Docs/cn/api/android/" selected>Chinese</option>
                     
                   
               
@@ -545,7 +545,13 @@
             
           
           
-            <a href='/Docs/cn/'>角蜂鸟使用手册与文档</a> > 联系我们
+            
+            
+          
+          
+            <a href='/Docs/cn/'>角蜂鸟使用手册与文档</a> > <a href='/Docs/cn/api/'>角蜂鸟API</a> > Android Java API
+          
+         
           
          
           
@@ -568,22 +574,319 @@
 
 
 
-<h2 id="联系我们">联系我们</h2>
+<h1 id="sungemsdk-android-api">SungemSDK Android API</h1>
+
+<h3 id="version-0-1-0">Version 0.1.0</h3>
+
+<h2 id="hsthread类相关函数及属性">HsThread类相关函数及属性</h2>
+
+<p>当前类是跟角蜂鸟交互的子线程，开发者可继承该类进行功能扩展</p>
+
+<h3 id="类内主要变量">类内主要变量：</h3>
+
+<pre><code>-  mHandler:用于处理线程中的消息循环，通知主线程执行UI的更新
+-  mActivity:当前线程绑定的activity,可用于跳转，获取资源等
+-  mHsApi:与角蜂鸟通信的主要api类，可调用类里对应函数执行相应操作
+</code></pre>
+
+<h3 id="相关函数">相关函数</h3>
+
+<ol>
+<li><p><strong>allocateGraph(filename)</strong> ：此函数是传送一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能</p>
+
+<ul>
+<li>参数 Parameters：</li>
+<li>filename（String类型） 文件绝对路径<br /></li>
+<li>返回 return:返回操作状态 （状态声明都在HsConnectApi里）</li>
+<li>HS_OK值为0，表示成功</li>
+<li>HS_ERROR值为-2，表示加载失败</li>
+<li>HS_UNSUPPORTED_GRAPH_FILE值为-10,表示不支持的模型文件</li>
+<li>HS_NO_FILE值为-12，表示filename路径有误，没有文件</li>
+<li>Example用法:</li>
+</ul>
+
+<pre><code>int status=allocateGraph(Environment.getExternalStorageDirectory().getAbsolutePath() + "/hs/" + "graph_face_SSD");
+</code></pre></li>
+
+<li><p><strong>allocateGraphByAssets(filename)</strong> :与上述方法功能相似，区别在于参数表示在android工程assets包下的文件</p>
+
+<ul>
+<li>Example用法:</li>
+</ul>
+
+<p><pre><code>int status = allocateGraphByAssets(&ldquo;graph_face_SSD&rdquo;);
+ </code></pre></p></li>
+
+<li><p><strong>close()</strong>: 线程关闭时调用，执行操作包括：deallocate模型,关闭角蜂鸟设备等</p>
+
+<ul>
+<li>无参数</li>
+<li>Example：示例代码</li>
+</ul>
+
+<pre><code>
+if (mHsThread != null) {
+   mHsThread.setRunning(false);
+   mHsThread.close();
+ }
+</code></pre></li>
+
+<li><p><strong>setZoom( zoom)</strong>：设置获取角蜂鸟的图像分辨率大小，用于处理得到数据，设置图像宽高等</p>
+
+<ul>
+<li>参数 zoom(boolean类型):</li>
+<li>true:设置为true,获取分辨率为640*360</li>
+<li>false:设置为false,获取分辨率为1920*1080</li>
+</ul></li>
+</ol>
 
 <hr />
 
-<p>感谢您使用角蜂鸟！</p>
+<h2 id="hsconnectapi类相关属性及函数">HsConnectApi类相关属性及函数</h2>
 
-<p><a href="http://www.hornedsungem.org">官网地址</a></p>
+<p>当前类跟角蜂鸟直接交互，定义了许多变量标识，传送，获取图像及得到返回结果等函数</p>
 
-<p>如在使用过程中遇见问题，请先参考<a href="/Docs/quickstart">新手入门</a>中的疑难解答Q&amp;A部分。仍无法解决或Bug提交可通过邮件(<a href="mailto:support@hornedsungem.org">support@hornedsungem.org</a>)或<a href="https://github.com/HornedSungem/SungemSDK">Github</a>的<a href="https://github.com/HornedSungem/SungemSDK/issues">Issue</a>与我们进行沟通。</p>
+<h3 id="重要状态参数">重要状态参数</h3>
 
-<p>如有任何建议、模型需求或希望加入我们也欢迎和我们联系。</p>
+<ul>
+<li>HS_OK ：正常</li>
+<li>HS_BUSY ：队列正忙</li>
+<li>HS_ERROR ：发送异常</li>
+<li>HS_NO_FILE ：没有索引到文件</li>
+<li>HS_UNSUPPORTED_GRAPH_FILE ：不支持的graph文件</li>
+<li>STATUS_WAIT_TIMEOUT ： 等待命令超时时间</li>
+</ul>
+
+<h3 id="相关函数-1">相关函数</h3>
+
+<ol>
+<li><p><strong>getImage(stdValue,meanValue,truthy)</strong>:获取角蜂鸟上摄像头图像</p>
+
+<ul>
+<li>参数 Parameters：
+
+<ul>
+<li>stdValue（float类型）:默认值为0.007843f</li>
+<li>meanValue（float类型）:默认值为-0.9999825f</li>
+<li>truthy（boolean类型）： 用于控制接收图像的大小</li>
+<li>ture：接收640*360的3通道图像</li>
+<li>false：接收1920*1080的3通道图像</li>
+</ul></li>
+
+<li><p>返回 return:返回 byte[] ，表示该图像的原始数据</p>
+
+<ul>
+<li>如果参数truthy为true: byte[]大小为640*360*3，得到bgr的图像，示例代码如下：</li>
+</ul></li>
+</ul>
+
+<p><pre><code>
+  byte[] bytes = mHsApi.getImage(STD, MEAN, true);
+  int  FRAME_W = 640;
+  int  FRAME_H = 360;
+  opencv_core.IplImage  bgrImage = opencv_core.IplImage.create(FRAME_W, FRAME_H, opencv_core.IPL_DEPTH_8U, 3);
+  bgrImage.getByteBuffer().put(bytes);
+  </code></pre></p>
+
+<ul>
+<li>如果参数truthy为false: byte[]大小为1920*1080*3 rgb图像顺序排列，需要作对应转化才能显示正确，转化代码如下</li>
+</ul>
+
+<p><pre><code>
+  byte[] bytes = mHsApi.getImage(STD, MEAN, false);
+  int FRAME_W = 1920;
+  int FRAME_H = 1080;
+  byte[] bytes_rgb = new byte[FRAME_W * FRAME_H * 3];
+  for (int i = 0; i &lt; FRAME_H * FRAME_W; i++) {
+      bytes_rgb[i * 3 + 2] = bytes[i];//r
+      bytes_rgb[i * 3 + 1] = bytes[FRAME_W * FRAME_H + i];//g
+      bytes_rgb[i * 3] = bytes[FRAME_W * FRAME_H * 2 + i];//b
+  }
+  opencv_core.IplImage bgrImage = opencv_core.IplImage.create(FRAME_W, FRAME_H, opencv_core.IPL_DEPTH_8U, 3);
+  bgrImage.getByteBuffer().put(bytes_rgb);
+  </code></pre></p></li>
+
+<li><p><strong>deviceGetImage(truthy)</strong>:从树莓派摄像头里取出图像</p>
+
+<ul>
+<li>参数 Parameters：</li>
+<li>truthy(boolean类型):控制接受图像的大小
+
+<ul>
+<li>true:接收640*360的3通道图像</li>
+<li>false:接收1920*1080的3通道图像</li>
+</ul></li>
+<li>返回 return:返回图像byte[],表示图像的原始数据，<strong>返回值跟getImage()函数相似，此处就不具体阐述</strong></li>
+</ul></li>
+
+<li><p><strong>loadTensor(inputTensor,length,userObj)</strong>：把外部的图像或数据传送给角蜂鸟</p></li>
+</ol>
+
+<p><strong>该方法重载，可根据开发者使用参数不同选择对应函数</strong></p>
+
+<ul>
+<li><p>参数 Parameters：</p>
+
+<ul>
+<li>inputTensor（float[]或byte[]类型）：传送的数据</li>
+<li>length(int类型):传送数据数组的大小，默认数组index从0开始</li>
+<li>userObj(int类型)：<strong>用户配置参数，当前版本未使用，可随意填写</strong></li>
+</ul></li>
+
+<li><p>返回 return:返回该函数执行后状态</p>
+
+<ul>
+<li>HS_ERROR:读写发生异常<br /></li>
+<li>HS_BUSY:当前设备正忙，操作失败</li>
+<li>HS_OK:正常</li>
+</ul></li>
+
+<li><p>Example：此处采用hello2018的示例代码</p>
+
+<pre><code>
+for (int i = 1; i < 5; i++) {
+    int[] ints = new int[28 * 28];
+    try {
+        InputStream inputStream = mActivity.getAssets().open("hello/" + i + ".jpg");
+        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+        bitmap.getPixels(ints, 0, 28, 0, 0, 28, 28);
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    float[] float_tensor = new float[28 * 28];
+    for (int j = 0; j < 28 * 28; j++) {
+        float_tensor[j] = Color.red(ints[j]) * 0.007843f - 1;
+    }
+    int status_load = mHsApi.loadTensor(float_tensor, float_tensor.length, 0);
+    if (status_load == HsConnectApi.HS_OK) {
+        float[] result = mHsApi.getResult(0);
+        if (result != null) {
+            int max = getMaxPossible(result);
+            mHandler.sendEmptyMessage(max);
+        }
+    }
+}
+</code></pre></li>
+</ul>
+
+<ol>
+<li><p><strong>getResult(userObj)</strong>:获取图像处理后的返回结果</p>
+
+<ul>
+<li>参数 Parameters：</li>
+<li>userObj(int类型)：<strong>用户配置参数，当前版本未使用，可随意填写</strong></li>
+<li>基本用法 Example：</li>
+</ul>
+
+<pre><code>  float[] result = mHsApi.getResult(0);
+</code></pre>
+
+<ul>
+<li>返回 return：返回float[] 根据使用神经网络不同，返回数组长度和后续使用也不尽相同</li>
+<li>人脸及物体检测返回结果处理：</li>
+</ul>
+
+<p><pre><code><br />
+  //结果处理
+  int num = (int) floats[0];//第一个数为检测到的个数
+  if (num &gt; 0) {
+      for (int i = 0; i &lt; num; i++) {
+          int type = (int) (floats[7 * (i + 1) + 1]);//类别
+          int x1 = (int) (floats[7 * (i + 1) + 3] * FRAME_W);
+          int y1 = (int) (floats[7 * (i + 1) + 4] * FRAME_H);
+          int x2 = (int) (floats[7 * (i + 1) + 5] * FRAME_W);
+          int y2 = (int) (floats[7 * (i + 1) + 6] * FRAME_H);
+          int wight = x2 - x1;
+          int height = y2 - y1;
+          //如果有值不满足条件，这组数据干掉
+          int percentage = (int) (floats[7 * (i + 1) + 2] * 100);//置信度
+          if (percentage &lt;= MIN_SCORE_PERCENT) {
+            continue;
+          }
+          if (wight &gt;= FRAME_W * 0.8 || height &gt;= FRAME_H * 0.8) {
+            continue;
+          }
+          if (x1 &lt; 0 || x2 &lt; 0 || y1 &lt; 0 || y2 &lt; 0 || wight &lt; 0 || height &lt; 0) {
+            continue;
+          }
+      }
+  }
+  </code></pre>
+2. 数字识别返回结果处理：返回10个float数，分别对应0-9的置信度
+3. 简笔画识别返回结果处理：返回345个float值，分别对应345种物体的置信度，详情可见<a href="https://hornedsungem.github.io/Docs/workflow/">手绘识别</a>文档</p></li>
+</ol>
+
+<hr />
+
+<h2 id="hsbaseactivity相关属性及函数">HsBaseActivity相关属性及函数</h2>
+
+<p>该抽象类继承Activity，定义几个抽象回调函数用于各种行为处理，是开发者使用角蜂鸟的基础Activity</p>
+
+<h3 id="主要参数">主要参数</h3>
+
+<pre><code>- mUsbManager： UsbManager 用于控制USB的连接
+</code></pre>
+
+<h3 id="相关回调">相关回调</h3>
+
+<ol>
+<li><p><strong>openSucceed(usbLinkVsc)</strong>: 打开角蜂鸟设备以后的回调函数，主要用于进行通信，比如创建角蜂鸟线程，给出提醒等</p>
+
+<ul>
+<li>参数 Parameters：</li>
+<li>usbLinkVsc: SDK里封装的usb读写类，用于实例化hsThread需要的参数</li>
+<li>Example: 示例代码</li>
+</ul>
+
+<pre><code>
+@Override
+public void openSucceed(UsbLinkVsc usbLinkVsc) {
+    mTvTip.setVisibility(View.GONE);
+    mHsThread = new FaceDetectionThread(FaceDetectorActivity.this, usbLinkVsc, mHandler);
+    mHsThread.start();
+}
+</code></pre></li>
+
+<li><p><strong>openFailed()</strong>:打开角蜂鸟设备失败以后的回调函数，主要用于失败以后执行对应操作，比如提醒重新插拔角蜂鸟等</p>
+
+<ul>
+<li>无参数</li>
+<li>Example: 部分示例代码</li>
+</ul>
+
+<pre><code>
+@Override
+public void openFailed() {
+    mTvTip.setText("请重新插拔角蜂鸟允许权限");
+}
+</code></pre></li>
+
+<li><p><strong>disConnected()</strong>:拔掉角蜂鸟或usb接触有问题的回调函数，用于处理断开后的release操作，比如停止线程等</p>
+
+<ul>
+<li>无参数</li>
+<li>Example: 部分示例代码</li>
+</ul>
+
+<pre><code>
+@Override
+public void disConnected() {
+    Toast.makeText(this, "断开连接", Toast.LENGTH_SHORT).show();
+    if (mHsThread != null) {
+      mHsThread.setRunning(false);
+      mHsThread.close();
+    }
+}
+</code></pre></li>
+</ol>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
             </div> 
@@ -829,6 +1132,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -836,6 +1140,25 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -858,21 +1181,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -893,6 +1201,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -912,10 +1222,10 @@
 
 
         
-            <a class="nav nav-prev" href="/Docs/cn/api/android/" title="Android Java API"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/Docs/cn/api/highlevel/" title="高层API"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/Docs/cn/installation/" title="安装说明" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/Docs/cn/contact/" title="联系我们" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -945,3 +1255,4 @@
 
   </body>
 </html>
+

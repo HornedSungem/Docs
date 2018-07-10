@@ -161,7 +161,7 @@ public class HelloActivity extends HsBaseActivity { private TextView mTextView; 
     </item>
     
     <item>
-      <title>底层API (英文）</title>
+      <title>Low Level API</title>
       <link>https://hornedsungem.github.io/Docs/api/lowlevel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -197,7 +197,7 @@ The GlobalOption class is an enumeration class that defines the options that are
     </item>
     
     <item>
-      <title>Android Java API</title>
+      <title>Android Java API (Chinese)</title>
       <link>https://hornedsungem.github.io/Docs/api/android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

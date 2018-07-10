@@ -213,6 +213,20 @@
   </url>
   
   <url>
+    <loc>https://hornedsungem.github.io/Docs/cn/api/lowlevel/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/api/lowlevel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/api/lowlevel/"
+                />
+  </url>
+  
+  <url>
     <loc>https://hornedsungem.github.io/Docs/cn/api/highlevel/</loc>
     <xhtml:link
                 rel="alternate"
@@ -223,6 +237,20 @@
                 rel="alternate"
                 hreflang="cn"
                 href="https://hornedsungem.github.io/Docs/cn/api/highlevel/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/cn/api/android/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/api/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/api/android/"
                 />
   </url>
   
