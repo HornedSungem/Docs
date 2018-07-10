@@ -12,19 +12,19 @@
     <title>Quick Start :: Horned Sungem Documentation</title>
     
     
-    <link href="/Docs/css/nucleus.css?1530279882" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1530279882" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1530279882" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1530279882" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1530279882" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1530279882" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1530279882" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1530279882" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1531215145" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1531215145" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1531215145" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1531215145" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1531215145" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1531215145" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1531215145" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1531215145" rel="stylesheet">
     
-      <link href="/Docs/css/theme-mine.css?1530279882" rel="stylesheet">
+      <link href="/Docs/css/theme-mine.css?1531215145" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1530279882"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1531215145"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1530279882"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1530279882"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1531215145"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1531215145"></script>
 <script type="text/javascript">
     
         var baseurl = "\/Docs";
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1530279882"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1531215145"></script>
 
     
   </div>
@@ -142,13 +142,13 @@
  
   
     
-    <li data-nav-id="/Docs/workflow/" title="Example and Tutorials" class="dd-item 
+    <li data-nav-id="/Docs/workflow/" title="Examples and Tutorials" class="dd-item 
         
         
         
         ">
       <a href="/Docs/workflow/">
-          Example and Tutorials
+          Examples and Tutorials
           
       </a>
       
@@ -709,12 +709,12 @@
     <img align="right" src="./2.jpg" width="28">
     <img align="right"  src="./1.jpg" width="28">
 </div>
-In this tutorial <em>Hello 2018</em>, we will introduce how to deploy a built-in CNN model in Python using HS, with only few lines of code!</p>
+In this tutorial <em>Hello 2018</em>, we will introduce how to deploy a built-in CNN model in Python using HS, with only a few lines of code!</p>
 
-<p>The goal is to identify four hand-written images: <strong>2018</strong>. So we are going to deploy a simple CNN model trained with MNIST hand-writing dataset.</p>
+<p>The goal is to identify four hand-written images of <strong>2018</strong>. We are going to deploy a simple CNN model trained with MNIST hand-writing dataset.</p>
 
 <ul>
-<li>This tutorial is based on Ubuntu 16.04 system</li>
+<li>This tutorial is based on Ubuntu 16.04</li>
 </ul>
 
 <hr />
@@ -724,8 +724,8 @@ In this tutorial <em>Hello 2018</em>, we will introduce how to deploy a built-in
 <p>Under the project directory <strong>SungemSDK/examples</strong>：</p>
 
 <ul>
-<li><strong>/graphs</strong>: store built-in CNN model files, modify or move the file may cause failure on a part of API.</li>
-<li><strong>/misc</strong>: store images, labels and other miscellaneous files.</li>
+<li><strong>/graphs</strong>: folder for built-in CNN model files, modification or removal of the files may cause failure on API.</li>
+<li><strong>/misc</strong>: folder for images, labels and other miscellaneous files.</li>
 <li><strong>/python</strong>: Python examples.</li>
 </ul>
 
@@ -733,12 +733,12 @@ In this tutorial <em>Hello 2018</em>, we will introduce how to deploy a built-in
 
 <h3 id="hello-2018">Hello 2018</h3>
 
-<p>Under <strong>python</strong> directory, exxcute the following command to run <em>Hello 2018</em> demo</p>
+<p>Under <strong>python</strong> directory, type the following commands to run <em>Hello 2018</em> demo</p>
 
 <pre><code>~/SungemSDK/examples/python$ python3 Hello2018.py
 </code></pre>
 
-<p>If everything goes fine, the following will be displayed:</p>
+<p>If everything goes well, the following will be displayed:</p>
 
 <pre><code>| ======= Horned Sungem ======== |
 |        Device found [0]        |
@@ -765,7 +765,7 @@ sys.path.append('../../api/')
 import hsapi as hs
 </code></pre>
 
-<p>initialising HS, built-in models and image root folder,</p>
+<p>initializing HS, built-in models and image root folder,</p>
 
 <pre><code class="language-python">net = hs.HS('mnist')
 imgRoot = '../misc/2018_mnist/%d.jpg'
@@ -794,7 +794,7 @@ for n in [1,2,3,4]:
 
 <h2 id="q-a">Q&amp;A</h2>
 
-<p>If your issue is still not solved , please contact us: <a href="mailto:support@hornedsungem.org">support@hornedsungem.org</a></p>
+<p>If you still have issues, please contact us at <a href="mailto:support@hornedsungem.org">support@hornedsungem.org</a></p>
 
 <pre><code>Q: Error: No devices found
 A: Please wait few seconds and try again, if doesn't work please try reconnect the ports.
@@ -1257,20 +1257,20 @@ A: Currently the device must be reset to load another model. Soon it will be sup
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1530279882"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1530279882"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1530279882"></script>
-    <script src="/Docs/js/jquery.sticky.js?1530279882"></script>
-    <script src="/Docs/js/featherlight.min.js?1530279882"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1530279882"></script>
-    <script src="/Docs/js/highlight.pack.js?1530279882"></script>
+    <script src="/Docs/js/clipboard.min.js?1531215145"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1531215145"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1531215145"></script>
+    <script src="/Docs/js/jquery.sticky.js?1531215145"></script>
+    <script src="/Docs/js/featherlight.min.js?1531215145"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1531215145"></script>
+    <script src="/Docs/js/highlight.pack.js?1531215145"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1530279882"></script>
-    <script src="/Docs/js/learn.js?1530279882"></script>
-    <script src="/Docs/js/hugo-learn.js?1530279882"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1531215145"></script>
+    <script src="/Docs/js/learn.js?1531215145"></script>
+    <script src="/Docs/js/hugo-learn.js?1531215145"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1530279882" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1530279882"></script>
+    <link href="/Docs/mermaid/mermaid.css?1531215145" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1531215145"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
