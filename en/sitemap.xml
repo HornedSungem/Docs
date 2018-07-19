@@ -3,20 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/detector/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/workflow/detector/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hornedsungem.github.io/Docs/workflow/detector/"
-                />
-  </url>
-  
-  <url>
     <loc>https://hornedsungem.github.io/Docs/installation/</loc>
     <xhtml:link
                 rel="alternate"
@@ -31,16 +17,30 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/detector_object/</loc>
+    <loc>https://hornedsungem.github.io/Docs/workflow/python/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/workflow/detector_object/"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/python/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://hornedsungem.github.io/Docs/workflow/detector_object/"
+                href="https://hornedsungem.github.io/Docs/workflow/python/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/python/detector/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/python/detector/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/python/detector/"
                 />
   </url>
   
@@ -73,58 +73,16 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/recorder/</loc>
+    <loc>https://hornedsungem.github.io/Docs/workflow/python/detector_object/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/workflow/recorder/"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/python/detector_object/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://hornedsungem.github.io/Docs/workflow/recorder/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/face_recognition/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/workflow/face_recognition/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hornedsungem.github.io/Docs/workflow/face_recognition/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/image_recognition/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/workflow/image_recognition/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hornedsungem.github.io/Docs/workflow/image_recognition/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/rapiro/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/workflow/rapiro/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hornedsungem.github.io/Docs/workflow/rapiro/"
+                href="https://hornedsungem.github.io/Docs/workflow/python/detector_object/"
                 />
   </url>
   
@@ -143,16 +101,16 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/smartlamp/</loc>
+    <loc>https://hornedsungem.github.io/Docs/workflow/python/recorder/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/workflow/smartlamp/"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/python/recorder/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://hornedsungem.github.io/Docs/workflow/smartlamp/"
+                href="https://hornedsungem.github.io/Docs/workflow/python/recorder/"
                 />
   </url>
   
@@ -185,51 +143,101 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/sitting_pose/</loc>
+    <loc>https://hornedsungem.github.io/Docs/workflow/python/image_recognition/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/workflow/sitting_pose/"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/python/image_recognition/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://hornedsungem.github.io/Docs/workflow/sitting_pose/"
+                href="https://hornedsungem.github.io/Docs/workflow/python/image_recognition/"
                 />
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/raspi_car/</loc>
+    <loc>https://hornedsungem.github.io/Docs/workflow/python/face_recognition/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/workflow/raspi_car/"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/python/face_recognition/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://hornedsungem.github.io/Docs/workflow/raspi_car/"
+                href="https://hornedsungem.github.io/Docs/workflow/python/face_recognition/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/android/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/android/"
                 />
   </url>
   
   <url>
     <loc>https://hornedsungem.github.io/Docs/workflow/android/android_hello2018/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/android/android_hello2018/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/android/android_hello2018/"
+                />
   </url>
   
   <url>
     <loc>https://hornedsungem.github.io/Docs/workflow/android/android_face_detector/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/android/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/android/android_face_detector/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/android/android_face_detector/"
+                />
   </url>
   
   <url>
     <loc>https://hornedsungem.github.io/Docs/workflow/android/android_object_detector/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/android/android_object_detector/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/android/android_object_detector/"
+                />
   </url>
   
   <url>
     <loc>https://hornedsungem.github.io/Docs/workflow/android/android_sketchguess/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/android/android_sketchguess/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/android/android_sketchguess/"
+                />
   </url>
   
   <url>
@@ -243,6 +251,34 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://hornedsungem.github.io/Docs/api/lowlevel/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/ros/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/ros/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/ros/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/ros/quickstart/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/ros/quickstart/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/ros/quickstart/"
                 />
   </url>
   
@@ -275,6 +311,76 @@
   </url>
   
   <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/diy/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/diy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/diy/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/diy/rapiro/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/diy/rapiro/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/diy/rapiro/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/diy/smartlamp/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/diy/smartlamp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/diy/smartlamp/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/diy/sitting_pose/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/diy/sitting_pose/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/diy/sitting_pose/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/diy/raspi_car/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/diy/raspi_car/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/diy/raspi_car/"
+                />
+  </url>
+  
+  <url>
     <loc>https://hornedsungem.github.io/Docs/contact/</loc>
     <xhtml:link
                 rel="alternate"
@@ -293,7 +399,7 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/ocr/</loc>
+    <loc>https://hornedsungem.github.io/Docs/workflow/python/ocr/</loc>
   </url>
   
   <url>

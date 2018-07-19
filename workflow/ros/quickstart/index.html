@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.44" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+    <title>ROS Tutorial(Chinese) :: Horned Sungem Documentation</title>
+    
+    
+    <link href="/Docs/css/nucleus.css?1531997314" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1531997314" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1531997314" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1531997314" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1531997314" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1531997314" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1531997314" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1531997314" rel="stylesheet">
+    
+      <link href="/Docs/css/theme-mine.css?1531997314" rel="stylesheet">
+    
+
+    <script src="/Docs/js/jquery-2.x.min.js?1531997314"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Docs/workflow/ros/quickstart/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+	<a href="/Docs/" ><img align="left" src="/Docs/logo.png"></a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1531997314"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1531997314"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/Docs";
+    
+</script>
+<script type="text/javascript" src="/Docs/js/search.js?1531997314"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/installation/" title="Installation Guide" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/installation/">
+          Installation Guide
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/quickstart/" title="Quick Start" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/quickstart/">
+          Quick Start
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/model/" title="Model List" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/model/">
+          Model List
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/workflow/" title="Examples and Tutorials" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Docs/workflow/">
+          Examples and Tutorials
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/workflow/python/" title="Python" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/workflow/python/">
+          Python
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/python/detector/" title="Face detector" class="dd-item ">
+        <a href="/Docs/workflow/python/detector/">
+        Face detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/python/detector_object/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/workflow/python/detector_object/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/python/recorder/" title="Scene Recorder" class="dd-item ">
+        <a href="/Docs/workflow/python/recorder/">
+        Scene Recorder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/python/image_recognition/" title="Image Recogniser (Low-level API Tutorial)" class="dd-item ">
+        <a href="/Docs/workflow/python/image_recognition/">
+        Image Recogniser (Low-level API Tutorial)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/python/face_recognition/" title="Face recorder (Working with two HS devices)" class="dd-item ">
+        <a href="/Docs/workflow/python/face_recognition/">
+        Face recorder (Working with two HS devices)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/python/ocr/" title="" class="dd-item ">
+        <a href="/Docs/workflow/python/ocr/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/workflow/android/" title="Android" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/workflow/android/">
+          Android
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_hello2018/" title="Hello 2018" class="dd-item ">
+        <a href="/Docs/workflow/android/android_hello2018/">
+        Hello 2018
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_face_detector/" title="Face Detector" class="dd-item ">
+        <a href="/Docs/workflow/android/android_face_detector/">
+        Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_object_detector/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/workflow/android/android_object_detector/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_sketchguess/" title="SketchGuess" class="dd-item ">
+        <a href="/Docs/workflow/android/android_sketchguess/">
+        SketchGuess
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/workflow/ros/" title="ROS" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Docs/workflow/ros/">
+          ROS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/ros/quickstart/" title="ROS Tutorial(Chinese)" class="dd-item active">
+        <a href="/Docs/workflow/ros/quickstart/">
+        ROS Tutorial(Chinese)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/workflow/diy/" title="DIY" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/workflow/diy/">
+          DIY
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/diy/rapiro/" title="Rapiro Robot" class="dd-item ">
+        <a href="/Docs/workflow/diy/rapiro/">
+        Rapiro Robot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/diy/smartlamp/" title="Smart Lamp" class="dd-item ">
+        <a href="/Docs/workflow/diy/smartlamp/">
+        Smart Lamp
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/diy/sitting_pose/" title="Sitting posture alarm" class="dd-item ">
+        <a href="/Docs/workflow/diy/sitting_pose/">
+        Sitting posture alarm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/diy/raspi_car/" title="Raspberry Pi Toy Car" class="dd-item ">
+        <a href="/Docs/workflow/diy/raspi_car/">
+        Raspberry Pi Toy Car
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/api/" title="HS-API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/api/">
+          HS-API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/api/lowlevel/" title="Low Level API" class="dd-item ">
+        <a href="/Docs/api/lowlevel/">
+        Low Level API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/api/highlevel/" title="High-level API" class="dd-item ">
+        <a href="/Docs/api/highlevel/">
+        High-level API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/api/android/" title="Android API" class="dd-item ">
+        <a href="/Docs/api/android/">
+        Android API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/contact/" title="Contact us" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/contact/">
+          Contact us
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/Docs/workflow/ros/quickstart/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="/Docs/cn/workflow/ros/quickstart/">Chinese</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <a class="github-button" href="https://github.com/HornedSungem/SungemSDK" data-icon="octicon-cloud-download" aria-label="Download Horned Sungem SDK on GitHub">Github Link</a>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Docs/'>Horned Sungem Documentation</a> > <a href='/Docs/workflow/'>Examples and Tutorials</a> > <a href='/Docs/workflow/ros/'>ROS</a> > ROS Tutorial(Chinese)
+          
+         
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+
+<p>本文主要介绍如何通过ROS使用角蜂鸟的基本示例教程</p>
+
+<h2 id="1-配置环境">1 配置环境</h2>
+
+<p>操作系统 Ubuntu16.04下</p>
+
+<h3 id="配置ros环境-推荐kinetic版本">配置ROS环境 (推荐kinetic版本)</h3>
+
+<p>下面给大家介绍配置ROS环境具体的执行过程</p>
+
+<ul>
+<li><p>设置当前系统可接受ROS的包,并设置密钥。</p>
+
+<pre><code class="language-bash">sudo sh -c 'echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+</code></pre></li>
+
+<li><p>检查apt-get更新，安装ROS, rqt, rviz, and robot-generic libraries。</p>
+
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get install ros-kinetic-desktop    
+</code></pre>
+
+<p>安装不上就科学上网一下</p></li>
+
+<li><p>安装rosdep,rosdep为要编译的源代码安装系统依赖项，并且需要在ROS中运行一些核心组件。</p>
+
+<pre><code class="language-sh">sudo rosdep init
+rosdep update
+</code></pre></li>
+
+<li><p>如果报错多尝试几次，实在不行删除配置文件</p>
+
+<pre><code class="language-bash">cd /etc/ros/rosdep/sources.list.d
+sudo rm -rf 20-default.list
+</code></pre>
+
+<p>重新执行第3步骤</p></li>
+
+<li><p>设置ROS环境变量到bashrc</p>
+
+<pre><code class="language-bash">echo &quot;source /opt/ros/kinetic/setup.bash&quot; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre></li>
+
+<li><p>更新配置</p>
+
+<pre><code class="language-sh">source /opt/ros/kinetic/setup.bash
+</code></pre></li>
+
+<li><p>安装其它依赖包</p>
+
+<pre><code class="language-bash">sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential
+</code></pre></li>
+</ul>
+
+<p><strong>添加代理方式</strong>：使用shandowsock-qt5,配置完毕以后，执行下列命令</p>
+
+<pre><code>  sudo apt-get -o Acquire::http::proxy=&quot;http://127.0.0.1:1080/&quot; update
+</code></pre>
+
+<p>参考链接<a href="http://wiki.ros.org/kinetic/Installation/Ubuntu">ROS环境安装</a></p>
+
+<h3 id="配置sungemsdk环境及资源">配置SungemSDK环境及资源</h3>
+
+<ul>
+<li><p>下载SungemSDK基础SDK，保证你的环境安装了git，如果没有安装，请参照百度经验<a href="https://jingyan.baidu.com/article/915fc414ba51be51394b20c9.html">ubuntu 安装git</a>，git下来角蜂鸟的SDK</p>
+
+<pre><code>git clone https://github.com/HornedSungem/SungemSDK.git
+</code></pre>
+
+<p><strong>如已下载SungemSDK，请更新保证它是最新版本</strong></p></li>
+
+<li><p>拷贝hs.h接口头文件到/usr/local/include，SungemSDK-ROS需要引用该头文件，所以需拷贝到系统目录下</p>
+
+<pre><code>sudo cp -i &lt;workspace&gt;/SungemSDK/api/includes/hs.h  /usr/local/include
+</code></pre></li>
+
+<li><p>根据您当前系统的架构选择对应文件夹下的libhs.so,拷贝该文件到/usr/local/lib</p>
+
+<pre><code>sudo cp -i &lt;workspace&gt;/SungemSDK/api/lib/linux/x86_64/libhs.so /usr/local/lib
+</code></pre></li>
+
+<li><p>准备需要的资源文件，model及data文件，git最新SungemSDK-GraphModels,或从百度云盘中下载，并把该目录link到系统下,如果不想放在系统下，你可以修改horned_sungem_launch目录下config下每次模型类型的graph_file_path和category_file_path参数，确保路径下能找到该文件即可。</p>
+
+<pre><code>git clone https://github.com/HornedSungem/SungemSDK-GraphModels.git
+sudo ln -s &lt;workspace&gt;/SungemSDK-GraphModels /opt/SungemSDK-GraphModels
+</code></pre></li>
+</ul>
+
+<h3 id="创建ros工作空间">创建ROS工作空间</h3>
+
+<ul>
+<li><p>创建一个工作空间，名字自定义</p>
+
+<pre><code>mkdir -p ~/catkin_&lt;name&gt;/src
+</code></pre></li>
+
+<li><p>cd到你当前的工作空间下</p>
+
+<pre><code>cd ~/catkin_&lt;name&gt;/src
+</code></pre></li>
+
+<li><p>下载SungemSDK-ROS</p>
+
+<pre><code>git clone http://192.168.0.7/HornedSungem/sdk/SungemSDK-ROS.git
+</code></pre></li>
+
+<li><p>使用catkin编译生成build和devel文件</p>
+
+<pre><code>catkin_make
+</code></pre>
+
+<p>如果编译过程中报错，可根据错误内容对源码进行修改，并查找目录下CmakeList.txt和package.xml是否有误</p></li>
+
+<li><p>执行source命令，依次执行文件中的语句，使刚修改的初始化文件生效</p>
+
+<pre><code>source devel/setup.bash
+</code></pre></li>
+
+<li><p>设置ros包路径</p>
+
+<pre><code>echo $ROS_PACKAGE_PATH
+/home/&lt;user_name&gt;/catkin_&lt;name&gt;/src:/opt/ros/kinetic/share
+</code></pre></li>
+</ul>
+
+<h2 id="2-如何使用sungem-ros">2 如何使用Sungem-ROS</h2>
+
+<p>配置完上述环境，下面就跟大家介绍下如何使用Sungem-ROS。 根据需求，我们提供了俩种模式：</p>
+
+<ol>
+<li><p>使用usb摄像头：</p>
+
+<ul>
+<li>涉及参数：
+
+<ul>
+<li>camera:=usb</li>
+<li>cnn_type :=googlenet (默认为googlenet) :声明使用的模型类型</li>
+</ul></li>
+
+<li><p>如果没有配置ROS摄像头，需要先安装环境</p>
+
+<pre><code>sudo apt-get install ros-kinetic-usb-cam
+</code></pre></li>
+
+<li><p>示例：使用mobilenetssd进行检测</p>
+
+<p>打开终端，加载nodelet</p>
+
+<pre><code>roslaunch horned_sungem_launch hs_camera.launch cnn_type:=mobilenetssd camera:=usb
+</code></pre>
+
+<p>如果出现错误，需cd到你的catkin工作空间的devel重新source下setup.bash。
+打开新的终端，加载图像</p>
+
+<pre><code>roslaunch horned_sungem_launch hs_detection_example.launch camera_topic:=&quot;/usb_cam/image_raw&quot;
+</code></pre>
+
+<p><strong>注意：</strong>因为是使用的usb摄像头，不管模型的类型，<strong>camera_topic是固定的</strong></p></li>
+</ul></li>
+
+<li><p>使用角蜂鸟自带摄像头：</p>
+
+<ul>
+<li>涉及参数：
+
+<ul>
+<li>camera:=hs (默认为hs) ：如果不声明则使用的是角蜂鸟摄像头</li>
+<li>pixels:=1080 (默认为360) ：角蜂鸟提供了俩个摄像头分辨率，1920*1080和640*360，你可以根据项目，选择适用于自己的分辨率。</li>
+</ul></li>
+
+<li><p>示例：下面介绍使用googlenet模型进行分类</p>
+
+<p>打开终端，加载nodelet,接受角蜂鸟360P的图像</p>
+
+<pre><code>roslaunch horned_sungem_launch hs_camera.launch cnn_type:=googlenet camera:=hs pixels:=360
+</code></pre>
+
+<p>如果出现错误，需cd到你的catkin工作空间的devel重新source下setup.bash</p>
+
+<p>打开新的终端，加载图像</p>
+
+<pre><code>ROSlaunch horned_sungem_launch hs_classification_example.launch camera_topic:=&quot;/hs/camera/image_raw&quot;
+</code></pre></li>
+</ul></li>
+</ol>
+
+<h2 id="3-参数说明">3 参数说明</h2>
+
+<p>在horned_sungem_launch文件夹下，你可以查看所有的launch文件，用于启动多个节点完成复杂需求，您可以根据您的项目需求，对其进行修改丰富，现在给大家介绍下launch文件里现有参数及其用法</p>
+
+<ul>
+<li>常用参数：
+
+<ul>
+<li>cnn_type:卷积神经网络类型，默认为googlenet 主要分两类：tensorflow,caffe
+
+<ul>
+<li>MobileNetSSD</li>
+<li>Yolo</li>
+<li>AlexNet</li>
+<li>GoogLeNet</li>
+<li>SqueezeNet</li>
+<li>Inception_v1,Inception_v2,Inception_v3,Inception_v4</li>
+<li>MobileNet<br /></li>
+</ul></li>
+<li>camera:默认值为hs
+
+<ul>
+<li>hs</li>
+<li>usb</li>
+</ul></li>
+<li>pixels:默认为360
+
+<ul>
+<li>360</li>
+<li>1080</li>
+<li>其他数值现在只评定为1080P</li>
+</ul></li>
+</ul></li>
+<li>其他参数：
+
+<ul>
+<li>device_index:默认为0</li>
+<li>log_level:默认为0</li>
+<li>video_device：默认为/dev/video0  使用usb摄像头，如果连接设备过多，需要找到对应的名字进行指定</li>
+</ul></li>
+</ul>
+
+<p><strong>注意：</strong> 参数声明的时候都为小写</p>
+
+<h2 id="4-效果展示">4 效果展示</h2>
+
+<p>当前截图是在ubuntu16.0.4环境下，camera为hs,pixels为1080，cnn_type为yolo，截图比较仓促</p>
+
+<p><img src="/Docs/ros/ros1.jpeg" alt="result" /></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/Docs/workflow/ros/" title="ROS"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/Docs/workflow/diy/" title="DIY" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Docs/js/clipboard.min.js?1531997314"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1531997314"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1531997314"></script>
+    <script src="/Docs/js/jquery.sticky.js?1531997314"></script>
+    <script src="/Docs/js/featherlight.min.js?1531997314"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1531997314"></script>
+    <script src="/Docs/js/highlight.pack.js?1531997314"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1531997314"></script>
+    <script src="/Docs/js/learn.js?1531997314"></script>
+    <script src="/Docs/js/hugo-learn.js?1531997314"></script>
+
+    <link href="/Docs/mermaid/mermaid.css?1531997314" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1531997314"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

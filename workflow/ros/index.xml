@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROS on Horned Sungem Documentation</title>
+    <link>https://hornedsungem.github.io/Docs/workflow/ros/</link>
+    <description>Recent content in ROS on Horned Sungem Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://hornedsungem.github.io/Docs/workflow/ros/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ROS Tutorial(Chinese)</title>
+      <link>https://hornedsungem.github.io/Docs/workflow/ros/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/workflow/ros/quickstart/</guid>
+      <description>本文主要介绍如何通过ROS使用角蜂鸟的基本示例教程
+1 配置环境 操作系统 Ubuntu16.04下
+配置ROS环境 (推荐kinetic版本) 下面给大家介绍配置ROS环境具体的执行过程
+ 设置当前系统可接受ROS的包,并设置密钥。
+sudo sh -c &#39;echo &amp;quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&amp;quot; &amp;gt; /etc/apt/sources.list.d/ros-latest.list&#39; sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116  检查apt-get更新，安装ROS, rqt, rviz, and robot-generic libraries。
+sudo apt-get update sudo apt-get install ros-kinetic-desktop  安装不上就科学上网一下
+ 安装rosdep,rosdep为要编译的源代码安装系统依赖项，并且需要在ROS中运行一些核心组件。
+sudo rosdep init rosdep update  如果报错多尝试几次，实在不行删除配置文件
+cd /etc/ros/rosdep/sources.list.d sudo rm -rf 20-default.list  重新执行第3步骤
+ 设置ROS环境变量到bashrc
+echo &amp;quot;source /opt/ros/kinetic/setup.bash&amp;quot; &amp;gt;&amp;gt; ~/.bashrc source ~/.</description>
+    </item>
+    
+  </channel>
+</rss>

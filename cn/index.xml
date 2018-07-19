@@ -11,10 +11,10 @@
     
     <item>
       <title>人脸检测</title>
-      <link>https://hornedsungem.github.io/Docs/cn/workflow/detector/</link>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/python/detector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/cn/workflow/detector/</guid>
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/python/detector/</guid>
       <description>SSD-Mobilenet 人脸检测 本章为您介绍如何使用角蜂鸟在Python调用内置部署的SSD-Mobilenet人脸检测卷积神经网络。
 检测器分析图片并找出目标的位置和尺寸。
  本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK/examples/python/FaceDetector.py 模型文件：SungemSDK/examples/graphs/graph_face_SSD  人脸检测 Face Detector 在python目录下执行以下命令来启动 人脸检测 范例。
@@ -25,10 +25,10 @@
     
     <item>
       <title>物体检测</title>
-      <link>https://hornedsungem.github.io/Docs/cn/workflow/detector_object/</link>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/python/detector_object/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/cn/workflow/detector_object/</guid>
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/python/detector_object/</guid>
       <description>SSD-Mobilenet 物体检测 本章为您介绍如何使用角蜂鸟在Python调用内置部署的SSD-Mobilenet物体检测卷积神经网络。
 检测器分析图片并找出目标的位置和尺寸。
  本教程基于Ubuntu 16.04系统  路径和文件  物体识别Python：SungemSDK/examples/python/ObjectDetector.py 模型文件：SungemSDK/examples/graphs/graph_object_SSD  物体检测 Object Detector 在python目录下执行以下命令来启动 物体检测 范例。
@@ -38,10 +38,10 @@
     
     <item>
       <title>情景记录器</title>
-      <link>https://hornedsungem.github.io/Docs/cn/workflow/recorder/</link>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/python/recorder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/cn/workflow/recorder/</guid>
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/python/recorder/</guid>
       <description>角蜂鸟情景记录器 本章为您介绍如何使用角蜂鸟在Python调用内置部署的GoogleNet来实现一个实用性非常强的情景记录器。
 介绍 角蜂鸟情景记录器可将希望分类的图像实时储存在不同的“存档”下并立即生成一个分类模型，之后便可辨识它们对应的场景。比如说在门打开的时候将图像录制进[存档1]，关闭的时候录制进[存档2]，生成模型之后便可辨认门是否开启。将不同的手势录制进不同的存档下就变成了一个简单的手势识别。
 使用说明 执行Python程序、初始化角蜂鸟之后，对准需要录制的第一个目标，按1-5之中的一个数字（对应存档编号）：
@@ -54,11 +54,25 @@
     </item>
     
     <item>
-      <title>人脸识别器（双角蜂鸟集联教程）</title>
-      <link>https://hornedsungem.github.io/Docs/cn/workflow/face_recognition/</link>
+      <title>图像识别器（底层API教程）</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/python/image_recognition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/cn/workflow/face_recognition/</guid>
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/python/image_recognition/</guid>
+      <description>SqueezeNet 1000类图像识别器 本章为您介绍如何使用角蜂鸟在Python调用底层API实现基于SqueezeNet的图像识别器。
+比起检测器，识别器可从图片分析得到较细的分类类别，例如猫、狗的某个品种。
+ 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK/examples/python/ImageRecognition.py 模型文件：SungemSDK/examples/graphs/graph_sz  图像识别 Image Recognition 在python目录下执行以下命令来启动 图像识别 范例。
+~/SungemSDK/examples/python$ python3 ImageRecognition.py  识别目标图像为青色框中区域(ROI)的图像部分。通过按 &amp;lsquo;w&amp;rsquo; 与 &amp;rsquo;s&amp;rsquo; 可调整 ROI 的大小。
+得到 Top5 结果例如: 属于计算机键盘概率98.39%、空格1.40%、打字机键盘0.22%、笔记本0.03%、仓鼠0.00%。 因为调用全部函数为底层API，终端不显示任何提示。
+参数设置 初始化 # Load device （载入设备） devices = hs.EnumerateDevices() dev = hs.Device(devices[0]) dev.OpenDevice() # Load CNN model （载入模型） with open(&#39;../graphs/graph_sz&#39;, mode=&#39;rb&#39;) as f: b = f.read() graph = dev.AllocateGraph(b) dim = (227,227) # Load classes （载入分类标签） classes=np.</description>
+    </item>
+    
+    <item>
+      <title>人脸识别器（双角蜂鸟集联教程）</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/python/face_recognition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/python/face_recognition/</guid>
       <description>人脸检测器 + 情景记录器 = 人脸识别器 本章为您介绍如何使用两个角蜂鸟基于人脸检测与情景记录器来实现人脸识别。
  注意：本范例需要同时运行两个角蜂鸟进行集联 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK/examples/python/FaceRecorder.py 模型文件 - 检测：SungemSDK/examples/graphs/graph_face_SSD 模型文件 - 识别：SungemSDK/examples/graphs/graph_face_rec  图像识别 Image Recognition 连接两个角蜂鸟后，在python目录下执行以下命令来启动 双角蜂鸟人脸识别 范例。
 ~/SungemSDK/examples/python$ python3 FaceRecorder.py  运行后会出现窗口 Detection， 显示人脸检测结果。 如果检测到人脸， 会出现第二个窗口 Rec 指示录制目标。
@@ -70,98 +84,110 @@
     </item>
     
     <item>
-      <title>图像识别器（底层API教程）</title>
-      <link>https://hornedsungem.github.io/Docs/cn/workflow/image_recognition/</link>
+      <title>Hello 2018</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/android/android_hello2018/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/cn/workflow/image_recognition/</guid>
-      <description>SqueezeNet 1000类图像识别器 本章为您介绍如何使用角蜂鸟在Python调用底层API实现基于SqueezeNet的图像识别器。
-比起检测器，识别器可从图片分析得到较细的分类类别，例如猫、狗的某个品种。
- 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK/examples/python/ImageRecognition.py 模型文件：SungemSDK/examples/graphs/graph_sz  图像识别 Image Recognition 在python目录下执行以下命令来启动 图像识别 范例。
-~/SungemSDK/examples/python$ python3 ImageRecognition.py  识别目标图像为青色框中区域(ROI)的图像部分。通过按 &amp;lsquo;w&amp;rsquo; 与 &amp;rsquo;s&amp;rsquo; 可调整 ROI 的大小。
-得到 Top5 结果例如: 属于计算机键盘概率98.39%、空格1.40%、打字机键盘0.22%、笔记本0.03%、仓鼠0.00%。 因为调用全部函数为底层API，终端不显示任何提示。
-参数设置 初始化 # Load device （载入设备） devices = hs.EnumerateDevices() dev = hs.Device(devices[0]) dev.OpenDevice() # Load CNN model （载入模型） with open(&#39;../graphs/graph_sz&#39;, mode=&#39;rb&#39;) as f: b = f.read() graph = dev.AllocateGraph(b) dim = (227,227) # Load classes （载入分类标签） classes=np.</description>
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_hello2018/</guid>
+      <description>快速开始 下面介绍如何在Android Studio开发环境下通过角蜂鸟SDK使用Mnist卷积神经网络，实现数字识别，本文的介绍示例是使用角蜂鸟摄像头，如果需要外部图像来源可参考示例工程实现
+步骤1：准备环境  下载最新版HornedSungemSDK jar包 请确保满足一下开发环境要求  确保minSdkVersion在Android 3.1以上 确保设备支持OTG Android Studio 2.0或以上版本  新建project工程 请确保在使用角蜂鸟相关功能及服务前，已阅读Android API,详见API文档  步骤2：添加SDK  将下载的软件包根据实际需求拷贝到您项目对应的文件夹里，例如：  该lib下包含了horned-sungemSDK及javacv所需要的jar和so库
+注意：libs文件夹路径不能包含中文，否则会编译失败
+2.请在build.gradle文件里，请将上述库放入正确路径下，如检索不到，可手动添加引用：
+步骤3：添加权限 为了保证SDK正常运行，需要在AndroidManistest.xml文件下添加下列许可：
+&amp;lt;uses-permission android:name=&amp;quot;android.permission.READ_EXTERNAL_STORAGE&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.WRITE_EXTERNAL_STORAGE&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.hardware.usb.host&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.hardware.usb.accessory&amp;quot;/&amp;gt; &amp;lt;uses-feature android:name=&amp;quot;android.hardware.usb.host&amp;quot;/&amp;gt;  步骤4：代码实现 下面通过一个简单hello2018的例子讲解具体怎么使用角蜂鸟SDK
+ 下载graph_mnist文件和4张测试图片,在您的module下新建assets包，将下载的文件复制到该目录下，如图：   定义HelloActivity继承HsBaseActivity,用于角蜂鸟通信和显示结果,具体代码如下：
+public class HelloActivity extends HsBaseActivity { private TextView mTextView; private Handler mHandler = new Handler() { @Override public void handleMessage(Message msg) { super.</description>
     </item>
     
     <item>
-      <title>奥松机器人</title>
-      <link>https://hornedsungem.github.io/Docs/cn/workflow/rapiro/</link>
+      <title>人脸检测</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/android/android_face_detector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/cn/workflow/rapiro/</guid>
-      <description>这里给大家带来一个借助角蜂鸟实现的人脸检测控制的机器人。
- 硬件清单参考如下：
- 角蜂鸟 树莓派3b 奥松机器人 12V转5V的DC-DC模块（可选） 散热风扇（可选）   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现人脸检测的功能。大概的处理逻辑如下：
-实现 首先组装好奥松机器人，奥松机器人为树莓派供电，树莓派为角蜂鸟供电，树莓派通过USB通信控制奥松机器人和角蜂鸟。 由于树莓派USB供电限制，可能会产生供电不足的问题，影响稳定性。这里考虑从奥松机器人的电源上接入12V转5V的DC-DC模块为USB提供额外供电，或者使用外源HUB。 担心空间散热性比较差可考虑加入散热风扇。
-为了优雅与美观，这里我们DIY了奥松机器人，把所有的东西都埋进了脑袋里，角蜂鸟放在了后脑勺的位置。
-奥松机器人控制代码如下：
-class RapiroProcessor(Thread): class Flags: face = None face_frame_cnt = 0 head_angle = 90 arm_raised = False light_on = False light_need_change = False def __init__(self, connection): Thread.__init__(self) self.daemon = True self.rapiro = Rapiro(connection) self.flags = RapiroProcessor.Flags() def reset(self): self.rapiro.execute(GO_TO_INITIAL_POSITION) time.sleep(3) def run(self): self.reset() try: while True: time.sleep(0.1) has_face = self.</description>
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_face_detector/</guid>
+      <description>本文主要给大家介绍如何在Android平台下使用角蜂鸟调用SSD-Mobilenet卷积神经网络,实现人脸检测
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载人脸检测所需模型graph_face_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 1.实现具体步骤：  将graph文件传输到角蜂鸟里
+int status = allocateGraphByAssets(&amp;quot;graph_face_SSD&amp;quot;);  处理图像数据，分俩种模式
+ 使用角蜂鸟内置摄像头：
+byte[] bytes = getImage(0.007843f, 1.0f);  使用外部图像来源：该模式下，传入角蜂鸟的数据要经过预处理，下面介绍的例子是使用手机摄像头的数据，图像大小为1280*720：
+SoftReference&amp;lt;Bitmap&amp;gt; softRef = new SoftReference&amp;lt;&amp;gt;(Bitmap.createBitmap(1280, 720, Bitmap.Config.ARGB_8888)); Bitmap bitmap = softRef.get(); allocations[0].copyTo(bitmap); Matrix matrix = new Matrix(); matrix.postScale(300f / 1280, 300f / 720); Bitmap newbm = Bitmap.createBitmap(bitmap, 0, 0, 1280, 720, matrix,true); int[] ints = new int[300 * 300]; newbm.getPixels(ints, 0, 300, 0, 0, 300, 300); float[] float_tensor = new float[300 * 300 * 3]; for (int j = 0; j &amp;lt; 300 * 300; j++) { float_tensor[j * 3] = Color.</description>
     </item>
     
     <item>
-      <title>智能台灯</title>
-      <link>https://hornedsungem.github.io/Docs/cn/workflow/smartlamp/</link>
+      <title>物体检测</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/android/android_object_detector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/cn/workflow/smartlamp/</guid>
-      <description>这里给大家带来一个借助角蜂鸟实现的人脸检测控制的智能台灯。当角蜂鸟发现人脸出现时台灯自动打开，没有检测到人时会自动关闭。
- 硬件清单参考如下：
- 角蜂鸟 树莓派3b 1路继电器模块 5V USB台灯   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现人脸检测的功能。大概的处理逻辑如下：
-然后就是控制台灯，我们通过 1路继电器模块 来控制工作电路的闭合。树莓派 GPIO 引脚接继电器控制端 IN，GND 引脚接继电器 DC-端构成回路。这里采用高电平触发，当 GPIO 输出高电平时，工作电路闭合，台灯亮起；输出低电平时，工作电路断开，台灯熄灭。
- 1路继电器模块
- DC+ 接电源正极 DC- 接电源负极 IN 高或低电平控制继电器吸合 COM 公用接口 NO 常开接口，吸合前悬空，吸合后与 COM 短接 NC 常闭接口，吸合前与 COM 短接，吸合后悬空  跳线与 High 短接时为高电平触发，与 LOW 短接时为低电平触发。
- 具体实现 准备好树莓派，安装 SungemSDK 运行环境，并且连接好角蜂鸟和继电器。 继电器控制代码如下：
-#!/usr/bin/env python3 # coding=utf-8 # lamp.py import RPi.GPIO as GPIO PIN = 7 def setup(): GPIO.</description>
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_object_detector/</guid>
+      <description>本文主要给大家介绍如何在Android平台下使用角蜂鸟调用SSD-Mobilenet卷积神经网络，实现物体检测
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载物体检测所需模型graph_object_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下，该模型支持20种物体的检测。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 本文体验的模型文件提供的20种物体检测包含：
+String[] labels = {&amp;quot;aeroplane&amp;quot;, &amp;quot;bicycle&amp;quot;, &amp;quot;bird&amp;quot;, &amp;quot;boat&amp;quot;, &amp;quot;bottle&amp;quot;, &amp;quot;bus&amp;quot;, &amp;quot;car&amp;quot;, &amp;quot;cat&amp;quot;, &amp;quot;chair&amp;quot;, &amp;quot;cow&amp;quot;, &amp;quot;diningtable&amp;quot;, &amp;quot;dog&amp;quot;, &amp;quot;horse&amp;quot;, &amp;quot;motorbike&amp;quot;, &amp;quot;person&amp;quot;, &amp;quot;pottedplant&amp;quot;, &amp;quot;sheep&amp;quot;, &amp;quot;sofa&amp;quot;, &amp;quot;train&amp;quot;, &amp;quot;tvmonitor&amp;quot;};  主要实现流程：  将graph文件传输到角蜂鸟里 处理图像数据 获取返回的处理结果 结果显示在view上 俩种实现模式
+ 使用角蜂鸟内置摄像头，主要业务逻辑代码如下：
+int status = allocateGraphByAssets(&amp;quot;graph_object_SSD&amp;quot;); if (status != HsConnectApi.HS_OK) { return; } while (true) { if (mHsApi != null &amp;amp;&amp;amp; isRunning) { byte[] bytes = getImage(0.007843f, 1); float[] result = getResult(0); if (bytes !</description>
     </item>
     
     <item>
-      <title>坐姿提醒</title>
-      <link>https://hornedsungem.github.io/Docs/cn/workflow/sitting_pose/</link>
+      <title>手绘识别</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/android/android_sketchguess/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/cn/workflow/sitting_pose/</guid>
-      <description>这里给大家带来一个借助角蜂鸟实现的简单的坐姿监测器。
- 硬件清单参考如下：
- 角蜂鸟 树莓派3b 蜂鸣器   构思 在角蜂鸟的内置模型中和公开的数据集中没有关于坐姿的，我们要实现效果非常好，需要大量的数据，自己去采集数据并去标记不太现实。这里我们采用角蜂鸟内置的 GoogleNet 来实现我们的需求，仿照情景记录器做一个比较简单的坐姿监测器。
-我们需要记录至少2个场景分类：
- 正确的坐姿 不良的坐姿  大概的处理逻辑如下：
-准备 首先，我们需要先记录我们的情景分类。 我们可以执行SDK示例程序中的 SceneRecorder.py 来记录场景，再拷贝数据文件到我们的项目中，或者仿照情景记录器自己去实现。 这里我们把情景记录与应用分开，树莓派的界面实在不够友好，我们在PC端进行场景记录，在树莓派上实现我们监测的应用。
-from SungemSDK.api import hsapi as hs import cv2 if __name__ == &#39;__main__&#39;: cv2.namedWindow(&amp;quot;Scene Recorder&amp;quot;, cv2.WINDOW_NORMAL) try: net = hs.HS(&#39;GoogleNet&#39;, zoom=True, verbose=2, graphFolder=&amp;quot;../../SungemSDK/examples/graphs/&amp;quot;) while True: result = net.run() key = cv2.waitKey(5) prob = net.record(result, key, saveFilename=&amp;quot;./record.dat&amp;quot;) cv2.imshow(&amp;quot;Scene Recorder&amp;quot;, result[0]) cv2.waitKey(1) finally: cv2.destroyAllWindows()  我们需要不断去重复训练的过程，不断去修正，直到达到预期的结果。这里 1 为正确的坐姿，2 为不良的坐姿。在训练的过程中，如果出现误检，需要再次记录场景，再次训练，不断扩充训练集。</description>
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_sketchguess/</guid>
+      <description>本文主要给大家介绍下在Android平台下使用角蜂鸟实现手绘识别功能
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述 下载物体检测所需模型graph_sg文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中libs下拷贝到自己工程 将class_list_chn.txt文件拷贝到Android设备的存储空间下，用于345种物体的比对  具体实现  将graph文件传输到角蜂鸟里
+int status = allocateGraphByAssets(&amp;quot;graph_sg&amp;quot;);  读取物体分类文件
+try { BufferedReader bufferedReader = new BufferedReader(new FileReader(Environment.getExternalStorageDirectory().getAbsolutePath() + &amp;quot;/hs/class_list_chn.txt&amp;quot;)); for (int i = 0; i &amp;lt; 345; i++) { String line = bufferedReader.readLine(); if (line != null) { String[] strings = line.split(&amp;quot; &amp;quot;); mObjectNames[i] = strings[0]; } } bufferedReader.close(); } catch (FileNotFoundException e) { e.printStackTrace(); Log.e(&amp;quot;SketchGuessThread&amp;quot;, &amp;quot;FileNotFoundException&amp;quot;); } catch (IOException e) { e.</description>
     </item>
     
     <item>
-      <title>树莓派小车</title>
-      <link>https://hornedsungem.github.io/Docs/cn/workflow/raspi_car/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hornedsungem.github.io/Docs/cn/workflow/raspi_car/</guid>
-      <description>这里给大家带来一个借助角蜂鸟实现的基于物体识别控制的树莓派小车。
- 硬件清单参考如下：
- 角蜂鸟 树莓派3b + 小车配件   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现物体检测的功能。大概的处理逻辑如下：
-具体实现 首先我们需要将小车组装起来，虽然购买到的树莓派小车的可能不同，但组装过程大同小异，实际上都是通过 GPIO 控制驱动板，进而控制电机转动。
-安装好小车、固定好角蜂鸟之后，就可以配置树莓派以及 SungemSDK 的运行环境了。树莓派的图形界面不太友好，本着要优雅的原则，可以使用 pycharm 进行远程开发调试，具体配置过程可询问谷哥和度娘。
-这里需要说明的是，树莓派的USB接口有电流限制，最高只能达到600mA，可能当多个IO输出的时候，会造成工作不稳定。这里可以考虑为USB提供额外的供电，飞根线或者采用外源HUB。
-主要流程实现直接上代码：
-#!/usr/bin/env python3 # coding=utf-8 from SungemSDK.api import hsapi as hs import drive from video import VideoProcessor def process(ret): bicycles = [x for x in ret[1] if x[0] in {1}] # 1 bicycle if len(bicycles) &amp;gt; 0: # 当检测到自行车时 bike = bicycles[0] x_mid = (bike[2] + bike[4]) / 2 / ret[0].</description>
-    </item>
-    
-    <item>
-      <title>底层API (英文）</title>
+      <title>底层API</title>
       <link>https://hornedsungem.github.io/Docs/cn/api/lowlevel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/cn/api/lowlevel/</guid>
-      <description>Horned Sungem Low Level API Version 0.1.0 Enumerations GlobalOption  Version: 0.1.0
- Overview:
-The GlobalOption class is an enumeration class that defines the options that are passed to and received from the SetGlobalOption and the GetGlobalOption functions.
- enum: LOGLEVEL
- option type: int
- possible values: 0, 1, 2
- get/set get, set
- Description
-0 = Nothing is printed (default)
-1 = Print errors only
-2 = Verbose</description>
+      <description>角蜂鸟底层API 版本 0.1.0 Enumerations GlobalOption  版本: 0.1.0
+ 概述:
+GlobalOption类是一个枚举类，定义了一些选项，这些选项用于SetGlobalOption和GetGlobalOption函数输入和返回值。
+ 枚举: LOGLEVEL
+ 选项类型: int
+ 合法数值: 0, 1, 2
+ 获取/设置 get, set
+ 描述
+0 = 没有打印输出 (默认)
+1 = 只打印错误
+2 = 打印所有信息
+  Status  版本: 0.1.0
+ 概述:
+Status类是一个枚举类，定义了API函数的状态返回值。如果API函数返回一个非零状态值，通常会抛出一个与之对应的异常。可能出现的状态值如下所示：
+ 枚举: HS_OK
+ 描述:
+函数调用正常。
+ 枚举: HS_BUSY
+ 描述:
+设备忙，稍后重试。
+ 枚举: HS_ERROR
+ 描述:
+函数调用遇到意外错误。
+ 枚举: HS_OUT_OF_MEMORY
+ 描述:</description>
+    </item>
+    
+    <item>
+      <title>ROS教程</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/ros/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/ros/quickstart/</guid>
+      <description>本文主要介绍如何通过ROS使用角蜂鸟的基本示例教程
+1 配置环境 操作系统 Ubuntu16.04下
+配置ROS环境 (推荐kinetic版本) 下面给大家介绍配置ROS环境具体的执行过程
+ 设置当前系统可接受ROS的包,并设置密钥。
+sudo sh -c &#39;echo &amp;quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&amp;quot; &amp;gt; /etc/apt/sources.list.d/ros-latest.list&#39; sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116  检查apt-get更新，安装ROS, rqt, rviz, and robot-generic libraries。
+sudo apt-get update sudo apt-get install ros-kinetic-desktop  安装不上就科学上网一下
+ 安装rosdep,rosdep为要编译的源代码安装系统依赖项，并且需要在ROS中运行一些核心组件。
+sudo rosdep init rosdep update  如果报错多尝试几次，实在不行删除配置文件
+cd /etc/ros/rosdep/sources.list.d sudo rm -rf 20-default.list  重新执行第3步骤
+ 设置ROS环境变量到bashrc
+echo &amp;quot;source /opt/ros/kinetic/setup.bash&amp;quot; &amp;gt;&amp;gt; ~/.bashrc source ~/.</description>
     </item>
     
     <item>
@@ -188,18 +214,75 @@ The GlobalOption class is an enumeration class that defines the options that are
     </item>
     
     <item>
-      <title>Android Java API</title>
+      <title>Android 中文API</title>
       <link>https://hornedsungem.github.io/Docs/cn/api/android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/cn/api/android/</guid>
-      <description>SungemSDK Android API Version 0.1.0 HsThread类相关函数及属性 当前类是跟角蜂鸟交互的子线程，开发者可继承该类进行功能扩展
-类内主要变量： - mHandler:用于处理线程中的消息循环，通知主线程执行UI的更新 - mActivity:当前线程绑定的activity,可用于跳转，获取资源等 - mHsApi:与角蜂鸟通信的主要api类，可调用类里对应函数执行相应操作  相关函数  allocateGraph(filename) ：此函数是传送一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能
- 参数 Parameters： filename（String类型） 文件绝对路径
- 返回 return:返回操作状态 （状态声明都在HsConnectApi里） HS_OK值为0，表示成功 HS_ERROR值为-2，表示加载失败 HS_UNSUPPORTED_GRAPH_FILE值为-10,表示不支持的模型文件 HS_NO_FILE值为-12，表示filename路径有误，没有文件 Example用法:  int status=allocateGraph(Environment.getExternalStorageDirectory().getAbsolutePath() + &#34;/hs/&#34; + &#34;graph_face_SSD&#34;);  allocateGraphByAssets(filename) :与上述方法功能相似，区别在于参数表示在android工程assets包下的文件
- Example用法:  int status = allocateGraphByAssets(&amp;ldquo;graph_face_SSD&amp;rdquo;); 
- close(): 线程关闭时调用，执行操作包括：deallocate模型,关闭角蜂鸟设备等
- 无参数 Example：示例代码   if (mHsThread != null) { mHsThread.setRunning(false); mHsThread.close(); }  setZoom( zoom)：设置获取角蜂鸟的图像分辨率大小，用于处理得到数据，设置图像宽高等</description>
+      <description>SungemSDK-Android API 当前版本为0.1.2 ConnectStatus 状态参数  HS_OK ：正常 HS_BUSY ：队列正忙 HS_ERROR ：通信异常 HS_NO_FILE ：没有索引到文件 HS_UNSUPPORTED_GRAPH_FILE ：不支持的graph文件 STATUS_WAIT_TIMEOUT ：超时  HsBaseThread HsBaseThread继承Thread的一个子线程,负责与角蜂鸟通信，开发者可根据自己需求继承此类去作功能扩展。
+构造器  ConnectBridge：在usb连接上执行回调函数openSucceed时的参数，用于连接Usb设备与当前类 zoom : 决定获取角蜂鸟自带摄像头图像的分辨率大小，true为640*360的图像，false为1920*1080的图像  相关函数    返回值 函数名 描述     int allocateGraph(String filename) 分配卷积神经网络模型到角蜂鸟，传入文件路径   int allocateGraphByAssets(String filename) 分配卷积神经网络模型到角蜂鸟，传入文件在assets下路径   byte[] getImage(float stdValue,float mean) 获取graph图像   byte[] deviceGetImage() 获取设备图像   void setZoom(boolean zoom) 设置摄像头分辨率   int loadTensor(float[] data,int length,int parameter) 角蜂鸟加载预处理后的图像数据   int loadTensor(byte[] data,int length,int parameter) 角蜂鸟加载经过预处理后的数据   byte[] getResult(int parameter) 获取返回结果   void close() 关闭设备     allocateGraph(filename)：此函数是分配一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能</description>
+    </item>
+    
+    <item>
+      <title>奥松机器人</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/diy/rapiro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/diy/rapiro/</guid>
+      <description>这里给大家带来一个借助角蜂鸟实现的人脸检测控制的机器人。
+ 硬件清单参考如下：
+ 角蜂鸟 树莓派3b 奥松机器人 12V转5V的DC-DC模块（可选） 散热风扇（可选）   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现人脸检测的功能。大概的处理逻辑如下：
+实现 首先组装好奥松机器人，奥松机器人为树莓派供电，树莓派为角蜂鸟供电，树莓派通过USB通信控制奥松机器人和角蜂鸟。 由于树莓派USB供电限制，可能会产生供电不足的问题，影响稳定性。这里考虑从奥松机器人的电源上接入12V转5V的DC-DC模块为USB提供额外供电，或者使用外源HUB。 担心空间散热性比较差可考虑加入散热风扇。
+为了优雅与美观，这里我们DIY了奥松机器人，把所有的东西都埋进了脑袋里，角蜂鸟放在了后脑勺的位置。
+奥松机器人控制代码如下：
+class RapiroProcessor(Thread): class Flags: face = None face_frame_cnt = 0 head_angle = 90 arm_raised = False light_on = False light_need_change = False def __init__(self, connection): Thread.__init__(self) self.daemon = True self.rapiro = Rapiro(connection) self.flags = RapiroProcessor.Flags() def reset(self): self.rapiro.execute(GO_TO_INITIAL_POSITION) time.sleep(3) def run(self): self.reset() try: while True: time.sleep(0.1) has_face = self.</description>
+    </item>
+    
+    <item>
+      <title>智能台灯</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/diy/smartlamp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/diy/smartlamp/</guid>
+      <description>这里给大家带来一个借助角蜂鸟实现的人脸检测控制的智能台灯。当角蜂鸟发现人脸出现时台灯自动打开，没有检测到人时会自动关闭。
+ 硬件清单参考如下：
+ 角蜂鸟 树莓派3b 1路继电器模块 5V USB台灯   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现人脸检测的功能。大概的处理逻辑如下：
+然后就是控制台灯，我们通过 1路继电器模块 来控制工作电路的闭合。树莓派 GPIO 引脚接继电器控制端 IN，GND 引脚接继电器 DC-端构成回路。这里采用高电平触发，当 GPIO 输出高电平时，工作电路闭合，台灯亮起；输出低电平时，工作电路断开，台灯熄灭。
+ 1路继电器模块
+ DC+ 接电源正极 DC- 接电源负极 IN 高或低电平控制继电器吸合 COM 公用接口 NO 常开接口，吸合前悬空，吸合后与 COM 短接 NC 常闭接口，吸合前与 COM 短接，吸合后悬空  跳线与 High 短接时为高电平触发，与 LOW 短接时为低电平触发。
+ 具体实现 准备好树莓派，安装 SungemSDK 运行环境，并且连接好角蜂鸟和继电器。 继电器控制代码如下：
+#!/usr/bin/env python3 # coding=utf-8 # lamp.py import RPi.GPIO as GPIO PIN = 7 def setup(): GPIO.</description>
+    </item>
+    
+    <item>
+      <title>坐姿提醒</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/diy/sitting_pose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/diy/sitting_pose/</guid>
+      <description>这里给大家带来一个借助角蜂鸟实现的简单的坐姿监测器。
+ 硬件清单参考如下：
+ 角蜂鸟 树莓派3b 蜂鸣器   构思 在角蜂鸟的内置模型中和公开的数据集中没有关于坐姿的，我们要实现效果非常好，需要大量的数据，自己去采集数据并去标记不太现实。这里我们采用角蜂鸟内置的 GoogleNet 来实现我们的需求，仿照情景记录器做一个比较简单的坐姿监测器。
+我们需要记录至少2个场景分类：
+ 正确的坐姿 不良的坐姿  大概的处理逻辑如下：
+准备 首先，我们需要先记录我们的情景分类。 我们可以执行SDK示例程序中的 SceneRecorder.py 来记录场景，再拷贝数据文件到我们的项目中，或者仿照情景记录器自己去实现。 这里我们把情景记录与应用分开，树莓派的界面实在不够友好，我们在PC端进行场景记录，在树莓派上实现我们监测的应用。
+from SungemSDK.api import hsapi as hs import cv2 if __name__ == &#39;__main__&#39;: cv2.namedWindow(&amp;quot;Scene Recorder&amp;quot;, cv2.WINDOW_NORMAL) try: net = hs.HS(&#39;GoogleNet&#39;, zoom=True, verbose=2, graphFolder=&amp;quot;../../SungemSDK/examples/graphs/&amp;quot;) while True: result = net.run() key = cv2.waitKey(5) prob = net.record(result, key, saveFilename=&amp;quot;./record.dat&amp;quot;) cv2.imshow(&amp;quot;Scene Recorder&amp;quot;, result[0]) cv2.waitKey(1) finally: cv2.destroyAllWindows()  我们需要不断去重复训练的过程，不断去修正，直到达到预期的结果。这里 1 为正确的坐姿，2 为不良的坐姿。在训练的过程中，如果出现误检，需要再次记录场景，再次训练，不断扩充训练集。</description>
+    </item>
+    
+    <item>
+      <title>树莓派小车</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/diy/raspi_car/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/diy/raspi_car/</guid>
+      <description>这里给大家带来一个借助角蜂鸟实现的基于物体识别控制的树莓派小车。
+ 硬件清单参考如下：
+ 角蜂鸟 树莓派3b + 小车配件   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现物体检测的功能。大概的处理逻辑如下：
+具体实现 首先我们需要将小车组装起来，虽然购买到的树莓派小车的可能不同，但组装过程大同小异，实际上都是通过 GPIO 控制驱动板，进而控制电机转动。
+安装好小车、固定好角蜂鸟之后，就可以配置树莓派以及 SungemSDK 的运行环境了。树莓派的图形界面不太友好，本着要优雅的原则，可以使用 pycharm 进行远程开发调试，具体配置过程可询问谷哥和度娘。
+这里需要说明的是，树莓派的USB接口有电流限制，最高只能达到600mA，可能当多个IO输出的时候，会造成工作不稳定。这里可以考虑为USB提供额外的供电，飞根线或者采用外源HUB。
+主要流程实现直接上代码：
+#!/usr/bin/env python3 # coding=utf-8 from SungemSDK.api import hsapi as hs import drive from video import VideoProcessor def process(ret): bicycles = [x for x in ret[1] if x[0] in {1}] # 1 bicycle if len(bicycles) &amp;gt; 0: # 当检测到自行车时 bike = bicycles[0] x_mid = (bike[2] + bike[4]) / 2 / ret[0].</description>
     </item>
     
   </channel>

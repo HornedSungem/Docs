@@ -46,18 +46,12 @@ The GlobalOption class is an enumeration class that defines the options that are
     </item>
     
     <item>
-      <title>Android Java API (Chinese)</title>
+      <title>Android API</title>
       <link>https://hornedsungem.github.io/Docs/api/android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/api/android/</guid>
-      <description>SungemSDK Android API Version 0.1.0 HsThread类相关函数及属性 当前类是跟角蜂鸟交互的子线程，开发者可继承该类进行功能扩展
-类内主要变量： - mHandler:用于处理线程中的消息循环，通知主线程执行UI的更新 - mActivity:当前线程绑定的activity,可用于跳转，获取资源等 - mHsApi:与角蜂鸟通信的主要api类，可调用类里对应函数执行相应操作  相关函数  allocateGraph(filename) ：此函数是传送一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能
- 参数 Parameters： filename（String类型） 文件绝对路径
- 返回 return:返回操作状态 （状态声明都在HsConnectApi里） HS_OK值为0，表示成功 HS_ERROR值为-2，表示加载失败 HS_UNSUPPORTED_GRAPH_FILE值为-10,表示不支持的模型文件 HS_NO_FILE值为-12，表示filename路径有误，没有文件 Example用法:  int status=allocateGraph(Environment.getExternalStorageDirectory().getAbsolutePath() + &#34;/hs/&#34; + &#34;graph_face_SSD&#34;);  allocateGraphByAssets(filename) :与上述方法功能相似，区别在于参数表示在android工程assets包下的文件
- Example用法:  int status = allocateGraphByAssets(&amp;ldquo;graph_face_SSD&amp;rdquo;); 
- close(): 线程关闭时调用，执行操作包括：deallocate模型,关闭角蜂鸟设备等
- 无参数 Example：示例代码   if (mHsThread != null) { mHsThread.setRunning(false); mHsThread.close(); }  setZoom( zoom)：设置获取角蜂鸟的图像分辨率大小，用于处理得到数据，设置图像宽高等</description>
+      <description>SungemSDK-Android API The current version is 0.1.2 ConnectStatus Parameter  HS_OK :The function call worked as expected. HS_BUSY :The device is busy, retry later. HS_ERROR :An unexpected error was encountered during the function call. HS_NO_FILE :No files found HS_UNSUPPORTED_GRAPH_FILE :The graph file is corrupt. Try to recompile the graph file with the version of the toolkit that corresponds to the API version. STATUS_WAIT_TIMEOUT : The function call timeout  HsBaseThread HsBaseThread is a thread for HornedSungem interacion, developers can extend this class for function expansion.</description>
     </item>
     
   </channel>

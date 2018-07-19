@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on 角蜂鸟中文文档</title>
+    <link>https://hornedsungem.github.io/Docs/cn/workflow/android/</link>
+    <description>Recent content in Android on 角蜂鸟中文文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://hornedsungem.github.io/Docs/cn/workflow/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello 2018</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/android/android_hello2018/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_hello2018/</guid>
+      <description>快速开始 下面介绍如何在Android Studio开发环境下通过角蜂鸟SDK使用Mnist卷积神经网络，实现数字识别，本文的介绍示例是使用角蜂鸟摄像头，如果需要外部图像来源可参考示例工程实现
+步骤1：准备环境  下载最新版HornedSungemSDK jar包 请确保满足一下开发环境要求  确保minSdkVersion在Android 3.1以上 确保设备支持OTG Android Studio 2.0或以上版本  新建project工程 请确保在使用角蜂鸟相关功能及服务前，已阅读Android API,详见API文档  步骤2：添加SDK  将下载的软件包根据实际需求拷贝到您项目对应的文件夹里，例如：  该lib下包含了horned-sungemSDK及javacv所需要的jar和so库
+注意：libs文件夹路径不能包含中文，否则会编译失败
+2.请在build.gradle文件里，请将上述库放入正确路径下，如检索不到，可手动添加引用：
+步骤3：添加权限 为了保证SDK正常运行，需要在AndroidManistest.xml文件下添加下列许可：
+&amp;lt;uses-permission android:name=&amp;quot;android.permission.READ_EXTERNAL_STORAGE&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.WRITE_EXTERNAL_STORAGE&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.hardware.usb.host&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.hardware.usb.accessory&amp;quot;/&amp;gt; &amp;lt;uses-feature android:name=&amp;quot;android.hardware.usb.host&amp;quot;/&amp;gt;  步骤4：代码实现 下面通过一个简单hello2018的例子讲解具体怎么使用角蜂鸟SDK
+ 下载graph_mnist文件和4张测试图片,在您的module下新建assets包，将下载的文件复制到该目录下，如图：   定义HelloActivity继承HsBaseActivity,用于角蜂鸟通信和显示结果,具体代码如下：
+public class HelloActivity extends HsBaseActivity { private TextView mTextView; private Handler mHandler = new Handler() { @Override public void handleMessage(Message msg) { super.</description>
+    </item>
+    
+    <item>
+      <title>人脸检测</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/android/android_face_detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_face_detector/</guid>
+      <description>本文主要给大家介绍如何在Android平台下使用角蜂鸟调用SSD-Mobilenet卷积神经网络,实现人脸检测
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载人脸检测所需模型graph_face_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 1.实现具体步骤：  将graph文件传输到角蜂鸟里
+int status = allocateGraphByAssets(&amp;quot;graph_face_SSD&amp;quot;);  处理图像数据，分俩种模式
+ 使用角蜂鸟内置摄像头：
+byte[] bytes = getImage(0.007843f, 1.0f);  使用外部图像来源：该模式下，传入角蜂鸟的数据要经过预处理，下面介绍的例子是使用手机摄像头的数据，图像大小为1280*720：
+SoftReference&amp;lt;Bitmap&amp;gt; softRef = new SoftReference&amp;lt;&amp;gt;(Bitmap.createBitmap(1280, 720, Bitmap.Config.ARGB_8888)); Bitmap bitmap = softRef.get(); allocations[0].copyTo(bitmap); Matrix matrix = new Matrix(); matrix.postScale(300f / 1280, 300f / 720); Bitmap newbm = Bitmap.createBitmap(bitmap, 0, 0, 1280, 720, matrix,true); int[] ints = new int[300 * 300]; newbm.getPixels(ints, 0, 300, 0, 0, 300, 300); float[] float_tensor = new float[300 * 300 * 3]; for (int j = 0; j &amp;lt; 300 * 300; j++) { float_tensor[j * 3] = Color.</description>
+    </item>
+    
+    <item>
+      <title>物体检测</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/android/android_object_detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_object_detector/</guid>
+      <description>本文主要给大家介绍如何在Android平台下使用角蜂鸟调用SSD-Mobilenet卷积神经网络，实现物体检测
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载物体检测所需模型graph_object_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下，该模型支持20种物体的检测。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 本文体验的模型文件提供的20种物体检测包含：
+String[] labels = {&amp;quot;aeroplane&amp;quot;, &amp;quot;bicycle&amp;quot;, &amp;quot;bird&amp;quot;, &amp;quot;boat&amp;quot;, &amp;quot;bottle&amp;quot;, &amp;quot;bus&amp;quot;, &amp;quot;car&amp;quot;, &amp;quot;cat&amp;quot;, &amp;quot;chair&amp;quot;, &amp;quot;cow&amp;quot;, &amp;quot;diningtable&amp;quot;, &amp;quot;dog&amp;quot;, &amp;quot;horse&amp;quot;, &amp;quot;motorbike&amp;quot;, &amp;quot;person&amp;quot;, &amp;quot;pottedplant&amp;quot;, &amp;quot;sheep&amp;quot;, &amp;quot;sofa&amp;quot;, &amp;quot;train&amp;quot;, &amp;quot;tvmonitor&amp;quot;};  主要实现流程：  将graph文件传输到角蜂鸟里 处理图像数据 获取返回的处理结果 结果显示在view上 俩种实现模式
+ 使用角蜂鸟内置摄像头，主要业务逻辑代码如下：
+int status = allocateGraphByAssets(&amp;quot;graph_object_SSD&amp;quot;); if (status != HsConnectApi.HS_OK) { return; } while (true) { if (mHsApi != null &amp;amp;&amp;amp; isRunning) { byte[] bytes = getImage(0.007843f, 1); float[] result = getResult(0); if (bytes !</description>
+    </item>
+    
+    <item>
+      <title>手绘识别</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/android/android_sketchguess/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_sketchguess/</guid>
+      <description>本文主要给大家介绍下在Android平台下使用角蜂鸟实现手绘识别功能
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述 下载物体检测所需模型graph_sg文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中libs下拷贝到自己工程 将class_list_chn.txt文件拷贝到Android设备的存储空间下，用于345种物体的比对  具体实现  将graph文件传输到角蜂鸟里
+int status = allocateGraphByAssets(&amp;quot;graph_sg&amp;quot;);  读取物体分类文件
+try { BufferedReader bufferedReader = new BufferedReader(new FileReader(Environment.getExternalStorageDirectory().getAbsolutePath() + &amp;quot;/hs/class_list_chn.txt&amp;quot;)); for (int i = 0; i &amp;lt; 345; i++) { String line = bufferedReader.readLine(); if (line != null) { String[] strings = line.split(&amp;quot; &amp;quot;); mObjectNames[i] = strings[0]; } } bufferedReader.close(); } catch (FileNotFoundException e) { e.printStackTrace(); Log.e(&amp;quot;SketchGuessThread&amp;quot;, &amp;quot;FileNotFoundException&amp;quot;); } catch (IOException e) { e.</description>
+    </item>
+    
+  </channel>
+</rss>

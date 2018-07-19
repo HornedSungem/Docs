@@ -10,22 +10,36 @@
     
     
     <item>
-      <title>底层API (英文）</title>
+      <title>底层API</title>
       <link>https://hornedsungem.github.io/Docs/cn/api/lowlevel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/cn/api/lowlevel/</guid>
-      <description>Horned Sungem Low Level API Version 0.1.0 Enumerations GlobalOption  Version: 0.1.0
- Overview:
-The GlobalOption class is an enumeration class that defines the options that are passed to and received from the SetGlobalOption and the GetGlobalOption functions.
- enum: LOGLEVEL
- option type: int
- possible values: 0, 1, 2
- get/set get, set
- Description
-0 = Nothing is printed (default)
-1 = Print errors only
-2 = Verbose</description>
+      <description>角蜂鸟底层API 版本 0.1.0 Enumerations GlobalOption  版本: 0.1.0
+ 概述:
+GlobalOption类是一个枚举类，定义了一些选项，这些选项用于SetGlobalOption和GetGlobalOption函数输入和返回值。
+ 枚举: LOGLEVEL
+ 选项类型: int
+ 合法数值: 0, 1, 2
+ 获取/设置 get, set
+ 描述
+0 = 没有打印输出 (默认)
+1 = 只打印错误
+2 = 打印所有信息
+  Status  版本: 0.1.0
+ 概述:
+Status类是一个枚举类，定义了API函数的状态返回值。如果API函数返回一个非零状态值，通常会抛出一个与之对应的异常。可能出现的状态值如下所示：
+ 枚举: HS_OK
+ 描述:
+函数调用正常。
+ 枚举: HS_BUSY
+ 描述:
+设备忙，稍后重试。
+ 枚举: HS_ERROR
+ 描述:
+函数调用遇到意外错误。
+ 枚举: HS_OUT_OF_MEMORY
+ 描述:</description>
     </item>
     
     <item>
@@ -52,18 +66,13 @@ The GlobalOption class is an enumeration class that defines the options that are
     </item>
     
     <item>
-      <title>Android Java API</title>
+      <title>Android 中文API</title>
       <link>https://hornedsungem.github.io/Docs/cn/api/android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/cn/api/android/</guid>
-      <description>SungemSDK Android API Version 0.1.0 HsThread类相关函数及属性 当前类是跟角蜂鸟交互的子线程，开发者可继承该类进行功能扩展
-类内主要变量： - mHandler:用于处理线程中的消息循环，通知主线程执行UI的更新 - mActivity:当前线程绑定的activity,可用于跳转，获取资源等 - mHsApi:与角蜂鸟通信的主要api类，可调用类里对应函数执行相应操作  相关函数  allocateGraph(filename) ：此函数是传送一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能
- 参数 Parameters： filename（String类型） 文件绝对路径
- 返回 return:返回操作状态 （状态声明都在HsConnectApi里） HS_OK值为0，表示成功 HS_ERROR值为-2，表示加载失败 HS_UNSUPPORTED_GRAPH_FILE值为-10,表示不支持的模型文件 HS_NO_FILE值为-12，表示filename路径有误，没有文件 Example用法:  int status=allocateGraph(Environment.getExternalStorageDirectory().getAbsolutePath() + &#34;/hs/&#34; + &#34;graph_face_SSD&#34;);  allocateGraphByAssets(filename) :与上述方法功能相似，区别在于参数表示在android工程assets包下的文件
- Example用法:  int status = allocateGraphByAssets(&amp;ldquo;graph_face_SSD&amp;rdquo;); 
- close(): 线程关闭时调用，执行操作包括：deallocate模型,关闭角蜂鸟设备等
- 无参数 Example：示例代码   if (mHsThread != null) { mHsThread.setRunning(false); mHsThread.close(); }  setZoom( zoom)：设置获取角蜂鸟的图像分辨率大小，用于处理得到数据，设置图像宽高等</description>
+      <description>SungemSDK-Android API 当前版本为0.1.2 ConnectStatus 状态参数  HS_OK ：正常 HS_BUSY ：队列正忙 HS_ERROR ：通信异常 HS_NO_FILE ：没有索引到文件 HS_UNSUPPORTED_GRAPH_FILE ：不支持的graph文件 STATUS_WAIT_TIMEOUT ：超时  HsBaseThread HsBaseThread继承Thread的一个子线程,负责与角蜂鸟通信，开发者可根据自己需求继承此类去作功能扩展。
+构造器  ConnectBridge：在usb连接上执行回调函数openSucceed时的参数，用于连接Usb设备与当前类 zoom : 决定获取角蜂鸟自带摄像头图像的分辨率大小，true为640*360的图像，false为1920*1080的图像  相关函数    返回值 函数名 描述     int allocateGraph(String filename) 分配卷积神经网络模型到角蜂鸟，传入文件路径   int allocateGraphByAssets(String filename) 分配卷积神经网络模型到角蜂鸟，传入文件在assets下路径   byte[] getImage(float stdValue,float mean) 获取graph图像   byte[] deviceGetImage() 获取设备图像   void setZoom(boolean zoom) 设置摄像头分辨率   int loadTensor(float[] data,int length,int parameter) 角蜂鸟加载预处理后的图像数据   int loadTensor(byte[] data,int length,int parameter) 角蜂鸟加载经过预处理后的数据   byte[] getResult(int parameter) 获取返回结果   void close() 关闭设备     allocateGraph(filename)：此函数是分配一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能</description>
     </item>
     
   </channel>
