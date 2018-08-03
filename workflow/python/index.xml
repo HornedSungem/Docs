@@ -16,8 +16,8 @@
       
       <guid>https://hornedsungem.github.io/Docs/workflow/python/detector/</guid>
       <description>SSD-Mobilenet Face Detector This chapter will introduce how to use HS to deploy SSD-Mobilenet face detector
- Based on Ubuntu 16.04  Path and files  Python: SungemSDK/examples/python/FaceDetector.py Model file: SungemSDK/examples/graphs/graph_face_SSD  Face Detector Under python directory, enter following command to run face detector demo:
-~/SungemSDK/examples/python$ python3 FaceDetector.py  get result:
+ Based on Ubuntu 16.04  Path and files  Python: SungemSDK-Python/examples/apps/FaceDetector/FaceDetector.py Model file: SungemSDK-Python/examples/graphs/graph_face_SSD  Face Detector Under FaceDetector directory, enter following command to run face detector demo:
+~/SungemSDK-Python/examples/apps/FaceDetector$ python3 FaceDetector.py  get result:
 | ======= Horned Sungem ======== | | Device found [0] | | ../graphs/graph_face_SSD | | Model loaded to Python | | Model allocated to device | | ============================== | * *****SSD [0]: Box values****** * .</description>
     </item>
     
@@ -29,8 +29,8 @@
       <guid>https://hornedsungem.github.io/Docs/workflow/python/detector_object/</guid>
       <description>SSD-Mobilenet Object Detector This chapter will introduce how to user HS to deploy SSD-Mobilenet object detector.
 Detector analyse images and find the target image location and size.
- Based on Ubuntu 16.04  Path and files  Python: SungemSDK/examples/python/ObjectDetector.py Model files: SungemSDK/examples/graphs/graph_object_SSD  Object Detector Under python directory, enter following command to run object detector demo:
-~/SungemSDK/examples/python$ python3 ObjectDetector.py  Object detector is very similar to the previous face detector, except the number of classes is 20 (from VOC dataset).</description>
+ Based on Ubuntu 16.04  Path and files  Python: SungemSDK-Python/examples/apps/ObjectDetector/ObjectDetector.py Model files: SungemSDK-Python/examples/graphs/graph_object_SSD  Object Detector Under ObjectDetector directory, enter following command to run object detector demo:
+~/SungemSDK/examples/apps/ObjectDetector$ python3 ObjectDetector.py  Object detector is very similar to the previous face detector, except the number of classes is 20 (from VOC dataset).</description>
     </item>
     
     <item>
@@ -50,8 +50,8 @@ Introduction HS Scene Recorder records and classifies images in real-time. It &a
       
       <guid>https://hornedsungem.github.io/Docs/workflow/python/image_recognition/</guid>
       <description>SqueezeNet 1000 Classes Image Classifier This chapter introduces how to build an image classifier by using low-level API only.
- Tested on Ubuntu 16.04  Path and files  Python：SungemSDK/examples/python/ImageRecognition.py Model file：SungemSDK/examples/graphs/graph_sz  Image Recognition run image recogniser with the following command under python directory
-~/SungemSDK/examples/python$ python3 ImageRecognition.py  The region-of-interest is highlighted with a cyan bounding box. You can adjust the size by pressing &amp;lsquo;w&amp;rsquo; and &amp;rsquo;s&amp;rsquo;.
+ Tested on Ubuntu 16.04  Path and files  Python：SungemSDK-Python/examples/apps/ImageRecognition/ImageRecognition.py Model file：SungemSDK-Python/examples/graphs/graph_sz  Image Recognition run image recogniser with the following command under ImageRecognition directory
+~/SungemSDK/examples/apps/ImageRecognition$ python3 ImageRecognition.py  The region-of-interest is highlighted with a cyan bounding box. You can adjust the size by pressing &amp;lsquo;w&amp;rsquo; and &amp;rsquo;s&amp;rsquo;.
 Get Top5 classification result, as shown in the example.</description>
     </item>
     
@@ -62,7 +62,7 @@ Get Top5 classification result, as shown in the example.</description>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/python/face_recognition/</guid>
       <description>Face detetor + Scene recorder = Face recorder This chapter introduces how to build a face recorder with two HS devices.
- Note that two HS devices are needed to run this demo Tested on Ubuntu 16.04 system  Path and files  Face recorder Python：SungemSDK/examples/python/FaceRecorder.py Model file - detection：SungemSDK/examples/graphs/graph_face_SSD Model file - recognition：SungemSDK/examples/graphs/graph_face_rec  Image Recognition After connecting two HS devices, run face recorder with the following command under python directory</description>
+ Note that two HS devices are needed to run this demo Tested on Ubuntu 16.04 system  Path and files  Face recorder Python：SungemSDK-Python/examples/apps/FaceRecorder/FaceRecorder.py Model file - detection：SungemSDK-Python/examples/graphs/graph_face_SSD Model file - recognition：SungemSDK-Python/examples/graphs/graph_face_rec  Image Recognition After connecting two HS devices, run face recorder with the following command under FaceRecorder directory</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ Get Top5 classification result, as shown in the example.</description>
       <guid>https://hornedsungem.github.io/Docs/workflow/python/ocr/</guid>
       <description> 本章为您介绍如何使用角蜂鸟在Python调用内置部署的OCR中文文字检测与识别。
 OCR分析图片找出文字并识别。
- 本教程基于Ubuntu 16.04系统  路径和文件  OCR Python：SungemSDK/examples/python/OCR.py 模型文件：SungemSDK/examples/graphs/graph_ocr  </description>
+ 本教程基于Ubuntu 16.04系统  路径和文件  OCR Python：SungemSDK-Python/examples/apps/OCR/OCR.py 模型文件：SungemSDK-Python/examples/graphs/graph_ocr  </description>
     </item>
     
   </channel>

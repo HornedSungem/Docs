@@ -12,19 +12,19 @@
     <title>Quick Start :: Horned Sungem Documentation</title>
     
     
-    <link href="/Docs/css/nucleus.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1531997864" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1533290917" rel="stylesheet">
     
-      <link href="/Docs/css/theme-mine.css?1531997864" rel="stylesheet">
+      <link href="/Docs/css/theme-mine.css?1533290917" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1531997864"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1533290917"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1531997864"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1531997864"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1533290917"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1533290917"></script>
 <script type="text/javascript">
     
         var baseurl = "\/Docs";
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1531997864"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1533290917"></script>
 
     
   </div>
@@ -842,12 +842,15 @@ In this tutorial <em>Hello 2018</em>, we will introduce how to deploy a built-in
 
 <h3 id="path-and-files">Path and files</h3>
 
-<p>Under the project directory <strong>SungemSDK/examples</strong>：</p>
+<p>Before running the example programs, you must download and copy required files from SungemSDK-GraphModels to the corresponding folders under the examples.</p>
+
+<pre><code>SungemSDK-GraphModels/graphs -&gt; examples/graphs
+SungemSDK-GraphModels/misc   -&gt; examples/misc
+</code></pre>
 
 <ul>
-<li><strong>/graphs</strong>: folder for built-in CNN model files, modification or removal of the files may cause failure on API.</li>
-<li><strong>/misc</strong>: folder for images, labels and other miscellaneous files.</li>
-<li><strong>/python</strong>: Python examples.</li>
+<li><strong>graphs</strong>: folder for built-in CNN model files, modification or removal of the files may cause failure on API.</li>
+<li><strong>misc</strong>: folder for images, labels and other miscellaneous files.</li>
 </ul>
 
 <hr />
@@ -856,7 +859,7 @@ In this tutorial <em>Hello 2018</em>, we will introduce how to deploy a built-in
 
 <p>Under <strong>python</strong> directory, type the following commands to run <em>Hello 2018</em> demo</p>
 
-<pre><code>~/SungemSDK/examples/python$ python3 Hello2018.py
+<pre><code>~/SungemSDK-Python/examples/apps/Hello2018$ python3 Hello2018.py
 </code></pre>
 
 <p>If everything goes well, the following will be displayed:</p>
@@ -882,14 +885,14 @@ Hello
 <p>Loading <strong>OpenCV</strong>, <strong>Numpy</strong> and <strong>HSAPI</strong>,</p>
 
 <pre><code class="language-python">import cv2, sys, numpy as np
-sys.path.append('../../api/')
+sys.path.append('../../../')
 import hsapi as hs
 </code></pre>
 
 <p>initializing HS, built-in models and image root folder,</p>
 
 <pre><code class="language-python">net = hs.HS('mnist')
-imgRoot = '../misc/2018_mnist/%d.jpg'
+imgRoot = '../../misc/2018_mnist/%d.jpg'
 </code></pre>
 
 <p>load four images with <strong>cv2.imread</strong> to get the image pixel values, then load to HS device through <strong>HS.run(img)</strong>. HS returns and prints the result.</p>
@@ -1445,20 +1448,20 @@ A: Set virtual machine USB compatibility to `USB 3.0`.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1531997864"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1531997864"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1531997864"></script>
-    <script src="/Docs/js/jquery.sticky.js?1531997864"></script>
-    <script src="/Docs/js/featherlight.min.js?1531997864"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1531997864"></script>
-    <script src="/Docs/js/highlight.pack.js?1531997864"></script>
+    <script src="/Docs/js/clipboard.min.js?1533290917"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1533290917"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1533290917"></script>
+    <script src="/Docs/js/jquery.sticky.js?1533290917"></script>
+    <script src="/Docs/js/featherlight.min.js?1533290917"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1533290917"></script>
+    <script src="/Docs/js/highlight.pack.js?1533290917"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1531997864"></script>
-    <script src="/Docs/js/learn.js?1531997864"></script>
-    <script src="/Docs/js/hugo-learn.js?1531997864"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1533290917"></script>
+    <script src="/Docs/js/learn.js?1533290917"></script>
+    <script src="/Docs/js/hugo-learn.js?1533290917"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1531997864" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1531997864"></script>
+    <link href="/Docs/mermaid/mermaid.css?1533290917" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1533290917"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

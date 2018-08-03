@@ -52,7 +52,7 @@ class RapiroProcessor(Thread): class Flags: face = None face_frame_cnt = 0 head_
 我们需要记录至少2个场景分类：
  正确的坐姿 不良的坐姿  大概的处理逻辑如下：
 准备 首先，我们需要先记录我们的情景分类。 我们可以执行SDK示例程序中的 SceneRecorder.py 来记录场景，再拷贝数据文件到我们的项目中，或者仿照情景记录器自己去实现。 这里我们把情景记录与应用分开，树莓派的界面实在不够友好，我们在PC端进行场景记录，在树莓派上实现我们监测的应用。
-from SungemSDK.api import hsapi as hs import cv2 if __name__ == &#39;__main__&#39;: cv2.namedWindow(&amp;quot;Scene Recorder&amp;quot;, cv2.WINDOW_NORMAL) try: net = hs.HS(&#39;GoogleNet&#39;, zoom=True, verbose=2, graphFolder=&amp;quot;../../SungemSDK/examples/graphs/&amp;quot;) while True: result = net.run() key = cv2.waitKey(5) prob = net.record(result, key, saveFilename=&amp;quot;./record.dat&amp;quot;) cv2.imshow(&amp;quot;Scene Recorder&amp;quot;, result[0]) cv2.waitKey(1) finally: cv2.destroyAllWindows()  我们需要不断去重复训练的过程，不断去修正，直到达到预期的结果。这里 1 为正确的坐姿，2 为不良的坐姿。在训练的过程中，如果出现误检，需要再次记录场景，再次训练，不断扩充训练集。</description>
+import sys sys.path.append(&amp;quot;../../SungemSDK-Python&amp;quot;) import hsapi as hs import cv2 if __name__ == &#39;__main__&#39;: cv2.namedWindow(&amp;quot;Scene Recorder&amp;quot;, cv2.WINDOW_NORMAL) try: net = hs.HS(&#39;GoogleNet&#39;, zoom=True, verbose=2, graphFolder=&amp;quot;../../SungemSDK-Python/examples/graphs/&amp;quot;) while True: result = net.run() key = cv2.waitKey(5) prob = net.record(result, key, saveFilename=&amp;quot;./record.dat&amp;quot;) cv2.imshow(&amp;quot;Scene Recorder&amp;quot;, result[0]) cv2.waitKey(1) finally: cv2.destroyAllWindows()  我们需要不断去重复训练的过程，不断去修正，直到达到预期的结果。这里 1 为正确的坐姿，2 为不良的坐姿。在训练的过程中，如果出现误检，需要再次记录场景，再次训练，不断扩充训练集。</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ from SungemSDK.api import hsapi as hs import cv2 if __name__ == &#39;__main__&#3
 安装好小车、固定好角蜂鸟之后，就可以配置树莓派以及 SungemSDK 的运行环境了。树莓派的图形界面不太友好，本着要优雅的原则，可以使用 pycharm 进行远程开发调试，具体配置过程可询问谷哥和度娘。
 这里需要说明的是，树莓派的USB接口有电流限制，最高只能达到600mA，可能当多个IO输出的时候，会造成工作不稳定。这里可以考虑为USB提供额外的供电，飞根线或者采用外源HUB。
 主要流程实现直接上代码：
-#!/usr/bin/env python3 # coding=utf-8 from SungemSDK.api import hsapi as hs import drive from video import VideoProcessor def process(ret): bicycles = [x for x in ret[1] if x[0] in {1}] # 1 bicycle if len(bicycles) &amp;gt; 0: # 当检测到自行车时 bike = bicycles[0] x_mid = (bike[2] + bike[4]) / 2 / ret[0].</description>
+#!/usr/bin/env python3 # coding=utf-8 import sys sys.path.append(&amp;quot;../../SungemSDK-Python&amp;quot;) import hsapi as hs import drive from video import VideoProcessor def process(ret): bicycles = [x for x in ret[1] if x[0] in {1}] # 1 bicycle if len(bicycles) &amp;gt; 0: # 当检测到自行车时 bike = bicycles[0] x_mid = (bike[2] + bike[4]) / 2 / ret[0].</description>
     </item>
     
   </channel>

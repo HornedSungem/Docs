@@ -17,8 +17,8 @@
       <guid>https://hornedsungem.github.io/Docs/cn/workflow/python/detector/</guid>
       <description>SSD-Mobilenet 人脸检测 本章为您介绍如何使用角蜂鸟在Python调用内置部署的SSD-Mobilenet人脸检测卷积神经网络。
 检测器分析图片并找出目标的位置和尺寸。
- 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK/examples/python/FaceDetector.py 模型文件：SungemSDK/examples/graphs/graph_face_SSD  人脸检测 Face Detector 在python目录下执行以下命令来启动 人脸检测 范例。
-~/SungemSDK/examples/python$ python3 FaceDetector.py  得到结果：
+ 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK-Python/examples/apps/FaceDetector/FaceDetector.py 模型文件：SungemSDK-Python/examples/graphs/graph_face_SSD  人脸检测 Face Detector 在FaceDetector目录下执行以下命令来启动 人脸检测 范例。
+~/SungemSDK-Python/examples/apps/FaceDetector$ python3 FaceDetector.py  得到结果：
 | ======= Horned Sungem ======== | | Device found [0] | | ../graphs/graph_face_SSD | | Model loaded to Python | | Model allocated to device | | ============================== | * *****SSD [0]: Box values****** * ...  如图像中包括人脸，则：
 * *****SSD [1]: Box values****** * * Box Name: Face * * 360 106 591 361 - w:231 h:255 *  其中SSD [N]中N为检测人脸个数，下一行为人脸检测框Bounding Box的左上角和右下角坐标以及窗的宽高。</description>
     </item>
@@ -31,8 +31,8 @@
       <guid>https://hornedsungem.github.io/Docs/cn/workflow/python/detector_object/</guid>
       <description>SSD-Mobilenet 物体检测 本章为您介绍如何使用角蜂鸟在Python调用内置部署的SSD-Mobilenet物体检测卷积神经网络。
 检测器分析图片并找出目标的位置和尺寸。
- 本教程基于Ubuntu 16.04系统  路径和文件  物体识别Python：SungemSDK/examples/python/ObjectDetector.py 模型文件：SungemSDK/examples/graphs/graph_object_SSD  物体检测 Object Detector 在python目录下执行以下命令来启动 物体检测 范例。
-~/SungemSDK/examples/python$ python3 ObjectDetector.py  物体检测流程与人脸检测基本相同。检测类别为20个，具体类别请参考VOC数据库或从API中取得。
+ 本教程基于Ubuntu 16.04系统  路径和文件  物体识别Python：SungemSDK-Python/examples/apps/ObjectDetector/ObjectDetector.py 模型文件：SungemSDK-Python/examples/graphs/graph_object_SSD  物体检测 Object Detector 在ObjectDetector目录下执行以下命令来启动 物体检测 范例。
+~/SungemSDK/examples/apps/ObjectDetector$ python3 ObjectDetector.py  物体检测流程与人脸检测基本相同。检测类别为20个，具体类别请参考VOC数据库或从API中取得。
 使用实例 * *****SSD [2]: Box values****** * * Box Name: chair * * 221 141 335 300 - w:114 h:159 * * Box Name: pottedplant * * 388 46 530 265 - w:142 h:219 *  *截图和复制时之间的短暂延时导致图片与结果略微不符</description>
     </item>
     
@@ -61,10 +61,10 @@
       <guid>https://hornedsungem.github.io/Docs/cn/workflow/python/image_recognition/</guid>
       <description>SqueezeNet 1000类图像识别器 本章为您介绍如何使用角蜂鸟在Python调用底层API实现基于SqueezeNet的图像识别器。
 比起检测器，识别器可从图片分析得到较细的分类类别，例如猫、狗的某个品种。
- 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK/examples/python/ImageRecognition.py 模型文件：SungemSDK/examples/graphs/graph_sz  图像识别 Image Recognition 在python目录下执行以下命令来启动 图像识别 范例。
-~/SungemSDK/examples/python$ python3 ImageRecognition.py  识别目标图像为青色框中区域(ROI)的图像部分。通过按 &amp;lsquo;w&amp;rsquo; 与 &amp;rsquo;s&amp;rsquo; 可调整 ROI 的大小。
+ 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK-Python/examples/apps/ImageRecognition/ImageRecognition.py 模型文件：SungemSDK-Python/examples/graphs/graph_sz  图像识别 Image Recognition 在ImageRecognition目录下执行以下命令来启动 图像识别 范例。
+~/SungemSDK/examples/apps/ImageRecognition$ python3 ImageRecognition.py  识别目标图像为青色框中区域(ROI)的图像部分。通过按 &amp;lsquo;w&amp;rsquo; 与 &amp;rsquo;s&amp;rsquo; 可调整 ROI 的大小。
 得到 Top5 结果例如: 属于计算机键盘概率98.39%、空格1.40%、打字机键盘0.22%、笔记本0.03%、仓鼠0.00%。 因为调用全部函数为底层API，终端不显示任何提示。
-参数设置 初始化 # Load device （载入设备） devices = hs.EnumerateDevices() dev = hs.Device(devices[0]) dev.OpenDevice() # Load CNN model （载入模型） with open(&#39;../graphs/graph_sz&#39;, mode=&#39;rb&#39;) as f: b = f.read() graph = dev.AllocateGraph(b) dim = (227,227) # Load classes （载入分类标签） classes=np.</description>
+参数设置 初始化 # Load device （载入设备） devices = hs.EnumerateDevices() dev = hs.Device(devices[0]) dev.OpenDevice() # Load CNN model （载入模型） with open(&#39;../../graphs/graph_sz&#39;, mode=&#39;rb&#39;) as f: b = f.read() graph = dev.AllocateGraph(b) dim = (227,227) # Load classes （载入分类标签） classes=np.</description>
     </item>
     
     <item>
@@ -74,8 +74,8 @@
       
       <guid>https://hornedsungem.github.io/Docs/cn/workflow/python/face_recognition/</guid>
       <description>人脸检测器 + 情景记录器 = 人脸识别器 本章为您介绍如何使用两个角蜂鸟基于人脸检测与情景记录器来实现人脸识别。
- 注意：本范例需要同时运行两个角蜂鸟进行集联 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK/examples/python/FaceRecorder.py 模型文件 - 检测：SungemSDK/examples/graphs/graph_face_SSD 模型文件 - 识别：SungemSDK/examples/graphs/graph_face_rec  图像识别 Image Recognition 连接两个角蜂鸟后，在python目录下执行以下命令来启动 双角蜂鸟人脸识别 范例。
-~/SungemSDK/examples/python$ python3 FaceRecorder.py  运行后会出现窗口 Detection， 显示人脸检测结果。 如果检测到人脸， 会出现第二个窗口 Rec 指示录制目标。
+ 注意：本范例需要同时运行两个角蜂鸟进行集联 本教程基于Ubuntu 16.04系统  路径和文件  人脸识别Python：SungemSDK-Python/examples/apps/FaceRecorder/FaceRecorder.py 模型文件 - 检测：SungemSDK-Python/examples/graphs/graph_face_SSD 模型文件 - 识别：SungemSDK-Python/examples/graphs/graph_face_rec  图像识别 Image Recognition 连接两个角蜂鸟后，在FaceRecorder目录下执行以下命令来启动 双角蜂鸟人脸识别 范例。
+~/SungemSDK-Python/examples/apps/FaceRecorder$ python3 FaceRecorder.py  运行后会出现窗口 Detection， 显示人脸检测结果。 如果检测到人脸， 会出现第二个窗口 Rec 指示录制目标。
 单击 Detection 窗口， 按住 1 可将当前人脸录入至第一个存档中。将负责检测的角蜂鸟对准第二个人， 在Rec 窗口中出现第二个人后， 按住 2 可将第二人录入至第二个存档中。 之后按 r 即可实时训练出人脸分类器。
 识别结果将显示于人脸的检测框上。
 键盘输入：  1-9: 将录制框中人脸储存至1-9。 s: 将存档数据存储至指定路径。 l: 从指定路径读取存档数据，需与 numBin 符合。 p: 重置存档。
@@ -266,7 +266,7 @@ class RapiroProcessor(Thread): class Flags: face = None face_frame_cnt = 0 head_
 我们需要记录至少2个场景分类：
  正确的坐姿 不良的坐姿  大概的处理逻辑如下：
 准备 首先，我们需要先记录我们的情景分类。 我们可以执行SDK示例程序中的 SceneRecorder.py 来记录场景，再拷贝数据文件到我们的项目中，或者仿照情景记录器自己去实现。 这里我们把情景记录与应用分开，树莓派的界面实在不够友好，我们在PC端进行场景记录，在树莓派上实现我们监测的应用。
-from SungemSDK.api import hsapi as hs import cv2 if __name__ == &#39;__main__&#39;: cv2.namedWindow(&amp;quot;Scene Recorder&amp;quot;, cv2.WINDOW_NORMAL) try: net = hs.HS(&#39;GoogleNet&#39;, zoom=True, verbose=2, graphFolder=&amp;quot;../../SungemSDK/examples/graphs/&amp;quot;) while True: result = net.run() key = cv2.waitKey(5) prob = net.record(result, key, saveFilename=&amp;quot;./record.dat&amp;quot;) cv2.imshow(&amp;quot;Scene Recorder&amp;quot;, result[0]) cv2.waitKey(1) finally: cv2.destroyAllWindows()  我们需要不断去重复训练的过程，不断去修正，直到达到预期的结果。这里 1 为正确的坐姿，2 为不良的坐姿。在训练的过程中，如果出现误检，需要再次记录场景，再次训练，不断扩充训练集。</description>
+import sys sys.path.append(&amp;quot;../../SungemSDK-Python&amp;quot;) import hsapi as hs import cv2 if __name__ == &#39;__main__&#39;: cv2.namedWindow(&amp;quot;Scene Recorder&amp;quot;, cv2.WINDOW_NORMAL) try: net = hs.HS(&#39;GoogleNet&#39;, zoom=True, verbose=2, graphFolder=&amp;quot;../../SungemSDK-Python/examples/graphs/&amp;quot;) while True: result = net.run() key = cv2.waitKey(5) prob = net.record(result, key, saveFilename=&amp;quot;./record.dat&amp;quot;) cv2.imshow(&amp;quot;Scene Recorder&amp;quot;, result[0]) cv2.waitKey(1) finally: cv2.destroyAllWindows()  我们需要不断去重复训练的过程，不断去修正，直到达到预期的结果。这里 1 为正确的坐姿，2 为不良的坐姿。在训练的过程中，如果出现误检，需要再次记录场景，再次训练，不断扩充训练集。</description>
     </item>
     
     <item>
@@ -282,7 +282,7 @@ from SungemSDK.api import hsapi as hs import cv2 if __name__ == &#39;__main__&#3
 安装好小车、固定好角蜂鸟之后，就可以配置树莓派以及 SungemSDK 的运行环境了。树莓派的图形界面不太友好，本着要优雅的原则，可以使用 pycharm 进行远程开发调试，具体配置过程可询问谷哥和度娘。
 这里需要说明的是，树莓派的USB接口有电流限制，最高只能达到600mA，可能当多个IO输出的时候，会造成工作不稳定。这里可以考虑为USB提供额外的供电，飞根线或者采用外源HUB。
 主要流程实现直接上代码：
-#!/usr/bin/env python3 # coding=utf-8 from SungemSDK.api import hsapi as hs import drive from video import VideoProcessor def process(ret): bicycles = [x for x in ret[1] if x[0] in {1}] # 1 bicycle if len(bicycles) &amp;gt; 0: # 当检测到自行车时 bike = bicycles[0] x_mid = (bike[2] + bike[4]) / 2 / ret[0].</description>
+#!/usr/bin/env python3 # coding=utf-8 import sys sys.path.append(&amp;quot;../../SungemSDK-Python&amp;quot;) import hsapi as hs import drive from video import VideoProcessor def process(ret): bicycles = [x for x in ret[1] if x[0] in {1}] # 1 bicycle if len(bicycles) &amp;gt; 0: # 当检测到自行车时 bike = bicycles[0] x_mid = (bike[2] + bike[4]) / 2 / ret[0].</description>
     </item>
     
   </channel>

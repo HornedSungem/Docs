@@ -12,19 +12,19 @@
     <title>使用入门 :: 角蜂鸟中文文档</title>
     
     
-    <link href="/Docs/css/nucleus.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1531997864" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1531997864" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1533290917" rel="stylesheet">
     
-      <link href="/Docs/css/theme-mine.css?1531997864" rel="stylesheet">
+      <link href="/Docs/css/theme-mine.css?1533290917" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1531997864"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1533290917"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1531997864"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1531997864"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1533290917"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1533290917"></script>
 <script type="text/javascript">
     
         var baseurl = "\/Docs\/cn";
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1531997864"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1533290917"></script>
 
     
   </div>
@@ -824,12 +824,15 @@
 
 <h3 id="路径和文件">路径和文件</h3>
 
-<p>在角蜂鸟项目的范例目录<strong>SungemSDK/examples</strong>下的3个文件夹分别对应内容为：</p>
+<p>在运行示例程序前，需要从 <a href="https://github.com/HornedSungem/SungemSDK-GraphModels.git">SungemSDK-GraphModels</a> 下载需要的文件，并拷贝至本项目对应的文件夹下。</p>
+
+<pre><code>SungemSDK-GraphModels/graphs -&gt; examples/graphs
+SungemSDK-GraphModels/misc   -&gt; examples/misc
+</code></pre>
 
 <ul>
-<li><strong>/graphs</strong>: 储存内置CNN模型文件，修改/移动文件会导致部分API失效。</li>
-<li><strong>/misc</strong>: 储存图像、标签数据或其他杂物。</li>
-<li><strong>/python</strong>: Python实例。</li>
+<li><strong>graphs</strong>: 储存内置CNN模型文件，修改/移动文件会导致部分API失效。</li>
+<li><strong>misc</strong>: 储存图像、标签数据或其他杂物。</li>
 </ul>
 
 <hr />
@@ -838,7 +841,7 @@
 
 <p>在<strong>python</strong>目录下执行以下命令来启动 <em>Hello 2018</em> 范例。</p>
 
-<pre><code>~/SungemSDK/examples/python$ python3 Hello2018.py
+<pre><code>~/SungemSDK-Python/examples/apps/Hello2018$ python3 Hello2018.py
 </code></pre>
 
 <p>如果一切正常，将会得到以下结果:</p>
@@ -864,14 +867,14 @@ Hello
 <p>加载<strong>OpenCV</strong>、<strong>Numpy</strong>以及角蜂鸟<strong>HSAPI</strong></p>
 
 <pre><code class="language-python">import cv2, sys, numpy as np
-sys.path.append('../../api/')
+sys.path.append('../../../')
 import hsapi as hs
 </code></pre>
 
 <p>初始化角蜂鸟、设定内置加载模型、识别对象图片的根目录</p>
 
 <pre><code class="language-python">net = hs.HS('mnist')
-imgRoot = '../misc/2018_mnist/%d.jpg'
+imgRoot = '../../misc/2018_mnist/%d.jpg'
 </code></pre>
 
 <p>分别调取4张图片[<em>1.jpg - 4.jpg</em>]。使用OpenCV的<strong>imread</strong>获取每张图像位图矩阵并通过**.run(img)载入角蜂鸟中。角蜂鸟返回识别结果并打印。</p>
@@ -1413,20 +1416,20 @@ A: 将虚拟机USB兼容性设置为`USB 3.0`。
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1531997864"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1531997864"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1531997864"></script>
-    <script src="/Docs/js/jquery.sticky.js?1531997864"></script>
-    <script src="/Docs/js/featherlight.min.js?1531997864"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1531997864"></script>
-    <script src="/Docs/js/highlight.pack.js?1531997864"></script>
+    <script src="/Docs/js/clipboard.min.js?1533290917"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1533290917"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1533290917"></script>
+    <script src="/Docs/js/jquery.sticky.js?1533290917"></script>
+    <script src="/Docs/js/featherlight.min.js?1533290917"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1533290917"></script>
+    <script src="/Docs/js/highlight.pack.js?1533290917"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1531997864"></script>
-    <script src="/Docs/js/learn.js?1531997864"></script>
-    <script src="/Docs/js/hugo-learn.js?1531997864"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1533290917"></script>
+    <script src="/Docs/js/learn.js?1533290917"></script>
+    <script src="/Docs/js/hugo-learn.js?1533290917"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1531997864" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1531997864"></script>
+    <link href="/Docs/mermaid/mermaid.css?1533290917" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1533290917"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
