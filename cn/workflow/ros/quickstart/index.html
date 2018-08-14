@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.44" />
+    <meta name="generator" content="Hugo 0.46" />
     <meta name="description" content="">
 
 
@@ -12,19 +12,19 @@
     <title>ROS教程 :: 角蜂鸟中文文档</title>
     
     
-    <link href="/Docs/css/nucleus.css?1533290917" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1533290917" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1533290917" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1533290917" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1533290917" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1533290917" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1533290917" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1533290917" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1534234882" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1534234882" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1534234882" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1534234882" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1534234882" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1534234882" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1534234882" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1534234882" rel="stylesheet">
     
-      <link href="/Docs/css/theme-mine.css?1533290917" rel="stylesheet">
+      <link href="/Docs/css/theme-mine.css?1534234882" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1533290917"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1534234882"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1533290917"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1533290917"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1534234882"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1534234882"></script>
 <script type="text/javascript">
     
         var baseurl = "\/Docs\/cn";
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1533290917"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1534234882"></script>
 
     
   </div>
@@ -833,7 +833,7 @@ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C
 <li><p>检查apt-get更新，安装ROS, rqt, rviz, and robot-generic libraries。</p>
 
 <pre><code class="language-bash">sudo apt-get update
-sudo apt-get install ros-kinetic-desktop    
+sudo apt-get install ros-kinetic-desktop-full    
 </code></pre>
 
 <p>安装不上就科学上网一下</p></li>
@@ -844,21 +844,13 @@ sudo apt-get install ros-kinetic-desktop
 rosdep update
 </code></pre></li>
 
-<li><p>如果报错多尝试几次，实在不行删除配置文件</p>
-
-<pre><code class="language-bash">cd /etc/ros/rosdep/sources.list.d
-sudo rm -rf 20-default.list
-</code></pre>
-
-<p>重新执行第3步骤</p></li>
-
 <li><p>设置ROS环境变量到bashrc</p>
 
 <pre><code class="language-bash">echo &quot;source /opt/ros/kinetic/setup.bash&quot; &gt;&gt; ~/.bashrc
 source ~/.bashrc
 </code></pre></li>
 
-<li><p>更新配置</p>
+<li><p>如果不写在bashrc下，就需要每次在当前终端更新配置</p>
 
 <pre><code class="language-sh">source /opt/ros/kinetic/setup.bash
 </code></pre></li>
@@ -888,34 +880,32 @@ source ~/.bashrc
 
 <li><p>拷贝hs.h接口头文件到/usr/local/include，SungemSDK-ROS需要引用该头文件，所以需拷贝到系统目录下</p>
 
-<pre><code>sudo cp -i &lt;workspace&gt;/SungemSDK/api/includes/hs.h  /usr/local/include
+<pre><code>sudo cp -i &lt;workspace&gt;/SungemSDK/include/hs.h  /usr/local/include
 </code></pre></li>
 
 <li><p>根据您当前系统的架构选择对应文件夹下的libhs.so,拷贝该文件到/usr/local/lib</p>
 
-<pre><code>sudo cp -i &lt;workspace&gt;/SungemSDK/api/lib/linux/x86_64/libhs.so /usr/local/lib
+<pre><code>sudo cp -i &lt;workspace&gt;/SungemSDK/lib/linux/x86_64/libhs.so /usr/local/lib
 </code></pre></li>
 
-<li><p>准备需要的资源文件，model及data文件，git最新SungemSDK-GraphModels,或从百度云盘中下载，并把该目录link到系统下,如果不想放在系统下，你可以修改horned_sungem_launch目录下config下每次模型类型的graph_file_path和category_file_path参数，确保路径下能找到该文件即可。</p>
+<li><p>如果未执行过SungemSDK的install.sh脚本文件，就需要将SungemSDK里的99-hornedsungem.rules文件拷贝到系统rule.d下，并给予执行权限</p>
+
+<pre><code class="language-bash">sudo cp SungemSDK/installer/99-hornedsungem.rules /etc/udev/rules.d/
+sudo chmod +x /etc/udev/rules.d/99-hornedsungem.rules
+sudo udevadm control --reload
+sudo udevadm trigger
+</code></pre></li>
+
+<li><p>准备需要的资源文件，model及data文件，git最新SungemSDK-GraphModels,或从百度云盘中下载，并把该目录link或拷贝到系统下,如果不想放在系统下，你可以修改horned_sungem_launch/config目录下模型配置文件的graph_file_path和category_file_path参数，确保路径下能找到该文件即可。</p>
 
 <pre><code>git clone https://github.com/HornedSungem/SungemSDK-GraphModels.git
-sudo ln -s &lt;workspace&gt;/SungemSDK-GraphModels /opt/SungemSDK-GraphModels
+sudo cp -r &lt;workspace&gt;/SungemSDK-GraphModels /opt/SungemSDK-GraphModels
 </code></pre></li>
 </ul>
 
-<h3 id="创建ros工作空间">创建ROS工作空间</h3>
+<h2 id="2-具体使用">2 具体使用</h2>
 
 <ul>
-<li><p>创建一个工作空间，名字自定义</p>
-
-<pre><code>mkdir -p ~/catkin_&lt;name&gt;/src
-</code></pre></li>
-
-<li><p>cd到你当前的工作空间下</p>
-
-<pre><code>cd ~/catkin_&lt;name&gt;/src
-</code></pre></li>
-
 <li><p>下载SungemSDK-ROS</p>
 
 <pre><code>git clone https://github.com/HornedSungem/SungemSDK-ROS.git
@@ -923,26 +913,38 @@ sudo ln -s &lt;workspace&gt;/SungemSDK-GraphModels /opt/SungemSDK-GraphModels
 
 <li><p>使用catkin编译生成build和devel文件</p>
 
-<pre><code>catkin_make
-</code></pre>
-
-<p>如果编译过程中报错，可根据错误内容对源码进行修改，并查找目录下CmakeList.txt和package.xml是否有误</p></li>
+<pre><code class="language-bash">cd SungemSDK-ROS
+catkin_make
+</code></pre></li>
 
 <li><p>执行source命令，依次执行文件中的语句，使刚修改的初始化文件生效</p>
 
 <pre><code>source devel/setup.bash
 </code></pre></li>
 
-<li><p>设置ros包路径</p>
+<li><p>确保ROS包路径正确</p>
 
 <pre><code>echo $ROS_PACKAGE_PATH
 /home/&lt;user_name&gt;/catkin_&lt;name&gt;/src:/opt/ros/kinetic/share
 </code></pre></li>
 </ul>
 
-<h2 id="2-如何使用sungem-ros">2 如何使用Sungem-ROS</h2>
+<p><strong>提示：</strong> 如果开发者想在俩台机器上进行通信，需要保证在同一局域网下，并设置ROS_MASTER_URI和ROS_IP</p>
 
-<p>配置完上述环境，下面就跟大家介绍下如何使用Sungem-ROS。 根据需求，我们提供了俩种模式：</p>
+<p>查找主机IP地址,终端执行ifconfig</p>
+
+<pre><code>  ifconfig
+</code></pre>
+
+<p>举例主机ip为192.168.50.201,在当前终端执行下列命令</p>
+
+<pre><code>  export ROS_MASTER_URI=http://192.168.50.201:11311
+  export ROS_IP=192.168.50.201
+</code></pre>
+
+<h3 id="如何使用sungemsdk-ros">如何使用SungemSDK-ROS</h3>
+
+<p>配置完上述环境，下面就跟大家介绍下如何使用SungemSDK-ROS。 根据需求，我们提供了俩种模式：</p>
 
 <ol>
 <li><p>使用usb摄像头：</p>
@@ -986,18 +988,17 @@ sudo ln -s &lt;workspace&gt;/SungemSDK-GraphModels /opt/SungemSDK-GraphModels
 <li>pixels:=1080 (默认为360) ：角蜂鸟提供了俩个摄像头分辨率，1920*1080和640*360，你可以根据项目，选择适用于自己的分辨率。</li>
 </ul></li>
 
-<li><p>示例：下面介绍使用googlenet模型进行分类</p>
+<li><p>示例：下面介绍使用yolo模型进行检测</p>
 
 <p>打开终端，加载nodelet,接受角蜂鸟360P的图像</p>
 
-<pre><code>roslaunch horned_sungem_launch hs_camera.launch cnn_type:=googlenet camera:=hs pixels:=360
+<pre><code>roslaunch horned_sungem_launch hs_camera.launch cnn_type:=yolo camera:=hs pixels:=360
 </code></pre>
 
-<p>如果出现错误，需cd到你的catkin工作空间的devel重新source下setup.bash</p>
+<p>如果出现错误，需cd到你的catkin工作空间的devel重新source下setup.bash
+打开新的终端，加载图像</p>
 
-<p>打开新的终端，加载图像</p>
-
-<pre><code>ROSlaunch horned_sungem_launch hs_classification_example.launch camera_topic:=&quot;/hs/camera/image_raw&quot;
+<pre><code>roslaunch horned_sungem_launch hs_detection_example.launch camera_topic:=&quot;/hs/camera/image_raw&quot;
 </code></pre></li>
 </ul></li>
 </ol>
@@ -1032,7 +1033,7 @@ sudo ln -s &lt;workspace&gt;/SungemSDK-GraphModels /opt/SungemSDK-GraphModels
 <ul>
 <li>360</li>
 <li>1080</li>
-<li>其他数值现在只评定为1080P</li>
+<li>如声明其他数值现在只评定为1080P</li>
 </ul></li>
 </ul></li>
 <li>其他参数：
@@ -1044,7 +1045,7 @@ sudo ln -s &lt;workspace&gt;/SungemSDK-GraphModels /opt/SungemSDK-GraphModels
 </ul></li>
 </ul>
 
-<p><strong>注意：</strong> 参数声明的时候都为小写</p>
+<p><strong>注意：</strong> 参数声明都为小写</p>
 
 <h2 id="4-效果展示">4 效果展示</h2>
 
@@ -1551,20 +1552,20 @@ sudo ln -s &lt;workspace&gt;/SungemSDK-GraphModels /opt/SungemSDK-GraphModels
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1533290917"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1533290917"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1533290917"></script>
-    <script src="/Docs/js/jquery.sticky.js?1533290917"></script>
-    <script src="/Docs/js/featherlight.min.js?1533290917"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1533290917"></script>
-    <script src="/Docs/js/highlight.pack.js?1533290917"></script>
+    <script src="/Docs/js/clipboard.min.js?1534234882"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1534234882"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1534234882"></script>
+    <script src="/Docs/js/jquery.sticky.js?1534234882"></script>
+    <script src="/Docs/js/featherlight.min.js?1534234882"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1534234882"></script>
+    <script src="/Docs/js/highlight.pack.js?1534234882"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1533290917"></script>
-    <script src="/Docs/js/learn.js?1533290917"></script>
-    <script src="/Docs/js/hugo-learn.js?1533290917"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1534234882"></script>
+    <script src="/Docs/js/learn.js?1534234882"></script>
+    <script src="/Docs/js/hugo-learn.js?1534234882"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1533290917" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1533290917"></script>
+    <link href="/Docs/mermaid/mermaid.css?1534234882" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1534234882"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

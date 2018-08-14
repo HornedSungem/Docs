@@ -182,12 +182,12 @@ Status类是一个枚举类，定义了API函数的状态返回值。如果API�
 配置ROS环境 (推荐kinetic版本) 下面给大家介绍配置ROS环境具体的执行过程
  设置当前系统可接受ROS的包,并设置密钥。
 sudo sh -c &#39;echo &amp;quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&amp;quot; &amp;gt; /etc/apt/sources.list.d/ros-latest.list&#39; sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116  检查apt-get更新，安装ROS, rqt, rviz, and robot-generic libraries。
-sudo apt-get update sudo apt-get install ros-kinetic-desktop  安装不上就科学上网一下
+sudo apt-get update sudo apt-get install ros-kinetic-desktop-full  安装不上就科学上网一下
  安装rosdep,rosdep为要编译的源代码安装系统依赖项，并且需要在ROS中运行一些核心组件。
-sudo rosdep init rosdep update  如果报错多尝试几次，实在不行删除配置文件
-cd /etc/ros/rosdep/sources.list.d sudo rm -rf 20-default.list  重新执行第3步骤
- 设置ROS环境变量到bashrc
-echo &amp;quot;source /opt/ros/kinetic/setup.bash&amp;quot; &amp;gt;&amp;gt; ~/.bashrc source ~/.</description>
+sudo rosdep init rosdep update  设置ROS环境变量到bashrc
+echo &amp;quot;source /opt/ros/kinetic/setup.bash&amp;quot; &amp;gt;&amp;gt; ~/.bashrc source ~/.bashrc  如果不写在bashrc下，就需要每次在当前终端更新配置
+source /opt/ros/kinetic/setup.bash  安装其它依赖包
+sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential   添加代理方式：配置代理完毕以后，执行下列命令</description>
     </item>
     
     <item>
