@@ -3,16 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/installation/</loc>
+    <loc>https://hornedsungem.github.io/Docs/product/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/installation/"
+                href="https://hornedsungem.github.io/Docs/cn/product/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://hornedsungem.github.io/Docs/installation/"
+                href="https://hornedsungem.github.io/Docs/product/"
                 />
   </url>
   
@@ -115,20 +115,6 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/workflow/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/workflow/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hornedsungem.github.io/Docs/workflow/"
-                />
-  </url>
-  
-  <url>
     <loc>https://hornedsungem.github.io/Docs/api/</loc>
     <xhtml:link
                 rel="alternate"
@@ -181,6 +167,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://hornedsungem.github.io/Docs/workflow/android/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/workflow/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/workflow/"
                 />
   </url>
   
@@ -241,16 +241,16 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/api/lowlevel/</loc>
+    <loc>https://hornedsungem.github.io/Docs/workflow/android/multiple_model/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/api/lowlevel/"
+                href="https://hornedsungem.github.io/Docs/cn/workflow/android/multiple_model/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://hornedsungem.github.io/Docs/api/lowlevel/"
+                href="https://hornedsungem.github.io/Docs/workflow/android/multiple_model/"
                 />
   </url>
   
@@ -283,16 +283,16 @@
   </url>
   
   <url>
-    <loc>https://hornedsungem.github.io/Docs/api/highlevel/</loc>
+    <loc>https://hornedsungem.github.io/Docs/api/python/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="https://hornedsungem.github.io/Docs/cn/api/highlevel/"
+                href="https://hornedsungem.github.io/Docs/cn/api/python/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://hornedsungem.github.io/Docs/api/highlevel/"
+                href="https://hornedsungem.github.io/Docs/api/python/"
                 />
   </url>
   
@@ -377,6 +377,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://hornedsungem.github.io/Docs/workflow/diy/raspi_car/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hornedsungem.github.io/Docs/faq/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/cn/faq/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/faq/"
                 />
   </url>
   

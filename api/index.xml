@@ -1,48 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HS-API on Horned Sungem Documentation</title>
+    <title>API on Horned Sungem Documentation</title>
     <link>https://hornedsungem.github.io/Docs/api/</link>
-    <description>Recent content in HS-API on Horned Sungem Documentation</description>
+    <description>Recent content in API on Horned Sungem Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://hornedsungem.github.io/Docs/api/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Low Level API</title>
-      <link>https://hornedsungem.github.io/Docs/api/lowlevel/</link>
+      <title>Python API (Chinese)</title>
+      <link>https://hornedsungem.github.io/Docs/api/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/api/lowlevel/</guid>
-      <description>Horned Sungem Low Level API Version 0.1.0 Enumerations GlobalOption  Version: 0.1.0
- Overview:
-The GlobalOption class is an enumeration class that defines the options that are passed to and received from the SetGlobalOption and the GetGlobalOption functions.
- enum: LOGLEVEL
- option type: int
- possible values: 0, 1, 2
- get/set get, set
- Description
-0 = Nothing is printed (default)
-1 = Print errors only
-2 = Verbose</description>
-    </item>
-    
-    <item>
-      <title>High-level API</title>
-      <link>https://hornedsungem.github.io/Docs/api/highlevel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hornedsungem.github.io/Docs/api/highlevel/</guid>
-      <description>Horned Sungem High Level API Version 0.1.0 HS.__init__()  Version: 0.1.0
- Overview: initialisation
- Syntax:
-  hs.HS(modelName, **kwargs)   Parameters:
- modelName: built-in models&amp;rsquo; name
- **kwargs key arguments: (Optional)
- &amp;lsquo;verbose&amp;rsquo; Detail of log. From 0 to 2: no log, key log, full log. Default is 2
- &amp;lsquo;mean&amp;rsquo; Mean value in preprocessing. Default is 1.0
- &amp;lsquo;scale&amp;rsquo; Scale value in preprocessing. Default is 0.007843 (1&amp;frasl;127.</description>
+      <guid>https://hornedsungem.github.io/Docs/api/python/</guid>
+      <description>img.badge { margin:0!important; display:inline!important } span.keyword { color:#0000FF; font-weight:bold; font-style: italic; } span.param { color:#2B839F; font-weight:bold; font-style: italic; } span.constant { font-weight:bold; } p { font-size: 16px!important; }  SungemSDK-Python  开发指南 hsapi 的包结构如下：
+hsapi ├── __init__.py ├── core │ ├── __init__.py │ ├── base.py │ ├── device.py │ └── graph.py ├── high │ ├── __init__.py │ ├── net.py │ └── task.py └── easy ├── __init__.py └── prefab.py   core 模块为底层接口 high 模块为高层接口，抽象了一个神经网络基类，简化操作流程 easy 模块提供了一些使用内置神经网络比较简便的类和方法  底层接口 管理设备 Device实例 import numpy import hsapi as hs # 导入 hsapi 模块, 注意导入路径 # 获取角蜂鸟设备 device_list = hs.</description>
     </item>
     
     <item>
@@ -51,7 +25,7 @@ The GlobalOption class is an enumeration class that defines the options that are
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/api/android/</guid>
-      <description>SungemSDK-Android API The current version is 0.1.2 ConnectStatus Parameter  HS_OK :The function call worked as expected. HS_BUSY :The device is busy, retry later. HS_ERROR :An unexpected error was encountered during the function call. HS_NO_FILE :No files found HS_UNSUPPORTED_GRAPH_FILE :The graph file is corrupt. Try to recompile the graph file with the version of the toolkit that corresponds to the API version. STATUS_WAIT_TIMEOUT : The function call timeout  HsBaseThread HsBaseThread is a thread for HornedSungem interacion, developers can extend this class for function expansion.</description>
+      <description>SungemSDK-Android API The current version is 0.2.0,support for multiple models ConnectStatus Parameter  HS_OK : The function call worked as expected. HS_BUSY : The device is busy, retry later. HS_ERROR : An unexpected error was encountered during the function call. HS_NO_CONTEXT: No context. HS_NO_FILE : No files found. HS_DEVICE_NOT_FOUND : No device found. HS_DEVICE_OPEN_FAILED : Failed to open device. HS_UNSUPPORTED_GRAPH_FILE :The graph file is corrupt. Try to recompile the graph file with the version of the toolkit that corresponds to the API version.</description>
     </item>
     
   </channel>

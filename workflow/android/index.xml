@@ -49,5 +49,15 @@ Preparation  For details on the configuration environment, please refer to quick
 Preparation  For details on the configuration environment, please refer to quick start, I will not elaborate here. Download the model graph_sg, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory. Because the project needs to process and display the image, the javacv library is use.</description>
     </item>
     
+    <item>
+      <title>Multiple Model</title>
+      <link>https://hornedsungem.github.io/Docs/workflow/android/multiple_model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/workflow/android/multiple_model/</guid>
+      <description>This article mainly introduces how to implement a simple multi-model example using the multi-model version of HornedSungem under Android platform.
+Preparation  For details on the configuration environment, please refer to quick start, I will not elaborate here. Download the models graph_face_SSD and graph_object_SSD required for detection, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory. Because the project needs to process and display the image, the javacv library is use.</description>
+    </item>
+    
   </channel>
 </rss>

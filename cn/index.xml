@@ -90,13 +90,13 @@
       
       <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_hello2018/</guid>
       <description>快速开始 下面介绍如何在Android Studio开发环境下通过角蜂鸟SDK使用Mnist卷积神经网络，实现数字识别，本文的介绍示例是使用角蜂鸟摄像头，如果需要外部图像来源可参考示例工程实现
-步骤1：准备环境  下载最新版HornedSungemSDK jar包 请确保满足一下开发环境要求  确保minSdkVersion在Android 3.1以上 确保设备支持OTG Android Studio 2.0或以上版本  新建project工程 请确保在使用角蜂鸟相关功能及服务前，已阅读Android API,详见API文档  步骤2：添加SDK  将下载的软件包根据实际需求拷贝到您项目对应的文件夹里，例如：  该lib下包含了horned-sungemSDK及javacv所需要的jar和so库
+步骤1：准备环境  下载最新版SungemSDK-Android jar包 请确保满足一下开发环境要求  确保minSdkVersion在Android 3.1以上 确保设备支持OTG Android Studio 2.0或以上版本  新建project工程 请确保在使用角蜂鸟相关功能及服务前，已阅读Android API,详见API文档  步骤2：添加SDK  将下载的软件包根据实际需求拷贝到您项目对应的文件夹里，例如：  该lib下包含了SungemSDK-Android及javacv所需要的jar和so库
 注意：libs文件夹路径不能包含中文，否则会编译失败
-2.请在build.gradle文件里，请将上述库放入正确路径下，如检索不到，可手动添加引用：
+2.请在build.gradle文件里，将上述库放入正确路径下，如检索不到，可手动添加引用：
 步骤3：添加权限 为了保证SDK正常运行，需要在AndroidManistest.xml文件下添加下列许可：
 &amp;lt;uses-permission android:name=&amp;quot;android.permission.READ_EXTERNAL_STORAGE&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.WRITE_EXTERNAL_STORAGE&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.hardware.usb.host&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.hardware.usb.accessory&amp;quot;/&amp;gt; &amp;lt;uses-feature android:name=&amp;quot;android.hardware.usb.host&amp;quot;/&amp;gt;  步骤4：代码实现 下面通过一个简单hello2018的例子讲解具体怎么使用角蜂鸟SDK
- 下载graph_mnist文件和4张测试图片,在您的module下新建assets包，将下载的文件复制到该目录下，如图：   定义HelloActivity继承HsBaseActivity,用于角蜂鸟通信和显示结果,具体代码如下：
-public class HelloActivity extends HsBaseActivity { private TextView mTextView; private Handler mHandler = new Handler() { @Override public void handleMessage(Message msg) { super.</description>
+ 下载graph_mnist文件和4张测试图片,在您的module下新建assets包，将下载的文件复制到该目录下，如图：   初始化HsDevice,用于角蜂鸟通信和显示结果,具体代码如下：
+mHsDevice = new HsDevice(this) { @Override public void openSucceed(UsbDevice usbDevice) { Toast.makeText(MainActivity.this, &amp;quot;连接成功&amp;quot;, Toast.LENGTH_SHORT).show(); mUsbDevice = usbDevice; mCbDevice.setChecked(true); } @Override public void openFailed() { mCbDevice.</description>
     </item>
     
     <item>
@@ -106,11 +106,13 @@ public class HelloActivity extends HsBaseActivity { private TextView mTextView; 
       
       <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_face_detector/</guid>
       <description>本文主要给大家介绍如何在Android平台下使用角蜂鸟调用SSD-Mobilenet卷积神经网络,实现人脸检测
-准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载人脸检测所需模型graph_face_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 1.实现具体步骤：  将graph文件传输到角蜂鸟里
-int status = allocateGraphByAssets(&amp;quot;graph_face_SSD&amp;quot;);  处理图像数据，分俩种模式
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载人脸检测所需模型graph_face_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 1.实现具体步骤：  开启设备
+int status = openDevice(); if (status != ConnectStatus.HS_OK) { return; }  将graph文件传输到角蜂鸟里
+int id = allocateGraphByAssets(&amp;quot;graph_face_SSD&amp;quot;);  如果单模型，id即为0，不需要维护此属性。
+ 处理图像数据，分俩种模式
  使用角蜂鸟内置摄像头：
-byte[] bytes = getImage(0.007843f, 1.0f);  使用外部图像来源：该模式下，传入角蜂鸟的数据要经过预处理，下面介绍的例子是使用手机摄像头的数据，图像大小为1280*720：
-SoftReference&amp;lt;Bitmap&amp;gt; softRef = new SoftReference&amp;lt;&amp;gt;(Bitmap.createBitmap(1280, 720, Bitmap.Config.ARGB_8888)); Bitmap bitmap = softRef.get(); allocations[0].copyTo(bitmap); Matrix matrix = new Matrix(); matrix.postScale(300f / 1280, 300f / 720); Bitmap newbm = Bitmap.createBitmap(bitmap, 0, 0, 1280, 720, matrix,true); int[] ints = new int[300 * 300]; newbm.getPixels(ints, 0, 300, 0, 0, 300, 300); float[] float_tensor = new float[300 * 300 * 3]; for (int j = 0; j &amp;lt; 300 * 300; j++) { float_tensor[j * 3] = Color.</description>
+byte[] bytes = getImage(0.007843f, 1.0f,id);  使用外部图像来源：该模式下，传入角蜂鸟的数据要经过预处理，下面介绍的例子是使用手机摄像头的数据，图像大小为1280*720：
+SoftReference&amp;lt;Bitmap&amp;gt; softRef = new SoftReference&amp;lt;&amp;gt;(Bitmap.createBitmap(1280, 720, Bitmap.Config.ARGB_8888)); Bitmap bitmap = softRef.get(); allocations[0].copyTo(bitmap); Matrix matrix = new Matrix(); matrix.postScale(300f / 1280, 300f / 720); Bitmap newbm = Bitmap.</description>
     </item>
     
     <item>
@@ -121,9 +123,9 @@ SoftReference&amp;lt;Bitmap&amp;gt; softRef = new SoftReference&amp;lt;&amp;gt;(
       <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_object_detector/</guid>
       <description>本文主要给大家介绍如何在Android平台下使用角蜂鸟调用SSD-Mobilenet卷积神经网络，实现物体检测
 准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载物体检测所需模型graph_object_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下，该模型支持20种物体的检测。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 本文体验的模型文件提供的20种物体检测包含：
-String[] labels = {&amp;quot;aeroplane&amp;quot;, &amp;quot;bicycle&amp;quot;, &amp;quot;bird&amp;quot;, &amp;quot;boat&amp;quot;, &amp;quot;bottle&amp;quot;, &amp;quot;bus&amp;quot;, &amp;quot;car&amp;quot;, &amp;quot;cat&amp;quot;, &amp;quot;chair&amp;quot;, &amp;quot;cow&amp;quot;, &amp;quot;diningtable&amp;quot;, &amp;quot;dog&amp;quot;, &amp;quot;horse&amp;quot;, &amp;quot;motorbike&amp;quot;, &amp;quot;person&amp;quot;, &amp;quot;pottedplant&amp;quot;, &amp;quot;sheep&amp;quot;, &amp;quot;sofa&amp;quot;, &amp;quot;train&amp;quot;, &amp;quot;tvmonitor&amp;quot;};  主要实现流程：  将graph文件传输到角蜂鸟里 处理图像数据 获取返回的处理结果 结果显示在view上 俩种实现模式
+String[] labels = {&amp;quot;aeroplane&amp;quot;, &amp;quot;bicycle&amp;quot;, &amp;quot;bird&amp;quot;, &amp;quot;boat&amp;quot;, &amp;quot;bottle&amp;quot;, &amp;quot;bus&amp;quot;, &amp;quot;car&amp;quot;, &amp;quot;cat&amp;quot;, &amp;quot;chair&amp;quot;, &amp;quot;cow&amp;quot;, &amp;quot;diningtable&amp;quot;, &amp;quot;dog&amp;quot;, &amp;quot;horse&amp;quot;, &amp;quot;motorbike&amp;quot;, &amp;quot;person&amp;quot;, &amp;quot;pottedplant&amp;quot;, &amp;quot;sheep&amp;quot;, &amp;quot;sofa&amp;quot;, &amp;quot;train&amp;quot;, &amp;quot;tvmonitor&amp;quot;};  主要实现流程：  开启设备 将graph文件传输到角蜂鸟里 处理图像数据 获取返回的处理结果 结果显示在view上 俩种实现模式
  使用角蜂鸟内置摄像头，主要业务逻辑代码如下：
-int status = allocateGraphByAssets(&amp;quot;graph_object_SSD&amp;quot;); if (status != HsConnectApi.HS_OK) { return; } while (true) { if (mHsApi != null &amp;amp;&amp;amp; isRunning) { byte[] bytes = getImage(0.007843f, 1); float[] result = getResult(0); if (bytes !</description>
+int status = openDevice(); if (status != ConnectStatus.HS_OK) { return; } int id = allocateGraphByAssets(&amp;quot;graph_object_SSD&amp;quot;); if (id &amp;lt; 0) { return; } while (true) { byte[] bytes = getImage(0.</description>
     </item>
     
     <item>
@@ -133,42 +135,22 @@ int status = allocateGraphByAssets(&amp;quot;graph_object_SSD&amp;quot;); if (st
       
       <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/android_sketchguess/</guid>
       <description>本文主要给大家介绍下在Android平台下使用角蜂鸟实现手绘识别功能
-准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述 下载物体检测所需模型graph_sg文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中libs下拷贝到自己工程 将class_list_chn.txt文件拷贝到Android设备的存储空间下，用于345种物体的比对  具体实现  将graph文件传输到角蜂鸟里
-int status = allocateGraphByAssets(&amp;quot;graph_sg&amp;quot;);  读取物体分类文件
-try { BufferedReader bufferedReader = new BufferedReader(new FileReader(Environment.getExternalStorageDirectory().getAbsolutePath() + &amp;quot;/hs/class_list_chn.txt&amp;quot;)); for (int i = 0; i &amp;lt; 345; i++) { String line = bufferedReader.readLine(); if (line != null) { String[] strings = line.split(&amp;quot; &amp;quot;); mObjectNames[i] = strings[0]; } } bufferedReader.close(); } catch (FileNotFoundException e) { e.printStackTrace(); Log.e(&amp;quot;SketchGuessThread&amp;quot;, &amp;quot;FileNotFoundException&amp;quot;); } catch (IOException e) { e.</description>
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述 下载物体检测所需模型graph_sg文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中libs下拷贝到自己工程 将class_list_chn.txt文件拷贝到Android设备的存储空间下，用于345种物体的比对  具体实现  打开设备通信
+int status = openDevice(); if (status != ConnectStatus.HS_OK) { return; }  将graph文件传输到角蜂鸟里
+int id = allocateGraphByAssets(&amp;quot;graph_sg&amp;quot;);  读取物体分类文件
+try { BufferedReader bufferedReader = new BufferedReader(new FileReader(Environment.getExternalStorageDirectory().getAbsolutePath() + &amp;quot;/hs/class_list_chn.txt&amp;quot;)); for (int i = 0; i &amp;lt; 345; i++) { String line = bufferedReader.readLine(); if (line != null) { String[] strings = line.split(&amp;quot; &amp;quot;); mObjectNames[i] = strings[0]; } } bufferedReader.</description>
     </item>
     
     <item>
-      <title>底层API</title>
-      <link>https://hornedsungem.github.io/Docs/cn/api/lowlevel/</link>
+      <title>多模型</title>
+      <link>https://hornedsungem.github.io/Docs/cn/workflow/android/multiple_model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/cn/api/lowlevel/</guid>
-      <description>角蜂鸟底层API 版本 0.1.0 Enumerations GlobalOption  版本: 0.1.0
- 概述:
-GlobalOption类是一个枚举类，定义了一些选项，这些选项用于SetGlobalOption和GetGlobalOption函数输入和返回值。
- 枚举: LOGLEVEL
- 选项类型: int
- 合法数值: 0, 1, 2
- 获取/设置 get, set
- 描述
-0 = 没有打印输出 (默认)
-1 = 只打印错误
-2 = 打印所有信息
-  Status  版本: 0.1.0
- 概述:
-Status类是一个枚举类，定义了API函数的状态返回值。如果API函数返回一个非零状态值，通常会抛出一个与之对应的异常。可能出现的状态值如下所示：
- 枚举: HS_OK
- 描述:
-函数调用正常。
- 枚举: HS_BUSY
- 描述:
-设备忙，稍后重试。
- 枚举: HS_ERROR
- 描述:
-函数调用遇到意外错误。
- 枚举: HS_OUT_OF_MEMORY
- 描述:</description>
+      <guid>https://hornedsungem.github.io/Docs/cn/workflow/android/multiple_model/</guid>
+      <description>本文主要给大家介绍如何在Android平台下使用多模型版本的角蜂鸟实现一个简单的多模型例子。
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载物体检测和人脸检测所需的俩个模型graph_object_SSD，graph_face_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下，该模型支持20种物体的检测。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 1.实现具体步骤：  开启设备通信。 将俩个模型按顺序通过USB送入角蜂鸟里。 获取人脸模型对应的图像。 得到对应人脸模型的结果。 将图像进行预处理传入物体检测的模型里。 得到对应物体检测的结果。  2.主要代码逻辑： //子线程中执行对应步骤代码 int status = openDevice(); int face_id = allocateGraphByAssets(mContext, &amp;quot;graph_face_SSD&amp;quot;); int object_id = allocateGraphByAssets(mContext, &amp;quot;graph_object_SSD&amp;quot;); byte[] bytes = getImage(STD, MEAN, face_id); float[] result_face = getResult(face_id); //...经过预处理bytes图像数据并转成float类型传给物体检测模型 loadTensor(float_tensor, float_tensor.length, object_id); float[] result_object = getResult(object_id); HornedSungemFrame frame = getFrameResult(image, result_face, result_object);//整合结果显示  具体代码可以参考示例工程，本文只摘取了重要代码，其中数据的处理及业务逻辑未列出
+3.返回结果解析： 因本文主要用到人脸检测和物体检测俩种模型，具体的解析结果可参照模型列表的详细介绍。
+int num_object = (int) object_result[0]; if (num_object &amp;gt; 0) { for (int i = 0; i &amp;lt; num_object; i++) { HornedSungemFrame.</description>
     </item>
     
     <item>
@@ -177,7 +159,8 @@ Status类是一个枚举类，定义了API函数的状态返回值。如果API�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/cn/workflow/ros/quickstart/</guid>
-      <description>本文主要介绍如何通过ROS使用角蜂鸟的基本示例教程
+      <description>本文主要介绍如何通过ROS使用角蜂鸟的基本示例教程。
+该版本只适用于多模型api，如果角蜂鸟版本过低，请更新对应版本的固件。
 1 配置环境 操作系统 Ubuntu16.04下
 配置ROS环境 (推荐kinetic版本) 下面给大家介绍配置ROS环境具体的执行过程
  设置当前系统可接受ROS的包,并设置密钥。
@@ -187,40 +170,27 @@ sudo apt-get update sudo apt-get install ros-kinetic-desktop-full  安装不上�
 sudo rosdep init rosdep update  设置ROS环境变量到bashrc
 echo &amp;quot;source /opt/ros/kinetic/setup.bash&amp;quot; &amp;gt;&amp;gt; ~/.bashrc source ~/.bashrc  如果不写在bashrc下，就需要每次在当前终端更新配置
 source /opt/ros/kinetic/setup.bash  安装其它依赖包
-sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential   添加代理方式：配置代理完毕以后，执行下列命令</description>
+sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential   参考链接ROS环境安装</description>
     </item>
     
     <item>
-      <title>高层API</title>
-      <link>https://hornedsungem.github.io/Docs/cn/api/highlevel/</link>
+      <title>Python API</title>
+      <link>https://hornedsungem.github.io/Docs/cn/api/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hornedsungem.github.io/Docs/cn/api/highlevel/</guid>
-      <description>Horned Sungem High Level API Version 0.1.0 通用高层函数 HS.__init__()  版本 Version: 0.1.0
- 总览 Overview: 初始化角蜂鸟高层接口。
- 语法 Syntax:
-  hs.HS(modelName, **kwargs)   参数 Parameters:
- modelName: 内置模型名称。
- **kwargs 关键字参数: (Optional)
- &amp;lsquo;verbose&amp;rsquo; 显示信息详细程度：从0到2分别为无信息、关键信息、全部信息。默认为2。
- &amp;lsquo;mean&amp;rsquo; 模型前处理均值。默认为1.0
- &amp;lsquo;scale&amp;rsquo; 模型前处理尺度。默认为0.007843 （1/127.5）
- &amp;lsquo;graphFolder&amp;rsquo; 模型文件夹路径。 默认为 &amp;lsquo;../graphs/&amp;rsquo;
- &amp;lsquo;zoom&amp;rsquo; 为True时图像尺寸为640x360，False时1920x1080。默认为True。
- &amp;lsquo;labels&amp;rsquo; 使用SSD时是否使用自定义标签。默认为None。未来开放自定义模型时可更改。
- &amp;lsquo;threshSSD&amp;rsquo; 使用SSD时的阈值，范围为0-1。 默认为0.55。
-   返回 Return: 返回已加载模型的HS Object实例。
- 范例 Example:</description>
+      <guid>https://hornedsungem.github.io/Docs/cn/api/python/</guid>
+      <description>img.badge { margin:0!important; display:inline!important } span.keyword { color:#0000FF; font-weight:bold; font-style: italic; } span.param { color:#2B839F; font-weight:bold; font-style: italic; } span.constant { font-weight:bold; } p { font-size: 16px!important; }  SungemSDK-Python  开发指南 hsapi 的包结构如下：
+hsapi ├── __init__.py ├── core │ ├── __init__.py │ ├── base.py │ ├── device.py │ └── graph.py ├── high │ ├── __init__.py │ ├── net.py │ └── task.py └── easy ├── __init__.py └── prefab.py   core 模块为底层接口 high 模块为高层接口，抽象了一个神经网络基类，简化操作流程 easy 模块提供了一些使用内置神经网络比较简便的类和方法  底层接口 管理设备 Device实例 import numpy import hsapi as hs # 导入 hsapi 模块, 注意导入路径 # 获取角蜂鸟设备 device_list = hs.</description>
     </item>
     
     <item>
-      <title>Android 中文API</title>
+      <title>Android API</title>
       <link>https://hornedsungem.github.io/Docs/cn/api/android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/cn/api/android/</guid>
-      <description>SungemSDK-Android API 当前版本为0.1.2 ConnectStatus 状态参数  HS_OK ：正常 HS_BUSY ：队列正忙 HS_ERROR ：通信异常 HS_NO_FILE ：没有索引到文件 HS_UNSUPPORTED_GRAPH_FILE ：不支持的graph文件 STATUS_WAIT_TIMEOUT ：超时  HsBaseThread HsBaseThread继承Thread的一个子线程,负责与角蜂鸟通信，开发者可根据自己需求继承此类去作功能扩展。
-构造器  ConnectBridge：在usb连接上执行回调函数openSucceed时的参数，用于连接Usb设备与当前类 zoom : 决定获取角蜂鸟自带摄像头图像的分辨率大小，true为640*360的图像，false为1920*1080的图像  相关函数    返回值 函数名 描述     int allocateGraph(String filename) 分配卷积神经网络模型到角蜂鸟，传入文件路径   int allocateGraphByAssets(String filename) 分配卷积神经网络模型到角蜂鸟，传入文件在assets下路径   byte[] getImage(float stdValue,float mean) 获取graph图像   byte[] deviceGetImage() 获取设备图像   void setZoom(boolean zoom) 设置摄像头分辨率   int loadTensor(float[] data,int length,int parameter) 角蜂鸟加载预处理后的图像数据   int loadTensor(byte[] data,int length,int parameter) 角蜂鸟加载经过预处理后的数据   byte[] getResult(int parameter) 获取返回结果   void close() 关闭设备     allocateGraph(filename)：此函数是分配一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能</description>
+      <description>SungemSDK-Android API 当前版本为0.2.0，支持多模型 ConnectStatus 状态参数  HS_OK ：正常 HS_BUSY ：队列正忙 HS_ERROR ：通信异常 HS_NO_CONTEXT ：没有上下文 HS_NO_FILE ：没有索引到文件 HS_DEVICE_NOT_FOUND ：没有找到设备 HS_DEVICE_OPEN_FAILED ：打开设备失败 HS_UNSUPPORTED_GRAPH_FILE ：不支持的graph文件 HS_NO_OPEN ：调用openDevice()之前进行通信操作产生的错误  HsBaseThread HsBaseThread继承Thread的一个子线程,负责与角蜂鸟通信，开发者可根据自己需求继承此类去作功能扩展。
+构造器  context：上下文 usbDevice：在usb连接上执行回调函数openSucceed时的参数，用于初始化通信类 zoom : 决定获取角蜂鸟自带摄像头图像的分辨率大小，true为640*360的图像，false为1920*1080的图像  相关函数    返回值 函数名 描述     int allocateGraph(String filename) 分配卷积神经网络模型到角蜂鸟，传入文件路径   int allocateGraphByAssets(String filename) 分配卷积神经网络模型到角蜂鸟，传入文件在assets下路径   byte[] getImage(float std,float mean,int id) 获取某graph对应的原始图像   byte[] deviceGetImage() 获取设备图像   void setZoom(boolean zoom) 设置摄像头分辨率   int loadTensor(float[] data,int length,int id) 角蜂鸟加载预处理后的图像数据   int loadTensor(byte[] data,int length,int id) 角蜂鸟加载经过预处理后的数据   byte[] getResult(int id) 获取返回结果   int openDevice() 打开设备   void closeDevice() 关闭设备     allocateGraph(filename)：此函数是分配一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能</description>
     </item>
     
     <item>

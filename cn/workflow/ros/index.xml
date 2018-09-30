@@ -15,7 +15,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/cn/workflow/ros/quickstart/</guid>
-      <description>本文主要介绍如何通过ROS使用角蜂鸟的基本示例教程
+      <description>本文主要介绍如何通过ROS使用角蜂鸟的基本示例教程。
+该版本只适用于多模型api，如果角蜂鸟版本过低，请更新对应版本的固件。
 1 配置环境 操作系统 Ubuntu16.04下
 配置ROS环境 (推荐kinetic版本) 下面给大家介绍配置ROS环境具体的执行过程
  设置当前系统可接受ROS的包,并设置密钥。
@@ -25,7 +26,7 @@ sudo apt-get update sudo apt-get install ros-kinetic-desktop-full  安装不上�
 sudo rosdep init rosdep update  设置ROS环境变量到bashrc
 echo &amp;quot;source /opt/ros/kinetic/setup.bash&amp;quot; &amp;gt;&amp;gt; ~/.bashrc source ~/.bashrc  如果不写在bashrc下，就需要每次在当前终端更新配置
 source /opt/ros/kinetic/setup.bash  安装其它依赖包
-sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential   添加代理方式：配置代理完毕以后，执行下列命令</description>
+sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential   参考链接ROS环境安装</description>
     </item>
     
   </channel>
