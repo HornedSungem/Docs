@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>API on Horned Sungem Documentation</title>
+    <title>角蜂鸟API on 角蜂鸟中文文档</title>
     <link>https://hornedsungem.github.io/Docs/api/</link>
-    <description>Recent content in API on Horned Sungem Documentation</description>
+    <description>Recent content in 角蜂鸟API on 角蜂鸟中文文档</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://hornedsungem.github.io/Docs/api/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Python API (Chinese)</title>
+      <title>Python API</title>
       <link>https://hornedsungem.github.io/Docs/api/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -25,7 +25,8 @@ hsapi ├── __init__.py ├── core │ ├── __init__.py │ ├�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/api/android/</guid>
-      <description>SungemSDK-Android API The current version is 0.2.0,support for multiple models ConnectStatus Parameter  HS_OK : The function call worked as expected. HS_BUSY : The device is busy, retry later. HS_ERROR : An unexpected error was encountered during the function call. HS_NO_CONTEXT: No context. HS_NO_FILE : No files found. HS_DEVICE_NOT_FOUND : No device found. HS_DEVICE_OPEN_FAILED : Failed to open device. HS_UNSUPPORTED_GRAPH_FILE :The graph file is corrupt. Try to recompile the graph file with the version of the toolkit that corresponds to the API version.</description>
+      <description>SungemSDK-Android API 当前版本为0.2.0，支持多模型 ConnectStatus 状态参数  HS_OK ：正常 HS_BUSY ：队列正忙 HS_ERROR ：通信异常 HS_NO_CONTEXT ：没有上下文 HS_NO_FILE ：没有索引到文件 HS_DEVICE_NOT_FOUND ：没有找到设备 HS_DEVICE_OPEN_FAILED ：打开设备失败 HS_UNSUPPORTED_GRAPH_FILE ：不支持的graph文件 HS_NO_OPEN ：调用openDevice()之前进行通信操作产生的错误  HsBaseThread HsBaseThread继承Thread的一个子线程,负责与角蜂鸟通信，开发者可根据自己需求继承此类去作功能扩展。
+构造器  context：上下文 usbDevice：在usb连接上执行回调函数openSucceed时的参数，用于初始化通信类 zoom : 决定获取角蜂鸟自带摄像头图像的分辨率大小，true为640*360的图像，false为1920*1080的图像  相关函数    返回值 函数名 描述     int allocateGraph(String filename) 分配卷积神经网络模型到角蜂鸟，传入文件路径   int allocateGraphByAssets(String filename) 分配卷积神经网络模型到角蜂鸟，传入文件在assets下路径   byte[] getImage(float std,float mean,int id) 获取某graph对应的原始图像   byte[] deviceGetImage() 获取设备图像   void setZoom(boolean zoom) 设置摄像头分辨率   int loadTensor(float[] data,int length,int id) 角蜂鸟加载预处理后的图像数据   int loadTensor(byte[] data,int length,int id) 角蜂鸟加载经过预处理后的数据   byte[] getResult(int id) 获取返回结果   int openDevice() 打开设备   void closeDevice() 关闭设备     allocateGraph(filename)：此函数是分配一个神经网络模型给角蜂鸟，通过加载该模型来实现某个功能</description>
     </item>
     
   </channel>

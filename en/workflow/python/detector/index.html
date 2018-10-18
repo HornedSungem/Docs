@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.49" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+    <title>Face detector :: Horned Sungem Documentation</title>
+    
+    
+    <link href="/Docs/css/nucleus.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1539858228" rel="stylesheet">
+    
+      <link href="/Docs/css/theme-mine.css?1539858228" rel="stylesheet">
+    
+
+    <script src="/Docs/js/jquery-2.x.min.js?1539858228"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Docs/en/workflow/python/detector/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+	<a href="/Docs/" ><img align="left" src="/Docs/logo.png"></a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1539858228"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1539858228"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/Docs\/en";
+    
+</script>
+<script type="text/javascript" src="/Docs/js/search.js?1539858228"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/purchase/" title="Purchase" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/purchase/">
+          Purchase
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/product/" title="Product Instructions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/product/">
+          Product Instructions
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/quickstart/" title="Quick Start" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/quickstart/">
+          Quick Start
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/model/" title="Model List" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/model/">
+          Model List
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_mnist/" title="Mnist Digit recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_mnist/">
+        Mnist Digit recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_face_ssd/" title="MobileNet-SSD Face Detector" class="dd-item ">
+        <a href="/Docs/en/model/graph_face_ssd/">
+        MobileNet-SSD Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_object_ssd/" title="MobileNet-SSD Object Detector" class="dd-item ">
+        <a href="/Docs/en/model/graph_object_ssd/">
+        MobileNet-SSD Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_sz/" title="SqueezeNet Image Classification" class="dd-item ">
+        <a href="/Docs/en/model/graph_sz/">
+        SqueezeNet Image Classification
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_g/" title="GoogleNet Image Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_g/">
+        GoogleNet Image Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_fn/" title="FaceNet Face Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_fn/">
+        FaceNet Face Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_sg/" title="Sketch Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_sg/">
+        Sketch Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/api/" title="APIs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/api/">
+          APIs
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/api/python/" title="Python API" class="dd-item ">
+        <a href="/Docs/en/api/python/">
+        Python API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/api/android/" title="Android API" class="dd-item ">
+        <a href="/Docs/en/api/android/">
+        Android API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/" title="Examples and Tutorials" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Docs/en/workflow/">
+          Examples and Tutorials
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/python/" title="Python" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Docs/en/workflow/python/">
+          Python
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/detector/" title="Face detector" class="dd-item active">
+        <a href="/Docs/en/workflow/python/detector/">
+        Face detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/detector_object/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/python/detector_object/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/recorder/" title="Scene Recorder" class="dd-item ">
+        <a href="/Docs/en/workflow/python/recorder/">
+        Scene Recorder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/image_recognition/" title="Image Recogniser (Low-level API Tutorial)" class="dd-item ">
+        <a href="/Docs/en/workflow/python/image_recognition/">
+        Image Recogniser (Low-level API Tutorial)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/android/" title="Android" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/android/">
+          Android
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_hello2018/" title="Hello 2018" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_hello2018/">
+        Hello 2018
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_face_detector/" title="Face Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_face_detector/">
+        Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_object_detector/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_object_detector/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_sketchguess/" title="SketchGuess" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_sketchguess/">
+        SketchGuess
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/multiple_model/" title="Multiple Model" class="dd-item ">
+        <a href="/Docs/en/workflow/android/multiple_model/">
+        Multiple Model
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/ros/" title="ROS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/ros/">
+          ROS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/ros/quickstart/" title="ROS Tutorial" class="dd-item ">
+        <a href="/Docs/en/workflow/ros/quickstart/">
+        ROS Tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/diy/" title="DIY" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/diy/">
+          DIY
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/rapiro/" title="Rapiro Robot" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/rapiro/">
+        Rapiro Robot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/smartlamp/" title="Smart Lamp" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/smartlamp/">
+        Smart Lamp
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/sitting_pose/" title="Sitting posture alarm" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/sitting_pose/">
+        Sitting posture alarm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/raspi_car/" title="Raspberry Pi Toy Car" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/raspi_car/">
+        Raspberry Pi Toy Car
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/faq/" title="FAQs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/faq/">
+          FAQs
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/contact/" title="Contact us" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/contact/">
+          Contact us
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/Docs/en/workflow/python/detector/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="/Docs/workflow/python/detector/">Chinese</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/HornedSungem">Github</a>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Docs/en/'>Horned Sungem Documentation</a> > <a href='/Docs/en/workflow/'>Examples and Tutorials</a> > <a href='/Docs/en/workflow/python/'>Python</a> > Face detector
+          
+         
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#show">Show</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Face detector</h1>
+          
+
+        
+
+
+
+
+<p>This chapter will introduce how to use Horned Sungem to deploy <strong>SSD-Mobilenet</strong> face detector</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>Get <a href="https://github.com/HornedSungem/SungemSDK-Python">Python Development Kit</a> and <a href="https://github.com/HornedSungem/SungemSDK-GraphModels">Model Resources</a> according to <a href="../../../quickstart">Getting Started</a> page.</p>
+
+<table border="1" cellspacing="0">
+<tr><td>Graph File</td><td>graph_face_SSD</td></tr>
+<tr><td>Example</td><td>examples/apps/FaceDetector/FaceDetector.py</td></tr>
+</table>
+
+<h2 id="code">Code</h2>
+
+<pre><code class="language-python"># 1. Import libs
+import numpy as np, cv2, sys
+from hsapi import FaceDetector
+
+# 2. Create a face detection network
+net = FaceDetector(zoom=True, thresh=0.55)
+&quot;&quot;&quot;
+zoom: If True, the image output from the camera built into the Horned Sungem is 640x360, otherwise 1920x1080.
+thresh: Face detection threshold, range 0-1, increasing the threshold will reduce false detection but increase missed detection, and vice versa.
+device: Used to specify the device that creates the network.
+graphPath: Used to customize the path of the graph file, defaulted to the examples/graphs directory.
+... 
+Other options can refer to the specific implementation in the API.
+&quot;&quot;&quot;
+
+# If using an external camera, create a cv2.VideoCapture class to call the camera
+WEBCAM = False
+if WEBCAM: video_capture = cv2.VideoCapture(0)
+
+# 3. Read image data and detection results, frame and display
+try:
+    while True:
+        # If you use an external camera, load the camera image into the Hornd Sungem
+        if WEBCAM: _, img = video_capture.read()
+        else: img = None
+
+        result = net.run(img)
+        &quot;&quot;&quot;
+        When the function parameter is None, use the built-in camera of the Horned Sungem as input.
+
+        Return value 'result' is a tuple
+        result[0]: Image for the device (if an external camera is used, the loaded image)
+        result[1]: A list of multiple detection results
+
+        You can get the number of detection results by len(result[1])
+
+        result[1][0]: Detection result, a list of classification information, confidence, and location information.
+        result[1][0][0]: Tag
+        result[1][0][1]: Confidence [0-1]
+        result[1][0][2]: x1
+        result[1][0][3]: y1
+        result[1][0][4]: x2
+        result[1][0][5]: y2
+        &quot;&quot;&quot;
+
+        img = net.plot(result) # Visualize the results
+        cv2.imshow(&quot;Face Detector&quot;, img) # show image
+        cv2.waitKey(1)
+finally:
+    net.quit() # reset device
+</code></pre>
+
+<h2 id="show">Show</h2>
+
+<p>After connecting the Horned Sungem:</p>
+
+<pre><code class="language-bash">cd SungemSDK-Python/examples/apps/FaceDetector
+python3 FaceDetector.py
+</code></pre>
+
+<p><img src="/Docs/media/img/face_detection.jpg" alt="" /></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/Docs/en/workflow/python/" title="Python"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/Docs/en/workflow/python/detector_object/" title="Object Detector" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Docs/js/clipboard.min.js?1539858228"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1539858228"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1539858228"></script>
+    <script src="/Docs/js/jquery.sticky.js?1539858228"></script>
+    <script src="/Docs/js/featherlight.min.js?1539858228"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1539858228"></script>
+    <script src="/Docs/js/highlight.pack.js?1539858228"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1539858228"></script>
+    <script src="/Docs/js/learn.js?1539858228"></script>
+    <script src="/Docs/js/hugo-learn.js?1539858228"></script>
+
+    <link href="/Docs/mermaid/mermaid.css?1539858228" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1539858228"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

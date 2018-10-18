@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DIY on Horned Sungem Documentation</title>
+    <link>https://hornedsungem.github.io/Docs/en/workflow/diy/</link>
+    <description>Recent content in DIY on Horned Sungem Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://hornedsungem.github.io/Docs/en/workflow/diy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rapiro Robot</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/diy/rapiro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/diy/rapiro/</guid>
+      <description>This chapter introduced how to build a robot that controlled by HS face detector.
+ Hardware requirement:
+ Horned Sungem Device Raspberry Pi 3b Rapiro Robot 12V to 5V DC-DC module (Optional) Cooling fan (Optional)   Workflow The built-in model Mobilenet-SSD face detector is used in this DIY demo. The logic is illustrated as below:
+Implementation Firstly assemble and power the Rapiro robot, then use robot to supply the power to a Raspeberry Pi.</description>
+    </item>
+    
+    <item>
+      <title>Smart Lamp</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/diy/smartlamp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/diy/smartlamp/</guid>
+      <description>Here we give a tutorial on how to control a lamp through face detector with HS device. The lamb automatically turns on if face appears, otherwise turn off.
+ Hardware list:
+ HS device Raspberry Pi 3b 1 channel relay module 5V USB lamp   Workflow The built-in model Mobilenet-SSD face detector is used in this DIY demo. The logic is illustrated as below:
+then we control the switch of the lamp through a 1 channel relay module.</description>
+    </item>
+    
+    <item>
+      <title>Sitting posture alarm</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/diy/sitting_pose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/diy/sitting_pose/</guid>
+      <description>In this tutorial we will build a simple sitting posture alarm.
+ Hardware list:
+ HS device Raspberry Pi 3b Buzzer   Workflow Since currently the HS model zoo does not include pose estimation model, we simplify the problem and use our Scene Recorder to achieve the goal.
+Here we consider two senarios that need to be distinguished:
+ Normal sitting posture Unhealthy sitting posture  as shown below:</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Toy Car</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/diy/raspi_car/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/diy/raspi_car/</guid>
+      <description>We bring a HS enhanced Raspberry Pi Toy car by using object detector.
+ Hardware list:
+ HS device Raspberry Pi 3b Assembled Raspberry Pi toy car with SCM controlled motors   Workflow The built-in model Mobilenet-SSD object detector is used in this DIY demo. The logic is illustrated as below:
+Implementation Firstly we assemble the toy car, the car is not necessary to be the same as ours, it should work as long as it is controlled through GPIO pin.</description>
+    </item>
+    
+  </channel>
+</rss>

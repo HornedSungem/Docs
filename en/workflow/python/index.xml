@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Horned Sungem Documentation</title>
+    <link>https://hornedsungem.github.io/Docs/en/workflow/python/</link>
+    <description>Recent content in Python on Horned Sungem Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://hornedsungem.github.io/Docs/en/workflow/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Face detector</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/python/detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/python/detector/</guid>
+      <description>This chapter will introduce how to use Horned Sungem to deploy SSD-Mobilenet face detector
+Getting Started Get Python Development Kit and Model Resources according to Getting Started page.
+Graph Filegraph_face_SSD Exampleexamples/apps/FaceDetector/FaceDetector.py  Code # 1. Import libs import numpy as np, cv2, sys from hsapi import FaceDetector # 2. Create a face detection network net = FaceDetector(zoom=True, thresh=0.55) &amp;quot;&amp;quot;&amp;quot; zoom: If True, the image output from the camera built into the Horned Sungem is 640x360, otherwise 1920x1080.</description>
+    </item>
+    
+    <item>
+      <title>Object Detector</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/python/detector_object/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/python/detector_object/</guid>
+      <description>This chapter will introduce how to use Horned Sungem to deploy SSD-Mobilenet object detector.
+Getting Started Get Python Development Kit and Model Resources according to Getting Started page.
+Graph Filegraph_object_SSD Exampleexamples/apps/ObjectDetector/ObjectDetector.py  Code The flow of object detection is basically the same as Face Detection.
+The detection category is 20.
+For specific categories, please refer to Model Description or the specific code in the API.
+Show After connecting the Horned Sungem:</description>
+    </item>
+    
+    <item>
+      <title>Scene Recorder</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/python/recorder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/python/recorder/</guid>
+      <description>Scene Recorder This chapter introduces how to use Horned Sungem to deploy GoogleNet for building a useful scene recorder tool
+Introduction HS Scene Recorder records and classifies images in real-time. It &amp;lsquo;descripts&amp;rsquo; images into image feature vectors and store them into different bins for training a classifier. For instance, put HS in front of a door and record the images to bin-0 when door is closed and bin-&amp;lsquo;1&amp;rsquo; when door is opened.</description>
+    </item>
+    
+    <item>
+      <title>Image Recogniser (Low-level API Tutorial)</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/python/image_recognition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/python/image_recognition/</guid>
+      <description>SqueezeNet 1000 Classes Image Classifier This chapter introduces how to build an image classifier by using low-level API only.
+ Tested on Ubuntu 16.04  Path and files  Python：SungemSDK-Python/examples/apps/ImageRecognition/ImageRecognition.py Model file：SungemSDK-Python/examples/graphs/graph_sz  Image Recognition run image recogniser with the following command under ImageRecognition directory
+~/SungemSDK/examples/apps/ImageRecognition$ python3 ImageRecognition.py  The region-of-interest is highlighted with a cyan bounding box. You can adjust the size by pressing &amp;lsquo;w&amp;rsquo; and &amp;rsquo;s&amp;rsquo;.
+Get Top5 classification result, as shown in the example.</description>
+    </item>
+    
+  </channel>
+</rss>

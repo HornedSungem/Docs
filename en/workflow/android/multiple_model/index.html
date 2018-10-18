@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.49" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+    <title>Multiple Model :: Horned Sungem Documentation</title>
+    
+    
+    <link href="/Docs/css/nucleus.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1539858228" rel="stylesheet">
+    
+      <link href="/Docs/css/theme-mine.css?1539858228" rel="stylesheet">
+    
+
+    <script src="/Docs/js/jquery-2.x.min.js?1539858228"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Docs/en/workflow/android/multiple_model/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+	<a href="/Docs/" ><img align="left" src="/Docs/logo.png"></a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1539858228"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1539858228"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/Docs\/en";
+    
+</script>
+<script type="text/javascript" src="/Docs/js/search.js?1539858228"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/purchase/" title="Purchase" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/purchase/">
+          Purchase
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/product/" title="Product Instructions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/product/">
+          Product Instructions
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/quickstart/" title="Quick Start" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/quickstart/">
+          Quick Start
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/model/" title="Model List" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/model/">
+          Model List
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_mnist/" title="Mnist Digit recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_mnist/">
+        Mnist Digit recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_face_ssd/" title="MobileNet-SSD Face Detector" class="dd-item ">
+        <a href="/Docs/en/model/graph_face_ssd/">
+        MobileNet-SSD Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_object_ssd/" title="MobileNet-SSD Object Detector" class="dd-item ">
+        <a href="/Docs/en/model/graph_object_ssd/">
+        MobileNet-SSD Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_sz/" title="SqueezeNet Image Classification" class="dd-item ">
+        <a href="/Docs/en/model/graph_sz/">
+        SqueezeNet Image Classification
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_g/" title="GoogleNet Image Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_g/">
+        GoogleNet Image Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_fn/" title="FaceNet Face Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_fn/">
+        FaceNet Face Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_sg/" title="Sketch Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_sg/">
+        Sketch Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/api/" title="APIs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/api/">
+          APIs
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/api/python/" title="Python API" class="dd-item ">
+        <a href="/Docs/en/api/python/">
+        Python API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/api/android/" title="Android API" class="dd-item ">
+        <a href="/Docs/en/api/android/">
+        Android API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/" title="Examples and Tutorials" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Docs/en/workflow/">
+          Examples and Tutorials
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/python/" title="Python" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/python/">
+          Python
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/detector/" title="Face detector" class="dd-item ">
+        <a href="/Docs/en/workflow/python/detector/">
+        Face detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/detector_object/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/python/detector_object/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/recorder/" title="Scene Recorder" class="dd-item ">
+        <a href="/Docs/en/workflow/python/recorder/">
+        Scene Recorder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/image_recognition/" title="Image Recogniser (Low-level API Tutorial)" class="dd-item ">
+        <a href="/Docs/en/workflow/python/image_recognition/">
+        Image Recogniser (Low-level API Tutorial)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/android/" title="Android" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Docs/en/workflow/android/">
+          Android
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_hello2018/" title="Hello 2018" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_hello2018/">
+        Hello 2018
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_face_detector/" title="Face Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_face_detector/">
+        Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_object_detector/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_object_detector/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_sketchguess/" title="SketchGuess" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_sketchguess/">
+        SketchGuess
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/multiple_model/" title="Multiple Model" class="dd-item active">
+        <a href="/Docs/en/workflow/android/multiple_model/">
+        Multiple Model
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/ros/" title="ROS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/ros/">
+          ROS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/ros/quickstart/" title="ROS Tutorial" class="dd-item ">
+        <a href="/Docs/en/workflow/ros/quickstart/">
+        ROS Tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/diy/" title="DIY" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/diy/">
+          DIY
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/rapiro/" title="Rapiro Robot" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/rapiro/">
+        Rapiro Robot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/smartlamp/" title="Smart Lamp" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/smartlamp/">
+        Smart Lamp
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/sitting_pose/" title="Sitting posture alarm" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/sitting_pose/">
+        Sitting posture alarm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/raspi_car/" title="Raspberry Pi Toy Car" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/raspi_car/">
+        Raspberry Pi Toy Car
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/faq/" title="FAQs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/faq/">
+          FAQs
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/contact/" title="Contact us" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/contact/">
+          Contact us
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/Docs/en/workflow/android/multiple_model/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="/Docs/workflow/android/multiple_model/">Chinese</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/HornedSungem">Github</a>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Docs/en/'>Horned Sungem Documentation</a> > <a href='/Docs/en/workflow/'>Examples and Tutorials</a> > <a href='/Docs/en/workflow/android/'>Android</a> > Multiple Model
+          
+         
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#preparation">Preparation</a></li>
+<li><a href="#implementation">Implementation</a>
+<ul>
+<li><a href="#1-implementation-steps">1.Implementation steps:</a></li>
+<li><a href="#2-main-code">2.Main code:</a></li>
+<li><a href="#3-return-result-analysis">3.Return result analysis:</a></li>
+<li><a href="#4-showing-results">4.Showing results:</a></li>
+<li><a href="#5-node">5.Node:</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Multiple Model</h1>
+          
+
+        
+
+
+
+
+<p>This article mainly introduces how to implement a simple multi-model example using the multi-model version of HornedSungem under Android platform.</p>
+
+<h2 id="preparation">Preparation</h2>
+
+<ol>
+<li>For details on the configuration environment, please refer to <a href="https://hornedsungem.github.io/Docs/workflow/android/android_hello2018/">quick start</a>, I will not elaborate here.</li>
+<li>Download the models <a href="https://github.com/HornedSungem/SungemSDK-GraphModels/raw/master/graphs/graph_face_SSD">graph_face_SSD</a> and <a href="https://github.com/HornedSungem/SungemSDK-GraphModels/raw/master/graphs/graph_object_SSD">graph_object_SSD</a> required for detection, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory.</li>
+<li>Because the project needs to process and display the image, the javacv library is use. Developers can download it from GitHub or copy it from the <a href="https://github.com/HornedSungem/SungemSDK-Android">official sample project</a> to their own project.</li>
+</ol>
+
+<h2 id="implementation">Implementation</h2>
+
+<h3 id="1-implementation-steps">1.Implementation steps:</h3>
+
+<ul>
+<li>Turn on device communication.</li>
+<li>The two models are sent to HornedSungem in sequence using USB communication.</li>
+<li>Get image data corresponding to the face model.</li>
+<li>Get the result of the corresponding face model.</li>
+<li>The image is preprocessed and passed into the device.</li>
+<li>Get the result of the corresponding object detection and draw it on the screen.</li>
+</ul>
+
+<h3 id="2-main-code">2.Main code:</h3>
+
+<pre><code class="language-java">    //Executed in a thread
+   int status = openDevice();
+   int face_id = allocateGraphByAssets(mContext, &quot;graph_face_SSD&quot;);
+   int object_id = allocateGraphByAssets(mContext, &quot;graph_object_SSD&quot;);
+   byte[] bytes = getImage(STD, MEAN, face_id);
+   float[] result_face = getResult(face_id);
+   //...The preprocessed image data is converted into a float type and passed to the object detection model.
+   loadTensor(float_tensor, float_tensor.length, object_id);
+   float[] result_object = getResult(object_id);
+  HornedSungemFrame frame = getFrameResult(image, result_face, result_object);//show
+</code></pre>
+
+<p><strong>Code can refer to <a href="https://github.com/HornedSungem/SungemSDK-Android">example project</a>, This article only extracts important code, data processing and business logic are not listed</strong></p>
+
+<h3 id="3-return-result-analysis">3.Return result analysis:</h3>
+
+<p>Because this article mainly uses two models of face detection and object detection, the specific analysis results can refer to the detailed introduction of <a href="https://hornedsungem.github.io/Docs/cn/model/">Model List</a>.</p>
+
+<pre><code class="language-java">  int num_object = (int) object_result[0];
+  if (num_object &gt; 0) {
+    for (int i = 0; i &lt; num_object; i++) {
+        HornedSungemFrame.ObjectInfo objectInfo = new HornedSungemFrame.ObjectInfo();
+        int type = (int) (object_result[7 * (i + 1) + 1]);
+        int x1 = (int) (object_result[7 * (i + 1) + 3] * 1280);
+        int y1 = (int) (object_result[7 * (i + 1) + 4] * 720);
+        int x2 = (int) (object_result[7 * (i + 1) + 5] * 1280);
+        int y2 = (int) (object_result[7 * (i + 1) + 6] * 720);
+        int wight = x2 - x1;
+        int height = y2 - y1;
+        int percentage = (int) (object_result[7 * (i + 1) + 2] * 100);
+        if (type == 0) {
+            continue;
+        }
+        if (percentage &lt;= 55) {
+            continue;
+        }
+        if (wight &gt;= 1280 * 0.8 || height &gt;= 720 * 0.8) {
+            continue;
+        }
+        if (x1 &lt; 0 || x2 &lt; 0 || y1 &lt; 0 || y2 &lt; 0 || wight &lt; 0 || height &lt; 0) {
+            continue;
+        }
+        objectInfo.setType(labels[type - 1]);
+        objectInfo.setRect(new Rect(x1, y1, x2, y2));
+        objectInfo.setScore(percentage);
+        objectInfos.add(objectInfo);
+    }
+}
+</code></pre>
+
+<h3 id="4-showing-results">4.Showing results:</h3>
+
+<p><img src="/Docs/android/android_multiplemodel.jpeg" alt="result" /></p>
+
+<h3 id="5-node">5.Node:</h3>
+
+<p>The multi-model version is in beta. If you need any help, please post us an issue on <a href="https://github.com/HornedSungem/SungemSDK-Android/issues">GitHub Issues</a> or send us an email (support@hornedsungem.org).
+You are welcome to contact us for your suggestions, and model request.</p>
+
+<p><strong>The code can be downloaded from GitHub, the address is as follows</strong> <a href="https://github.com/HornedSungem/SungemSDK-Android">SungemSDK-AndroidExamples</a></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/Docs/en/workflow/android/android_sketchguess/" title="SketchGuess"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/Docs/en/workflow/ros/" title="ROS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Docs/js/clipboard.min.js?1539858228"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1539858228"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1539858228"></script>
+    <script src="/Docs/js/jquery.sticky.js?1539858228"></script>
+    <script src="/Docs/js/featherlight.min.js?1539858228"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1539858228"></script>
+    <script src="/Docs/js/highlight.pack.js?1539858228"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1539858228"></script>
+    <script src="/Docs/js/learn.js?1539858228"></script>
+    <script src="/Docs/js/hugo-learn.js?1539858228"></script>
+
+    <link href="/Docs/mermaid/mermaid.css?1539858228" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1539858228"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Model List on Horned Sungem Documentation</title>
+    <link>https://hornedsungem.github.io/Docs/en/model/</link>
+    <description>Recent content in Model List on Horned Sungem Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://hornedsungem.github.io/Docs/en/model/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mnist Digit recognition</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_mnist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_mnist/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  Mnist Digit recognition filename graph_mnist
+ INPUT image size28 x 28 image channel1 (gray) preprocess coefficientscale0.007843 mean-1.0    OUTPUT One-dimensional array of classification ([0-9]) confidence  </description>
+    </item>
+    
+    <item>
+      <title>MobileNet-SSD Face Detector</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_face_ssd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_face_ssd/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  MobileNet-SSD Face Detector filename graph_face_SSD
+Mobilenet + Single-shot detector
+ INPUT image size300 x 300 image channel3 (RGB) preprocess coefficientscale0.007843 mean-1.0, -1.0, -1.0    OUTPUT One-dimensional Array INDEX (n  0)DESCRIPTION 0number of results n * 7 + 1label n * 7 + 2confidence (range [0, 1]) n * 7 + 3box x1 n * 7 + 4box y1 n * 7 + 5box x2 n * 7 + 6box y2   </description>
+    </item>
+    
+    <item>
+      <title>MobileNet-SSD Object Detector</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_object_ssd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_object_ssd/</guid>
+      <description>p { border: 1px; font-size: 16px!important; } th { font-weight: normal; } td { white-space: nowrap; }  MobileNet-SSD Object Detector filename graph_object_SSD
+Mobilenet + Single-shot detector Object Detector
+VOC dataset training, a total of 20 objects
+ Classified information  LABELDESCRIPTION 1aeroplane 2bicycle 3bird 4boat 5bottle 6bus 7car 8cat 9chair 10cow 11diningtable 12dog 13horse 14motorbike 15person 16pottedplant 17sheep 18sofa 19train 20tvmonitor    INPUT image size300 x 300 image channel3 (RGB) preprocess coefficientscale0.</description>
+    </item>
+    
+    <item>
+      <title>SqueezeNet Image Classification</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_sz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_sz/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  SqueezeNet Image Classification filename graph_sz
+SqueezeNet image classification model, trained with ImageNet, 1000 classes in total
+ INPUT image size227 x 227 image channel3 (RGB) preprocess coefficientscale1 mean-104, -117, -123    OUTPUT One-dimensional array of classification confidence  </description>
+    </item>
+    
+    <item>
+      <title>GoogleNet Image Recognition</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_g/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_g/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  GoogleNet Image Recognition filename graph_g
+GoogleNet image recognition model as image descriptor
+ INPUT image size224 x 224 image channel3 (RGB) preprocess coefficientscale0.007843 mean-1.0, -1.0, -1.0    OUTPUT Feature vector  </description>
+    </item>
+    
+    <item>
+      <title>FaceNet Face Recognition</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_fn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_fn/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  FaceNet Face Recognition filename graph_fn
+FaceNet face recognition model as image descriptor
+ INPUT image size160 x 160 image channel3 (RGB) preprocess coefficientscale0.007843 mean-1.0, -1.0, -1.0    OUTPUT Feature vector  </description>
+    </item>
+    
+    <item>
+      <title>Sketch Recognition</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_sg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_sg/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  Sketch Recognition filename graph_sg
+SketchGraph sketch recognition model, trained with Google’s Quick Draw! dataset.
+For class list please refer to class_list.txt under SungemSDK-GraphModels/misc
+ INPUT image size28 x 28 image channel3 (Binarised RGB image) preprocess coefficientscale0.007843 mean-1.0, -1.0, -1.0    OUTPUT One-dimensional array of classification confidence  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROS on Horned Sungem Documentation</title>
+    <link>https://hornedsungem.github.io/Docs/en/workflow/ros/</link>
+    <description>Recent content in ROS on Horned Sungem Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://hornedsungem.github.io/Docs/en/workflow/ros/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ROS Tutorial</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/ros/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/ros/quickstart/</guid>
+      <description>This article focuses on the basic example tutorial on how to use HornedSungem in ROS.
+This document is only available for the multi-model version. If HornedSungem hardware version is too low, please update the firmware of the corresponding version.
+1 Environment The operating system selected for our documentation is Ubuntu 16.04
+Configuring the ROS environment (Recommended kinetic) ROS Kinetic ONLY supports Wily (Ubuntu 15.10), Xenial (Ubuntu 16.04) and Jessie (Debian 8) for debian packages.</description>
+    </item>
+    
+  </channel>
+</rss>

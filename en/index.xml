@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Horned Sungem Documentation</title>
+    <link>https://hornedsungem.github.io/Docs/en/</link>
+    <description>Recent content on Horned Sungem Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://hornedsungem.github.io/Docs/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mnist Digit recognition</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_mnist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_mnist/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  Mnist Digit recognition filename graph_mnist
+ INPUT image size28 x 28 image channel1 (gray) preprocess coefficientscale0.007843 mean-1.0    OUTPUT One-dimensional array of classification ([0-9]) confidence  </description>
+    </item>
+    
+    <item>
+      <title>Face detector</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/python/detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/python/detector/</guid>
+      <description>This chapter will introduce how to use Horned Sungem to deploy SSD-Mobilenet face detector
+Getting Started Get Python Development Kit and Model Resources according to Getting Started page.
+Graph Filegraph_face_SSD Exampleexamples/apps/FaceDetector/FaceDetector.py  Code # 1. Import libs import numpy as np, cv2, sys from hsapi import FaceDetector # 2. Create a face detection network net = FaceDetector(zoom=True, thresh=0.55) &amp;quot;&amp;quot;&amp;quot; zoom: If True, the image output from the camera built into the Horned Sungem is 640x360, otherwise 1920x1080.</description>
+    </item>
+    
+    <item>
+      <title>MobileNet-SSD Face Detector</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_face_ssd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_face_ssd/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  MobileNet-SSD Face Detector filename graph_face_SSD
+Mobilenet + Single-shot detector
+ INPUT image size300 x 300 image channel3 (RGB) preprocess coefficientscale0.007843 mean-1.0, -1.0, -1.0    OUTPUT One-dimensional Array INDEX (n  0)DESCRIPTION 0number of results n * 7 + 1label n * 7 + 2confidence (range [0, 1]) n * 7 + 3box x1 n * 7 + 4box y1 n * 7 + 5box x2 n * 7 + 6box y2   </description>
+    </item>
+    
+    <item>
+      <title>MobileNet-SSD Object Detector</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_object_ssd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_object_ssd/</guid>
+      <description>p { border: 1px; font-size: 16px!important; } th { font-weight: normal; } td { white-space: nowrap; }  MobileNet-SSD Object Detector filename graph_object_SSD
+Mobilenet + Single-shot detector Object Detector
+VOC dataset training, a total of 20 objects
+ Classified information  LABELDESCRIPTION 1aeroplane 2bicycle 3bird 4boat 5bottle 6bus 7car 8cat 9chair 10cow 11diningtable 12dog 13horse 14motorbike 15person 16pottedplant 17sheep 18sofa 19train 20tvmonitor    INPUT image size300 x 300 image channel3 (RGB) preprocess coefficientscale0.</description>
+    </item>
+    
+    <item>
+      <title>Object Detector</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/python/detector_object/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/python/detector_object/</guid>
+      <description>This chapter will introduce how to use Horned Sungem to deploy SSD-Mobilenet object detector.
+Getting Started Get Python Development Kit and Model Resources according to Getting Started page.
+Graph Filegraph_object_SSD Exampleexamples/apps/ObjectDetector/ObjectDetector.py  Code The flow of object detection is basically the same as Face Detection.
+The detection category is 20.
+For specific categories, please refer to Model Description or the specific code in the API.
+Show After connecting the Horned Sungem:</description>
+    </item>
+    
+    <item>
+      <title>Scene Recorder</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/python/recorder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/python/recorder/</guid>
+      <description>Scene Recorder This chapter introduces how to use Horned Sungem to deploy GoogleNet for building a useful scene recorder tool
+Introduction HS Scene Recorder records and classifies images in real-time. It &amp;lsquo;descripts&amp;rsquo; images into image feature vectors and store them into different bins for training a classifier. For instance, put HS in front of a door and record the images to bin-0 when door is closed and bin-&amp;lsquo;1&amp;rsquo; when door is opened.</description>
+    </item>
+    
+    <item>
+      <title>SqueezeNet Image Classification</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_sz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_sz/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  SqueezeNet Image Classification filename graph_sz
+SqueezeNet image classification model, trained with ImageNet, 1000 classes in total
+ INPUT image size227 x 227 image channel3 (RGB) preprocess coefficientscale1 mean-104, -117, -123    OUTPUT One-dimensional array of classification confidence  </description>
+    </item>
+    
+    <item>
+      <title>GoogleNet Image Recognition</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_g/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_g/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  GoogleNet Image Recognition filename graph_g
+GoogleNet image recognition model as image descriptor
+ INPUT image size224 x 224 image channel3 (RGB) preprocess coefficientscale0.007843 mean-1.0, -1.0, -1.0    OUTPUT Feature vector  </description>
+    </item>
+    
+    <item>
+      <title>Image Recogniser (Low-level API Tutorial)</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/python/image_recognition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/python/image_recognition/</guid>
+      <description>SqueezeNet 1000 Classes Image Classifier This chapter introduces how to build an image classifier by using low-level API only.
+ Tested on Ubuntu 16.04  Path and files  Python：SungemSDK-Python/examples/apps/ImageRecognition/ImageRecognition.py Model file：SungemSDK-Python/examples/graphs/graph_sz  Image Recognition run image recogniser with the following command under ImageRecognition directory
+~/SungemSDK/examples/apps/ImageRecognition$ python3 ImageRecognition.py  The region-of-interest is highlighted with a cyan bounding box. You can adjust the size by pressing &amp;lsquo;w&amp;rsquo; and &amp;rsquo;s&amp;rsquo;.
+Get Top5 classification result, as shown in the example.</description>
+    </item>
+    
+    <item>
+      <title>FaceNet Face Recognition</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_fn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_fn/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  FaceNet Face Recognition filename graph_fn
+FaceNet face recognition model as image descriptor
+ INPUT image size160 x 160 image channel3 (RGB) preprocess coefficientscale0.007843 mean-1.0, -1.0, -1.0    OUTPUT Feature vector  </description>
+    </item>
+    
+    <item>
+      <title>Sketch Recognition</title>
+      <link>https://hornedsungem.github.io/Docs/en/model/graph_sg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/model/graph_sg/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  Sketch Recognition filename graph_sg
+SketchGraph sketch recognition model, trained with Google’s Quick Draw! dataset.
+For class list please refer to class_list.txt under SungemSDK-GraphModels/misc
+ INPUT image size28 x 28 image channel3 (Binarised RGB image) preprocess coefficientscale0.007843 mean-1.0, -1.0, -1.0    OUTPUT One-dimensional array of classification confidence  </description>
+    </item>
+    
+    <item>
+      <title>Hello 2018</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/android/android_hello2018/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/android/android_hello2018/</guid>
+      <description>Quickstart This article describes how to use the Mnist convolutional neural network to achieve digital recognition through the Sungem-SDK in the Android Studio development environment. The current example uses the camera that comes with the HornedSungem. If you need an external image source, please refer to SungemSDK-AndroidExamples.
+step 1: Prepare the development environment  Download the latest versionSungemSDK-Android.jar package Prerequisites:  Make sure minSdkVersion is above Android 3.1 Make sure the Android device supports OTG Android Studio 2.</description>
+    </item>
+    
+    <item>
+      <title>Face Detector</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/android/android_face_detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/android/android_face_detector/</guid>
+      <description>This article mainly introduces how to use HornedSungem to load the SSD-Mobilenet convolutional neural network on the Android platform to realize face detection.
+Preparation  For details on the configuration environment, please refer to quick start, I will not elaborate here. Download the model graph_face_SSD required for face detection, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory.</description>
+    </item>
+    
+    <item>
+      <title>Object Detector</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/android/android_object_detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/android/android_object_detector/</guid>
+      <description>This article mainly introduces how to use HornedSungem to load the SSD-Mobilenet convolutional neural network on the Android platform to realize Object detection.
+Preparation  For details on the configuration environment, please refer to quick start, I will not elaborate here. Download the model graph_object_SSD required for Object detection, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory.</description>
+    </item>
+    
+    <item>
+      <title>SketchGuess</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/android/android_sketchguess/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/android/android_sketchguess/</guid>
+      <description>This article introduces you to use HornedSungem to achieve hand-painted recognition under the Android platform.
+Preparation  For details on the configuration environment, please refer to quick start, I will not elaborate here. Download the model graph_sg, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory. Because the project needs to process and display the image, the javacv library is use.</description>
+    </item>
+    
+    <item>
+      <title>Multiple Model</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/android/multiple_model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/android/multiple_model/</guid>
+      <description>This article mainly introduces how to implement a simple multi-model example using the multi-model version of HornedSungem under Android platform.
+Preparation  For details on the configuration environment, please refer to quick start, I will not elaborate here. Download the models graph_face_SSD and graph_object_SSD required for detection, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory. Because the project needs to process and display the image, the javacv library is use.</description>
+    </item>
+    
+    <item>
+      <title>ROS Tutorial</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/ros/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/ros/quickstart/</guid>
+      <description>This article focuses on the basic example tutorial on how to use HornedSungem in ROS.
+This document is only available for the multi-model version. If HornedSungem hardware version is too low, please update the firmware of the corresponding version.
+1 Environment The operating system selected for our documentation is Ubuntu 16.04
+Configuring the ROS environment (Recommended kinetic) ROS Kinetic ONLY supports Wily (Ubuntu 15.10), Xenial (Ubuntu 16.04) and Jessie (Debian 8) for debian packages.</description>
+    </item>
+    
+    <item>
+      <title>Python API</title>
+      <link>https://hornedsungem.github.io/Docs/en/api/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/api/python/</guid>
+      <description>img.badge { margin:0!important; display:inline!important } span.keyword { color:#0000FF; font-weight:bold; font-style: italic; } span.param { color:#2B839F; font-weight:bold; font-style: italic; } span.constant { font-weight:bold; } p { font-size: 16px!important; }  SungemSDK-Python  Development guide hsapi&amp;rsquo;s package structure is as follows：
+hsapi ├── __init__.py ├── core │ ├── __init__.py │ ├── base.py │ ├── device.py │ └── graph.py ├── high │ ├── __init__.py │ ├── net.py │ └── task.py └── easy ├── __init__.</description>
+    </item>
+    
+    <item>
+      <title>Android API</title>
+      <link>https://hornedsungem.github.io/Docs/en/api/android/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/api/android/</guid>
+      <description>SungemSDK-Android API The current version is 0.2.0,support for multiple models ConnectStatus Parameter  HS_OK : The function call worked as expected. HS_BUSY : The device is busy, retry later. HS_ERROR : An unexpected error was encountered during the function call. HS_NO_CONTEXT: No context. HS_NO_FILE : No files found. HS_DEVICE_NOT_FOUND : No device found. HS_DEVICE_OPEN_FAILED : Failed to open device. HS_UNSUPPORTED_GRAPH_FILE :The graph file is corrupt. Try to recompile the graph file with the version of the toolkit that corresponds to the API version.</description>
+    </item>
+    
+    <item>
+      <title>Rapiro Robot</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/diy/rapiro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/diy/rapiro/</guid>
+      <description>This chapter introduced how to build a robot that controlled by HS face detector.
+ Hardware requirement:
+ Horned Sungem Device Raspberry Pi 3b Rapiro Robot 12V to 5V DC-DC module (Optional) Cooling fan (Optional)   Workflow The built-in model Mobilenet-SSD face detector is used in this DIY demo. The logic is illustrated as below:
+Implementation Firstly assemble and power the Rapiro robot, then use robot to supply the power to a Raspeberry Pi.</description>
+    </item>
+    
+    <item>
+      <title>Smart Lamp</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/diy/smartlamp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/diy/smartlamp/</guid>
+      <description>Here we give a tutorial on how to control a lamp through face detector with HS device. The lamb automatically turns on if face appears, otherwise turn off.
+ Hardware list:
+ HS device Raspberry Pi 3b 1 channel relay module 5V USB lamp   Workflow The built-in model Mobilenet-SSD face detector is used in this DIY demo. The logic is illustrated as below:
+then we control the switch of the lamp through a 1 channel relay module.</description>
+    </item>
+    
+    <item>
+      <title>Sitting posture alarm</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/diy/sitting_pose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/diy/sitting_pose/</guid>
+      <description>In this tutorial we will build a simple sitting posture alarm.
+ Hardware list:
+ HS device Raspberry Pi 3b Buzzer   Workflow Since currently the HS model zoo does not include pose estimation model, we simplify the problem and use our Scene Recorder to achieve the goal.
+Here we consider two senarios that need to be distinguished:
+ Normal sitting posture Unhealthy sitting posture  as shown below:</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Toy Car</title>
+      <link>https://hornedsungem.github.io/Docs/en/workflow/diy/raspi_car/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/workflow/diy/raspi_car/</guid>
+      <description>We bring a HS enhanced Raspberry Pi Toy car by using object detector.
+ Hardware list:
+ HS device Raspberry Pi 3b Assembled Raspberry Pi toy car with SCM controlled motors   Workflow The built-in model Mobilenet-SSD object detector is used in this DIY demo. The logic is illustrated as below:
+Implementation Firstly we assemble the toy car, the car is not necessary to be the same as ours, it should work as long as it is controlled through GPIO pin.</description>
+    </item>
+    
+  </channel>
+</rss>

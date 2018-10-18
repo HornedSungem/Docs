@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.49" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+    <title>Python API :: Horned Sungem Documentation</title>
+    
+    
+    <link href="/Docs/css/nucleus.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1539858228" rel="stylesheet">
+    
+      <link href="/Docs/css/theme-mine.css?1539858228" rel="stylesheet">
+    
+
+    <script src="/Docs/js/jquery-2.x.min.js?1539858228"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Docs/en/api/python/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+	<a href="/Docs/" ><img align="left" src="/Docs/logo.png"></a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1539858228"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1539858228"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/Docs\/en";
+    
+</script>
+<script type="text/javascript" src="/Docs/js/search.js?1539858228"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/purchase/" title="Purchase" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/purchase/">
+          Purchase
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/product/" title="Product Instructions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/product/">
+          Product Instructions
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/quickstart/" title="Quick Start" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/quickstart/">
+          Quick Start
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/model/" title="Model List" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/model/">
+          Model List
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_mnist/" title="Mnist Digit recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_mnist/">
+        Mnist Digit recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_face_ssd/" title="MobileNet-SSD Face Detector" class="dd-item ">
+        <a href="/Docs/en/model/graph_face_ssd/">
+        MobileNet-SSD Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_object_ssd/" title="MobileNet-SSD Object Detector" class="dd-item ">
+        <a href="/Docs/en/model/graph_object_ssd/">
+        MobileNet-SSD Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_sz/" title="SqueezeNet Image Classification" class="dd-item ">
+        <a href="/Docs/en/model/graph_sz/">
+        SqueezeNet Image Classification
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_g/" title="GoogleNet Image Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_g/">
+        GoogleNet Image Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_fn/" title="FaceNet Face Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_fn/">
+        FaceNet Face Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_sg/" title="Sketch Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_sg/">
+        Sketch Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/api/" title="APIs" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Docs/en/api/">
+          APIs
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/api/python/" title="Python API" class="dd-item active">
+        <a href="/Docs/en/api/python/">
+        Python API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/api/android/" title="Android API" class="dd-item ">
+        <a href="/Docs/en/api/android/">
+        Android API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/" title="Examples and Tutorials" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/">
+          Examples and Tutorials
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/python/" title="Python" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/python/">
+          Python
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/detector/" title="Face detector" class="dd-item ">
+        <a href="/Docs/en/workflow/python/detector/">
+        Face detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/detector_object/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/python/detector_object/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/recorder/" title="Scene Recorder" class="dd-item ">
+        <a href="/Docs/en/workflow/python/recorder/">
+        Scene Recorder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/image_recognition/" title="Image Recogniser (Low-level API Tutorial)" class="dd-item ">
+        <a href="/Docs/en/workflow/python/image_recognition/">
+        Image Recogniser (Low-level API Tutorial)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/android/" title="Android" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/android/">
+          Android
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_hello2018/" title="Hello 2018" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_hello2018/">
+        Hello 2018
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_face_detector/" title="Face Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_face_detector/">
+        Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_object_detector/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_object_detector/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_sketchguess/" title="SketchGuess" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_sketchguess/">
+        SketchGuess
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/multiple_model/" title="Multiple Model" class="dd-item ">
+        <a href="/Docs/en/workflow/android/multiple_model/">
+        Multiple Model
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/ros/" title="ROS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/ros/">
+          ROS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/ros/quickstart/" title="ROS Tutorial" class="dd-item ">
+        <a href="/Docs/en/workflow/ros/quickstart/">
+        ROS Tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/diy/" title="DIY" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/diy/">
+          DIY
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/rapiro/" title="Rapiro Robot" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/rapiro/">
+        Rapiro Robot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/smartlamp/" title="Smart Lamp" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/smartlamp/">
+        Smart Lamp
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/sitting_pose/" title="Sitting posture alarm" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/sitting_pose/">
+        Sitting posture alarm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/raspi_car/" title="Raspberry Pi Toy Car" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/raspi_car/">
+        Raspberry Pi Toy Car
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/faq/" title="FAQs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/faq/">
+          FAQs
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/contact/" title="Contact us" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/contact/">
+          Contact us
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/Docs/en/api/python/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="/Docs/api/python/">Chinese</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/HornedSungem">Github</a>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Docs/en/'>Horned Sungem Documentation</a> > <a href='/Docs/en/api/'>APIs</a> > Python API
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+
+<style type="text/css">
+img.badge {  margin:0!important; display:inline!important }
+span.keyword { color:#0000FF; font-weight:bold; font-style: italic; }
+span.param { color:#2B839F; font-weight:bold; font-style: italic; }
+span.constant { font-weight:bold; }
+p { font-size: 16px!important; }
+</style>
+
+<h1 id="sungemsdk-python">SungemSDK-Python</h1>
+
+<div align="center">
+    <img class="badge" src="https://img.shields.io/badge/python-3.x-blue.svg">
+</div>
+
+<h2 id="development-guide">Development guide</h2>
+
+<p><code>hsapi</code>&rsquo;s package structure is as follows：</p>
+
+<pre><code>hsapi
+├── __init__.py
+├── core
+│   ├── __init__.py
+│   ├── base.py
+│   ├── device.py
+│   └── graph.py
+├── high
+│   ├── __init__.py
+│   ├── net.py
+│   └── task.py
+└── easy
+    ├── __init__.py
+    └── prefab.py
+</code></pre>
+
+<ul>
+<li><code>core</code> Low-Level Interface.</li>
+<li><code>high</code> High-Level Interface. Abstract a neural network base class to simplify the operation process.</li>
+<li><code>easy</code> Provides some simple classes and methods that use built-in neural networks.</li>
+</ul>
+
+<h3 id="low-level-interface">Low-Level Interface</h3>
+
+<h4 id="device-management-class-device">Device Management (class Device)</h4>
+
+<pre><code class="language-python"># Import libs
+import numpy
+import hsapi as hs
+
+# Get Device
+device_list = hs.EnumerateDevices() # Get all connected devices
+device = hs.Device(device_list[0])
+
+# Open Device
+device.OpenDevice()
+
+&quot;&quot;&quot;
+# [Optional, according to business needs]
+# Read the image of the camera built into the Horned Sungem
+image = device.GetImage(zoomMode=True) # zoomMode: True(640x360) False(1920x1080)
+&quot;&quot;&quot;
+
+# Manage neural network resources, processing data, business logic, etc.
+...
+
+# Close the device and the Horned Sungem will automatically reset
+device.CloseDevice()
+</code></pre>
+
+<h4 id="manage-neural-network-resources-class-graph">Manage neural network resources (class Graph)</h4>
+
+<blockquote>
+<ul>
+<li><strong>Single-device Multi-model</strong>: Same <em>Device instance</em> Load multiple Graph files and get multiple <em>Graph instances</em></li>
+<li><strong>Multi-device Multi-model</strong>: Different <em>Device instances</em> Load different Graph files to get the corresponding <em>Graph instance</em></li>
+</ul>
+</blockquote>
+
+<pre><code class="language-python"># Load the Graph file, get the Graph instance
+with open('Graph filePath', mode='rb') as f:
+    data = f.read()
+graph = device.AllocateGraph(data, scale, mean) # scale/mean Image preprocessing parameters
+
+# Neural network image input, there are two ways [2 choose 1]
+# 1. Load external image, here to read the USB camera as an example
+&quot;&quot;&quot;
+import cv2
+capture = cv2.VideoCapture(0)
+_, image = capture.read()
+
+image = image_preprocess(image) # Preprocess the image and process it into the format and size required by the neural network
+graph.LoadTensor(image.astype(numpy.float16), None) # Load image as input to neural network
+&quot;&quot;&quot;
+# 2. Use the built-in camera of the Horned Sungem as input
+# Use the built-in camera as input to return images
+image = graph.GetImage(True)  # zoomMode: True(640x360) False(1920x1080)
+
+# Read neural network output
+output, _ = graph.GetResult()
+
+# Analyze neural network output to implement business logic
+...
+
+# Release neural network resources
+graph.DeallocateGraph()
+</code></pre>
+
+<h4 id="simple-interface-call-flow">Simple interface call flow</h4>
+
+<pre><code class="language-python"># Single-device Single-model
+import cv2, numpy
+import hsapi as hs # import libs
+
+scale = 0.007843 # Image preprocessing parameters
+mean = -1.0 # Image preprocessing parameters
+
+device_list = hs.EnumerateDevices() # Get all connected devices
+device = hs.Device(device_list[0]) # Get a Device instance
+
+device.OpenDevice() # Open device
+
+with open('Graph filePath', mode='rb') as f:
+    data = f.read()
+graph = device.AllocateGraph(data, scale, mean) # Get a Graph instance
+
+try:
+    while True:
+        # Use the built-in camera of the Horned Sungem as input
+        image = graph.GetImage(True) # Use the built-in camera as input to return images
+        output, _ = graph.GetResult() # Read neural network output
+        print(output)
+        cv2.imshow(&quot;horned-sungem&quot;, image)
+        cv2.waitKey(1)
+finally:
+    graph.DeallocateGraph() # Release neural network resources
+    device.CloseDevice() # Close device
+</code></pre>
+
+<h3 id="high-level-interface">High-Level Interface</h3>
+
+<p><a href="#Net">Net</a> is an abstract class that encapsulates some simple device operations.<br />
+Based on this class, you can implement your own neural network class.<br />
+Refer to the model class preset in the <code>easy.prefab</code> module.</p>
+
+<h4 id="built-in-model-face-detection">Built-in Model - Face Detection</h4>
+
+<pre><code class="language-python"># Single-device Single-model
+import cv2, numpy 
+from hsapi import FaceDetector # import libs
+
+# The model path can be specified by the 'graphPath' attribute. The default path is under 'examples/graphs'. 
+
+net = FaceDetector(graphPath=&quot;./graph_face_SSD&quot;, zoom = True, thresh=0.55) # Create a face detection network
+
+try:
+    while True:
+        # Use the built-in camera of the Horned Sungem as input
+        result = net.run(image=None) # Use the built-in camera as input to return images
+        image = net.plot(result) # Draw an image based on the output
+        cv2.imshow(&quot;FaceDetector&quot;, image)
+        cv2.waitKey(1)
+finally:
+    net.quit() # Exit the neural network, release resources, reset the device
+</code></pre>
+
+<h4 id="built-in-model-face-detection-object-detection">Built-in Model - Face Detection + Object Detection</h4>
+
+<pre><code class="language-python"># Single-device Multi-model
+import cv2
+import hsapi as hs
+
+device_list = hs.EnumerateDevices() # Get all connected devices
+device = hs.Device(device_list[0]) # Get a Device instance
+
+face_net = hs.FaceDetector(device=device, zoom = True, thresh=0.55) # Create a face detection network
+obj_net = hs.ObjectDetector(device=device, zoom = True, thresh=0.55) # Create a object detection network
+
+&quot;&quot;&quot;
+Multi-Device Multi-Model: Use different Device instances when initializing Net
+&quot;&quot;&quot;
+
+capture = cv2.VideoCapture(0) # Get a USB camera
+
+try:
+    while True:
+        # Use a USB camera as input
+        _, image = capture.read() # Read USB camera image data
+        face_result = face_net.run(image) # Input images into the face detection network
+        obj_result = obj_net.run(image) # Input images into the object detection network
+
+        # Draw on the image according to the recognition result of the face detection network
+        image = face_net.overlay(image, face_result[1])
+        
+        # Draw on the image according to the recognition result of the object detection network
+        image = obj_net.overlay(image, obj_result[1]) 
+
+        cv2.imshow(&quot;Face/Obj Detector&quot;, image)
+        cv2.waitKey(1)
+finally:
+    face_net.quit() # Reset the device, the same device only needs to exit one network
+</code></pre>
+
+<h3 id="about-preprocessing-parameters-scale-mean">About Preprocessing Parameters (scale &amp; mean)</h3>
+
+<p>The input of the neural network requires pre-processing of the image according to the needs of the network.</p>
+
+<p>When using the built-in camera of the horned hummingbird as the neural network input, only the unified preprocessing operation of the RGB channel of the image is currently supported.<br />
+Here <u>Horned Sungem internals</u> and <u>Python API</u> both use <strong>multiply plus</strong> operations to preprocess images.</p>
+
+<pre><code class="language-python">image *= scale
+image += mean
+</code></pre>
+
+<p>If the image 3 channel unified processing is required, or the preprocessing requirements are not strict, the mean <b>mean</b> can be taken as a parameter input.</p>
+
+<pre><code class="language-python">mean = -1.0 # [-1.0, -1.0, -1.0]
+scale = 0.007843
+graph = device.AllocateGraph(data, scale, mean) # scale &amp; mean
+
+# The built-in device image has been pre-processed and loaded into the neural network. 
+# The returned image is the unprocessed original image.
+image = graph.GetImage(True) 
+
+output, _ = graph.GetResult() # Read neural network output
+</code></pre>
+
+<p>If grayscale input is required, or different pre-processing operations need to be performed on different channels, the image can be processed by itself and loaded into the Horned Sungem.</p>
+
+<pre><code class="language-python">image = preprocess(image) # preprocess by yourself
+graph.LoadTensor(image.astype(numpy.float16), None)
+</code></pre>
+
+<h2 id="api-documentation">API Documentation</h2>
+
+<ul>
+<li><strong>hsapi.core</strong><br />
+Low-Level API
+
+<ul>
+<li><span class="keyword">class</span> <strong>Status(enum.Enum)</strong><br />
+Return status
+
+<ul>
+<li><span class="constant">OK</span></li>
+<li><span class="constant">BUSY</span></li>
+<li><span class="constant">ERROR</span></li>
+<li><span class="constant">OUT_OF_MEMORY</span></li>
+<li><span class="constant">DEVICE_NOT_FOUND</span></li>
+<li><span class="constant">INVALID_PARAMETERS</span></li>
+<li><span class="constant">TIMEOUT</span></li>
+<li><span class="constant">NO_DATA</span></li>
+<li><span class="constant">GONE</span> No Graph found or closed</li>
+<li><span class="constant">UNSUPPORTED_GRAPH_FILE</span></li>
+<li><span class="constant">MYRIAD_ERROR</span></li>
+</ul></li>
+<li><span class="keyword">class</span> <strong>GlobalOption(enum.Enum)</strong><br />
+Global option
+
+<ul>
+<li>LOG_LEVEL</li>
+</ul></li>
+<li><strong>GetGlobalOption(<span class="param">opt</span>)</strong><br />
+Get the value of the global option
+
+<ul>
+<li><span class="param">opt</span> refer to <em>GlobalOption</em></li>
+</ul></li>
+<li><strong>SetGlobalOption(<span class="param">opt</span>, <span class="param">data</span>)</strong><br />
+Set the value of global option
+
+<ul>
+<li><span class="param">opt</span> refer to <em>GlobalOption</em><br /></li>
+<li><span class="param">data</span> value</li>
+</ul></li>
+<li><strong>BootUpdateApp(<span class="param">fileName</span>)</strong><br />
+Upgrade firmware through &lsquo;Boot mode&rsquo;, mainly used for recovery and upgrade after firmware update failure
+
+<ul>
+<li><span class="param">fileName</span> Firmware file</li>
+</ul></li>
+<li><strong>EnumerateDevices()</strong><br />
+Enumerate all connected devices</li>
+<li><span class="keyword">class</span> <strong>Device</strong><br />
+
+<ul>
+<li><strong><strong>init</strong>(self, <span class="param">name</span>)</strong><br />
+Instantiating class objects</li>
+<li><strong>OpenDevice(self)</strong><br />
+Open Device</li>
+<li><strong>CloseDevice(self)</strong><br />
+Close Device</li>
+<li><strong>UpdateApp(self)</strong><br />
+Upgrade firmware</li>
+<li><strong>AllocateGraph(self, <span class="param">graphfile</span>, <span class="param">std_value=1.0</span>, <span class="param">mean_value=0.0</span>)</strong><br />
+Assign neural network resources and return to the &lsquo;Graph&rsquo; instance
+
+<ul>
+<li><span class="param">graphfile</span> graph file</li>
+<li><span class="param">std_value</span> Image preprocessing parameters</li>
+<li><span class="param">mean_value</span> Image preprocessing parameters</li>
+</ul></li>
+<li><strong>GetImage(self, <span class="param">zoomMode=True</span>)</strong><br />
+Get device image
+
+<ul>
+<li><span class="param">zoomMode</span> Image zoom mode (True: 640x360, False: 1920x1080)</li>
+</ul></li>
+</ul></li>
+<li><span class="keyword">class</span> <strong>Graph</strong><br />
+Neural network container class, which can be called by the <em>Device</em> instance <em>AllocateGraph()</em>
+
+<ul>
+<li><strong><strong>init</strong>(self, <span class="param">handle</span>, <span class="param">std_value</span>, <span class="param">mean_value</span>)</strong><br />
+Instantiating class objects
+
+<ul>
+<li><span class="param">handle</span> graph handle</li>
+<li><span class="param">std_value</span> Image preprocessing parameters</li>
+<li><span class="param">mean_value</span> Image preprocessing parameters</li>
+</ul></li>
+<li><strong>DeallocateGraph(self)</strong><br />
+Release allocated neural network resources</li>
+<li><strong>LoadTensor(self, <span class="param">tensor</span>, <span class="param">userobj</span>)</strong><br />
+Load image data input by neural network
+
+<ul>
+<li><span class="param">tensor</span> The preprocessed image data must be in the form of a semi-precision floating point (<strong>float16</strong>) type <strong>numpy ndarray</strong></li>
+<li><span class="param">userobj</span> User-defined parameter</li>
+</ul></li>
+<li><strong>GetResult(self)</strong><br />
+Get the output of the neural network forward inference</li>
+<li><strong>GetImage(self, <span class="param">zoomMode=True</span>)</strong><br />
+Use the built-in camera as a neural network input to return the input image
+
+<ul>
+<li><span class="param">zoomMode</span> Image zoom mode (True: 640x360, False: 1920x1080)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>hsapi.high</strong><br />
+High-Level API
+
+<ul>
+<li><strong>GetDevice(<span class="param">index=0</span>)</strong><br />
+Get connected device</li>
+<li><span id="Net" class="keyword">class</span> <strong>Net(object)</strong><br />
+Abstract class, which performs some simple management on the Device class and the Graph class.
+
+<ul>
+<li><strong>scale(self)</strong><br />
+Image preprocessing parameters (subclasses must implement)</li>
+<li><strong>mean(self)</strong><br />
+Image preprocessing parameters (subclasses must implement)</li>
+<li><strong>netSize(self)</strong><br />
+input image size (subclasses must implement)</li>
+<li><strong>graphPath(self)</strong><br />
+graph file path (subclasses must implement)</li>
+<li><strong>cleanup(self)</strong><br />
+Release neural network resources</li>
+<li><strong>quit(self)</strong><br />
+Release resources and close the device</li>
+<li><strong>run(self, <span class="param">image=None</span>, **kwargs)</strong><br />
+Perform one neural network
+
+<ul>
+<li><span class="param">image</span> Input image, &lsquo;None&rsquo; means using built-in camera</li>
+</ul></li>
+</ul></li>
+<li><span class="keyword">class</span> <strong>SingleTask</strong><br />
+This class manages two child threads to perform a single neural network task.
+
+<ul>
+<li><strong><strong>init</strong>(self, <span class="param">net</span>, **kwargs)</strong><br />
+Instantiation method
+
+<ul>
+<li><span class="param">net</span> Net instance</li>
+</ul></li>
+<li><strong>start(self)</strong><br />
+Start task</li>
+<li><strong>stop(self)</strong><br />
+Stop task</li>
+</ul></li>
+</ul></li>
+<li><strong>hsapi.easy</strong><br />
+Some convenient APIs using built-in neural networks
+
+<ul>
+<li><strong>GetDefaultGraphRelPath(fileName)</strong><br />
+Get the default path of graphs</li>
+<li><strong>GetDefaultMiscRelPath(fileName)</strong><br />
+Get the default path of misc</li>
+<li><span class="keyword">class</span> <strong>SSD(object)</strong><br />
+Built-in &lsquo;MobileNet-SSD&rsquo; abstract class
+
+<ul>
+<li><strong>labels(self)</strong><br />
+The labels of categories (subclasses must implement)</li>
+<li><strong>thresh(self)</strong>
+threshold (subclasses must implement)</li>
+<li><strong>getBoundingBoxes(self, <span class="param">output</span>, <span class="param">image_size</span>)</strong><br />
+Parsing location information from the results of the output of the neural network
+
+<ul>
+<li><span class="param">output</span> Neural network output</li>
+<li><span class="param">image_size</span> Image size</li>
+</ul></li>
+<li><strong>overlay(self, <span class="param">image</span>, <span class="param">boxes</span>)</strong><br />
+Overlay position information on the image
+
+<ul>
+<li><span class="param">image</span> image</li>
+<li><span class="param">boxes</span> position information</li>
+</ul></li>
+<li><strong>plot(self, <span class="param">result</span>)</strong><br />
+Overlay position information on the image based on the output
+
+<ul>
+<li><span class="param">result</span> Output result</li>
+</ul></li>
+<li><strong>crop(self, <span class="param">result</span>, <span class="param">square=True</span>)</strong><br />
+Crop the recognized image based on the output
+
+<ul>
+<li><span class="param">result</span> Output result</li>
+<li><span class="param">square</span> Square</li>
+</ul></li>
+</ul></li>
+<li><span class="keyword">class</span> <strong>ObjectDetector(Net, SSD)</strong><br />
+Built-in Model - SSD-based object detection</li>
+<li><span class="keyword">class</span> <strong>FaceDetector(Net, SSD)</strong><br />
+Built-in Model - SSD-based face detection</li>
+<li><span class="keyword">class</span> <strong>FaceDetectorPlus(Net, SSD)</strong><br />
+Built-in Model - SSD-based face detection +</li>
+<li><span class="keyword">class</span> <strong>Mnist(Net)</strong><br />
+Built-in Model - Mnist</li>
+<li><span class="keyword">class</span> <strong>GoogleNet(Net)</strong><br />
+Built-in Model - GoogleNet</li>
+<li><span class="keyword">class</span> <strong>SceneRecorder(GoogleNet)</strong><br />
+Built-in Model - GoogleNet-based scene recorder
+
+<ul>
+<li><strong>record(self, <span class="param">result</span>, <span class="param">key</span>, **kwargs)</strong><br />
+Perform an ANN search based on GoogleNet output, returning similarity results
+
+<ul>
+<li><span class="param">result</span> GoogleNet output</li>
+<li><span class="param">key</span> command</li>
+</ul></li>
+</ul></li>
+<li><span class="keyword">class</span> <strong>SketchGuess(Net)</strong><br />
+Built-in Model - Sketch Recognition</li>
+</ul></li>
+</ul>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/Docs/en/api/" title="APIs"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/Docs/en/api/android/" title="Android API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Docs/js/clipboard.min.js?1539858228"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1539858228"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1539858228"></script>
+    <script src="/Docs/js/jquery.sticky.js?1539858228"></script>
+    <script src="/Docs/js/featherlight.min.js?1539858228"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1539858228"></script>
+    <script src="/Docs/js/highlight.pack.js?1539858228"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1539858228"></script>
+    <script src="/Docs/js/learn.js?1539858228"></script>
+    <script src="/Docs/js/hugo-learn.js?1539858228"></script>
+
+    <link href="/Docs/mermaid/mermaid.css?1539858228" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1539858228"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

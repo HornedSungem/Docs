@@ -1,13 +1,88 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Model List on Horned Sungem Documentation</title>
+    <title>模型列表 on 角蜂鸟中文文档</title>
     <link>https://hornedsungem.github.io/Docs/model/</link>
-    <description>Recent content in Model List on Horned Sungem Documentation</description>
+    <description>Recent content in 模型列表 on 角蜂鸟中文文档</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://hornedsungem.github.io/Docs/model/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mnist 数字识别模型</title>
+      <link>https://hornedsungem.github.io/Docs/model/graph_mnist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/model/graph_mnist/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  MNIST数字识别模型 文件名 graph_mnist
+ 输入 图像尺寸28 x 28 图像通道1 (灰度图) 预处理系数scale0.007843 mean-1.0    输出结果 [0-9] 分类置信度的一维数组  </description>
+    </item>
+    
+    <item>
+      <title>MobileNet-SSD 人脸检测模型</title>
+      <link>https://hornedsungem.github.io/Docs/model/graph_face_ssd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/model/graph_face_ssd/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  MobileNet-SSD 人脸检测模型 文件名 graph_face_SSD
+Mobilenet + Single-shot detector 人脸检测模型
+ 输入 图像尺寸300 x 300 图像通道3 (RGB图) 预处理系数scale0.007843 mean-1.0, -1.0, -1.0    输出结果 一维数组 索引 (n  0)描述 0检测到的数量 n * 7 + 1分类的标签 n * 7 + 2置信度 (范围[0, 1]) n * 7 + 3位置信息 x1 n * 7 + 4位置信息 y1 n * 7 + 5位置信息 x2 n * 7 + 6位置信息 y2   </description>
+    </item>
+    
+    <item>
+      <title>MobileNet-SSD 物体检测模型</title>
+      <link>https://hornedsungem.github.io/Docs/model/graph_object_ssd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/model/graph_object_ssd/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; } td { white-space: nowrap; }  MobileNet-SSD 物体检测模型 文件名 graph_object_SSD
+Mobilenet + Single-shot detector 物体检测模型，VOC数据集训练，共20种物体。
+ 分类信息  标签描述 1aeroplane 2bicycle 3bird 4boat 5bottle 6bus 7car 8cat 9chair 10cow 11diningtable 12dog 13horse 14motorbike 15person 16pottedplant 17sheep 18sofa 19train 20tvmonitor    输入 图像尺寸300 x 300 图像通道3 (RGB图) 预处理系数scale0.007843 mean-1.0, -1.0, -1.0    输出结果 一维数组 索引 (n  0)描述 0检测到的数量 n * 7 + 1分类的标签 n * 7 + 2置信度 (范围[0, 1]) n * 7 + 3位置信息 x1 n * 7 + 4位置信息 y1 n * 7 + 5位置信息 x2 n * 7 + 6位置信息 y2   </description>
+    </item>
+    
+    <item>
+      <title>SqueezeNet 图像分类模型</title>
+      <link>https://hornedsungem.github.io/Docs/model/graph_sz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/model/graph_sz/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  SqueezeNet 图像分类模型 文件名 graph_sz
+ 输入 图像尺寸227 x 227 图像通道3 (RGB图) 预处理系数scale1 mean-104, -117, -123    输出结果 分类置信度的一维数组  </description>
+    </item>
+    
+    <item>
+      <title>GoogleNet 图像识别模型</title>
+      <link>https://hornedsungem.github.io/Docs/model/graph_g/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/model/graph_g/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  GoogleNet 图像识别模型 文件名 graph_g
+GoogleNet 图像识别模型 (输出层用于特征提取)
+ 输入 图像尺寸224 x 224 图像通道3 (RGB图) 预处理系数scale0.007843 mean-1.0, -1.0, -1.0    输出结果 特征向量  </description>
+    </item>
+    
+    <item>
+      <title>FaceNet 人脸识别</title>
+      <link>https://hornedsungem.github.io/Docs/model/graph_fn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/model/graph_fn/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  FaceNet 特征提取 文件名 graph_fn
+FaceNet 人脸识别模型 (输出层用于特征提取)
+ 输入 图像尺寸160 x 160 图像通道3 (RGB图) 预处理系数scale0.007843 mean-1.0, -1.0, -1.0    输出结果 特征向量  </description>
+    </item>
+    
+    <item>
+      <title>手绘识别模型</title>
+      <link>https://hornedsungem.github.io/Docs/model/graph_sg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/model/graph_sg/</guid>
+      <description> p { border: 1px; font-size: 16px!important; } th { font-weight: normal; }  手绘识别模型 文件名 graph_sg
+由Google提供Quick Draw!提供数据，标签可参考 SungemSDK-GraphModels/misc 下的 class_list.txt。
+ 输入 图像尺寸28 x 28 图像通道3 (RGB图 建议前处理分割并二值化) 预处理系数scale0.007843 mean-1.0, -1.0, -1.0    输出结果 分类置信度的一维数组  </description>
+    </item>
     
   </channel>
 </rss>

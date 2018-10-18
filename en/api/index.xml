@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>APIs on Horned Sungem Documentation</title>
+    <link>https://hornedsungem.github.io/Docs/en/api/</link>
+    <description>Recent content in APIs on Horned Sungem Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://hornedsungem.github.io/Docs/en/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python API</title>
+      <link>https://hornedsungem.github.io/Docs/en/api/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/api/python/</guid>
+      <description>img.badge { margin:0!important; display:inline!important } span.keyword { color:#0000FF; font-weight:bold; font-style: italic; } span.param { color:#2B839F; font-weight:bold; font-style: italic; } span.constant { font-weight:bold; } p { font-size: 16px!important; }  SungemSDK-Python  Development guide hsapi&amp;rsquo;s package structure is as follows：
+hsapi ├── __init__.py ├── core │ ├── __init__.py │ ├── base.py │ ├── device.py │ └── graph.py ├── high │ ├── __init__.py │ ├── net.py │ └── task.py └── easy ├── __init__.</description>
+    </item>
+    
+    <item>
+      <title>Android API</title>
+      <link>https://hornedsungem.github.io/Docs/en/api/android/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hornedsungem.github.io/Docs/en/api/android/</guid>
+      <description>SungemSDK-Android API The current version is 0.2.0,support for multiple models ConnectStatus Parameter  HS_OK : The function call worked as expected. HS_BUSY : The device is busy, retry later. HS_ERROR : An unexpected error was encountered during the function call. HS_NO_CONTEXT: No context. HS_NO_FILE : No files found. HS_DEVICE_NOT_FOUND : No device found. HS_DEVICE_OPEN_FAILED : Failed to open device. HS_UNSUPPORTED_GRAPH_FILE :The graph file is corrupt. Try to recompile the graph file with the version of the toolkit that corresponds to the API version.</description>
+    </item>
+    
+  </channel>
+</rss>

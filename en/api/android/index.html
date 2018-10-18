@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.49" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+    <title>Android API :: Horned Sungem Documentation</title>
+    
+    
+    <link href="/Docs/css/nucleus.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1539858228" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1539858228" rel="stylesheet">
+    
+      <link href="/Docs/css/theme-mine.css?1539858228" rel="stylesheet">
+    
+
+    <script src="/Docs/js/jquery-2.x.min.js?1539858228"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Docs/en/api/android/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+	<a href="/Docs/" ><img align="left" src="/Docs/logo.png"></a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1539858228"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1539858228"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/Docs\/en";
+    
+</script>
+<script type="text/javascript" src="/Docs/js/search.js?1539858228"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/purchase/" title="Purchase" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/purchase/">
+          Purchase
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/product/" title="Product Instructions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/product/">
+          Product Instructions
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/quickstart/" title="Quick Start" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/quickstart/">
+          Quick Start
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/model/" title="Model List" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/model/">
+          Model List
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_mnist/" title="Mnist Digit recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_mnist/">
+        Mnist Digit recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_face_ssd/" title="MobileNet-SSD Face Detector" class="dd-item ">
+        <a href="/Docs/en/model/graph_face_ssd/">
+        MobileNet-SSD Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_object_ssd/" title="MobileNet-SSD Object Detector" class="dd-item ">
+        <a href="/Docs/en/model/graph_object_ssd/">
+        MobileNet-SSD Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_sz/" title="SqueezeNet Image Classification" class="dd-item ">
+        <a href="/Docs/en/model/graph_sz/">
+        SqueezeNet Image Classification
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_g/" title="GoogleNet Image Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_g/">
+        GoogleNet Image Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_fn/" title="FaceNet Face Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_fn/">
+        FaceNet Face Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_sg/" title="Sketch Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_sg/">
+        Sketch Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/api/" title="APIs" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Docs/en/api/">
+          APIs
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/api/python/" title="Python API" class="dd-item ">
+        <a href="/Docs/en/api/python/">
+        Python API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/api/android/" title="Android API" class="dd-item active">
+        <a href="/Docs/en/api/android/">
+        Android API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/" title="Examples and Tutorials" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/">
+          Examples and Tutorials
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/python/" title="Python" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/python/">
+          Python
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/detector/" title="Face detector" class="dd-item ">
+        <a href="/Docs/en/workflow/python/detector/">
+        Face detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/detector_object/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/python/detector_object/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/recorder/" title="Scene Recorder" class="dd-item ">
+        <a href="/Docs/en/workflow/python/recorder/">
+        Scene Recorder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/image_recognition/" title="Image Recogniser (Low-level API Tutorial)" class="dd-item ">
+        <a href="/Docs/en/workflow/python/image_recognition/">
+        Image Recogniser (Low-level API Tutorial)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/android/" title="Android" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/android/">
+          Android
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_hello2018/" title="Hello 2018" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_hello2018/">
+        Hello 2018
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_face_detector/" title="Face Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_face_detector/">
+        Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_object_detector/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_object_detector/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_sketchguess/" title="SketchGuess" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_sketchguess/">
+        SketchGuess
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/multiple_model/" title="Multiple Model" class="dd-item ">
+        <a href="/Docs/en/workflow/android/multiple_model/">
+        Multiple Model
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/ros/" title="ROS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/ros/">
+          ROS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/ros/quickstart/" title="ROS Tutorial" class="dd-item ">
+        <a href="/Docs/en/workflow/ros/quickstart/">
+        ROS Tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/diy/" title="DIY" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/diy/">
+          DIY
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/rapiro/" title="Rapiro Robot" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/rapiro/">
+        Rapiro Robot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/smartlamp/" title="Smart Lamp" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/smartlamp/">
+        Smart Lamp
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/sitting_pose/" title="Sitting posture alarm" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/sitting_pose/">
+        Sitting posture alarm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/raspi_car/" title="Raspberry Pi Toy Car" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/raspi_car/">
+        Raspberry Pi Toy Car
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/faq/" title="FAQs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/faq/">
+          FAQs
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/contact/" title="Contact us" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/contact/">
+          Contact us
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/Docs/en/api/android/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="/Docs/api/android/">Chinese</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/HornedSungem">Github</a>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Docs/en/'>Horned Sungem Documentation</a> > <a href='/Docs/en/api/'>APIs</a> > Android API
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+
+<h1 id="sungemsdk-android-api">SungemSDK-Android API</h1>
+
+<h3 id="the-current-version-is-0-2-0-support-for-multiple-models">The current version is 0.2.0,support for multiple models</h3>
+
+<h2 id="connectstatus-parameter">ConnectStatus Parameter</h2>
+
+<ul>
+<li>HS_OK : The function call worked as expected.</li>
+<li>HS_BUSY : The device is busy, retry later.</li>
+<li>HS_ERROR : An unexpected error was encountered during the function call.</li>
+<li>HS_NO_CONTEXT: No context.</li>
+<li>HS_NO_FILE : No files found.</li>
+<li>HS_DEVICE_NOT_FOUND : No device found.</li>
+<li>HS_DEVICE_OPEN_FAILED : Failed to open device.</li>
+<li>HS_UNSUPPORTED_GRAPH_FILE :The graph file is corrupt. Try to recompile the graph file with the version of the toolkit that corresponds to the API version.</li>
+<li>HS_NO_OPEN : Error status caused by communication operation before calling openDevice().</li>
+</ul>
+
+<hr />
+
+<h2 id="hsbasethread">HsBaseThread</h2>
+
+<p>HsBaseThread is a thread for HornedSungem interacion, developers can extend this class for function expansion.</p>
+
+<h3 id="constructor">Constructor</h3>
+
+<ul>
+<li>context</li>
+<li>usbDevice:Used to connect the Usb device to the current class.</li>
+<li>zoom : the parameter decided to get the resolution of the image of the hornedsungem&rsquo;s own camera image, true is 640*360 image, false is 1920*1080 image</li>
+</ul>
+
+<h3 id="public-member-functions">Public Member Functions</h3>
+
+<table>
+<thead>
+<tr>
+<th>Return</th>
+<th>Function name</th>
+<th>Overview</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>int</td>
+<td><a href="#jump1">allocateGraph(String filename)</a></td>
+<td>This function is used to create an instance of a Graph that represents a neural network, which can be used to infer results via methods loadTensor() and getResult().</td>
+</tr>
+
+<tr>
+<td>int</td>
+<td><a href="#jump2">allocateGraphByAssets(String filename)</a></td>
+<td>This function is used to create an instance of a Graph that represents a neural network,which under the assets package</td>
+</tr>
+
+<tr>
+<td>byte[]</td>
+<td><a href="#jump3">getImage(float std,float mean,int id)</a></td>
+<td>This function is to get the graph image</td>
+</tr>
+
+<tr>
+<td>byte[]</td>
+<td><a href="#jump4">deviceGetImage()</a></td>
+<td>This function is to get the device image</td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><a href="#jump5">setZoom(boolean zoom)</a></td>
+<td>This function set the device camera parameter</td>
+</tr>
+
+<tr>
+<td>int</td>
+<td><a href="#jumm6">loadTensor(float[] data,int length,int id)</a></td>
+<td>This function initiates an inference on the specified graph via the associated Horned Sungem device. After calling this function, use the getResult() function to retrieve the inference result.</td>
+</tr>
+
+<tr>
+<td>int</td>
+<td><a href="#jump6">loadTensor(byte[] data,int length,int id)</a></td>
+<td>This function initiates an inference on the specified graph via the associated Horned Sungem device. After calling this function, use the getResult() function to retrieve the inference result.</td>
+</tr>
+
+<tr>
+<td>byte[]</td>
+<td><a href="#jump7">getResult(int id)</a></td>
+<td>This function retrieves the result of an inference that was initiated via loadTensor() or getImage() on the specified graph.</td>
+</tr>
+
+<tr>
+<td>int</td>
+<td><a href="#jump8">openDevice()</a></td>
+<td>Open the device</td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><a href="#jump9">closeDevice()</a></td>
+<td>Turn off the device</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li><p><h3 id="jump1" >allocateGraph(filename):</h3>This function is used to create an instance of a Graph that represents a neural network, which can be used to infer results via methods loadTensor() and getResult().</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>filename : A string that is the path to the graph file.<br /></li>
+</ul></li>
+<li>Return : If it is abnormal, it returns an error code. If it is normal, it returns the id corresponding to the model. (&lt;0 is abnormal)
+
+<ul>
+<li>HS_ERROR(-2): Failed to load.</li>
+<li>HS_UNSUPPORTED_GRAPH_FILE(-10)</li>
+<li>HS_NO_FILE(-12)</li>
+</ul></li>
+<li>Example:</li>
+</ul>
+
+<pre><code class="language-java">  int id = allocateGraph(Environment.getExternalStorageDirectory().getAbsolutePath() + &quot;/hs/&quot; + &quot;graph_face_SSD&quot;);
+</code></pre></li>
+
+<li><p><h3 id="jump2" >allocateGraphByAssets(filename):</h3>This function is used to create an instance of a Graph that represents a neural network,which under the assets package</p>
+
+<ul>
+<li>Example:</li>
+</ul>
+
+<pre><code class="language-java">  int id = allocateGraphByAssets(&quot;graph_face_SSD&quot;);
+</code></pre></li>
+
+<li><p><h3 id="jump3">getImage(std,mean,id):</h3>This function is to get the graph image</p>
+
+<ul>
+<li>Parameters :
+
+<ul>
+<li>std,mean :The values ​​of the parameters vary depending on the use of different convolutional neural networks.
+For details,please click <a href="https://hornedsungem.github.io/Docs/model/">ModelList</a></li>
+<li>id : Used to identify the specified model.</li>
+</ul></li>
+
+<li><p>Return: The return value represents the raw data of the image</p>
+
+<ul>
+<li><p>If zoom parameter is set to true, the return value size is 640*360*3</p></li>
+
+<li><p>If zoom parameter is set to false, the return value size is 1920*1080*3, The rgb images are arranged in order and need to be converted to display correctly. The conversion code is as follows:</p></li>
+</ul></li>
+</ul>
+
+<pre><code class="language-java">  byte[] bytes = mHsApi.getImage(STD, MEAN,0);
+  int FRAME_W = 1920;
+  int FRAME_H = 1080;
+  byte[] bytes_rgb = new byte[FRAME_W * FRAME_H * 3];
+  for (int i = 0; i &lt; FRAME_H * FRAME_W; i++) {
+    bytes_rgb[i * 3 + 2] = bytes[i];//r
+    bytes_rgb[i * 3 + 1] = bytes[FRAME_W * FRAME_H + i];//g
+    bytes_rgb[i * 3] = bytes[FRAME_W * FRAME_H * 2 + i];//b
+  }
+  opencv_core.IplImage bgrImage = opencv_core.IplImage.create(FRAME_W, FRAME_H, opencv_core.IPL_DEPTH_8U, 3);
+  bgrImage.getByteBuffer().put(bytes_rgb);
+</code></pre></li>
+
+<li><p><h3 id="jump4" >deviceGetImage():</h3>This function is to get the device image</p>
+
+<ul>
+<li>Return : <strong>The return value is similar to the getImage() function. So don&rsquo;t elaborate</strong></li>
+</ul></li>
+
+<li><p><h3 id="jump5" >setZoom(zoom):</h3> This function set the device camera parameter</p>
+
+<ul>
+<li>zoom : boolean type</li>
+</ul></li>
+
+<li><p><h3 id="jump6" >loadTensor(inputTensor,length,id):</h3>This function initiates an inference on the specified graph via the associated Horned Sungem device. After calling this function, use the getResult() function to retrieve the inference result.</p>
+
+<p><strong>According to the developer&rsquo;s needs, use the parameters to select the corresponding function</strong></p>
+
+<ul>
+<li><p>Parameters :</p>
+
+<ul>
+<li>inputTensor : float[] type or byte[] type</li>
+<li>length : Array size</li>
+<li>id : Used to identify the specified model.</li>
+</ul></li>
+
+<li><p>Return : Returns the state after the function is executed</p></li>
+
+<li><p>Example : The code is taken at hello2018</p></li>
+</ul>
+
+<pre><code class="language-java">for (int i = 1; i &lt; 5; i++) {
+    int[] ints = new int[28 * 28];
+    try {
+        InputStream inputStream = mActivity.getAssets().open(&quot;hello/&quot; + i + &quot;.jpg&quot;);
+        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+        bitmap.getPixels(ints, 0, 28, 0, 0, 28, 28);
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    float[] float_tensor = new float[28 * 28];
+    for (int j = 0; j &lt; 28 * 28; j++) {
+        float_tensor[j] = Color.red(ints[j]) * 0.007843f - 1;
+    }
+    int status_load = mHsApi.loadTensor(float_tensor, float_tensor.length, 0);
+}
+</code></pre></li>
+
+<li><p><h3 id="jump7" >getResult(id):</h3>This function retrieves the result of an inference that was initiated via loadTensor() or getImage() on the specified graph.</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>id : Used to identify the specified model.</li>
+</ul></li>
+<li>Example :</li>
+</ul>
+
+<pre><code class="language-java">  float[] result = mHsApi.getResult(0);
+</code></pre>
+
+<ul>
+<li><p>Return : Depending on the neural network, the return array length and resolution are different.</p>
+
+<ul>
+<li>MobilenetSSD, the parsed code is as follows :</li>
+</ul>
+
+<pre><code class="language-java">int num = (int) floats[0];
+if (num &gt; 0) {
+  for (int i = 0; i &lt; num; i++) {
+      int type = (int) (floats[7 * (i + 1) + 1]);
+      int x1 = (int) (floats[7 * (i + 1) + 3] * FRAME_W);
+      int y1 = (int) (floats[7 * (i + 1) + 4] * FRAME_H);
+      int x2 = (int) (floats[7 * (i + 1) + 5] * FRAME_W);
+      int y2 = (int) (floats[7 * (i + 1) + 6] * FRAME_H);
+      int wight = x2 - x1;
+      int height = y2 - y1;
+      int percentage = (int) (floats[7 * (i + 1) + 2] * 100);
+      if (percentage &lt;= MIN_SCORE_PERCENT) {
+        continue;
+      }
+      if (wight &gt;= FRAME_W * 0.8 || height &gt;= FRAME_H * 0.8) {
+        continue;
+      }
+      if (x1 &lt; 0 || x2 &lt; 0 || y1 &lt; 0 || y2 &lt; 0 || wight &lt; 0 || height &lt; 0) {
+        continue;
+      }
+  }
+}
+</code></pre>
+
+<ul>
+<li>Mnist : Returns 10 float numbers, corresponding to 0-9 credibility.</li>
+<li>SketchGraph : Returns 345 float numbers,corresponding to the credibility of 345 objects,For details,please click <a href="https://hornedsungem.github.io/Docs/workflow/">Sketch recognisor</a></li>
+</ul></li>
+</ul></li>
+
+<li><p><h3 id="jump8" >openDevice():</h3> Open the device.</p>
+
+<ul>
+<li>No parameter.</li>
+<li>Return: Returns the status after the command is executed.
+
+<ul>
+<li>ConnectStatus.HS_DEVICE_NOT_FOUND, no HornedSungem equipment found, please make sure the USB cable is connected properly.</li>
+<li>ConnectStatus.HS_NO_CONTEXT, there is no incoming context when initializing the thread and it does not work properly</li>
+<li>ConnectStatus.HS_DEVICE_OPEN_FAILED, failed to open the device, please make sure the permissions are turned on.</li>
+<li>ConnectStatus.HS_OK, normal.</li>
+</ul></li>
+</ul></li>
+
+<li><p><h3 id="jump9" >closeDevice():</h3> Turn off the device.</p></li>
+</ol>
+
+<hr />
+
+<h2 id="hsdevice">HsDevice</h2>
+
+<p>This class defines several abstract callback functions for various behavior processing, which is the basic device of developers using horned sungem.</p>
+
+<h3 id="callback">Callback</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Return</th>
+<th align="left">Function</th>
+<th align="left">Overview</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">void</td>
+<td align="left"><a href="#jump11">openSucceed(UsbDevice usbDevice)</a></td>
+<td align="left">Successfully connected the HornedSungem device</td>
+</tr>
+
+<tr>
+<td align="left">void</td>
+<td align="left"><a href="#jump12">openFailed()</a></td>
+<td align="left">Connection failed or permission not granted</td>
+</tr>
+
+<tr>
+<td align="left">void</td>
+<td align="left"><a href="#jump13">disConnected()</a></td>
+<td align="left">Disconnect device</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li><p><h3 id="jump11" >openSucceed(usbDevice):</h3> Successfully connected the HornedSungem device</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>usbDevice</li>
+</ul></li>
+<li>Example:</li>
+</ul>
+
+<pre><code class="language-java">@Override
+public void openSucceed(UsbDevice usbDevice) {
+    mTvTip.setVisibility(View.GONE);
+    mHsThread = new FaceDetectionThread(FaceDetectorActivity.this, usbDevice, mHandler);
+    mHsThread.start();
+}
+</code></pre></li>
+
+<li><p><h3 id="jump12" >openFailed():</h3>Connection failed or permission not granted</p>
+
+<ul>
+<li>No parameters</li>
+<li>Example:</li>
+</ul>
+
+<pre><code class="language-java">@Override
+public void openFailed() {
+    mTvTip.setText(&quot;Please re-plug the HornedSungem and open the permissions.&quot;);
+  }
+</code></pre></li>
+
+<li><p><h3 id="jump13" >disConnected():</h3>Disconnect device</p>
+
+<ul>
+<li>No parameters</li>
+<li>Example:</li>
+</ul>
+
+<pre><code class="language-java">@Override
+public void disConnected() {
+    Toast.makeText(this, &quot;Disconnected&quot;, Toast.LENGTH_SHORT).show();
+}
+</code></pre></li>
+</ol>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/Docs/en/api/python/" title="Python API"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/Docs/en/workflow/" title="Examples and Tutorials" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Docs/js/clipboard.min.js?1539858228"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1539858228"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1539858228"></script>
+    <script src="/Docs/js/jquery.sticky.js?1539858228"></script>
+    <script src="/Docs/js/featherlight.min.js?1539858228"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1539858228"></script>
+    <script src="/Docs/js/highlight.pack.js?1539858228"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1539858228"></script>
+    <script src="/Docs/js/learn.js?1539858228"></script>
+    <script src="/Docs/js/hugo-learn.js?1539858228"></script>
+
+    <link href="/Docs/mermaid/mermaid.css?1539858228" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1539858228"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

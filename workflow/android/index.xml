@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Android on Horned Sungem Documentation</title>
+    <title>Android on 角蜂鸟中文文档</title>
     <link>https://hornedsungem.github.io/Docs/workflow/android/</link>
-    <description>Recent content in Android on Horned Sungem Documentation</description>
+    <description>Recent content in Android on 角蜂鸟中文文档</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://hornedsungem.github.io/Docs/workflow/android/index.xml" rel="self" type="application/rss+xml" />
@@ -15,48 +15,68 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/android/android_hello2018/</guid>
-      <description>Quickstart This article describes how to use the Mnist convolutional neural network to achieve digital recognition through the Sungem-SDK in the Android Studio development environment. The current example uses the camera that comes with the HornedSungem. If you need an external image source, please refer to SungemSDK-AndroidExamples.
-step 1: Prepare the development environment  Download the latest versionSungemSDK-Android.jar package Prerequisites:  Make sure minSdkVersion is above Android 3.1 Make sure the Android device supports OTG Android Studio 2.</description>
+      <description>快速开始 下面介绍如何在Android Studio开发环境下通过角蜂鸟SDK使用Mnist卷积神经网络，实现数字识别，本文的介绍示例是使用角蜂鸟摄像头，如果需要外部图像来源可参考示例工程实现
+步骤1：准备环境  下载最新版SungemSDK-Android jar包 请确保满足一下开发环境要求  确保minSdkVersion在Android 3.1以上 确保设备支持OTG Android Studio 2.0或以上版本  新建project工程 请确保在使用角蜂鸟相关功能及服务前，已阅读Android API,详见API文档  步骤2：添加SDK  将下载的软件包根据实际需求拷贝到您项目对应的文件夹里，例如：  该lib下包含了SungemSDK-Android及javacv所需要的jar和so库
+注意：libs文件夹路径不能包含中文，否则会编译失败
+2.请在build.gradle文件里，将上述库放入正确路径下，如检索不到，可手动添加引用：
+步骤3：添加权限 为了保证SDK正常运行，需要在AndroidManistest.xml文件下添加下列许可：
+&amp;lt;uses-permission android:name=&amp;quot;android.permission.READ_EXTERNAL_STORAGE&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.WRITE_EXTERNAL_STORAGE&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.hardware.usb.host&amp;quot;/&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.hardware.usb.accessory&amp;quot;/&amp;gt; &amp;lt;uses-feature android:name=&amp;quot;android.hardware.usb.host&amp;quot;/&amp;gt;  步骤4：代码实现 下面通过一个简单hello2018的例子讲解具体怎么使用角蜂鸟SDK
+ 下载graph_mnist文件和4张测试图片,在您的module下新建assets包，将下载的文件复制到该目录下，如图：   初始化HsDevice,用于角蜂鸟通信和显示结果,具体代码如下：
+mHsDevice = new HsDevice(this) { @Override public void openSucceed(UsbDevice usbDevice) { Toast.makeText(MainActivity.this, &amp;quot;连接成功&amp;quot;, Toast.LENGTH_SHORT).show(); mUsbDevice = usbDevice; mCbDevice.setChecked(true); } @Override public void openFailed() { mCbDevice.</description>
     </item>
     
     <item>
-      <title>Face Detector</title>
+      <title>人脸检测</title>
       <link>https://hornedsungem.github.io/Docs/workflow/android/android_face_detector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/android/android_face_detector/</guid>
-      <description>This article mainly introduces how to use HornedSungem to load the SSD-Mobilenet convolutional neural network on the Android platform to realize face detection.
-Preparation  For details on the configuration environment, please refer to quick start, I will not elaborate here. Download the model graph_face_SSD required for face detection, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory.</description>
+      <description>本文主要给大家介绍如何在Android平台下使用角蜂鸟调用SSD-Mobilenet卷积神经网络,实现人脸检测
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载人脸检测所需模型graph_face_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 1.实现具体步骤：  开启设备
+int status = openDevice(); if (status != ConnectStatus.HS_OK) { return; }  将graph文件传输到角蜂鸟里
+int id = allocateGraphByAssets(&amp;quot;graph_face_SSD&amp;quot;);  如果单模型，id即为0，不需要维护此属性。
+ 处理图像数据，分俩种模式
+ 使用角蜂鸟内置摄像头：
+byte[] bytes = getImage(0.007843f, 1.0f,id);  使用外部图像来源：该模式下，传入角蜂鸟的数据要经过预处理，下面介绍的例子是使用手机摄像头的数据，图像大小为1280*720：
+SoftReference&amp;lt;Bitmap&amp;gt; softRef = new SoftReference&amp;lt;&amp;gt;(Bitmap.createBitmap(1280, 720, Bitmap.Config.ARGB_8888)); Bitmap bitmap = softRef.get(); allocations[0].copyTo(bitmap); Matrix matrix = new Matrix(); matrix.postScale(300f / 1280, 300f / 720); Bitmap newbm = Bitmap.</description>
     </item>
     
     <item>
-      <title>Object Detector</title>
+      <title>物体检测</title>
       <link>https://hornedsungem.github.io/Docs/workflow/android/android_object_detector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/android/android_object_detector/</guid>
-      <description>This article mainly introduces how to use HornedSungem to load the SSD-Mobilenet convolutional neural network on the Android platform to realize Object detection.
-Preparation  For details on the configuration environment, please refer to quick start, I will not elaborate here. Download the model graph_object_SSD required for Object detection, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory.</description>
+      <description>本文主要给大家介绍如何在Android平台下使用角蜂鸟调用SSD-Mobilenet卷积神经网络，实现物体检测
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载物体检测所需模型graph_object_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下，该模型支持20种物体的检测。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 本文体验的模型文件提供的20种物体检测包含：
+String[] labels = {&amp;quot;aeroplane&amp;quot;, &amp;quot;bicycle&amp;quot;, &amp;quot;bird&amp;quot;, &amp;quot;boat&amp;quot;, &amp;quot;bottle&amp;quot;, &amp;quot;bus&amp;quot;, &amp;quot;car&amp;quot;, &amp;quot;cat&amp;quot;, &amp;quot;chair&amp;quot;, &amp;quot;cow&amp;quot;, &amp;quot;diningtable&amp;quot;, &amp;quot;dog&amp;quot;, &amp;quot;horse&amp;quot;, &amp;quot;motorbike&amp;quot;, &amp;quot;person&amp;quot;, &amp;quot;pottedplant&amp;quot;, &amp;quot;sheep&amp;quot;, &amp;quot;sofa&amp;quot;, &amp;quot;train&amp;quot;, &amp;quot;tvmonitor&amp;quot;};  主要实现流程：  开启设备 将graph文件传输到角蜂鸟里 处理图像数据 获取返回的处理结果 结果显示在view上 俩种实现模式
+ 使用角蜂鸟内置摄像头，主要业务逻辑代码如下：
+int status = openDevice(); if (status != ConnectStatus.HS_OK) { return; } int id = allocateGraphByAssets(&amp;quot;graph_object_SSD&amp;quot;); if (id &amp;lt; 0) { return; } while (true) { byte[] bytes = getImage(0.</description>
     </item>
     
     <item>
-      <title>SketchGuess</title>
+      <title>手绘识别</title>
       <link>https://hornedsungem.github.io/Docs/workflow/android/android_sketchguess/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/android/android_sketchguess/</guid>
-      <description>This article introduces you to use HornedSungem to achieve hand-painted recognition under the Android platform.
-Preparation  For details on the configuration environment, please refer to quick start, I will not elaborate here. Download the model graph_sg, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory. Because the project needs to process and display the image, the javacv library is use.</description>
+      <description>本文主要给大家介绍下在Android平台下使用角蜂鸟实现手绘识别功能
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述 下载物体检测所需模型graph_sg文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中libs下拷贝到自己工程 将class_list_chn.txt文件拷贝到Android设备的存储空间下，用于345种物体的比对  具体实现  打开设备通信
+int status = openDevice(); if (status != ConnectStatus.HS_OK) { return; }  将graph文件传输到角蜂鸟里
+int id = allocateGraphByAssets(&amp;quot;graph_sg&amp;quot;);  读取物体分类文件
+try { BufferedReader bufferedReader = new BufferedReader(new FileReader(Environment.getExternalStorageDirectory().getAbsolutePath() + &amp;quot;/hs/class_list_chn.txt&amp;quot;)); for (int i = 0; i &amp;lt; 345; i++) { String line = bufferedReader.readLine(); if (line != null) { String[] strings = line.split(&amp;quot; &amp;quot;); mObjectNames[i] = strings[0]; } } bufferedReader.</description>
     </item>
     
     <item>
-      <title>Multiple Model</title>
+      <title>多模型</title>
       <link>https://hornedsungem.github.io/Docs/workflow/android/multiple_model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/android/multiple_model/</guid>
-      <description>This article mainly introduces how to implement a simple multi-model example using the multi-model version of HornedSungem under Android platform.
-Preparation  For details on the configuration environment, please refer to quick start, I will not elaborate here. Download the models graph_face_SSD and graph_object_SSD required for detection, In your Android Studio, create a new assets package under the current module, copy the downloaded model file to this directory. Because the project needs to process and display the image, the javacv library is use.</description>
+      <description>本文主要给大家介绍如何在Android平台下使用多模型版本的角蜂鸟实现一个简单的多模型例子。
+准备工作  配置环境等详情请参照Hello 2018里的快速开始，此处不具体阐述。 下载物体检测和人脸检测所需的俩个模型graph_object_SSD，graph_face_SSD文件，在您Android Studio中，当前module下新建assets包，将下载的模型文件复制到该目录下，该模型支持20种物体的检测。 因工程需要处理图像，所以使用了javacv库，可从GitHub自行下载或点击链接从示例工程中拷贝到自己工程下。  具体实现 1.实现具体步骤：  开启设备通信。 将俩个模型按顺序通过USB送入角蜂鸟里。 获取人脸模型对应的图像。 得到对应人脸模型的结果。 将图像进行预处理传入物体检测的模型里。 得到对应物体检测的结果。  2.主要代码逻辑： //子线程中执行对应步骤代码 int status = openDevice(); int face_id = allocateGraphByAssets(mContext, &amp;quot;graph_face_SSD&amp;quot;); int object_id = allocateGraphByAssets(mContext, &amp;quot;graph_object_SSD&amp;quot;); byte[] bytes = getImage(STD, MEAN, face_id); float[] result_face = getResult(face_id); //...经过预处理bytes图像数据并转成float类型传给物体检测模型 loadTensor(float_tensor, float_tensor.length, object_id); float[] result_object = getResult(object_id); HornedSungemFrame frame = getFrameResult(image, result_face, result_object);//整合结果显示  具体代码可以参考示例工程，本文只摘取了重要代码，其中数据的处理及业务逻辑未列出
+3.返回结果解析： 因本文主要用到人脸检测和物体检测俩种模型，具体的解析结果可参照模型列表的详细介绍。
+int num_object = (int) object_result[0]; if (num_object &amp;gt; 0) { for (int i = 0; i &amp;lt; num_object; i++) { HornedSungemFrame.</description>
     </item>
     
   </channel>

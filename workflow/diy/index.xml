@@ -1,61 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DIY on Horned Sungem Documentation</title>
+    <title>扩展DIY on 角蜂鸟中文文档</title>
     <link>https://hornedsungem.github.io/Docs/workflow/diy/</link>
-    <description>Recent content in DIY on Horned Sungem Documentation</description>
+    <description>Recent content in 扩展DIY on 角蜂鸟中文文档</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://hornedsungem.github.io/Docs/workflow/diy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Rapiro Robot</title>
+      <title>奥松机器人</title>
       <link>https://hornedsungem.github.io/Docs/workflow/diy/rapiro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/diy/rapiro/</guid>
-      <description>This chapter introduced how to build a robot that controlled by HS face detector.
- Hardware requirement:
- Horned Sungem Device Raspberry Pi 3b Rapiro Robot 12V to 5V DC-DC module (Optional) Cooling fan (Optional)   Workflow The built-in model Mobilenet-SSD face detector is used in this DIY demo. The logic is illustrated as below:
-Implementation Firstly assemble and power the Rapiro robot, then use robot to supply the power to a Raspeberry Pi.</description>
+      <description>这里给大家带来一个借助角蜂鸟实现的人脸检测控制的机器人。
+ 硬件清单参考如下：
+ 角蜂鸟 树莓派3b 奥松机器人 12V转5V的DC-DC模块（可选） 散热风扇（可选）   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现人脸检测的功能。大概的处理逻辑如下：
+实现 首先组装好奥松机器人，奥松机器人为树莓派供电，树莓派为角蜂鸟供电，树莓派通过USB通信控制奥松机器人和角蜂鸟。 由于树莓派USB供电限制，可能会产生供电不足的问题，影响稳定性。这里考虑从奥松机器人的电源上接入12V转5V的DC-DC模块为USB提供额外供电，或者使用外源HUB。 担心空间散热性比较差可考虑加入散热风扇。
+为了优雅与美观，这里我们DIY了奥松机器人，把所有的东西都埋进了脑袋里，角蜂鸟放在了后脑勺的位置。
+奥松机器人控制代码如下：
+class RapiroProcessor(Thread): class Flags: face = None face_frame_cnt = 0 head_angle = 90 arm_raised = False light_on = False light_need_change = False def __init__(self, connection): Thread.__init__(self) self.daemon = True self.rapiro = Rapiro(connection) self.flags = RapiroProcessor.Flags() def reset(self): self.rapiro.execute(GO_TO_INITIAL_POSITION) time.sleep(3) def run(self): self.reset() try: while True: time.sleep(0.1) has_face = self.</description>
     </item>
     
     <item>
-      <title>Smart Lamp</title>
+      <title>智能台灯</title>
       <link>https://hornedsungem.github.io/Docs/workflow/diy/smartlamp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/diy/smartlamp/</guid>
-      <description>Here we give a tutorial on how to control a lamp through face detector with HS device. The lamb automatically turns on if face appears, otherwise turn off.
- Hardware list:
- HS device Raspberry Pi 3b 1 channel relay module 5V USB lamp   Workflow The built-in model Mobilenet-SSD face detector is used in this DIY demo. The logic is illustrated as below:
-then we control the switch of the lamp through a 1 channel relay module.</description>
+      <description>这里给大家带来一个借助角蜂鸟实现的人脸检测控制的智能台灯。当角蜂鸟发现人脸出现时台灯自动打开，没有检测到人时会自动关闭。
+ 硬件清单参考如下：
+ 角蜂鸟 树莓派3b 1路继电器模块 5V USB台灯   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现人脸检测的功能。大概的处理逻辑如下：
+然后就是控制台灯，我们通过 1路继电器模块 来控制工作电路的闭合。树莓派 GPIO 引脚接继电器控制端 IN，GND 引脚接继电器 DC-端构成回路。这里采用高电平触发，当 GPIO 输出高电平时，工作电路闭合，台灯亮起；输出低电平时，工作电路断开，台灯熄灭。
+ 1路继电器模块
+ DC+ 接电源正极 DC- 接电源负极 IN 高或低电平控制继电器吸合 COM 公用接口 NO 常开接口，吸合前悬空，吸合后与 COM 短接 NC 常闭接口，吸合前与 COM 短接，吸合后悬空  跳线与 High 短接时为高电平触发，与 LOW 短接时为低电平触发。
+ 具体实现 准备好树莓派，安装 SungemSDK 运行环境，并且连接好角蜂鸟和继电器。 继电器控制代码如下：
+#!/usr/bin/env python3 # coding=utf-8 # lamp.py import RPi.GPIO as GPIO PIN = 7 def setup(): GPIO.</description>
     </item>
     
     <item>
-      <title>Sitting posture alarm</title>
+      <title>坐姿提醒</title>
       <link>https://hornedsungem.github.io/Docs/workflow/diy/sitting_pose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/diy/sitting_pose/</guid>
-      <description>In this tutorial we will build a simple sitting posture alarm.
- Hardware list:
- HS device Raspberry Pi 3b Buzzer   Workflow Since currently the HS model zoo does not include pose estimation model, we simplify the problem and use our Scene Recorder to achieve the goal.
-Here we consider two senarios that need to be distinguished:
- Normal sitting posture Unhealthy sitting posture  as shown below:</description>
+      <description>这里给大家带来一个借助角蜂鸟实现的简单的坐姿监测器。
+ 硬件清单参考如下：
+ 角蜂鸟 树莓派3b 蜂鸣器   构思 在角蜂鸟的内置模型中和公开的数据集中没有关于坐姿的，我们要实现效果非常好，需要大量的数据，自己去采集数据并去标记不太现实。这里我们采用角蜂鸟内置的 GoogleNet 来实现我们的需求，仿照情景记录器做一个比较简单的坐姿监测器。
+我们需要记录至少2个场景分类：
+ 正确的坐姿 不良的坐姿  大概的处理逻辑如下：
+准备 首先，我们需要先记录我们的情景分类。 我们可以执行SDK示例程序中的 SceneRecorder.py 来记录场景，再拷贝数据文件到我们的项目中，或者仿照情景记录器自己去实现。 这里我们把情景记录与应用分开，树莓派的界面实在不够友好，我们在PC端进行场景记录，在树莓派上实现我们监测的应用。
+import sys sys.path.append(&amp;quot;../../SungemSDK-Python&amp;quot;) import hsapi as hs import cv2 if __name__ == &#39;__main__&#39;: cv2.namedWindow(&amp;quot;Scene Recorder&amp;quot;, cv2.WINDOW_NORMAL) try: net = hs.SceneRecorder(zoom=True, verbose=2) while True: result = net.run() key = cv2.waitKey(5) prob = net.record(result, key, saveFilename=&amp;quot;./record.dat&amp;quot;) cv2.imshow(&amp;quot;Scene Recorder&amp;quot;, result[0]) cv2.waitKey(1) finally: cv2.destroyAllWindows()  我们需要不断去重复训练的过程，不断去修正，直到达到预期的结果。这里 1 为正确的坐姿，2 为不良的坐姿。在训练的过程中，如果出现误检，需要再次记录场景，再次训练，不断扩充训练集。</description>
     </item>
     
     <item>
-      <title>Raspberry Pi Toy Car</title>
+      <title>树莓派小车</title>
       <link>https://hornedsungem.github.io/Docs/workflow/diy/raspi_car/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hornedsungem.github.io/Docs/workflow/diy/raspi_car/</guid>
-      <description>We bring a HS enhanced Raspberry Pi Toy car by using object detector.
- Hardware list:
- HS device Raspberry Pi 3b Assembled Raspberry Pi toy car with SCM controlled motors   Workflow The built-in model Mobilenet-SSD object detector is used in this DIY demo. The logic is illustrated as below:
-Implementation Firstly we assemble the toy car, the car is not necessary to be the same as ours, it should work as long as it is controlled through GPIO pin.</description>
+      <description>这里给大家带来一个借助角蜂鸟实现的基于物体识别控制的树莓派小车。
+ 硬件清单参考如下：
+ 角蜂鸟 树莓派3b + 小车配件   构思 在角蜂鸟内置的模型中，为我们提供了 Mobilenet-SSD 模型，我们将使用这个模型实现物体检测的功能。大概的处理逻辑如下：
+具体实现 首先我们需要将小车组装起来，虽然购买到的树莓派小车的可能不同，但组装过程大同小异，实际上都是通过 GPIO 控制驱动板，进而控制电机转动。
+安装好小车、固定好角蜂鸟之后，就可以配置树莓派以及 SungemSDK 的运行环境了。树莓派的图形界面不太友好，本着要优雅的原则，可以使用 pycharm 进行远程开发调试，具体配置过程可询问谷哥和度娘。
+这里需要说明的是，树莓派的USB接口有电流限制，最高只能达到600mA，可能当多个IO输出的时候，会造成工作不稳定。这里可以考虑为USB提供额外的供电，飞根线或者采用外源HUB。
+主要流程实现直接上代码：
+#!/usr/bin/env python3 # coding=utf-8 import sys sys.path.append(&amp;quot;../../SungemSDK-Python&amp;quot;) import hsapi as hs import drive from video import VideoProcessor def process(ret): bicycles = [x for x in ret[1] if x[0] in {1}] # 1 bicycle if len(bicycles) &amp;gt; 0: # 当检测到自行车时 bike = bicycles[0] x_mid = (bike[2] + bike[4]) / 2 / ret[0].</description>
     </item>
     
   </channel>
