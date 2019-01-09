@@ -12,19 +12,19 @@
     <title>模型转换 :: 角蜂鸟中文文档</title>
     
     
-    <link href="/Docs/css/nucleus.css?1546999549" rel="stylesheet">
-    <link href="/Docs/css/font-awesome.min.css?1546999549" rel="stylesheet">
-    <link href="/Docs/css/hybrid.css?1546999549" rel="stylesheet">
-    <link href="/Docs/css/featherlight.min.css?1546999549" rel="stylesheet">
-    <link href="/Docs/css/perfect-scrollbar.min.css?1546999549" rel="stylesheet">
-    <link href="/Docs/css/auto-complete.css?1546999549" rel="stylesheet">
-    <link href="/Docs/css/theme.css?1546999549" rel="stylesheet">
-    <link href="/Docs/css/hugo-theme.css?1546999549" rel="stylesheet">
+    <link href="/Docs/css/nucleus.css?1547000093" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1547000093" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1547000093" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1547000093" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1547000093" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1547000093" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1547000093" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1547000093" rel="stylesheet">
     
-      <link href="/Docs/css/theme-mine.css?1546999549" rel="stylesheet">
+      <link href="/Docs/css/theme-mine.css?1547000093" rel="stylesheet">
     
 
-    <script src="/Docs/js/jquery-2.x.min.js?1546999549"></script>
+    <script src="/Docs/js/jquery-2.x.min.js?1547000093"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/Docs/js/lunr.min.js?1546999549"></script>
-<script type="text/javascript" src="/Docs/js/auto-complete.js?1546999549"></script>
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1547000093"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1547000093"></script>
 <script type="text/javascript">
     
         var baseurl = "\/Docs";
     
 </script>
-<script type="text/javascript" src="/Docs/js/search.js?1546999549"></script>
+<script type="text/javascript" src="/Docs/js/search.js?1547000093"></script>
 
     
   </div>
@@ -1026,9 +1026,13 @@ pre { margin: 0!important; }
 
 <h4 id="安装pip包-建议使用清华源">安装pip包（建议使用清华源）</h4>
 
+<blockquote>
+<p>注意：graphviz可能需要apt安装 </p>
+</blockquote>
+
 <p>pip3 install graphviz, pyyaml</p>
 
-<h4 id="安装caffe-ssd-cpu版-如需caffe模型验证">安装Caffe-SSD CPU版（如需Caffe模型验证）</h4>
+<h4 id="安装caffe-ssd-cpu版-如需caffe模型转换">安装Caffe-SSD CPU版（如需Caffe模型转换）</h4>
 
 <blockquote>
 <p>注意：Makefile.config已根据转换工具的需求重新配置过，但仍有可能遇到Caffe编译不通过的情况。<br />
@@ -1043,7 +1047,7 @@ make -j
 make pycaffe
 </code></pre>
 
-<h4 id="安装tensorflow-如需tensorflow模型验证">安装Tensorflow （如需Tensorflow模型验证）</h4>
+<h4 id="安装tensorflow-如需tensorflow模型转换">安装Tensorflow （如需Tensorflow模型转换）</h4>
 
 <p>请参考官方 <strong><a href="https://www.tensorflow.org/install/">Tensorflow安装教程</a></strong> 。</p>
 
@@ -1051,7 +1055,7 @@ make pycaffe
 
 <h3 id="转换-compile">转换 - Compile</h3>
 
-<p>此脚本转换Caffe或Tensorflow模型到角蜂鸟Graph模型，无需编译Caffe或安装Tensorflow也可使用。
+<p>此脚本转换Caffe或Tensorflow模型到角蜂鸟Graph模型，无需连接角蜂鸟也可使用。
 使用说明如下：</p>
 
 <pre><code>python3 mvNCCompile.py network # network 为模型文件，如 *.prototxt(Caffe)* 或 *.meta(Tensorflow)*
@@ -1079,7 +1083,7 @@ mvNCCompile v02.00, Copyright @ Movidius Ltd 2016
 
 <h3 id="验证-check">验证 - Check</h3>
 
-<p>此脚本用途为验证生成Graph与原模型是否输出一致。、</p>
+<p>此脚本用途为验证生成Graph与原模型是否输出一致。</p>
 
 <blockquote>
 <p>此验证脚本机制为输入随机数或图像，通过欧式距离与排序分析转换前后模型的输出误差。<br />
@@ -1878,20 +1882,20 @@ python3 mvNCCheck.py -s 8 ./tf_wave/wave.ckpt.meta -in input -on UNet/Conv_end/c
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/Docs/js/clipboard.min.js?1546999549"></script>
-    <script src="/Docs/js/perfect-scrollbar.min.js?1546999549"></script>
-    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1546999549"></script>
-    <script src="/Docs/js/jquery.sticky.js?1546999549"></script>
-    <script src="/Docs/js/featherlight.min.js?1546999549"></script>
-    <script src="/Docs/js/html5shiv-printshiv.min.js?1546999549"></script>
-    <script src="/Docs/js/highlight.pack.js?1546999549"></script>
+    <script src="/Docs/js/clipboard.min.js?1547000093"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1547000093"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1547000093"></script>
+    <script src="/Docs/js/jquery.sticky.js?1547000093"></script>
+    <script src="/Docs/js/featherlight.min.js?1547000093"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1547000093"></script>
+    <script src="/Docs/js/highlight.pack.js?1547000093"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/Docs/js/modernizr.custom.71422.js?1546999549"></script>
-    <script src="/Docs/js/learn.js?1546999549"></script>
-    <script src="/Docs/js/hugo-learn.js?1546999549"></script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1547000093"></script>
+    <script src="/Docs/js/learn.js?1547000093"></script>
+    <script src="/Docs/js/hugo-learn.js?1547000093"></script>
 
-    <link href="/Docs/mermaid/mermaid.css?1546999549" type="text/css" rel="stylesheet" />
-    <script src="/Docs/mermaid/mermaid.js?1546999549"></script>
+    <link href="/Docs/mermaid/mermaid.css?1547000093" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1547000093"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
