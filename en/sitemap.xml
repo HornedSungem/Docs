@@ -277,6 +277,20 @@
   </url>
   
   <url>
+    <loc>https://hornedsungem.github.io/Docs/en/conversion/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/conversion/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/en/conversion/"
+                />
+  </url>
+  
+  <url>
     <loc>https://hornedsungem.github.io/Docs/en/workflow/android/multiple_model/</loc>
     <xhtml:link
                 rel="alternate"

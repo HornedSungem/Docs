@@ -291,6 +291,20 @@
   </url>
   
   <url>
+    <loc>https://hornedsungem.github.io/Docs/conversion/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hornedsungem.github.io/Docs/en/conversion/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://hornedsungem.github.io/Docs/conversion/"
+                />
+  </url>
+  
+  <url>
     <loc>https://hornedsungem.github.io/Docs/workflow/ros/</loc>
     <xhtml:link
                 rel="alternate"

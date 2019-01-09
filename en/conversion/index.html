@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.53" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+    <title>Model Conversion :: Horned Sungem Documentation</title>
+    
+    
+    <link href="/Docs/css/nucleus.css?1546999548" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1546999548" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1546999548" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1546999548" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1546999548" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1546999548" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1546999548" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1546999548" rel="stylesheet">
+    
+      <link href="/Docs/css/theme-mine.css?1546999548" rel="stylesheet">
+    
+
+    <script src="/Docs/js/jquery-2.x.min.js?1546999548"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Docs/en/conversion/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+	<a href="/Docs/" ><img align="left" src="/Docs/logo.png"></a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1546999548"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1546999548"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/Docs\/en";
+    
+</script>
+<script type="text/javascript" src="/Docs/js/search.js?1546999548"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/purchase/" title="Purchase" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/purchase/">
+          Purchase
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/product/" title="Product Instructions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/product/">
+          Product Instructions
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/quickstart/" title="Quick Start" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/quickstart/">
+          Quick Start
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/conversion/" title="Model Conversion" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/Docs/en/conversion/">
+          Model Conversion
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/model/" title="Model List" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/model/">
+          Model List
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_mnist/" title="Mnist Digit recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_mnist/">
+        Mnist Digit recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_face_ssd/" title="MobileNet-SSD Face Detector" class="dd-item ">
+        <a href="/Docs/en/model/graph_face_ssd/">
+        MobileNet-SSD Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_object_ssd/" title="MobileNet-SSD Object Detector" class="dd-item ">
+        <a href="/Docs/en/model/graph_object_ssd/">
+        MobileNet-SSD Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_sz/" title="SqueezeNet Image Classification" class="dd-item ">
+        <a href="/Docs/en/model/graph_sz/">
+        SqueezeNet Image Classification
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_g/" title="GoogleNet Image Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_g/">
+        GoogleNet Image Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_fn/" title="FaceNet Face Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_fn/">
+        FaceNet Face Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/model/graph_sg/" title="Sketch Recognition" class="dd-item ">
+        <a href="/Docs/en/model/graph_sg/">
+        Sketch Recognition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/api/" title="APIs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/api/">
+          APIs
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/api/python/" title="Python API" class="dd-item ">
+        <a href="/Docs/en/api/python/">
+        Python API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/api/android/" title="Android API" class="dd-item ">
+        <a href="/Docs/en/api/android/">
+        Android API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/" title="Examples and Tutorials" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/">
+          Examples and Tutorials
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/python/" title="Python" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/python/">
+          Python
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/detector/" title="Face detector" class="dd-item ">
+        <a href="/Docs/en/workflow/python/detector/">
+        Face detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/detector_object/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/python/detector_object/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/recorder/" title="Scene Recorder" class="dd-item ">
+        <a href="/Docs/en/workflow/python/recorder/">
+        Scene Recorder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/python/image_recognition/" title="Image Recogniser (Low-level API Tutorial)" class="dd-item ">
+        <a href="/Docs/en/workflow/python/image_recognition/">
+        Image Recogniser (Low-level API Tutorial)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/android/" title="Android" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/android/">
+          Android
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_hello2018/" title="Hello 2018" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_hello2018/">
+        Hello 2018
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_face_detector/" title="Face Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_face_detector/">
+        Face Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_object_detector/" title="Object Detector" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_object_detector/">
+        Object Detector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/android_sketchguess/" title="SketchGuess" class="dd-item ">
+        <a href="/Docs/en/workflow/android/android_sketchguess/">
+        SketchGuess
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/android/multiple_model/" title="Multiple Model" class="dd-item ">
+        <a href="/Docs/en/workflow/android/multiple_model/">
+        Multiple Model
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/ros/" title="ROS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/ros/">
+          ROS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/ros/quickstart/" title="ROS Tutorial" class="dd-item ">
+        <a href="/Docs/en/workflow/ros/quickstart/">
+        ROS Tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/workflow/diy/" title="DIY" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/workflow/diy/">
+          DIY
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/rapiro/" title="Rapiro Robot" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/rapiro/">
+        Rapiro Robot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/smartlamp/" title="Smart Lamp" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/smartlamp/">
+        Smart Lamp
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/sitting_pose/" title="Sitting posture alarm" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/sitting_pose/">
+        Sitting posture alarm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/en/workflow/diy/raspi_car/" title="Raspberry Pi Toy Car" class="dd-item ">
+        <a href="/Docs/en/workflow/diy/raspi_car/">
+        Raspberry Pi Toy Car
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/faq/" title="FAQs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/faq/">
+          FAQs
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/en/contact/" title="Contact us" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/en/contact/">
+          Contact us
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/Docs/en/conversion/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="/Docs/conversion/">Chinese</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/HornedSungem">Github</a>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/Docs/en/'>Horned Sungem Documentation</a> > Model Conversion
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+
+<style type="text/css">
+p { font-size: 16px!important; }
+pre { margin: 0!important; }
+</style>
+
+<h1 id="hs-model-conversion">HS Model Conversion</h1>
+
+<p>HSDK now supports conversion of Caffe and Tensorflow models. Models base on other CNN frameworks, e.g. MXNet, Darknet(YOLO), PyTorch, etc. would need to convert to Caffe/Tensorflow first. This tool is similar to the conversion tool provided by NCSDK.</p>
+
+<h2 id="get-model-conversion-toolkit">Get model conversion toolkit</h2>
+
+<p>This conversion tool is modified based on NCSDK (Python), implemented in the newest <strong><a href="https://github.com/HornedSungem/SungemSDK-Python">SungemSDK-Python</a></strong>.</p>
+
+<blockquote>
+<p>Conversion tool is located in <strong>SungemSDK-Python/tool</strong>.</p>
+</blockquote>
+
+<p>The directory <strong>tool</strong> has following structure:</p>
+
+<pre><code>tool
+├── Controllers # Model analyser (impl. from NCSDK)
+├── Models      # Model structures, setups, device configurations, util functions, etc. (impl. from NCSDK)
+├── Views       # Visualisation, log (impl. from NCSDK)
+├── caffe       # Simplified local CPU version Caffe-SSD for model validation tool.
+└── example     # Caffe\TF conversion examples
+</code></pre>
+
+<h2 id="setup">Setup</h2>
+
+<blockquote>
+<p>Tested on <strong>Ubuntu 16.04</strong>, should work on other platforms.</p>
+</blockquote>
+
+<h4 id="python-dependencies">Python dependencies</h4>
+
+<p>pip3 install graphviz, pyyaml</p>
+
+<h4 id="install-caffe-ssd-cpu-optional-for-model-validation">Install Caffe-SSD CPU (Optional, for model validation)</h4>
+
+<blockquote>
+<p>Note: Makefile.config has been rewritten, but may need modification in case that error occurs. <br />
+Error relates to <em>libboost</em>: <br />
+cd /usr/lib/x86_64-linux-gnu <br />
+sudo ln -s libboost_python-py35.so libboost_python3.so <br />
+Please seek help from us or community for other issues.</p>
+</blockquote>
+
+<pre><code>cd caffe
+make -j4
+make pycaffe
+</code></pre>
+
+<h4 id="install-tensorflow-optional-for-model-validation">Install Tensorflow （Optional, for model validation）</h4>
+
+<p>Please refer to <strong><a href="https://www.tensorflow.org/install/">Tensorflow official guide</a></strong> .</p>
+
+<h2 id="model-conversion-validation-and-profile">Model conversion, validation and profile</h2>
+
+<h3 id="compile">Compile</h3>
+
+<p>This script converts Caffe or Tensorflow model to HS Graph, installation of Caffe or Tensorflow is <strong>NOT</strong> necessary.</p>
+
+<p>Usage:</p>
+
+<pre><code>python3 mvNCCompile.py network # network - *.prototxt(Caffe)* or *.meta(Tensorflow)*
+-h                             # Show help
+-w WEIGHTS                     # Model weight (Caffe only), 如 *.caffemodel*
+-in INPUTNODE                  # Name of input node, default: Caffe: *data*, TF: *input*
+-on OUTPUTNODE                 # Name of output node, default: Caffe: Last layer, TF: *output*
+-o OUTFILE                     # Output path of HS Graph
+-s NSHAVES                     # Number of Movidius Shave, recommend 8, default 1
+-is INPUTSIZE INPUTSIZE        # Change network input size, default: original network size.
+</code></pre>
+
+<p>Example:
+Run under <em>tool</em>:</p>
+
+<pre><code>python3 mvNCCompile.py example/deploy.prototxt -w example/deploy.caffemodel -o example/graph_mnist -s 8
+
+-----------
+mvNCCompile v02.00, Copyright @ Movidius Ltd 2016
+...
+
+</code></pre>
+
+<p>Generates HS Graph: graph_mnist</p>
+
+<h3 id="validation">Validation</h3>
+
+<p>This script is used for validating the output of Caffe/TF and HS model.</p>
+
+<blockquote>
+<p>The evaluation method used in this script is comparing the result with Euclidean distance and sorting.
+Note: therefore if both somehow results in zero value, the test is incorrectly passed.
+Because of the limitaion of hardware and NCSDK conversion tool, the test may fail if some layer are not supported or behaving differently. If test fails, please check the network structure to ensure that all layers are supported. In some case you may have to retrain the model to workaround the limitation.
+As all calculations are based on half-precision float point (FP16), there would be errors due to precision loss, especially on deep and large model. In some case the test fails but the model is still usable. This can be analysed through the log.</p>
+</blockquote>
+
+<p>Usage:</p>
+
+<pre><code>python3 mvNCCheck.py network   # network - *.prototxt(Caffe)* or *.meta(Tensorflow)*
+-h                             # Show help
+-w WEIGHTS                     # Model weight (Caffe only), *.caffemodel*
+-in INPUTNODE                  # Name of input node, default: Caffe: *data*, TF: *input*
+-on OUTPUTNODE                 # Name of output node, default: Caffe: Last layer, TF: *output*
+-o OUTFILE                     # Output path of HS Graph
+-s NSHAVES                     # Number of Movidius Shave, recommend 8, default 1
+-is INPUTSIZE INPUTSIZE        # Change network input size, default: original network size.
+
+-i IMAGE                       # Image for validation, default: random float number
+-S SCALE                       # Scale for preprocessing, default: 1
+-M MEAN                        # Mean for preprocessing, after scale multiplication, default: 0
+-cs [CHANNEL_SWAP]             # Can modify to RGB [0,1,2], default: BGR [2,1,0]
+-metric METRIC                 # Metric for validation, options are: top1, top5, accuracy_metrics, ssd_pred_metric. Default: top1
+
+</code></pre>
+
+<p>Example:
+Run under <em>tool</em>:</p>
+
+<pre><code>python3 mvNCCheck.py example/deploy.prototxt -w example/deploy.caffemodel
+
+-----------
+mvNCCompile v02.00, Copyright @ Movidius Ltd 2016
+...
+
+USB: Transferring Data...
+USB: Myriad Execution Finished
+USB: Myriad Connection Closing.
+USB: Myriad Connection Closed.
+Result:  (10,)
+1) 3 8.3
+2) 8 4.64
+3) 2 4.617
+4) 5 3.217
+5) 7 1.299
+Expected:  (10,)
+1) 3 8.3
+2) 8 4.637
+3) 2 4.61
+4) 5 3.21
+5) 7 1.303
+------------------------------------------------------------
+ Obtained values 
+------------------------------------------------------------
+ Obtained Min Pixel Accuracy: 0.14124293811619282% (max allowed=2%), Pass
+ Obtained Average Pixel Accuracy: 0.06709039444103837% (max allowed=1%), Pass
+ Obtained Percentage of wrong values: 0.0% (max allowed=0%), Pass
+ Obtained Pixel-wise L2 error: 0.07816364273015063% (max allowed=1%), Pass
+ Obtained Global Sum Difference: 0.0556640625
+------------------------------------------------------------
+
+</code></pre>
+
+<p>The results show that Graph has similar output with Caffe, with neglectable error. This model is usable by HS device.</p>
+
+<h3 id="profile">Profile</h3>
+
+<p>This script is used for profiling model structure and overall/per layer time cost.</p>
+
+<p>Usage:</p>
+
+<pre><code>python3 mvNCProfile.py network # network - *.prototxt(Caffe)* or *.meta(Tensorflow)*
+-h                             # Show help
+-w WEIGHTS                     # Model weight (Caffe only), *.caffemodel*
+-in INPUTNODE                  # Name of input node, default: Caffe: *data*, TF: *input*
+-on OUTPUTNODE                 # Name of output node, default: Caffe: Last layer, TF: *output*
+-o OUTFILE                     # Output path of HS Graph
+-s NSHAVES                     # Number of Movidius Shave, recommend 8, default 1
+-is INPUTSIZE INPUTSIZE        # Change network input size, default: original network size.
+</code></pre>
+
+<p>Example:
+Run under <em>tool</em>:</p>
+
+<pre><code>python3 mvNCProfile.py example/deploy.prototxt -w example/deploy.caffemodel
+
+-----------
+mvNCCompile v02.00, Copyright @ Movidius Ltd 2016
+...
+USB: Transferring Data...
+Time to Execute :  5.75  ms
+USB: Myriad Execution Finished
+Time to Execute :  4.32  ms
+USB: Myriad Execution Finished
+USB: Myriad Connection Closing.
+USB: Myriad Connection Closed.
+Network Summary
+
+Detailed Per Layer Profile
+                                                               Bandwidth   time
+#   Name                                                 MFLOPs  (MB/s)    (ms)
+===============================================================================
+0   data                                                    0.0   935.8   0.002
+1   conv1                                                   0.6    59.7   0.658
+2   pool1                                                   0.0   220.2   0.100
+3   conv2                                                   3.2   223.5   0.829
+4   pool2                                                   0.0   149.4   0.041
+5   ip1                                                     0.8  2300.8   0.332
+6   ip2                                                     0.0   263.2   0.040
+-------------------------------------------------------------------------------
+                                   Total inference time                    2.00
+-------------------------------------------------------------------------------
+</code></pre>
+
+<p>Result: </p>
+
+<p>Python overall time cost: 5.75ms, USB cost 4.32ms, internal model inference time 2.00ms, and time cost for every layer.</p>
+
+<blockquote>
+<p>MFLOPS(Unit): million FP16 calculation. <br />
+Detailed report can be inspected from <strong>output.gv.svg</strong> or <strong>output_report.html</strong>.
+For small model that below 10ms, e.g. the LeNet model used in this example, the time cost for interaction/USB transfer might be higher than inferencing.</p>
+</blockquote>
+
+<h3 id="about-model-conversion-on-tensorflow">About model conversion on <em>Tensorflow</em></h3>
+
+<p>Converting Tensorflow model is more complicated than Caffe.</p>
+
+<h4 id="generate-tensorflow-deploy-model">Generate Tensorflow deploy model</h4>
+
+<blockquote>
+<p>This tutorial also adapts NCSDK.</p>
+</blockquote>
+
+<p>Mostly, Tensorflow model cannot be directly converted to HS Graph, the reasons are below:</p>
+
+<ol>
+<li><strong>Model format is not compatible</strong>. The Tensorflow model must be converted first to include these 3 files: <strong>.meta</strong> + <strong>.index</strong> + <strong>.data-00000-of-00001</strong>. <br /></li>
+<li><strong>Cannot directly convert using training model</strong>. Many operations for training cannot be recognised by the conversion tool, e.g. the operations for optimisation. As shown in the figures below (model for training / deploy). We recommend users to convert their TF models for deploy first before converting to HS model.</li>
+</ol>
+
+<p><img src="/Docs/conversion/TB_1.png" alt="TF_Graph_Train" />
+<img src="/Docs/conversion/TB_2.png" alt="TF_Graph_Deploy" />
+3. <strong>Defining output node name</strong>. Defining output node name is necessary for Tensorflow model conversion. The name can be acquired with Tensorboard, as shown below. The name is located at top-right corner. In this example, the name is <strong>UNet/Conv_end/conv1/bias_add</strong>.</p>
+
+<p><img src="/Docs/conversion/TB_3.png" alt="TF_Graph_Output" /></p>
+
+<h4 id="example">Example</h4>
+
+<p>Generate HS graph file under <em>tool</em>:</p>
+
+<pre><code>python3 mvNCCompile.py -s 8 ./example/wave.ckpt.meta -in input -on UNet/Conv_end/conv1/bias_add -o graph_wave
+python3 mvNCProfile.py -s 8 ./example/wave.ckpt.meta -in input -on UNet/Conv_end/conv1/bias_add
+python3 mvNCCheck.py -s 8 ./example/wave.ckpt.meta -in input -on UNet/Conv_end/conv1/bias_add
+</code></pre>
+
+<blockquote>
+<p>This model is our recently released small demo for style transfer <br />
+Usage guide: <br />
+First load model via HSAPI, resize image to 256x256 (float32), then directly load it to the HS device (no preprocessing). Reshape and convert the result (256x256x3) from BGR to RGB, resize back to the original size. <br />
+Output:</p>
+</blockquote>
+
+<p><img src="/Docs/conversion/Style.png" alt="Style" /></p>
+
+<h3 id="graph-usage">Graph usage</h3>
+
+<p>Please refer to API, examples and open-sourced codes to learn how to deploy the generated graph to applications.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/Docs/en/quickstart/" title="Quick Start"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/Docs/en/model/" title="Model List" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Docs/js/clipboard.min.js?1546999548"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1546999548"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1546999548"></script>
+    <script src="/Docs/js/jquery.sticky.js?1546999548"></script>
+    <script src="/Docs/js/featherlight.min.js?1546999548"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1546999548"></script>
+    <script src="/Docs/js/highlight.pack.js?1546999548"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1546999548"></script>
+    <script src="/Docs/js/learn.js?1546999548"></script>
+    <script src="/Docs/js/hugo-learn.js?1546999548"></script>
+
+    <link href="/Docs/mermaid/mermaid.css?1546999548" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1546999548"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>

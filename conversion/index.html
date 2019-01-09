@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="cn" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.53" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/Docs/images/favicon.png" type="image/x-icon" />
+    <title>模型转换 :: 角蜂鸟中文文档</title>
+    
+    
+    <link href="/Docs/css/nucleus.css?1546999549" rel="stylesheet">
+    <link href="/Docs/css/font-awesome.min.css?1546999549" rel="stylesheet">
+    <link href="/Docs/css/hybrid.css?1546999549" rel="stylesheet">
+    <link href="/Docs/css/featherlight.min.css?1546999549" rel="stylesheet">
+    <link href="/Docs/css/perfect-scrollbar.min.css?1546999549" rel="stylesheet">
+    <link href="/Docs/css/auto-complete.css?1546999549" rel="stylesheet">
+    <link href="/Docs/css/theme.css?1546999549" rel="stylesheet">
+    <link href="/Docs/css/hugo-theme.css?1546999549" rel="stylesheet">
+    
+      <link href="/Docs/css/theme-mine.css?1546999549" rel="stylesheet">
+    
+
+    <script src="/Docs/js/jquery-2.x.min.js?1546999549"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Docs/conversion/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+	<a href="/Docs/" ><img align="left" src="/Docs/logo.png"></a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/Docs/js/lunr.min.js?1546999549"></script>
+<script type="text/javascript" src="/Docs/js/auto-complete.js?1546999549"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/Docs";
+    
+</script>
+<script type="text/javascript" src="/Docs/js/search.js?1546999549"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/purchase/" title="立即购买" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/purchase/">
+          立即购买
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/product/" title="产品说明" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/product/">
+          产品说明
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/quickstart/" title="使用入门" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/quickstart/">
+          使用入门
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/conversion/" title="模型转换" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/Docs/conversion/">
+          模型转换
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/model/" title="模型列表" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/model/">
+          模型列表
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/model/graph_mnist/" title="Mnist 数字识别模型" class="dd-item ">
+        <a href="/Docs/model/graph_mnist/">
+        Mnist 数字识别模型
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/model/graph_face_ssd/" title="MobileNet-SSD 人脸检测模型" class="dd-item ">
+        <a href="/Docs/model/graph_face_ssd/">
+        MobileNet-SSD 人脸检测模型
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/model/graph_object_ssd/" title="MobileNet-SSD 物体检测模型" class="dd-item ">
+        <a href="/Docs/model/graph_object_ssd/">
+        MobileNet-SSD 物体检测模型
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/model/graph_sz/" title="SqueezeNet 图像分类模型" class="dd-item ">
+        <a href="/Docs/model/graph_sz/">
+        SqueezeNet 图像分类模型
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/model/graph_g/" title="GoogleNet 图像识别模型" class="dd-item ">
+        <a href="/Docs/model/graph_g/">
+        GoogleNet 图像识别模型
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/model/graph_fn/" title="FaceNet 人脸识别" class="dd-item ">
+        <a href="/Docs/model/graph_fn/">
+        FaceNet 人脸识别
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/model/graph_sg/" title="手绘识别模型" class="dd-item ">
+        <a href="/Docs/model/graph_sg/">
+        手绘识别模型
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/api/" title="角蜂鸟API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/api/">
+          角蜂鸟API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/api/python/" title="Python API" class="dd-item ">
+        <a href="/Docs/api/python/">
+        Python API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/api/android/" title="Android API" class="dd-item ">
+        <a href="/Docs/api/android/">
+        Android API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/workflow/" title="实例教程" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/workflow/">
+          实例教程
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/workflow/python/" title="Python" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/workflow/python/">
+          Python
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/python/detector/" title="人脸检测" class="dd-item ">
+        <a href="/Docs/workflow/python/detector/">
+        人脸检测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/python/detector_object/" title="物体检测" class="dd-item ">
+        <a href="/Docs/workflow/python/detector_object/">
+        物体检测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/python/recorder/" title="情景记录器" class="dd-item ">
+        <a href="/Docs/workflow/python/recorder/">
+        情景记录器
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/python/image_recognition/" title="图像识别器（底层API教程）" class="dd-item ">
+        <a href="/Docs/workflow/python/image_recognition/">
+        图像识别器（底层API教程）
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/workflow/android/" title="Android" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/workflow/android/">
+          Android
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_hello2018/" title="Hello 2018" class="dd-item ">
+        <a href="/Docs/workflow/android/android_hello2018/">
+        Hello 2018
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_face_detector/" title="人脸检测" class="dd-item ">
+        <a href="/Docs/workflow/android/android_face_detector/">
+        人脸检测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_object_detector/" title="物体检测" class="dd-item ">
+        <a href="/Docs/workflow/android/android_object_detector/">
+        物体检测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/android_sketchguess/" title="手绘识别" class="dd-item ">
+        <a href="/Docs/workflow/android/android_sketchguess/">
+        手绘识别
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/android/multiple_model/" title="多模型" class="dd-item ">
+        <a href="/Docs/workflow/android/multiple_model/">
+        多模型
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/workflow/ros/" title="ROS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/workflow/ros/">
+          ROS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/ros/quickstart/" title="ROS教程" class="dd-item ">
+        <a href="/Docs/workflow/ros/quickstart/">
+        ROS教程
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/workflow/diy/" title="扩展DIY" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/workflow/diy/">
+          扩展DIY
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/diy/rapiro/" title="奥松机器人" class="dd-item ">
+        <a href="/Docs/workflow/diy/rapiro/">
+        奥松机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/diy/smartlamp/" title="智能台灯" class="dd-item ">
+        <a href="/Docs/workflow/diy/smartlamp/">
+        智能台灯
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/diy/sitting_pose/" title="坐姿提醒" class="dd-item ">
+        <a href="/Docs/workflow/diy/sitting_pose/">
+        坐姿提醒
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Docs/workflow/diy/raspi_car/" title="树莓派小车" class="dd-item ">
+        <a href="/Docs/workflow/diy/raspi_car/">
+        树莓派小车
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/faq/" title="常见问题" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/faq/">
+          常见问题
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Docs/contact/" title="联系我们" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Docs/contact/">
+          联系我们
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/Docs/en/conversion/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="/Docs/conversion/" selected>Chinese</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/HornedSungem">Github</a>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/Docs/'>角蜂鸟使用手册与文档</a> > 模型转换
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+
+<style type="text/css">
+p { font-size: 16px!important; }
+pre { margin: 0!important; }
+</style>
+
+<h1 id="角蜂鸟模型转换">角蜂鸟模型转换</h1>
+
+<p>角蜂鸟现支持转换Caffe与Tensorflow(TF)模型，其他框架，如MXNet、Darknet(YOLO)、PyTorch等需要先通过其他工具转换为Caffe或TF模型。对于使用过NCS的用户，本工具的使用方式基本与NCSDK中模型转换工具相同。</p>
+
+<h2 id="获取模型转换工具包">获取模型转换工具包</h2>
+
+<p>转换工具基于NCSDK修改、于Python实现，已加入最新的 <strong><a href="https://github.com/HornedSungem/SungemSDK-Python">SungemSDK-Python</a></strong> ，如已下载旧版本只需更新即可使用转换工具。</p>
+
+<blockquote>
+<p>转换工具位于 <em>SungemSDK-Python</em> 的 <em>tool</em> 子文件夹下。</p>
+</blockquote>
+
+<p>tool的目录结构如下所示：</p>
+
+<pre><code>tool
+├── Controllers # 模型解析库（从NCSDK移植）
+├── Models      # 模型层定义、设备参数配置、功能库等（从NCSDK移植）
+├── Views       # 可视化、日志输出（从NCSDK移植）
+├── caffe       # 简易版Caffe-SSD用于本地编译CPU版本做模型验证
+└── example     # Caffe、TF模型，用于转换范例
+</code></pre>
+
+<h2 id="安装">安装</h2>
+
+<blockquote>
+<p>目前只测试于 <strong>Ubuntu 16.04</strong>，其他平台理论上可行。</p>
+</blockquote>
+
+<h4 id="安装pip包-建议使用清华源">安装pip包（建议使用清华源）</h4>
+
+<p>pip3 install graphviz, pyyaml</p>
+
+<h4 id="安装caffe-ssd-cpu版-如需caffe模型验证">安装Caffe-SSD CPU版（如需Caffe模型验证）</h4>
+
+<blockquote>
+<p>注意：Makefile.config已根据转换工具的需求重新配置过，但仍有可能遇到Caffe编译不通过的情况。<br />
+如遇见libboost错误可参考以下解决方式：<br />
+cd /usr/lib/x86_64-linux-gnu <br />
+sudo ln -s libboost_python-py35.so libboost_python3.so <br />
+其他编译问题可参考网上其他教程或在交流群寻求帮助。</p>
+</blockquote>
+
+<pre><code>cd caffe
+make -j
+make pycaffe
+</code></pre>
+
+<h4 id="安装tensorflow-如需tensorflow模型验证">安装Tensorflow （如需Tensorflow模型验证）</h4>
+
+<p>请参考官方 <strong><a href="https://www.tensorflow.org/install/">Tensorflow安装教程</a></strong> 。</p>
+
+<h2 id="模型转换以及评估-调试">模型转换以及评估、调试</h2>
+
+<h3 id="转换-compile">转换 - Compile</h3>
+
+<p>此脚本转换Caffe或Tensorflow模型到角蜂鸟Graph模型，无需编译Caffe或安装Tensorflow也可使用。
+使用说明如下：</p>
+
+<pre><code>python3 mvNCCompile.py network # network 为模型文件，如 *.prototxt(Caffe)* 或 *.meta(Tensorflow)*
+-h                             # 显示帮助信息
+-w WEIGHTS                     # 模型权重文件(Caffe), 如 *.caffemodel*
+-in INPUTNODE                  # 输入节点名称，默认Caffe为 *data*, TF为 *input*
+-on OUTPUTNODE                 # 输出节点名称，默认Caffe为最后一层，TF为 *output*
+-o OUTFILE                     # 输出HS Graph路径
+-s NSHAVES                     # 使用Movidius的Shave数量，建议为8，默认为1
+-is INPUTSIZE INPUTSIZE        # 更改输入网络尺寸，默认为网络输入尺寸。
+</code></pre>
+
+<p>范例：
+在 <em>tool</em> 子文件夹下执行：</p>
+
+<pre><code>python3 mvNCCompile.py example/deploy.prototxt -w example/deploy.caffemodel -o example/graph_mnist -s 8
+
+-----------
+mvNCCompile v02.00, Copyright @ Movidius Ltd 2016
+...
+
+</code></pre>
+
+<p>生成mnist的HS Graph: graph_mnist</p>
+
+<h3 id="验证-check">验证 - Check</h3>
+
+<p>此脚本用途为验证生成Graph与原模型是否输出一致。、</p>
+
+<blockquote>
+<p>此验证脚本机制为输入随机数或图像，通过欧式距离与排序分析转换前后模型的输出误差。<br />
+注意：模型或转换工具的错误可能导致输出结果全部为0, 会因输出一致而误判为通过验证。<br />
+因为硬件与NCSDK的限制，部分Caffe/Tensorflow的网络层或计算子不支持或实现与原模型不一致，可导致验证失败。这种情况建议检查是否原模型有自定义的非标准层，可尝试调整网络结构重新训练。 <br />
+另外，因为角蜂鸟所使用的芯片全部基于半精度计算(FP16)，部分网络会因此产生较大误差，尤其是较深的网络。有可能造成未通过验证但实际模型可用，可通过输出日志来自行判断。</p>
+</blockquote>
+
+<p>使用说明如下：</p>
+
+<pre><code>python3 mvNCCheck.py network   # network 为模型文件，如 *.prototxt(Caffe)* 或 *.meta(Tensorflow)*
+-h                             # 显示帮助信息
+-w WEIGHTS                     # 模型权重文件(Caffe), 如 *.caffemodel*
+-in INPUTNODE                  # 输入节点名称，默认Caffe为 *data*, TF为 *input*
+-on OUTPUTNODE                 # 输出节点名称，默认Caffe为最后一层，TF为 *output*
+-s NSHAVES                     # 使用Movidius的Shave数量，建议为8，默认为1
+-is INPUTSIZE INPUTSIZE        # 更改输入网络尺寸，默认为网络输入尺寸。
+
+-i IMAGE                       # 验证用图片，默认为随机浮点数
+-S SCALE                       # 前处理Scale设定，默认为1
+-M MEAN                        # 前处理Mean设定，默认为0, 在乘scale后计算
+-cs [CHANNEL_SWAP]             # 默认网络输入BGR [2,1,0]， 可改为RGB [0,1,2]
+-metric METRIC                 # 验证Metric，可用top1, top5, accuracy_metrics, ssd_pred_metric，适用于不同网络类型，默认为top1
+
+</code></pre>
+
+<p>范例：
+在 <em>tool</em> 子文件夹下执行：</p>
+
+<pre><code>python3 mvNCCheck.py example/deploy.prototxt -w example/deploy.caffemodel
+
+-----------
+mvNCCompile v02.00, Copyright @ Movidius Ltd 2016
+...
+
+USB: Transferring Data...
+USB: Myriad Execution Finished
+USB: Myriad Connection Closing.
+USB: Myriad Connection Closed.
+Result:  (10,)
+1) 3 8.3
+2) 8 4.64
+3) 2 4.617
+4) 5 3.217
+5) 7 1.299
+Expected:  (10,)
+1) 3 8.3
+2) 8 4.637
+3) 2 4.61
+4) 5 3.21
+5) 7 1.303
+------------------------------------------------------------
+ Obtained values 
+------------------------------------------------------------
+ Obtained Min Pixel Accuracy: 0.14124293811619282% (max allowed=2%), Pass
+ Obtained Average Pixel Accuracy: 0.06709039444103837% (max allowed=1%), Pass
+ Obtained Percentage of wrong values: 0.0% (max allowed=0%), Pass
+ Obtained Pixel-wise L2 error: 0.07816364273015063% (max allowed=1%), Pass
+ Obtained Global Sum Difference: 0.0556640625
+------------------------------------------------------------
+
+</code></pre>
+
+<p>结果显示转换后Graph与Caffe输出基本一致，误差极小，此模型可用于角蜂鸟。</p>
+
+<h3 id="评估-profile">评估 - Profile</h3>
+
+<p>此脚本用途为评估生成Graph的网络结构、在角蜂鸟上的运行速度、每层的计算量和耗时等。</p>
+
+<p>使用说明如下：</p>
+
+<pre><code>python3 mvNCProfile.py network # network 为模型文件，如 *.prototxt(Caffe)* 或 *.meta(Tensorflow)*
+-h                             # 显示帮助信息
+-w WEIGHTS                     # 模型权重文件(Caffe), 如 *.caffemodel*
+-in INPUTNODE                  # 输入节点名称，默认Caffe为 *data*, TF为 *input*
+-on OUTPUTNODE                 # 输出节点名称，默认Caffe为最后一层，TF为 *output*
+-s NSHAVES                     # 使用Movidius的Shave数量，建议为8，默认为1
+-is INPUTSIZE INPUTSIZE        # 更改输入网络尺寸，默认为网络输入尺寸。
+</code></pre>
+
+<p>范例：
+在 <em>tool</em> 子文件夹下执行：</p>
+
+<pre><code>python3 mvNCProfile.py example/deploy.prototxt -w example/deploy.caffemodel
+
+-----------
+mvNCCompile v02.00, Copyright @ Movidius Ltd 2016
+...
+USB: Transferring Data...
+Time to Execute :  5.75  ms
+USB: Myriad Execution Finished
+Time to Execute :  4.32  ms
+USB: Myriad Execution Finished
+USB: Myriad Connection Closing.
+USB: Myriad Connection Closed.
+Network Summary
+
+Detailed Per Layer Profile
+                                                               Bandwidth   time
+#   Name                                                 MFLOPs  (MB/s)    (ms)
+===============================================================================
+0   data                                                    0.0   935.8   0.002
+1   conv1                                                   0.6    59.7   0.658
+2   pool1                                                   0.0   220.2   0.100
+3   conv2                                                   3.2   223.5   0.829
+4   pool2                                                   0.0   149.4   0.041
+5   ip1                                                     0.8  2300.8   0.332
+6   ip2                                                     0.0   263.2   0.040
+-------------------------------------------------------------------------------
+                                   Total inference time                    2.00
+-------------------------------------------------------------------------------
+</code></pre>
+
+<p>结果: <br />
+Python调用时间总计5.75毫秒，USB端输入输出计时4.32毫秒，内部模型推算时间2.00毫秒，以及详细每层占用时间。</p>
+
+<blockquote>
+<p>MFLOPS为百万半精度浮点计算量。<br />
+更详细的信息可通过本目录下生成的output.gv.svg矢量图或网页output_report.html查看，验证失败时可通过此图与原模型对比检查。
+对于毫秒级的小模型，如本范例中的LeNet或是用于检测的MTCNN，半数时间将会花费在交互和USB传输。</p>
+</blockquote>
+
+<h3 id="关于-tensorflow-的模型转换">关于 <em>Tensorflow</em> 的模型转换</h3>
+
+<p>比起Caffe模型，Tensorflow更为复杂。</p>
+
+<h4 id="生成用于部署的tf模型">生成用于部署的TF模型</h4>
+
+<blockquote>
+<p>此教程同样适用于NCSDK。</p>
+</blockquote>
+
+<p>Tensorflow在训练时生成的Checkpoint模型文件往往无法被直接转换，原因有几种：<br />
+1. <strong>模型的存储格式不符合</strong> 。如(.pb/.ckpt/.npz)，转换要求的格式为同时包含3个文件： <strong>.meta</strong> + <strong>.index</strong> + <strong>.data-00000-of-00001</strong> 。<br />
+2. <strong>训练时使用了非部署用算子</strong> 。无法被转换工具解析或导致错误，比如说做梯度优化的种种算子。下图图1为训练时的Tensorflow Graph， 图2为部署。建议训练后重新生成图2的部署用Tensorflow模型后再进行转换。 <br />
+<img src="/Docs/conversion/TB_1.png" alt="TF_Graph_Train" />
+<img src="/Docs/conversion/TB_2.png" alt="TF_Graph_Deploy" />
+3. <strong>转换时需定义输出节点名称</strong> 。往往转换Caffe时不需要额外输入节点名称，因为最后一层默认为网络输出， 而在Tensorflow是必要的。查找输出节点方式为使用Tensorboard查看Graph（见下图）, 找到输出节点，从右上方找到名称后即可。此TF网络输出节点名称为 UNet/Conv_end/conv1/bias_add。</p>
+
+<p><img src="/Docs/conversion/TB_3.png" alt="TF_Graph_Output" /></p>
+
+<h4 id="范例">范例</h4>
+
+<p>在 <em>tool</em> 子文件夹下执行可生成对应的角蜂鸟Graph文件：</p>
+
+<pre><code>python3 mvNCCompile.py -s 8 ./tf_wave/wave.ckpt.meta -in input -on UNet/Conv_end/conv1/bias_add -o graph_wave
+python3 mvNCProfile.py -s 8 ./tf_wave/wave.ckpt.meta -in input -on UNet/Conv_end/conv1/bias_add
+python3 mvNCCheck.py -s 8 ./tf_wave/wave.ckpt.meta -in input -on UNet/Conv_end/conv1/bias_add
+</code></pre>
+
+<blockquote>
+<p>此模型为最新更新的一个小附赠品，为我们自训练的风格迁移模型，使用方式如下： <br />
+通过HSAPI加载模型后，首先将输入图像下采样为256x256尺寸，转换为float32类型，无需做前处理（Scale=1,Mean=0）直接调用HS的推算函数并取得结果。然后Reshape成256x256x3，调用cv2的BGR2RGB函数转换颜色，上采样回原图大小即可，效果如下：</p>
+</blockquote>
+
+<p><img src="/Docs/conversion/Style.png" alt="Style" /></p>
+
+<h3 id="graph使用">Graph使用</h3>
+
+<p>请参考API、范例与开源代码来详细了解生成的Graph如何部署于应用中。</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/Docs/quickstart/" title="使用入门"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/Docs/model/" title="模型列表" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Docs/js/clipboard.min.js?1546999549"></script>
+    <script src="/Docs/js/perfect-scrollbar.min.js?1546999549"></script>
+    <script src="/Docs/js/perfect-scrollbar.jquery.min.js?1546999549"></script>
+    <script src="/Docs/js/jquery.sticky.js?1546999549"></script>
+    <script src="/Docs/js/featherlight.min.js?1546999549"></script>
+    <script src="/Docs/js/html5shiv-printshiv.min.js?1546999549"></script>
+    <script src="/Docs/js/highlight.pack.js?1546999549"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Docs/js/modernizr.custom.71422.js?1546999549"></script>
+    <script src="/Docs/js/learn.js?1546999549"></script>
+    <script src="/Docs/js/hugo-learn.js?1546999549"></script>
+
+    <link href="/Docs/mermaid/mermaid.css?1546999549" type="text/css" rel="stylesheet" />
+    <script src="/Docs/mermaid/mermaid.js?1546999549"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
